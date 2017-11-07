@@ -652,3 +652,69 @@ blockquote p {
 .fa-star {
   color: #2ECC71;
 }
+
+/* ================================*/
+div.legal-container {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 80px;
+}
+
+hr.green-underline {
+  width: 50px;
+  height: 2px;
+  margin: 0;
+  color: #2ECC71;
+  background-color: #2ECC71;
+}
+
+.margin-top-twentypx {
+  margin-top: 20px;
+}
+
+.margin-top-eightypx {
+  margin-top: 80px;
+}
+
+/* ============ Styles for about.html ============ */
+.container-about {
+  max-width: 800px;
+}
+
+h1.margin-bottom-thirtypx {
+  margin-bottom: 30px;
+}
+
+p.about-text {
+  font-size: 18px;
+}
+
+a.about-link {
+  text-decoration: none;
+  color: #333;
+}
+
+a.about-link:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+a.get-started {
+  width: 300px;
+  height: 50px;
+  background-color: #F58A74;
+  border-style: solid;
+  border-color: #F58A74;
+  color: #fff;
+  letter-spacing: 1px;
+  display: block;
+  margin: 40px auto 0;
+  text-align: center;
+  padding-top: 12px;
+  text-decoration: none;
+}
+
+a.get-started:hover {
+  text-decoration: none;
+  color: #fff;
+}
