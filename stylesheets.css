@@ -744,6 +744,7 @@ h1.container-headers {
 div.team-container {
   margin-top: 60px;
   padding-bottom: 60px;
+  overflow: auto;
 }
 
 div.top-team {
@@ -752,11 +753,12 @@ div.top-team {
 }
 
 div.team-margin {
-  margin: 50px 0 60px;
+  margin-top: 50px;
 }
 
 img.team-image {
   width: 120px;
+  height: 120px;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
