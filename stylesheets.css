@@ -687,10 +687,14 @@ h1.margin-bottom-thirtypx {
 
 p.about-text {
   font-size: 18px;
+  color: #5F5F5F;
+  padding: 0 40px;
+  font-family: 'Lato', sans-serif;
 }
 
 p.margin-bottom-fortypx {
   margin-bottom: 40px;
+  padding-bottom: 60px;
 }
 
 a.about-link {
@@ -706,10 +710,11 @@ a.about-link:hover {
 a.get-started {
   width: 300px;
   height: 50px;
-  background-color: #F58A74;
+  /*background-color: #F58A74;*/
+  border-radius: 4px;
   border-style: solid;
   border-color: #F58A74;
-  color: #fff;
+  color: #F58A74;
   letter-spacing: 1px;
   display: block;
   margin: 40px auto 0;
@@ -720,5 +725,53 @@ a.get-started {
 
 a.get-started:hover {
   text-decoration: none;
+  background-color: #F58A74;
   color: #fff;
+}
+
+div.white-container {
+  border-radius: 4px;
+  background-color: #FFF;
+}
+
+h1.container-headers {
+  color: #5F5F5F;
+  text-align: center;
+  padding-top: 50px;
+  font-family: 'Lato', sans-serif;
+}
+
+div.team-container {
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
+
+div.top-team {
+  width: 50%;
+  float: left;
+}
+
+div.team-margin {
+  margin: 50px 0 60px;
+}
+
+img.team-image {
+  width: 120px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+h4.team-names {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  margin: 30px 0 0;
+  padding: 0;
+}
+
+p.team-roles {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  margin: 5px 0;
+  padding: 0;
 }

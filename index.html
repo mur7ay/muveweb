@@ -73,14 +73,14 @@
 
 <body>
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="box-shadow: 0px 8px 5px #f8f8f8; border: 0;">
     <div class="container-fluid" style="background-color: #fff;">
       <div class="navbar-header" style="background-color: #fff; border-color: #fff;">
         <button type="button" class="navbar-toggle collapsed" style="border-color: #fff;" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle Navigator</span>
-          	<span class="icon-bar"></span>
-          	<span class="icon-bar"></span>
-          	<span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="index.html" style="background-color: #fff; font-weight: 300;">MUVE</a>
         <!-- <div class="centered-navbar" style="position:absolute; left:25%; width:50%; text-align:center;"><a href="#"><img src="m-icon.png" style="width: 36px; margin-top: 5px;"></a></div> -->
@@ -89,6 +89,7 @@
       <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1" style="background-color: #fff;">
         <ul class="nav navbar-nav">
           <li><a href="#" title="links to the mover login screen">Mover Login</a></li>
+          <li><a href="about.html" title="links to the about page">About</a></li>
           <li><a href="https://medium.com/@shawnmurray_45503/understanding-our-services-942d5248cb02" title="links to Muve's blog hosted on Medium.com">Blog</a></li>
           <li style="background-color: #F58A74;"><a href="jobSelection.html" title="links to the job/move service selection page." style="color: #fff; letter-spacing: 1px;">Free Instant Quote</a></li>
         </ul>
@@ -174,10 +175,10 @@
 =======
  <!doctype html>
   	<script src="http:/maps.google.com/maps?file=api&v=2&key=AIzaSyCewg7d3sxbW2c8GWNkDOeG_OnygNZvwiU" type="text/javascript"></script>
-  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script> 
-  
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
    var geocoder, location1, location2;
-  
+
    var directionDisplay;
     var directionsService = new google.maps.DirectionsService();
     var map;
@@ -194,7 +195,7 @@ var cincinnati = new google.maps.LatLng();
     directionsDisplay.setMap(map);
     geocoder = new GClientGeocoder();
  }
-  
+
  function showLocation() {
         geocoder.getLocations(document.forms[0].address1.value, function (response) {
             if (!response || response.Status.code != 200) {
@@ -207,13 +208,13 @@ var cincinnati = new google.maps.LatLng();
                     } else {
                         location2 = {lat: response.Placemark[0].Point.coordinates[1], lon: response.Placemark[0].Point.coordinates[0], address: response.Placemark[0].address};
                         calculateDistance();
- 
+
                     }
                 });
             }
         });
     }
- 
+
   function calcRoute() {
     var start = document.getElementById("start").value;
     var end = document.getElementById("end").value;
@@ -232,7 +233,7 @@ var cincinnati = new google.maps.LatLng();
 }
 
   // function to format currency
- 
+
 function CurrencyFormatted(amount) {
     var i = parseFloat(amount);
     if(isNaN(i)) { i = 0.00; }
@@ -249,7 +250,7 @@ function CurrencyFormatted(amount) {
 }
 
   // function to calculate distance
- 
+
     function calculateDistance()
     {
         try
@@ -259,8 +260,8 @@ function CurrencyFormatted(amount) {
             var miledistance = glatlng1.distanceFrom(glatlng2, 3959).toFixed(1);
             var kmdistance = (miledistance * 1.609344).toFixed(1);
             document.getElementById('results').innerHTML = 'Address 1: ' + location1.address + ' (' + location1.lat + ':' + location1.lon + ')<br />Address 2: ' + location2.address + ' (' + location2.lat + ':' + location2.lon + ')<br />Distance: ' + miledistance + ' miles (or ' + kmdistance + ' kilometers)<br/>';
- 
-  
+
+
  // do our JS math here
     var rate = CurrencyFormatted(document.getElementById("price_per_mile").value);
     var fee = CurrencyFormatted(document.getElementById("admin_fee").value);
@@ -273,11 +274,11 @@ function CurrencyFormatted(amount) {
             alert(error);
         }
     }
-  
+
   <body onload="initialize()">
 
 <form action="#" onsubmit="showLocation();calcRoute(); return false;">
- 
+
 
 Start: <input id="start" type="text" name="address1" value="55423" class="address_input" size="5" />
 
@@ -305,19 +306,19 @@ Fee: <input id="admin_fee" type="text" name="admin-fee" value="" class="address_
     <p><strong>Price Results:</strong><br/><span id="price"></span></p>
     <div id="map_canvas" style="top:265px;"></div>
 </body>
-  
+
 
 <body>
- 
+
 <div class="ui-widget">
   <label for="tags">Tags: </label>
   <input id="tags">
 </div>
- 
- 
+
+
 </body>
 </html>
- 
+
   <h3>Move Details</h3>
   <hr style="width:50px;" />
 >>>>>>> 5a0b383454b82d3ca9a439e40100f2d2832f18a0
