@@ -1,9 +1,49 @@
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
+  background-color: #f8f8f8 !important;
 }
 
+/*============ Nav Bar Styles ============*/
+nav {
+  box-shadow: 0px 8px 5px #f8f8f8;
+  border: 0 !important;
+}
+
+.background-color-fff {
+  background-color: #fff !important;
+}
+
+.border-color-fff {
+  border-color: #fff !important;
+}
+
+.color-fff {
+  color: #fff !important;
+}
+
+.navbar-img {
+  display: inline !important;
+  height: 1em;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+
+.navbar-brand {
+  background-color: #fff;
+  font-weight: 300;
+}
+
+.background-color-f58a74 {
+  background-color: #f58a74;
+  color: #fff
+  letter-spacing: 1px;
+}
+
+
+/* ============ Main Section Styles ============*/
 #dv {
   display: none;
+  height: 100%;
 }
 
 #dvMap {
@@ -462,7 +502,7 @@ button:hover {
 
 footer{
      background-color: #33383c;
-     padding:70px 0px;
+     padding: 20px 0;
 }
 
 .logo{
@@ -776,4 +816,46 @@ p.team-roles {
   font-family: 'Lato', sans-serif;
   margin: 5px 0;
   padding: 0;
+}
+
+@media screen and (max-width: 439px) {
+  h1.container-headers {
+    font-size: 34px;
+  }
+}
+
+@media screen and (max-width: 417px) {
+  h1.container-headers {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  h1.container-headers {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 373px) {
+  h1.container-headers {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 352px) {
+  h1.container-headers {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  h1.container-headers {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 308px) {
+  h1.container-headers {
+    font-size: 22px;
+  }
 }
