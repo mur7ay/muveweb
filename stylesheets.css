@@ -500,9 +500,14 @@ button:hover {
   float: left;
 }
 
-footer{
+footer {
      background-color: #33383c;
      padding: 20px 0;
+}
+
+.footer-logo {
+  width: 80px !important;
+  margin-bottom: 20px !important;
 }
 
 .logo{
