@@ -698,6 +698,22 @@ blockquote p {
   color: #2ECC71;
 }
 
+/* ========== Styles for index2.html ============*/
+.index-header {
+  height: 400px;
+  width: 100%;
+  background-color: grey;
+}
+
+.margin-top-fiftypx {
+  margin-top: 50px;
+}
+
+.full-width {
+  width: 100%;
+  height: auto;
+}
+
 /* ================================*/
 div.legal-container {
   padding-left: 40px;
