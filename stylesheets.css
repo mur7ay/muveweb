@@ -738,10 +738,13 @@ hr.green-underline {
 }
 
 /* ========== Styles for blog.html ============*/
- img.blog-img {
+img.blog-img {
   padding: 0 40px;
- }
+}
 
+.width-eightypx {
+ width: 80px;
+}
 
 /* ============ Styles for about.html ============ */
 .container-about {
@@ -759,8 +762,11 @@ p.about-text {
   font-family: 'Lato', sans-serif;
 }
 
-p.margin-bottom-fortypx {
+.margin-bottom-fortypx {
   margin-bottom: 40px;
+}
+
+.padding-bottom-sixtypx {
   padding-bottom: 60px;
 }
 
