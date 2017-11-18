@@ -891,3 +891,39 @@ p.team-roles {
     font-size: 22px;
   }
 }
+
+
+/* ============ Styles for about.html social share icons ============ */
+.social-media-button {
+	border: none;
+	color: #FFFFFF;
+	font-size: 16px;
+	padding: 0.5em 1em;
+  margin-bottom: 50px;
+}
+
+.social-media-button:hover {
+	opacity: 0.9;
+}
+
+/* Twitter */
+.social-media-button.icon.twitter:before {
+  font-family: FontAwesome;
+  content: "\f099";
+  padding-right: 0.5em;
+}
+.social-media-button.twitter {
+	background: #1da1f2;
+  margin-left: 40px;
+}
+
+/* Facebook */
+.social-media-button.icon.facebook:before {
+  font-family: FontAwesome;
+  content: "\f09a";
+  padding-right: 0.5em;
+}
+
+.social-media-button.facebook {
+	background: #0077b5;
+}
