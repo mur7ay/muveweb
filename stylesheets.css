@@ -899,7 +899,11 @@ p.team-roles {
 }
 
 
-/* ============ Styles for about.html social share icons ============ */
+/* ============ Styles for about.html ============ */
+.bottom-padding-fortypx {
+  padding-bottom: 40px;
+}
+
 .social-media-button {
 	border: none;
 	color: #FFFFFF;
