@@ -710,13 +710,14 @@ blockquote p {
   background-color: grey;
 }
 
-
 .full-width {
   width: 100%;
   height: auto;
 }
 
-
+figcaption {
+  padding: 0 !important;
+}
 
 /* ================================*/
 div.legal-container {
@@ -767,7 +768,7 @@ h1.margin-bottom-thirtypx {
   margin-bottom: 30px;
 }
 
-p.about-text {
+.about-text {
   font-size: 18px;
   color: #5F5F5F;
   padding: 0 40px;
