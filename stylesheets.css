@@ -9,6 +9,11 @@ nav {
   border: 0 !important;
 }
 
+.no-box-shadow {
+  box-shadow: none;
+  border-bottom-color: #f8f8f8;
+}
+
 .background-color-fff {
   background-color: #fff !important;
 }
@@ -705,14 +710,13 @@ blockquote p {
   background-color: grey;
 }
 
-.margin-top-fiftypx {
-  margin-top: 50px;
-}
 
 .full-width {
   width: 100%;
   height: auto;
 }
+
+
 
 /* ================================*/
 div.legal-container {
@@ -731,6 +735,14 @@ hr.green-underline {
 
 .margin-top-twentypx {
   margin-top: 20px;
+}
+
+.margin-top-thirtypx {
+  margin-top: 30px;
+}
+
+.margin-top-fiftypx {
+  margin-top: 50px;
 }
 
 .margin-top-eightypx {
@@ -898,8 +910,6 @@ p.team-roles {
   }
 }
 
-
-/* ============ Styles for about.html ============ */
 .bottom-padding-fortypx {
   padding-bottom: 40px;
 }
