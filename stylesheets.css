@@ -29,13 +29,18 @@ nav {
 .navbar-img {
   display: inline !important;
   height: 1em;
-  margin-right: 5px;
+  margin-right: 10px;
   margin-top: -3px;
 }
 
 .navbar-brand {
   background-color: #fff;
   font-weight: 300;
+  font-size: 30px !important;
+}
+
+.navbar-nav {
+  font-size: 18px;
 }
 
 .background-color-f58a74 {
@@ -704,10 +709,14 @@ blockquote p {
 }
 
 /* ========== Styles for index2.html ============*/
-.index-header {
+header {
   height: 400px;
   width: 100%;
   background-color: grey;
+  background-image: url(img/cover.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .full-width {
@@ -794,7 +803,7 @@ a.about-link:hover {
 }
 
 a.get-started {
-  width: 300px;
+  max-width: 300px;
   height: 50px;
   /*background-color: #F58A74;*/
   border-radius: 4px;
