@@ -11,7 +11,7 @@ nav {
 
 .no-box-shadow {
   box-shadow: none;
-  border-bottom-color: #f8f8f8;
+  border-bottom: 1px solid #f8f8f8 !important;
 }
 
 .background-color-fff {
@@ -964,92 +964,115 @@ p.team-roles {
 
 /*============ Media Queries for index2.html cover photo ============*/
 
-@media screen and (min-width: 1245px) {
+@media screen and (min-width: 1600px) {
   .index-header {
+    background-image: url(img/cover2.jpeg);
+    background-position: 0 -250px;
+  }
+}
+
+
+@media screen and (max-width: 1600px) {
+  .index-header {
+    background-image: url(img/cover2.jpeg);
     background-position: 0 -175px;
   }
 }
 
 @media screen and (max-width: 1244px) {
   .index-header {
+    background-image: url(img/cover3.jpg);
     background-position: 0 -125px;
   }
 }
 
 @media screen and (max-width: 1045px) {
   .index-header {
+    background-image: url(img/cover3.jpg);
     background-position: 0 -100px;
   }
 }
 
 @media screen and (max-width: 1019px) {
   .index-header {
+    background-image: url(img/cover3.jpg);
     background-position: 0 -75px;
   }
 }
 
 @media screen and (max-width: 949px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: 0 -50px;
   }
 }
 
 @media screen and (max-width: 859px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: 0 -25px;
   }
 }
 
 @media screen and (max-width: 749px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: 0 0;
   }
 }
 
 @media screen and (max-width: 690px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -10 0;
   }
 }
 
 @media screen and (max-width: 610px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -5px 0;
   }
 }
 
 @media screen and (max-width: 600px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -15px 0;
   }
 }
 
 @media screen and (max-width: 590px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -25px 0;
   }
 }
 
 @media screen and (max-width: 580px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -35px 0;
   }
 }
 
 @media screen and (max-width: 570px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -45px 0;
   }
 }
 
 @media screen and (max-width: 560px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -55px 0;
   }
 }
 
 @media screen and (max-width: 550px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -65px 0;
   }
 }
@@ -1057,78 +1080,91 @@ p.team-roles {
 
 @media screen and (max-width: 540px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -75px 0;
   }
 }
 
 @media screen and (max-width: 530px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -85px 0;
   }
 }
 
 @media screen and (max-width: 520px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -90px 0;
   }
 }
 
 @media screen and (max-width: 510px) {
   .index-header {
+    background-image: url(img/cover4.jpg);
     background-position: -92px 0;
   }
 }
 
 @media screen and (max-width: 500px) {
   .index-header {
+    background-image: url(img/cover5.jpg);
     background-position: -95px 0;
   }
 }
 
 @media screen and (max-width: 480px) {
   .index-header {
+    background-image: url(img/cover5.jpg);
     background-position: -100px 0;
   }
 }
 
 @media screen and (max-width: 460px) {
   .index-header {
+    background-image: url(img/cover5.jpg);
     background-position: -110px 0;
   }
 }
 
 @media screen and (max-width: 450px) {
   .index-header {
+    background-image: url(img/cover5.jpg);
     background-position: -114px 0;
   }
 }
 
 @media screen and (max-width: 440px) {
   .index-header {
+    background-image: url(img/cover5.jpg);
     background-position: -115px 0;
   }
 }
 
 @media screen and (max-width: 430px) {
   .index-header {
+    background-image: url(img/cover5.jpg);
     background-position: -120px 0;
   }
 }
 
 @media screen and (max-width: 420px) {
   .index-header {
+    background-image: url(img/cover5.jpg);
     background-position: -125px 0;
   }
 }
 
 @media screen and (max-width: 419px) {
   .index-header {
+    background-image: url(img/cover5.jpg);
     background-position: 0 0;
   }
 }
 
 @media screen and (max-width: 335px) {
   .index-header {
+    background-image: url(img/cover5.jpg);
     background-position: -25px 0;
   }
 }
