@@ -1,58 +1,47 @@
-// var accountSid = process.env.TWILIO_ACCOUNT_SID;
-// var authToken = process.env.TWILIO_AUTH_TOKEN;
-// var client = require('twilio')(accountSid, authToken);
+const express = require('express');
+const stripe = require('stripe')('sk_test_LZJGwg1WdZXEKRig7xEMM2eC');
+const bodyParser = require('body-parser');
+const exphbs = require('express-handlebars');
 
-// client.messages.create({
-//   to: "+15137816780",
-//   from: "+18886194715",
-//   body: "hi there old lady"
-// }, function(err, message) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log(message.sid);
-//   }
-// });
+const app = express();
 
-// var accountSid = process.env.TWILIO_ACCOUNT_SID;
-// var authToken = process.env.TWILIO_AUTH_TOKEN;
-// var client = require('twilio')(accountSid, authToken);
-// var express = require('express');
-// var app = express();
-//
-// client.messages.create({
-//   to: "+15137816780",
-//   from: "+18886194715",
-//   body: "Testing, testing, testing hi"
-// }).then((messsage) => console.log(message.sid));
+// Handlebars Middleware
+app.engine('handlebars',exphbs({defaultLayout:'main'}));
+app.set('view engine', 'handlebars');
 
+// Body Parser Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 
-var accountSid = process.env.TWILIO_ACCOUNT_SID;
-var authToken = process.env.TWILIO_AUTH_TOKEN;
-var client = require('twilio')(accountSid, authToken);
+// Set Static Folder
+app.use(express.static('${__dirname}/public'));
 
-const express = require('express')
-const app = express()
+// Index route
+app.get('/', (req, res) => {
+  res.render('index');
+});
 
-app.post('/api', function (req, res) {
-    client.messages.create({
-        to: "+15137816780",
-        from: "+18886194715",
-        body: "Testing, testing, testing"
-    }).then((messsage) => {
-        console.log(message.sid)
-        res.send('done!', message.sid )
-    });
-})
+// charge route
+app.post('/charge', (req, res) => {
+  const amount = 2500;
 
-app.listen(8000, function () {
-console.log('Example app listening on port 8000!')
-})
+  stripe.customers.create({
+    email: req.body.stripeEmail,
+    source: req.body.stripeToken
+  })
+  .then(customer => stripe.charges.create({
+    amount,
+    description:'large move',
+    currency:'usd',
+    customer:customer.id
+  }))
+  .then(charge => res.render('success'));
+});
 
-// app.post('/index.js', function(req, res) {
-//   client.messages.create({
-//     to: "+15137816780",
-//     from: "+18886194715",
-//     body: "Testing, testing, testing"
-//   }).then((messsage) => console.log(message.sid));
-// });
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
+
+//kade
