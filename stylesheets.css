@@ -70,6 +70,15 @@ nav {
   text-align: left;
 }
 
+.green-heading-text {
+  font-size: 24px;
+  color: #28B463;
+}
+
+.margin-top-twentypx {
+  margin-top: 20px;
+}
+
 @media screen and (min-width: 350px) and (max-width: 430px) {
   #aboutH2 {
     font-size: 22px;
@@ -834,7 +843,7 @@ div.white-container {
 }
 
 h1.container-headers {
-  color: #5F5F5F;
+  color: #FFF;
   text-align: center;
   padding-top: 50px;
   font-family: 'Lato', sans-serif;
@@ -966,7 +975,7 @@ p.team-roles {
 
 @media screen and (min-width: 1600px) {
   .index-header {
-    background-image: url(img/cover2.jpeg);
+    background-image: url(img/cover2.jpg);
     background-position: 0 -250px;
   }
 }
@@ -974,7 +983,7 @@ p.team-roles {
 
 @media screen and (max-width: 1600px) {
   .index-header {
-    background-image: url(img/cover2.jpeg);
+    background-image: url(img/cover2.jpg);
     background-position: 0 -175px;
   }
 }
