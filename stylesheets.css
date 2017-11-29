@@ -741,6 +741,10 @@ figcaption {
   padding: 50px 0;
 }
 
+.swiper-slide img {
+  max-width: 250px;
+}
+
 /* ================================*/
 div.legal-container {
   padding-left: 40px;
