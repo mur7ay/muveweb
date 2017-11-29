@@ -801,6 +801,10 @@ h1.margin-bottom-thirtypx {
   font-family: 'Lato', sans-serif;
 }
 
+.no-padding {
+  padding: 0;
+}
+
 .margin-bottom-fortypx {
   margin-bottom: 40px;
 }
@@ -847,7 +851,6 @@ div.white-container {
 }
 
 h1.container-headers {
-  color: #FFF;
   text-align: center;
   padding-top: 50px;
   font-family: 'Lato', sans-serif;
