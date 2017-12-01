@@ -878,6 +878,39 @@ h1.container-headers2 {
   }
 }
 
+div.header-center-container {
+  display: block;
+  margin: 0 auto;
+  width: 330px;
+  font-family: 'Lato', sans-serif;
+}
+
+input.zipcode {
+  display: inline;
+  margin: 50px auto;
+  border-radius: 100px;
+  border-style: solid;
+  border-color: #01D06F;
+  height: 51px;
+  width: 200px;
+  padding-left: 10px;
+}
+
+button.zipcode-button {
+  height: 51px;
+  width: 160px;
+  letter-spacing: 1px;
+  color: #FFF;
+  background-color: #01D06F;
+  border-radius: 100px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-style: solid;
+  border-color: #01D06F;
+  margin-left: -30px;
+  font-weight: bold;
+}
+
 h2.container-headers {
   color: #5F5F5F;
   padding: 0 40px;
