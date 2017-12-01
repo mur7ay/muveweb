@@ -337,7 +337,12 @@ h1 {
   color: #474747;
   font-weight: 400;
   margin-top: 40px;
-  line-height: 0;
+  /*line-height: 0;*/
+}
+
+.zero-top {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .moverFormPTag {
@@ -373,6 +378,7 @@ button:hover {
   cursor: hand;
   cursor: pointer;
 }
+
 
 .noUnderline {
   text-decoration: none;
@@ -887,7 +893,7 @@ div.header-center-container {
 
 input.zipcode {
   display: inline;
-  margin: 50px auto;
+  margin: 20px auto 50px;
   border-radius: 100px;
   border-style: solid;
   border-color: #01D06F;
