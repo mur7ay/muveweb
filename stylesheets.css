@@ -22,15 +22,12 @@ nav {
   border-color: #fff !important;
 }
 
-.color-fff {
-  color: #fff !important;
+.color-01D06F {
+  color: #01D06F !important;
 }
 
-.navbar-img {
-  display: inline !important;
-  height: 1em;
-  margin-right: 10px;
-  margin-top: -3px;
+.color-01D06F:hover {
+  color: #FFF !important;
 }
 
 .navbar-brand {
@@ -43,10 +40,17 @@ nav {
   font-size: 18px;
 }
 
-.background-color-f58a74 {
-  background-color: #f58a74;
-  color: #fff
+.background-color-01D06F {
+  background-color: #FFF;
+  color: #01D06F;
+  border-width: 3px;
+  border-radius: 6px;
+  border-style: solid;
   letter-spacing: 1px;
+}
+
+.background-color-01D06F:hover {
+  background-color: #01D06F;
 }
 
 
@@ -852,8 +856,26 @@ div.white-container {
 
 h1.container-headers {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 60px;
+  color: #FFF;
   font-family: 'Lato', sans-serif;
+}
+
+h1.container-headers2 {
+  text-align: center;
+  padding-top: 10px;
+  color: #FFF;
+  font-family: 'Lato', sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  h1.container-headers {
+    font-size: 22px;
+  }
+  h1.container-headers2 {
+    font-size: 22px;
+    padding-top: 0px;
+  }
 }
 
 h2.container-headers {
