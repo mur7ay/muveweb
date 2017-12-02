@@ -1,13 +1,16 @@
 var slideCount;
 
+function adjustSlideCount() {
+    if ($(window).width() <= 570) {
+        slideCount = 1;
+    } else if ($(window).width() >= 1000) {
+        slideCount = 3;
+    } else {
+        slideCount = 2;
+    }
+};
 
-if ($(window).width() <= 570) {
-    slideCount = 1;
-} else if ($(window).width() >= 1000) {
-    slideCount = 3;
-} else {
-    slideCount = 2;
-}
+adjustSlideCount();
 
 var swiper = new Swiper(".swiper-container", {
     slidesPerView: slideCount,
@@ -23,14 +26,8 @@ var swiper = new Swiper(".swiper-container", {
     }
 });
 
-window.onresize = function(event) {
-    if ($(window).width() <= 570) {
-        slideCount = 1;
-    } else if ($(window).width() >= 1000) {
-        slideCount = 3;
-    } else {
-        slideCount = 2;
-    }
+window.onresize = function() {
+    adjustSlideCount();
 
     var swiper = new Swiper(".swiper-container", {
         slidesPerView: slideCount,
@@ -44,5 +41,5 @@ window.onresize = function(event) {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
         }
-    });
-}
+    }); 
+};

@@ -1067,6 +1067,14 @@ p.team-roles {
   .faq-text {
     text-align: center;
   }
+
+  .disappear {
+    display: none;
+  }
+
+  .margin-top-zero {
+    margin-top: 0 !important;
+  }
 }
 
 /*============ Media Queries for index2.html cover photo ============*/
