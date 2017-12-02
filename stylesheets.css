@@ -1,5 +1,5 @@
 body {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Lato', sans-serif;
   background-color: #f8f8f8 !important;
 }
 
@@ -739,8 +739,22 @@ blockquote p {
 }
 
 .full-width {
-  width: 100%;
+  width: 50%;
   height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.how-it-works-p {
+  margin-top: 4%;
+}
+
+@media screen and (max-width: 991px) {
+  .center-text-smscn {
+    text-align: center;
+    padding: 0 10%;
+    margin-top: 50px;
+  }
 }
 
 figcaption {
