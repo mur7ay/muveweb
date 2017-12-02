@@ -1,9 +1,9 @@
 var slideCount;
 
 
-if ($(window).width() <= 450) {
+if ($(window).width() <= 570) {
     slideCount = 1;
-} else if ($(window).width() >= 650) {
+} else if ($(window).width() >= 1000) {
     slideCount = 3;
 } else {
     slideCount = 2;
@@ -24,9 +24,9 @@ var swiper = new Swiper(".swiper-container", {
 });
 
 window.onresize = function(event) {
-    if ($(window).width() <= 450) {
+    if ($(window).width() <= 570) {
         slideCount = 1;
-    } else if ($(window).width() >= 650) {
+    } else if ($(window).width() >= 1000) {
         slideCount = 3;
     } else {
         slideCount = 2;
