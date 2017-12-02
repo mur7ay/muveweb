@@ -749,6 +749,10 @@ blockquote p {
   margin-top: 4%;
 }
 
+.how-it-works-text {
+  font-size: 16px !important;
+}
+
 @media screen and (max-width: 991px) {
   .center-text-smscn {
     text-align: center;
@@ -1056,6 +1060,13 @@ p.team-roles {
 
 .social-media-button.facebook {
 	background: #0077b5;
+}
+
+/* Media Queries for index2.html FAQ */
+@media screen and (max-width: 992px) {
+  .faq-text {
+    text-align: center;
+  }
 }
 
 /*============ Media Queries for index2.html cover photo ============*/
