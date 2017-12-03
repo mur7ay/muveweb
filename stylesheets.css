@@ -778,6 +778,19 @@ figcaption {
   width: 300px;
 }
 
+.panel-body {
+  background-color: #5B2C6F;
+}
+
+.panel-footer {
+  background-color: #FFF;
+}
+
+.glyphicon-star {
+  color: #FFF;
+}
+
+
 /* ================================*/
 div.legal-container {
   padding-left: 40px;
@@ -859,22 +872,25 @@ a.about-link:hover {
 a.get-started {
   max-width: 300px;
   height: 50px;
-  /*background-color: #F58A74;*/
+  font-family: lato, sans-serif;
   border-radius: 4px;
   border-style: solid;
-  border-color: #5B2C6F;
-  color: #5B2C6F;
+  border-width: 3px;
+  border-radius: 6px;
+  border-color: #01D06F;
+  color: #01D06F;
   letter-spacing: 1px;
   display: block;
   margin: 40px auto 0;
   text-align: center;
   padding-top: 12px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 a.get-started:hover {
   text-decoration: none;
-  background-color: #5B2C6F;
+  background-color: #01D06F;
   color: #fff;
 }
 
