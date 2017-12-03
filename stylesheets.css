@@ -883,10 +883,14 @@ div.white-container {
   background-color: #FFF;
 }
 
+.text-white {
+  color: #FFF !important;
+}
+
 h1.container-headers {
   text-align: center;
   padding-top: 60px;
-  color: #FFF;
+  color: #5F5F5F;
   font-family: 'Lato', sans-serif;
 }
 
