@@ -862,8 +862,8 @@ a.get-started {
   /*background-color: #F58A74;*/
   border-radius: 4px;
   border-style: solid;
-  border-color: #F58A74;
-  color: #F58A74;
+  border-color: #5B2C6F;
+  color: #5B2C6F;
   letter-spacing: 1px;
   display: block;
   margin: 40px auto 0;
@@ -874,7 +874,7 @@ a.get-started {
 
 a.get-started:hover {
   text-decoration: none;
-  background-color: #F58A74;
+  background-color: #5B2C6F;
   color: #fff;
 }
 
