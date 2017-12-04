@@ -53,6 +53,6 @@ _zipcodeBtn.onclick = function() {
   }
 
   /* Check */
-  if (found) console.log(window.location.href = "jobSelection.html";);
+  if (found) console.log(window.location.href = "jobSelection.html");
   else alert("We're currently not in your area"); // <-- We'll eventually reroute the to a new page.
 };
