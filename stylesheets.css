@@ -1,6 +1,7 @@
 body {
   font-family: 'Lato', sans-serif !important;
   background-color: #f8f8f8 !important;
+  min-width: 225px;
 }
 
 /*============ Nav Bar Styles ============*/
@@ -782,10 +783,6 @@ figcaption {
   background-color: #5B2C6F;
 }
 
-.panel-footer {
-  background-color: #FFF;
-}
-
 .glyphicon-star {
   color: #FFF;
 }
@@ -932,26 +929,32 @@ h1.container-headers2 {
 }
 
 div.header-center-container {
+  position: relative;
   display: block;
   margin: 0 auto;
-  width: 330px;
+  max-width: 330px;
   font-family: 'Lato', sans-serif;
 }
 
 input.zipcode {
+  position: absolute;
+  left: 0;
   display: inline;
-  margin: 20px auto 50px;
+  margin-top: 20px;
   border-radius: 100px;
   border-style: solid;
   border-color: #01D06F;
   height: 51px;
-  width: 200px;
+  width: 100%;
   padding-left: 10px;
 }
 
 button.zipcode-button {
+  position: absolute;
+  right: 0;
   height: 51px;
-  width: 160px;
+  width: 50%;
+  margin-top: 20px;
   letter-spacing: 1px;
   color: #FFF;
   background-color: #01D06F;
@@ -960,7 +963,6 @@ button.zipcode-button {
   border-bottom-left-radius: 0%;
   border-style: solid;
   border-color: #01D06F;
-  margin-left: -30px;
   font-weight: bold;
   border-top-width: 3px;
 }
@@ -1005,6 +1007,10 @@ p.team-roles {
   text-align: center;
   margin: 5px 0;
   padding: 0;
+}
+
+span.hidden {
+  display: hidden;
 }
 
 @media screen and (max-width: 439px) {
@@ -1088,6 +1094,11 @@ p.team-roles {
 }
 
 /* Media Queries for index2.html FAQ */
+.faq-padding {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
 @media screen and (max-width: 992px) {
   .faq-text {
     text-align: center;
@@ -1306,5 +1317,18 @@ p.team-roles {
   .index-header {
     background-image: url(img/cover5.jpg);
     background-position: -25px 0;
+  }
+}
+
+/* Testimonials Media Queries */
+@media screen and (min-width: 991px) {
+  .only-mid-size {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .only-mid-size {
+    display: none;
   }
 }
