@@ -8,6 +8,7 @@ body {
 nav {
   box-shadow: 0px 8px 5px #f8f8f8;
   border: 0 !important;
+  background-color: none;
 }
 
 .no-box-shadow {
@@ -770,6 +771,10 @@ figcaption {
   padding: 50px 0;
 }
 
+.swiper-wrapper {
+  height: 320px;
+}
+
 .swiper-slide img {
   max-width: 250px;
   margin-top: 10px;
@@ -947,6 +952,7 @@ input.zipcode {
   height: 51px;
   width: 100%;
   padding-left: 10px;
+  outline: none;
 }
 
 button.zipcode-button {
@@ -965,6 +971,7 @@ button.zipcode-button {
   border-color: #01D06F;
   font-weight: bold;
   border-top-width: 3px;
+  outline: none;
 }
 
 h2.container-headers {
