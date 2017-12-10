@@ -1339,3 +1339,78 @@ span.hidden {
     display: none;
   }
 }
+
+
+/* ============ Move Detail Styles ============*/
+
+div.body-container {
+  background: #FFF;
+  width: 90%;
+  height: 100%;
+  display: block;
+  margin: 100px auto;
+  overflow: auto;
+}
+
+div.question-wrapper {
+  display: block;
+  margin: 50px auto;
+  height: 80%;
+  width: 90%
+}
+
+div.question-container {
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+
+div.checkbox-container {
+  height: 50px;
+  border: 2px solid #f8f8f8;
+  border-radius: 2px;
+}
+
+label.checkbox-label {
+  height: 46px;
+  padding-top: 14px;
+  width: 500px;
+}
+
+input.margin-right {
+  margin-right: 20px;
+}
+
+h4.question-header {
+  font-family: 'Lato', sans-serif;
+  margin-top: 90px;
+  letter-spacing: 1px;
+}
+
+button.back-btn {
+  border-color: #f8f8f8;
+  border-style: solid;
+  background: #FFF;
+  color: #A6A6A6;
+  width: 150px;
+  height: 40px;
+}
+
+button.next-btn {
+  float: right;
+  background: #01D06F;
+  border-color: #01D06F;
+  border-style: solid;
+  color: #FFF;
+  height: 40px;
+  width: 200px;
+}
+
+@media screen and (max-width: 440px) {
+  button.back-btn {
+    width: 120px;
+  }
+  button.next-btn {
+    width: 190px;
+  }
+}
