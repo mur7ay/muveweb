@@ -1,0 +1,96 @@
+a.link {
+	display: block;
+	text-decoration: none;
+}
+
+a.link:focus, .link:hover {
+	text-decoration: none;
+}
+
+a.job-link {
+	width: 100%;
+	max-width: 450px;
+	margin: 20px auto;
+}
+
+span.job-selection {
+  border: 1px solid #5F5F5F;
+  border-radius: 6px;
+  width: 100%;
+  height: 100px;
+  background: #FFF;
+  display: block;
+  color: black;
+  cursor: pointer;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(96, 96, 96, .4);
+}
+
+span.check-box {
+	position: absolute;
+	border: 1px solid #5F5F5F;
+	background-color: #FFF;
+	top: -5px;
+	right: -5px;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+}
+
+.job-selection img {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	display: inline-block;
+	max-width: 70px;
+	margin-right: 20px;
+}
+
+span.hori-span {
+	margin-left: 110px;
+	display: block;
+	max-width: 340px;
+}
+
+p.hori {
+	padding: 10px 20px;
+  border-left: 1px solid hsla(200, 10%, 50%, 100);
+  border-color: #5F5F5F;
+  font-size: 26px;
+  color: #4237E3;
+  height: 60px;
+  color: #5F5F5F;
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  p.hori {
+  	padding-top: 17px;
+  	font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  p.hori {
+  	padding-top: 17px;
+  	font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 381px) {
+  p.furniture-del {
+  	padding-top: 5px;
+	}
+}
+
+@media screen and (max-width: 346px) {
+  p.curb-curb {
+		padding-top: 5px;
+	}
+}
+
+@media screen and (max-width: 341px) {
+  p.whole-home {
+		padding-top: 5px;
+	}
+}

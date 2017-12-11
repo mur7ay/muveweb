@@ -480,11 +480,11 @@ button:hover {
   display: none;
 }
 
+/*
 .butt {
   border: 2px;
   border-radius: 6px;
   border-width: medium;
-  /*border-style: solid;*/
   border-style: none;
   width: 370px;
   background: none;
@@ -530,6 +530,7 @@ button:hover {
   width: 1px;
   float: left;
 }
+*/
 
 footer {
      background-color: #33383c;
