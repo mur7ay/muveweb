@@ -7,16 +7,13 @@ a.link:focus, .link:hover {
 	text-decoration: none;
 }
 
-a.job-link {
-	width: 100%;
-	max-width: 450px;
-	margin: 20px auto;
-}
-
-span.job-selection {
+div.job-selection {
   border: 1px solid #5F5F5F;
   border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
+  max-width: 450px;
   height: 100px;
   background: #FFF;
   display: block;
@@ -27,14 +24,29 @@ span.job-selection {
   box-shadow: 0 5px 15px rgba(96, 96, 96, .4);
 }
 
-span.check-box {
+div.check-box {
 	position: absolute;
+	margin: 0;
+	padding: 0;
 	border: 1px solid #5F5F5F;
-	background-color: #FFF;
 	top: -5px;
 	right: -5px;
 	width: 40px;
 	height: 40px;
+	border-radius: 100%;
+	background-color: #FFF;
+}
+
+div.checked-box {
+	background-color: #01D06F;
+}
+
+i.fa-check {
+	position: absolute;
+	color: #FFF;
+	font-size: 35px;
+	top: 2px;
+	left: 1.5px;
 	border-radius: 100%;
 }
 
@@ -47,7 +59,7 @@ span.check-box {
 	margin-right: 20px;
 }
 
-span.hori-span {
+div.hori-span {
 	margin-left: 110px;
 	display: block;
 	max-width: 340px;
