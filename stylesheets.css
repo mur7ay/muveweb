@@ -81,6 +81,15 @@ nav {
   color: #28B463;
 }
 
+a.no-deco {
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.no-deco:hover, a.no-deco: active {
+  text-decoration: none;
+}
+
 .margin-top-twentypx {
   margin-top: 20px;
 }
@@ -1381,6 +1390,12 @@ label.checkbox-label {
 input.margin-right {
   margin-right: 20px;
 }
+
+input[type="checkbox"].remove-bootstrap {
+  position: static;
+  margin-left: 0;
+}
+
 
 h4.question-header {
   font-family: 'Lato', sans-serif;
