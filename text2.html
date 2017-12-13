@@ -17,6 +17,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="stylesheets.css" />
+  <link rel="stylesheet" type="text/css" href="css/job-select-questions.css" />
   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
 
 
@@ -115,9 +116,11 @@
     </div>
   </nav>
 
-
   <div class="body-container">
-    <div class="question-wrapper">
+
+
+    <!-- Job Selection -->
+    <div id="jobSelect" class="question-wrapper">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>FIRST, SELECT THE JOB(S) YOU NEED.</strong></h4>
         <a href="blog.html" class="no-deco"><p>NEED HELP DECIDING?</p></a>
@@ -125,48 +128,194 @@
         <form role="form" action="" style="margin-top: 60px;">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox1">
-              <input type="checkbox" id="checkbox1" name="checkbox-home" class="remove-bootstrap checkbox-circle margin-right" value="true" />
+              <input type="checkbox" id="checkbox1" name="checkbox-home" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
               WHOLE HOME
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox2">
-              <input type="checkbox" id="checkbox2" name="checkbox-furniture" class="remove-bootstrap checkbox-circle margin-right" value="true" />
+              <input type="checkbox" id="checkbox2" name="checkbox-furniture" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
               FURNITURE DELIVERY
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox3">
-              <input type="checkbox" id="checkbox3" name="checkbox-curb" class="remove-bootstrap checkbox-circle margin-right" value="true" />
+              <input type="checkbox" id="checkbox3" name="checkbox-curb" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
               CURB-TO-CURB
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox4">
-              <input type="checkbox" id="checkbox4" name="checkbox-assembly" class="remove-bootstrap checkbox-circle margin-right" value="true" />
+              <input type="checkbox" id="checkbox4" name="checkbox-assembly" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
               ASSEMBLY
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox5">
-              <input type="checkbox" id="checkbox5" name="checkbox-labor" class="remove-bootstrap checkbox-circle margin-right" value="true" />
+              <input type="checkbox" id="checkbox5" name="checkbox-labor" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
               JUST LABOR
             </label>
-          </div>
-
-
-          <div style="margin-top: 50px;">
-            <button class="back-btn">BACK</button>
-            <button class="next-btn">NEXT: NUMBER OF BOXES</button>
           </div>
         </form>
 
       </div>
     </div>
+
+
+    <!-- Bedroom Question-->
+    <div id="bedroomQ" class="question-wrapper initial-hidden 0">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY BEDROOMS DOES THE HOME HAVE?</strong></h4>
+
+        <form role="form" action="" style="margin-top: 40px;">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox1">
+              <input type="radio" id="checkbox1" name="radio" class="checkbox-circle margin-right" value="true" />
+              Studio
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox2">
+              <input type="radio" id="checkbox2" name="radio" class="checkbox-circle margin-right" value="true" />
+              1 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox3">
+              <input type="radio" id="checkbox3" name="radio" class="checkbox-circle margin-right" value="true" />
+              2 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox4">
+              <input type="radio" id="checkbox4" name="radio" class="checkbox-circle margin-right" value="true" />
+              3 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox5">
+              <input type="radio" id="checkbox5" name="radio" class="checkbox-circle margin-right" value="true" />
+              4 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox6">
+              <input type="radio" id="checkbox6" name="radio" class="checkbox-circle margin-right" value="true" />
+              5 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox7">
+              <input type="radio" id="checkbox7" name="radio" class="checkbox-circle margin-right" value="true" />
+              Just A Few Things
+            </label>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Boxes Question-->
+    <div id="boxesQ" class="question-wrapper initial-hidden 0">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY BOXES DO YOU PLAN ON MOVING?</strong></h4>
+
+        <form role="form" action="" style="margin-top: 40px;">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox1">
+              <input type="radio" id="checkbox1" name="radio" class="checkbox-circle margin-right" value="true" />
+              1-10
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox2">
+              <input type="radio" id="checkbox2" name="radio" class="checkbox-circle margin-right" value="true" />
+              11-20
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox3">
+              <input type="radio" id="checkbox3" name="radio" class="checkbox-circle margin-right" value="true" />
+              21-30
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox4">
+              <input type="radio" id="checkbox4" name="radio" class="checkbox-circle margin-right" value="true" />
+              31-40
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox5">
+              <input type="radio" id="checkbox5" name="radio" class="checkbox-circle margin-right" value="true" />
+              50+
+            </label>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Elevator Question -->
+    <div id="elevatorQ" class="question-wrapper initial-hidden 0 1">
+      <div class="inline field question-container">
+
+        <h4 class="question-header"><strong>WILL THE MOVER NEED TO USE STAIRS AT THE PICKUP LOCATION?</strong></h4>
+
+        <form role="form" action="" style="margin-top: 60px;">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox1">
+              <input type="radio" id="checkbox1" name="radio" class="checkbox-circle margin-right" value="true" />
+              Yes, the movers will need to move items up/down stairs.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox2">
+              <input type="radio" id="checkbox2" name="radio" class="checkbox-circle margin-right" value="true" />
+              No, the move is on the ground floor.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox3">
+              <input type="radio" id="checkbox3" name="radio" class="checkbox-circle margin-right" value="true" />
+              No, the movers will have access to a passenger elevator.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox4">
+              <input type="radio" id="checkbox4" name="radio" class="checkbox-circle margin-right" value="true" />
+              No, the movers will have access to a fright elevator.
+            </label>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <div style="margin-top: 50px;">
+      <button class="back-btn">BACK</button>
+      <button class="next-btn">NEXT: NUMBER OF BOXES</button>
+    </div>
+
   </div>
 
 
@@ -249,6 +398,6 @@
   </footer>
 
   <script src="js/number-pressed.js"></script>
-
+  <script src="js/job-select.js"></script>
 </body>
 </html>
