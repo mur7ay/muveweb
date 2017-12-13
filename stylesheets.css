@@ -1418,7 +1418,8 @@ button.next-btn {
   border-color: #01D06F;
   border-style: solid;
   color: #FFF;
-  height: 100px;
+  padding: 0;
+  height: 40px;
   width: 200px;
 }
 
