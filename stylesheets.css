@@ -1403,7 +1403,8 @@ h4.question-header {
   letter-spacing: 1px;
 }
 
-button.back-btn {
+.back-btn {
+  float: left;
   border-color: #f8f8f8;
   border-style: solid;
   background: #FFF;
@@ -1412,7 +1413,7 @@ button.back-btn {
   height: 40px;
 }
 
-button.next-btn {
+.next-btn {
   float: right;
   background: #01D06F;
   border-color: #01D06F;
@@ -1421,6 +1422,14 @@ button.next-btn {
   padding: 0;
   height: 40px;
   width: 200px;
+}
+
+.next-btn-txt {
+  padding-top: 7px;
+}
+
+.next-btn-txt:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 440px) {
