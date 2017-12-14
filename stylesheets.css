@@ -1413,7 +1413,7 @@ h4.question-header {
   height: 40px;
 }
 
-.next-btn {
+.next-btn, .first-next-btn {
   float: right;
   background: #01D06F;
   border-color: #01D06F;
