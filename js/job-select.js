@@ -47,6 +47,7 @@ $('.next-btn').click(function() {
 	$(formArray[counter]).addClass('initial-hidden');
 	counter++;
 	$(formArray[counter]).removeClass('initial-hidden');
+	return false;
 });
 
 
@@ -55,9 +56,11 @@ $('.back-btn').click(function() {
 	if (counter === 0) {
 		$('#jobSelect').removeClass('initial-hidden');
 		$(formArray[counter]).addClass('initial-hidden');
+		return false;
 	} else {
 		$(formArray[counter]).addClass('initial-hidden');
 		counter--;
-		$(formArray[counter]).removeClass('initial-hidden');	
+		$(formArray[counter]).removeClass('initial-hidden');
+		return false;	
 	}
 });
