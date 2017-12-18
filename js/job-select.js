@@ -54,7 +54,7 @@ $('.next-btn').click(function() {
 
 
 	} else {
-		// alert("Please select an option")
+		alert("Please select an option")
 	}
 });
 
