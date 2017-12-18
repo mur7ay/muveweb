@@ -7,20 +7,16 @@ var counter = 0;
 $('#first-next-btn').click(function() {
 	formArray = [];
 
-
 	//Assigns all checkboxes to checkboxArr
 	var checkboxArr = $('.checkbox-js');
-
 
 		//Loops through the checkboxes and determines which are checked
 		for (i = 0; i < checkboxArr.length; i++) {
 			if ($(checkboxArr[i]).is(":checked")) {
 
-
 				//Determines which forms needs to be displayed
 				var forms = [];
 				forms.push($('.' + i));
-
 
 				//Pushes forms to formArray without adding duplicates
 				for (j = 0; j < forms[0].length; j++) {
@@ -30,7 +26,6 @@ $('#first-next-btn').click(function() {
 				}
 			}
 		}
-
 
 	//Checks if at least one box is checked
 	if (formArray.length > 0) {
@@ -51,8 +46,15 @@ $('.next-btn').click(function() {
 		$(formArray[counter]).addClass('initial-hidden');
 		counter++;
 		$(formArray[counter]).removeClass('initial-hidden');
+
+		//Progress bar
+		var progress = Math.round((counter/formArray.length) * 100);
+		$('#progressBar').width(progress + '%');
+		$('#progressBar').text(progress + '%');
+
+
 	} else {
-		alert("Please select an option")
+		// alert("Please select an option")
 	}
 });
 
@@ -66,5 +68,10 @@ $('.back-btn').click(function() {
 		$(formArray[counter]).addClass('initial-hidden');
 		counter--;
 		$(formArray[counter]).removeClass('initial-hidden');
+
+		//Progress Bar
+		var progress = Math.round((counter/formArray.length) * 100);
+		$('#progressBar').width(progress + '%');
+		$('#progressBar').text(progress + '%');		
 	}
 });
