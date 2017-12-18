@@ -47,12 +47,12 @@ $('.next-btn').click(function() {
 	var currentForm = $(this).parent().parent();
 	var currentSelectedRB = currentForm.find(':radio').is(":checked");
 
-	if (!currentSelectedRB) {
-		alert("Please select an option")
-	} else {
+	if (currentSelectedRB) {
 		$(formArray[counter]).addClass('initial-hidden');
 		counter++;
 		$(formArray[counter]).removeClass('initial-hidden');
+	} else {
+		alert("Please select an option")
 	}
 });
 
