@@ -27,10 +27,14 @@ $('#first-next-btn').click(function() {
 			}
 		}
 
-	//Checks if at least one box is checked
+	//Form validation
 	if (formArray.length > 0) {
 		$('#jobSelect').addClass('initial-hidden');
 		$(formArray[counter]).removeClass('initial-hidden');
+	} else {
+		var currentForm = $(this).parent().parent();
+		var formValidate = currentForm.find('.text-danger')
+		formValidate.removeClass('initial-hidden');
 	}
 });
 
@@ -39,7 +43,7 @@ $('#first-next-btn').click(function() {
 $('.next-btn').click(function() {
 
 	//Form validation
-	var currentForm = $(this).parent().parent();
+	var currentForm = $(this).parent().parent().parent();
 	var currentSelectedRB = currentForm.find(':radio').is(":checked");
 
 	if (currentSelectedRB) {
@@ -50,9 +54,9 @@ $('.next-btn').click(function() {
 		//Progress bar
 		var progress = Math.round((counter/formArray.length) * 100);
 		$('#progressBar').width(progress + '%');
-
 	} else {
-		alert("Please select an option")
+		var formValidate = currentForm.find('.text-danger');
+		formValidate.removeClass('initial-hidden');
 	}
 });
 

@@ -485,59 +485,6 @@ button:hover {
   display: none;
 }
 
-/*
-.butt {
-  border: 2px;
-  border-radius: 6px;
-  border-width: medium;
-  border-style: none;
-  width: 370px;
-  background: none;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  color: black;
-  transition: all 0.5s;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(96, 96, 96, .4);
-}
-
-.butt span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.butt span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.butt:hover span {
-  padding-right: 25px;
-}
-
-.butt:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-.hori {
-  border: none;
-  border-left: 1px solid hsla(200, 10%, 50%, 100);
-  border-color: #C5C5C5;
-  height: 80px;
-  width: 1px;
-  float: left;
-}
-*/
-
-
 .progress {
   height: 5px;
   margin-top: 56px;
@@ -830,6 +777,10 @@ hr.green-underline {
 
 .margin-top-thirtypx {
   margin-top: 30px;
+}
+
+.margin-top-fortypx {
+  margin-top: 40px;
 }
 
 .margin-top-fiftypx {
@@ -1441,6 +1392,10 @@ h4.question-header {
 
 .next-btn-txt:hover {
   cursor: pointer;
+}
+
+.text-danger {
+  font-size: 16px;
 }
 
 @media screen and (max-width: 440px) {
