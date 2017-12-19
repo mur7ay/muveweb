@@ -90,10 +90,6 @@ a.no-deco:hover, a.no-deco: active {
   text-decoration: none;
 }
 
-.margin-top-twentypx {
-  margin-top: 20px;
-}
-
 @media screen and (min-width: 350px) and (max-width: 430px) {
   #aboutH2 {
     font-size: 22px;
@@ -540,6 +536,16 @@ button:hover {
   float: left;
 }
 */
+
+
+.progress {
+  height: 5px;
+  margin-top: 56px;
+}
+
+.progress-bar {
+  background-color: #476DFD;
+}
 
 footer {
      background-color: #33383c;
@@ -1348,6 +1354,11 @@ span.hidden {
   .only-mid-size {
     display: none;
   }
+
+  .progress {
+    margin-top: 50px;
+  }
+
 }
 
 

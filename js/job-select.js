@@ -50,8 +50,6 @@ $('.next-btn').click(function() {
 		//Progress bar
 		var progress = Math.round((counter/formArray.length) * 100);
 		$('#progressBar').width(progress + '%');
-		$('#progressBar').text(progress + '%');
-
 
 	} else {
 		alert("Please select an option")
@@ -72,6 +70,5 @@ $('.back-btn').click(function() {
 		//Progress Bar
 		var progress = Math.round((counter/formArray.length) * 100);
 		$('#progressBar').width(progress + '%');
-		$('#progressBar').text(progress + '%');		
 	}
 });
