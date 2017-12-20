@@ -1326,7 +1326,7 @@ div.body-container {
 
 div.question-wrapper {
   display: block;
-  margin: 50px auto;
+  margin: 50px auto 90px;
   height: 80%;
   width: 90%
 }
@@ -1378,16 +1378,15 @@ h4.question-header {
 .next-btn, .first-next-btn {
   float: right;
   background: #01D06F;
-  border-color: #01D06F;
-  border-style: solid;
   color: #FFF;
   padding: 0;
   height: 40px;
   width: 200px;
+  border: none;
 }
 
 .next-btn-txt {
-  padding-top: 7px;
+  padding-top: 10px;
 }
 
 .next-btn-txt:hover {
@@ -1396,6 +1395,7 @@ h4.question-header {
 
 .text-danger {
   font-size: 16px;
+  position: absolute;
 }
 
 @media screen and (max-width: 440px) {
