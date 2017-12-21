@@ -1358,7 +1358,6 @@ input[type="checkbox"].remove-bootstrap {
   margin-left: 0;
 }
 
-
 h4.question-header {
   font-family: 'Lato', sans-serif;
   margin-top: 90px;
@@ -1397,6 +1396,24 @@ h4.question-header {
   font-size: 16px;
   position: absolute;
 }
+
+.text-input {
+  padding-right: 20px;
+}
+
+.input__field {
+  width: 100%;
+  display: block;
+  border: none;
+  padding-left: 10px;
+  outline: none;
+}
+
+.input__field:hover, .input__field:active {
+  outline: none;
+  border-bottom: #1AD26F 2px solid;
+}
+
 
 @media screen and (max-width: 440px) {
   button.back-btn {
