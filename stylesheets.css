@@ -1443,6 +1443,7 @@ select {
   background-color: #01D06F;
   color: #FFF;
   margin: 10px 5px;
+  cursor: pointer;
 }
 
 .hidden-day {
