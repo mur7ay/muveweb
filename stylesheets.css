@@ -481,6 +481,12 @@ button:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.select-styles {
+
+
+}
+
+
 .assem {
   display: none;
 }
@@ -1318,6 +1324,9 @@ span.hidden {
 
 
 /* ============ Move Detail Styles ============*/
+.initial-hidden {
+  display: none !important;
+}
 
 div.body-container {
   background: #FFF;
@@ -1400,6 +1409,47 @@ h4.question-header {
   font-size: 16px;
   position: absolute;
 }
+
+.select-div {
+  position: relative;
+  width: 100%;
+  top: 30px;
+}
+
+.select-label {
+  text-align: center;
+  width: 50%;
+  font-weight: 900 !important;
+  display: block;
+  position: relative;
+  top: 5px;
+  padding: 0 !important;
+}
+
+select {
+  width: 200px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 1px;
+}
+
+@media screen and (max-width: 511px) {
+  .select-label {
+    width: 100%;
+  }
+
+  select {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 10px;
+  }
+}
+
+
 
 .text-input {
   padding-right: 20px;

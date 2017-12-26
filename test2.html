@@ -17,7 +17,6 @@
 
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="stylesheets.css" />
-  <link rel="stylesheet" type="text/css" href="css/job-select-questions.css" />
   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
 
 
@@ -656,6 +655,15 @@
               <input class="input__field input__field--hoshi" type="text" id="email" placeholder="Email" />
             </label>
           </div>
+
+        <div class="checkbox select-div">
+          <label for="week" class="select-label">Choose a day</label>
+          <select name="week" class="select-styles" name="week">
+            <option value="thisWeek" selected>This week</option>
+            <option value="nextWeek">Next week</option>
+          </select>
+        </div>
+
         </form>
 
       </div>
