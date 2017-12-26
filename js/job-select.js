@@ -30,7 +30,7 @@ $('#first-next-btn').click(function() {
 		formArray.push('#finalInfoQ');
 
 	//Form validation
-	if (formArray.length > 0) {
+	if (formArray.length > 1) {
 		$('#jobSelect').addClass('initial-hidden');
 		$(formArray[counter]).removeClass('initial-hidden');
 	} else {
@@ -48,7 +48,7 @@ $('.next-btn').click(function() {
 	var currentForm = $(this).parent().parent().parent();
 	var currentSelectedRB = currentForm.find(':radio').is(":checked");
 
-	if (counter + 1 < formArray.length && currentSelectedRB) {
+	if (currentSelectedRB) {
 		$(formArray[counter]).addClass('initial-hidden');
 		counter++;
 		$(formArray[counter]).removeClass('initial-hidden');
@@ -57,14 +57,6 @@ $('.next-btn').click(function() {
 		var progress = Math.round((counter/formArray.length) * 100);
 		$('#progressBar').width(progress + '%');
 
-	} else if (counter + 1 === formArray.length) {
-		$(formArray[counter]).addClass('initial-hidden');
-		counter++;
-		$(formArray[counter]).removeClass('initial-hidden');
-
-		//Progress bar
-		var progress = Math.round((counter/formArray.length) * 100);
-		$('#progressBar').width(progress + '%');
 	} else {
 		var formValidate = currentForm.find('.text-danger');
 		formValidate.removeClass('initial-hidden');

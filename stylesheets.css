@@ -485,13 +485,17 @@ button:hover {
   display: none;
 }
 
-.progress {
+.progress2 {
   height: 5px;
+  width: 100%;
   margin-top: 56px;
 }
 
 .progress-bar {
   background-color: #476DFD;
+  position: fixed;
+  height: 5px;
+  z-index: 1;
 }
 
 footer {

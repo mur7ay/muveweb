@@ -118,7 +118,7 @@
 
 
   <!-- Progress Bar -->
-  <div class="progress">
+  <div class="progress2">
     <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
 
@@ -621,7 +621,7 @@
 
 
     <!-- Final Info -->
-    <div id="finalInfoQ" class="question-wrapper">
+    <div id="finalInfoQ" class="question-wrapper initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>TELL US ABOUT YOUR MOVE.</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -659,46 +659,45 @@
         </form>
 
       </div>
-    </div>
 
-    <!-- Map -->
-    <div class="container-fluid" id="dv">
-      <div id="dvMap"></div>
+      <!-- Map -->
+      <div class="container-fluid" id="dv">
+        <div id="dvMap"></div>
 
-      <div class="row" style="text-align: center;" onload="doSomething()">
-        <div class="col-xs-6 col-sm-6 col-md-4 col-md-offset-2">
-          <div id="dvDistance">
-            <h3 id="miles" style="margin-top: 30px; font-size: 40px; color: #01D06F;"></h3>
-            <h6 style="color: #B1B1B1; font-size: 20px;">Miles Driven</h6>
+        <div class="row" style="text-align: center;" onload="doSomething()">
+          <div class="col-xs-6 col-sm-6 col-md-4 col-md-offset-2">
+            <div id="dvDistance">
+              <h3 id="miles" style="margin-top: 30px; font-size: 40px; color: #01D06F;"></h3>
+              <h6 style="color: #B1B1B1; font-size: 20px;">Miles Driven</h6>
+            </div>
           </div>
-        </div>
 
-        <div class="col-xs-6 col-sm-6 col-md-4">
-          <div id="dvDistance">
-            <h3 id="time" style="margin-top: 30px; font-size: 40px; color: #01D06F;"></h3>
-            <h6 style="color: #B1B1B1; font-size: 20px;">Drive Time</h6>
+          <div class="col-xs-6 col-sm-6 col-md-4">
+            <div id="dvDistance">
+              <h3 id="time" style="margin-top: 30px; font-size: 40px; color: #01D06F;"></h3>
+              <h6 style="color: #B1B1B1; font-size: 20px;">Drive Time</h6>
+            </div>
           </div>
         </div>
       </div>
+
+      <br style="clear: both;" />
+
+      <div class="text-center" style="margin-top: 60px;">
+        <h2 style="margin-top: 50px;">Estimated total $<span id="new_text">35</span> USD</h2>
+      </div>
+
+      <p class="home-p" style="text-align: center;">
+        By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
+      </p>
+
+      <div class="question-container" style="margin-top: 50px;">
+        <button type="button" class="back-btn">BACK</button>
+        <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
+      </div>
+
     </div>
-
-    <br style="clear: both;" />
-
-    <div class="text-center" style="margin-top: 60px;">
-      <h2 style="margin-top: 50px;">Estimated total $<span id="new_text">35</span> USD</h2>
-    </div>
-
-    <p class="home-p" style="text-align: center;">
-      By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
-    </p>
-
-    <div class="question-container" style="margin-top: 50px;">
-      <button type="button" class="back-btn">BACK</button>
-      <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
-    </div>
-
   </div>
-
 
   <!-- Footer -->
   <footer>
