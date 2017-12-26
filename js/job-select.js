@@ -27,6 +27,8 @@ $('#first-next-btn').click(function() {
 			}
 		}
 
+		formArray.push('#finalInfoQ');
+
 	//Form validation
 	if (formArray.length > 0) {
 		$('#jobSelect').addClass('initial-hidden');

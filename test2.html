@@ -621,7 +621,7 @@
 
 
     <!-- Final Info -->
-    <div id="finalInfoQ" class="question-wrapper initial-hidden 0 1 2 3 4 5">
+    <div id="finalInfoQ" class="question-wrapper">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>TELL US ABOUT YOUR MOVE.</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -656,14 +656,45 @@
               <input class="input__field input__field--hoshi" type="text" id="email" placeholder="Email" />
             </label>
           </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
-          </div>
         </form>
 
       </div>
+    </div>
+
+    <!-- Map -->
+    <div class="container-fluid" id="dv">
+      <div id="dvMap"></div>
+
+      <div class="row" style="text-align: center;" onload="doSomething()">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-md-offset-2">
+          <div id="dvDistance">
+            <h3 id="miles" style="margin-top: 30px; font-size: 40px; color: #01D06F;"></h3>
+            <h6 style="color: #B1B1B1; font-size: 20px;">Miles Driven</h6>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-4">
+          <div id="dvDistance">
+            <h3 id="time" style="margin-top: 30px; font-size: 40px; color: #01D06F;"></h3>
+            <h6 style="color: #B1B1B1; font-size: 20px;">Drive Time</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br style="clear: both;" />
+
+    <div class="text-center" style="margin-top: 60px;">
+      <h2 style="margin-top: 50px;">Estimated total $<span id="new_text">35</span> USD</h2>
+    </div>
+
+    <p class="home-p" style="text-align: center;">
+      By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
+    </p>
+
+    <div class="question-container" style="margin-top: 50px;">
+      <button type="button" class="back-btn">BACK</button>
+      <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
     </div>
 
   </div>
@@ -749,5 +780,78 @@
 
   <script src="js/number-pressed.js"></script>
   <script src="js/job-select.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
+      authDomain: "muve-ce0b0.firebaseapp.com",
+      databaseURL: "https://muve-ce0b0.firebaseio.com",
+      projectId: "muve-ce0b0",
+      storageBucket: "muve-ce0b0.appspot.com",
+      messagingSenderId: "274894158485"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="furniture.js"></script>
+  <!-- <script src="index.js"></script> -->
+
+  <script src="js/classie.js"></script>
+  <script>
+    (function() {
+      // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+      if (!String.prototype.trim) {
+        (function() {
+          // Make sure we trim BOM and NBSP
+          var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+          String.prototype.trim = function() {
+            return this.replace(rtrim, '');
+          };
+        })();
+      }
+
+      [].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl) {
+        // in case the input is already filled..
+        if (inputEl.value.trim() !== '') {
+          classie.add(inputEl.parentNode, 'input--filled');
+        }
+
+        // events:
+        inputEl.addEventListener('focus', onInputFocus);
+        inputEl.addEventListener('blur', onInputBlur);
+      });
+
+      function onInputFocus(ev) {
+        classie.add(ev.target.parentNode, 'input--filled');
+      }
+
+      function onInputBlur(ev) {
+        if (ev.target.value.trim() === '') {
+          classie.remove(ev.target.parentNode, 'input--filled');
+        }
+      }
+    })();
+  </script>
+
+  <script src="js/selectFx.js"></script>
+  <script>
+    (function() {
+      [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
+        new SelectFx(el, {
+          stickyPlaceholder: false,
+          onChange: function(val) {
+            var img = document.createElement('img');
+            img.src = 'img/' + val + '.png';
+            img.onload = function() {
+              document.querySelector('span.cs-placeholder').style.backgroundImage = '#fff';
+            };
+          }
+        });
+      });
+    })();
+  </script>
+
+
 </body>
 </html>
