@@ -1433,6 +1433,7 @@ select {
   position: absolute;
   right: 0;
   top: 1px;
+  border-radius: 5px;
 }
 
 .dayOfWeek {
