@@ -123,60 +123,62 @@
 
   <div class="body-container">
 
-
+3387404 cell
     <!-- Job Selection -->
     <div id="jobSelect" class="question-wrapper">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>FIRST, SELECT THE JOB(S) YOU NEED.</strong></h4>
-        <a href="blog.html" class="no-deco"><p>NEED HELP DECIDING?</p></a>
+        <a href="blog.html" class="no-deco">
+          <p>NEED HELP DECIDING?</p>
+        </a>
         <p class="text-danger initial-hidden">Please choose at least one option</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form id="job-input-form" role="form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox1">
-              <input type="checkbox" id="checkbox1" name="checkbox-home" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
+              <input type="checkbox" id="checkbox1" name="checkbox-home" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="whole home" />
               WHOLE HOME
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox2">
-              <input type="checkbox" id="checkbox2" name="checkbox-furniture" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
+              <input type="checkbox" id="checkbox2" name="checkbox-furniture" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="furniture delivery" />
               FURNITURE DELIVERY
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox3">
-              <input type="checkbox" id="checkbox3" name="checkbox-piano" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
+              <input type="checkbox" id="checkbox3" name="checkbox-piano" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="piano" />
               PIANO
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox4">
-              <input type="checkbox" id="checkbox4" name="checkbox-curb" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
+              <input type="checkbox" id="checkbox4" name="checkbox-curb" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="curb-to-curb" />
               CURB-TO-CURB
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox5">
-              <input type="checkbox" id="checkbox5" name="checkbox-assembly" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
+              <input type="checkbox" id="checkbox5" name="checkbox-assembly" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="assembly" />
               ASSEMBLY
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox6">
-              <input type="checkbox" id="checkbox6" name="checkbox-labor" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="true" />
+              <input type="checkbox" id="checkbox6" name="checkbox-labor" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="just labor" />
               JUST LABOR
             </label>
           </div>
         </form>
 
         <div style="margin-top: 50px;">
-          <div id="first-next-btn" class="first-next-btn">
+          <div id="first-next-btn" onclick="jobType()" class="first-next-btn">
             <p class="text-center next-btn-txt">NEXT</p>
           </div>
         </div>
@@ -191,59 +193,59 @@
         <h4 class="question-header"><strong>HOW MANY BEDROOMS DOES THE HOME HAVE?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="bedroom-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="bedroom1" name="bedroom" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="bedroom1" name="bedroom" class="checkbox-circle margin-right" value="studio" />
               Studio
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="bedroom2" name="bedroom" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="bedroom2" name="bedroom" class="checkbox-circle margin-right" value="1 bedroom home" />
               1 Bedroom Home
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="bedroom3" name="bedroom" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="bedroom3" name="bedroom" class="checkbox-circle margin-right" value="2 bedroom home" />
               2 Bedroom Home
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="bedroom4" name="bedroom" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="bedroom4" name="bedroom" class="checkbox-circle margin-right" value="3 bedroom home" />
               3 Bedroom Home
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="bedroom5" name="bedroom" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="bedroom5" name="bedroom" class="checkbox-circle margin-right" value="4 bedroom home" />
               4 Bedroom Home
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="bedroom6" name="bedroom" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="bedroom6" name="bedroom" class="checkbox-circle margin-right" value="5 bedroom home" />
               5 Bedroom Home
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="bedroom7" name="bedroom" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="bedroom7" name="bedroom" class="checkbox-circle margin-right" value="just a few things" />
               Just A Few Things
             </label>
           </div>
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" onclick="bedroomQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -257,7 +259,7 @@
         <h4 class="question-header"><strong>HOW MANY BOXES DO YOU PLAN ON MOVING?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="boxes-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
               <input type="radio" id="boxes1" name="boxes" class="checkbox-circle margin-right" value="true" />
@@ -295,7 +297,7 @@
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" onclick="boxQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -350,7 +352,7 @@
 
 
     <!-- Number of Movers Question -->
-    <div id="numberOfMoversQ"  class="question-wrapper initial-hidden 0 5">
+    <div id="numberOfMoversQ" class="question-wrapper initial-hidden 0 5">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>HOW MANY MOVERS WOULD YOU LIKE TO HIRE?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -393,7 +395,7 @@
       </div>
     </div>
 
-    
+
     <!-- Type of Piano Question -->
     <div id="typeOfPianoQ" class="question-wrapper initial-hidden 2">
       <div class="inline field question-container">
@@ -439,7 +441,7 @@
     </div>
 
 
-  <!-- How Many Items to Assemble Question -->
+    <!-- How Many Items to Assemble Question -->
     <div id="howManyItemsAssembleQ" class="question-wrapper initial-hidden 4">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>HOW MANY ITEMS WILL NEED TO BE ASSEMBLED?</strong></h4>
@@ -499,7 +501,7 @@
 
 
     <!-- How Many Assemblers Question -->
-    <div id="howManyAssemblersQ"  class="question-wrapper initial-hidden 4">
+    <div id="howManyAssemblersQ" class="question-wrapper initial-hidden 4">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>HOW MANY ASSEMBLERS WILL YOU NEED?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -535,7 +537,7 @@
       </div>
     </div>
 
-  
+
     <!-- In-store Pickup Question -->
     <div id="instorePickupQ" class="question-wrapper initial-hidden 3 4">
       <div class="inline field question-container">
@@ -567,8 +569,8 @@
     </div>
 
 
-  <!-- Home Type Question -->
-  <div id="homeTypeQ" class="question-wrapper initial-hidden 5">
+    <!-- Home Type Question -->
+    <div id="homeTypeQ" class="question-wrapper initial-hidden 5">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>WHAT TYPE OF HOME ARE YOU MOVING FROM?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -656,50 +658,50 @@
             </label>
           </div>
 
-        <div class="checkbox select-div">
-          <label for="week" class="select-label">Choose a day</label>
-          <select name="week" class="select-styles" name="week">
+          <div class="checkbox select-div">
+            <label for="week" class="select-label">Choose a day</label>
+            <select name="week" class="select-styles" name="week">
             <option value="thisWeek" selected>This week</option>
             <option value="nextWeek">Next week</option>
           </select>
-        </div>
-        
-        <div class="text-center">
-          <label class="dayOfWeek">
+          </div>
+
+          <div class="text-center">
+            <label class="dayOfWeek">
             <span class="day">M</span>
             <input class="hidden-day" type="radio" />
           </label>
 
-          <label class="dayOfWeek">
+            <label class="dayOfWeek">
             <span class="day">T</span>
             <input class="hidden-day" type="radio" />
           </label>
 
-          <label class="dayOfWeek">
+            <label class="dayOfWeek">
             <span class="day">W</span>
             <input class="hidden-day" type="radio" />
           </label>
 
-          <label class="dayOfWeek">
+            <label class="dayOfWeek">
             <span class="day">T</span>
             <input class="hidden-day" type="radio" />
           </label>
 
-          <label class="dayOfWeek">
+            <label class="dayOfWeek">
             <span class="day">F</span>
             <input class="hidden-day" type="radio" />
           </label>
 
-          <label class="dayOfWeek">
+            <label class="dayOfWeek">
             <span class="day">S</span>
             <input class="hidden-day" type="radio" />
           </label>
-          
-          <label class="dayOfWeek">
+
+            <label class="dayOfWeek">
             <span class="day">S</span>
             <input class="hidden-day" type="radio" />
           </label>
-        </div>
+          </div>
 
         </form>
 
@@ -825,7 +827,7 @@
   <script src="js/number-pressed.js"></script>
   <script src="js/job-select.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -839,6 +841,7 @@
     firebase.initializeApp(config);
   </script>
   <script src="furniture.js"></script>
+  <script src="client-info.js"></script>
   <!-- <script src="index.js"></script> -->
 
   <script src="js/classie.js"></script>
@@ -898,4 +901,5 @@
 
 
 </body>
+
 </html>

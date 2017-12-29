@@ -23,17 +23,6 @@ btnn.addEventListener('click', e => {
 });
 
 
-// document.getElementById('btn').onclick = function(e) {
-//     if (document.getElementById('email') !== null && document.getElementById('password') !== null) {
-//         x = document.getElementById("email").value;
-//         y = document.getElementById('password').value;
-//         const auth = firebase.auth();
-//         const promise = auth.createUserWithEmailAndPassword(x, y);
-//     } else {
-//       alert("blah");
-//     }
-// };
-
 function go() {
     window.location.href = 'contactInfo.html';
 }

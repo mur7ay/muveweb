@@ -11,17 +11,6 @@ var _cellPhone = document.getElementById("cellPhone");
 var _email2 = document.getElementById("email2");
 var assemblyAddress, numberOfAssemblyItems, instructionsAvail, needsDelivery, numberOfAssemblers, moreAssemblyDetails, assemblyDate, requestingName, requestingCellPhone, requestingEmail;
 
-// vars for curb-to-curb
-// var curbPickupAddress = document.getElementById('address4');
-// var curbDropoffAddress = document.getElementById('address5');
-// var curbUserName = document.getElementById('name3');
-// var curbUserPhone = document.getElementById('phone3');
-// var curbUserEmail = document.getElementById('email3');
-// var curbDate = document.getElementById('date');
-// var itemCount = document.getElementById('curbItemCount');
-// var additionalDetails = document.getElementById('curbDetails');
-// var pickupAddress, dropoffAddress, userName, userPhone, userEmail, pickupDate, curbItems, details;
-
 // function initialize() {
 //   var input = document.getElementById('address1');
 //   var input2 = document.getElementById('address2');
@@ -31,28 +20,6 @@ var assemblyAddress, numberOfAssemblyItems, instructionsAvail, needsDelivery, nu
 //
 // google.maps.event.addDomListener(window, 'load', initialize);
 
-
-// $("#buttons").click(function() {
-//   alert("Clicked.");
-// });
-
-// var pathname = window.location.pathname;
-//
-// $("#buttons").click(function() {
-//   alert("Clicked.");
-//
-//   $.ajax({
-//     url: "http://localhost:8000/api",
-//     type: "POST",
-//     beforeSend: function() {
-//       alert("testing");
-//     },
-//     success: function(result) {
-//       // $("#result").html(result);
-//       alert("  sss  ");
-//     }
-//   });
-// });
 
 // Formatting the phone number as the individual types
 document.getElementById('phone').addEventListener('keyup', function(evt) {
@@ -190,29 +157,6 @@ function phoneFormat(input) {
 //
 //   $('.text-center h2 span').html(total + " USD");
 // });
-
-
-
-
-var item;
-
-$('.items').on('change', function() {
-  var get = $('.items option:selected').val();
-
-  if (get === '1') {
-    item = 0;
-    alert(item);
-  } else if (get === '2') {
-    item = 15;
-    alert(item);
-  } else if (get === '3') {
-    item = 30;
-    alert(item);
-  }
-  // $('.text-center h2 span').html(total + item + " USD");
-});
-
-
 
 
 // var map;
