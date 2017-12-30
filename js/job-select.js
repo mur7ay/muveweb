@@ -12,7 +12,7 @@ $('#first-next-btn').click(function() {
 
 		//Loops through the checkboxes and determines which are checked
 		for (i = 0; i < checkboxArr.length; i++) {
-			if ($(checkboxArr[i]).is(":checked")) {
+			if ($(checkboxArr[i]).is(':checked')) {
 
 				//Determines which forms needs to be displayed
 				var forms = [];
@@ -78,4 +78,19 @@ $('.back-btn').click(function() {
 		var progress = Math.round((counter/formArray.length) * 100);
 		$('#progressBar').width(progress + '%');
 	}
+});
+
+
+$('.dayOfWeek').click(function() {
+	var dayOfWeek;
+	dayOfWeek = $('.dayOfWeek').find('input');
+
+	for (i = 0; i < dayOfWeek.length; i++) {
+		if ($(dayOfWeek[i]).is(':checked')) {
+			$(dayOfWeek[i]).parent().css('background-color', 'black');
+		} else {
+			$(dayOfWeek[i]).parent().css('background-color', '#01D06F');
+		}
+	}
+
 });
