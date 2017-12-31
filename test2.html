@@ -625,7 +625,7 @@
     <div id="finalInfoQ" class="question-wrapper ">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>TELL US ABOUT YOUR MOVE.</strong></h4>
-        <p class="text-danger initial-hidden">Please fill all required fieldss</p>
+        <p class="text-danger initial-hidden">Please fill all required fields</p>
 
         <form role="form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
@@ -659,8 +659,8 @@
           </div>
 
           <div class="checkbox select-div">
-            <label for="week" class="select-label">Choose a day</label>
-            <select name="week" class="select-styles" name="week">
+            <label for="week" class="week-label">Choose a day</label>
+            <select name="week" class="select-styles week" name="week">
               <option id="thisWeek" value="thisWeek" selected></option>
               <option id="nextWeek" value="nextWeek"></option>
             </select>
@@ -668,40 +668,50 @@
 
           <div class="text-center days-div">
             <label class="dayOfWeek">
-            <span class="day">S</span>
-            <input class="hidden-day" type="radio" name="day" />
-          </label>
+              <span class="day">S</span>
+              <input class="hidden-day" type="radio" name="day" />
+              <div id="timesWrapper">
+                <div class="tri-up"></div>
+              </div>
+            </label>
 
             <label class="dayOfWeek">
-            <span class="day">M</span>
-            <input class="hidden-day" type="radio" name="day"  />
-          </label>
+              <span class="day">M</span>
+              <input class="hidden-day" type="radio" name="day"  />
+
+            </label>
 
             <label class="dayOfWeek">
-            <span class="day">T</span>
-            <input class="hidden-day" type="radio" name="day"  />
-          </label>
+              <span class="day">T</span>
+              <input class="hidden-day" type="radio" name="day"  />
+            </label>
 
             <label class="dayOfWeek">
-            <span class="day">W</span>
-            <input class="hidden-day" type="radio" name="day"  />
-          </label>
+              <span class="day">W</span>
+              <input class="hidden-day" type="radio" name="day"  />
+            </label>
 
             <label class="dayOfWeek">
-            <span class="day">T</span>
-            <input class="hidden-day" type="radio" name="day"  />
-          </label>
+              <span class="day">T</span>
+              <input class="hidden-day" type="radio" name="day"  />
+            </label>
 
             <label class="dayOfWeek">
-            <span class="day">F</span>
-            <input class="hidden-day" type="radio" name="day"  />
-          </label>
+              <span class="day">F</span>
+              <input class="hidden-day" type="radio" name="day"  />
+            </label>
 
             <label class="dayOfWeek">
-            <span class="day">S</span>
-            <input class="hidden-day" type="radio" name="day"  />
-          </label>
+              <span class="day">S</span>
+              <input class="hidden-day" type="radio" name="day"  />
+            </label>
+
+            <div class="times">
+              <p>Choose a time</p>
+            </div>
           </div>
+
+
 
         </form>
 

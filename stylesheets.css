@@ -1411,7 +1411,7 @@ h4.question-header {
   top: 30px;
 }
 
-.select-label {
+.week-label {
   text-align: center;
   width: 50%;
   font-weight: 900 !important;
@@ -1421,7 +1421,7 @@ h4.question-header {
   padding: 0 !important;
 }
 
-select {
+select.week {
   width: 200px;
   height: 30px;
   position: absolute;
@@ -1433,8 +1433,6 @@ select {
   direction: ltr;
 }
 
-
-
 .dayOfWeek {
   width: 50px;
   height: 50px;
@@ -1443,6 +1441,44 @@ select {
   color: #FFF;
   margin: 10px 5px;
   cursor: pointer;
+  position: relative;
+}
+
+.tri-up {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #FFF;
+  border-top: 1px solid grey;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid grey;
+  top: 60px;
+  left: 15px;
+  transform: rotate(45deg);
+  z-index: 3;
+}
+
+.days-div {
+  position: relative;
+}
+
+.times {
+  position: absolute;
+  border: 1px solid grey;
+  background-color: #FFF;
+  border-radius: 3px;
+  height: 50px;
+  width: 95%;
+  top: 79px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2;
+  padding: 15px;
+  color: black;
+  text-align: left;
 }
 
 .hidden-day {

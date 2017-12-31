@@ -94,6 +94,7 @@ $('.dayOfWeek').click(function() {
 		}
 	}
 
+	$(this).append($('#timesWrapper'));
 });
 
 
