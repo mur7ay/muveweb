@@ -81,6 +81,7 @@ $('.back-btn').click(function() {
 });
 
 
+//Changes color of selected day of the week
 $('.dayOfWeek').click(function() {
 	var dayOfWeek;
 	dayOfWeek = $('.dayOfWeek').find('input');
@@ -94,3 +95,24 @@ $('.dayOfWeek').click(function() {
 	}
 
 });
+
+
+//Adds the dates of the current and next week to 'Choose a day' section
+Date.prototype.getWeek = function(start) {
+
+    start = start || 0;
+    var today = new Date(this.setHours(0, 0, 0, 0));
+    var day = today.getDay() - start;
+    var date = today.getDate() - day;
+
+    var StartDate = new Date(today.setDate(date));
+    var EndDate = new Date(today.setDate(date + 6));
+    return [StartDate, EndDate];
+}
+
+var Dates = new Date().getWeek();
+var thisWeek = (Dates[0].getMonth() + 1) + '.' + Dates[0].getDate() + ' - '+ (Dates[1].getMonth() + 1) + '.' + Dates[1].getDate();
+var nextWeek = (Dates[1].getMonth() + 1) + '.' + (Dates[1].getDate() + 1) + ' - '+ (Dates[1].getMonth() + 1) + '.' + (Dates[1].getDate() + 7);
+
+$('#thisWeek').text('This week (' +  thisWeek  +')');
+$('#nextWeek').text('Next week (' +  nextWeek  +')');
