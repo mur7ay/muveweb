@@ -81,21 +81,59 @@ $('.back-btn').click(function() {
 });
 
 
-//Changes color of selected day of the week
+//Changes color of selected day of the week and opens time pop-up
 $('.dayOfWeek').click(function() {
-	var dayOfWeek;
-	dayOfWeek = $('.dayOfWeek').find('input');
+	var dayOfWeek = $('.dayOfWeek').find('input');
 
 	for (i = 0; i < dayOfWeek.length; i++) {
 		if ($(dayOfWeek[i]).is(':checked')) {
-			$(dayOfWeek[i]).parent().css('background-color', 'black');
+			$(dayOfWeek[i]).parent().css('background-color', '#099C6F');
 		} else {
 			$(dayOfWeek[i]).parent().css('background-color', '#01D06F');
 		}
 	}
 
 	$(this).append($('#timesWrapper'));
+	$('#timesWrapper').removeClass('initial-hidden');
+	$('#times').removeClass('initial-hidden');
+
+	var windowWidth = $(window).width();
+	var checkedDay = $("input[name='day']:checked").val();
+
+	$('#times').css('top', '79px');
+	if (windowWidth < 539 && windowWidth > 306 && checkedDay == 'Saturday') {
+		$('#times').css('top', '149px');		
+	} else if (windowWidth < 462 && checkedDay == 'Friday') {
+		$('#times').css('top', '149px');	
+	} else if (windowWidth < 383 && checkedDay == 'Thursday') {
+		$('#times').css('top', '149px');	
+	} else if (windowWidth < 307 && checkedDay == 'Wednesday') {
+		$('#times').css('top', '149px');	
+	} else if (windowWidth < 307 && checkedDay == 'Saturday') {
+		$('#times').css('top', '219px');	
+	}
 });
+
+
+//Makes time pop-up responsive
+window.onresize = function() {
+	var windowWidth = $(window).width();
+	var checkedDay = $("input[name='day']:checked").val();
+	$('#times').css('top', '79px');
+
+	if (windowWidth < 539 && windowWidth > 306 && checkedDay == 'Saturday') {
+		$('#times').css('top', '149px');		
+	} else if (windowWidth < 462 && checkedDay == 'Friday') {
+		$('#times').css('top', '149px');	
+	} else if (windowWidth < 383 && checkedDay == 'Thursday') {
+		$('#times').css('top', '149px');	
+	} else if (windowWidth < 307 && checkedDay == 'Wednesday') {
+		$('#times').css('top', '149px');	
+	} else if (windowWidth < 307 && checkedDay == 'Saturday') {
+		$('#times').css('top', '219px');	
+	}
+};
+
 
 
 //Adds the dates of the current and next week to 'Choose a day' section

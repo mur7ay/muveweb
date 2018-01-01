@@ -1433,6 +1433,10 @@ select.week {
   direction: ltr;
 }
 
+.days-div {
+  position: relative;
+}
+
 .dayOfWeek {
   width: 50px;
   height: 50px;
@@ -1460,17 +1464,13 @@ select.week {
   z-index: 3;
 }
 
-.days-div {
-  position: relative;
-}
-
 .times {
   position: absolute;
   border: 1px solid grey;
   background-color: #FFF;
-  border-radius: 3px;
-  height: 50px;
-  width: 95%;
+  border-radius: 5px;
+  height: 250px;
+  width: 100%;
   top: 79px;
   left: 0;
   right: 0;
@@ -1479,7 +1479,28 @@ select.week {
   padding: 15px;
   color: black;
   text-align: left;
+  overflow: auto;
 }
+
+.times p {
+  font-size: 16px;
+}
+
+.times label {
+  display: block;
+  width: 95%;
+  background-color: #01D06F;
+  color: #FFF;
+  padding: 8px 0;
+  border-radius: 5px;
+  text-align: center;
+  margin: 3px auto;
+  position: relative;
+  z-index: 4 !important;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
 
 .hidden-day {
   display: none;
@@ -1492,11 +1513,11 @@ select.week {
 }
 
 @media screen and (max-width: 511px) {
-  .select-label {
+  .week-label {
     width: 100%;
   }
 
-  select {
+  select.week {
     display: block;
     margin: 0 auto;
     position: relative;
