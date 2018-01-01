@@ -135,8 +135,18 @@ window.onresize = function() {
 };
 
 
-
+//Makes changes color of selected time
 $('#times').find('label').click(function() {
+	var allTimes = $('#times').find('input');	
+
+	for (i = 0; i < allTimes.length; i++) {
+		if ($(allTimes[i]).is(':checked')) {
+			$(allTimes[i]).parent().css('background-color', '#099C6F');
+		} else {
+			$(allTimes[i]).parent().css('background-color', '#01D06F');
+		}
+	}
+
 	$('#timesWrapper').addClass('initial-hidden');
 	$('#times').addClass('initial-hidden');
 });
