@@ -147,10 +147,6 @@ $('.dayOfWeek').find('input').click(function() {
     	return (new Date(this.setDate(this.getDate() - this.getDay() + dayCounter)));
 	};
 
-	Date.prototype.dayOfNextWeek = function() {
-	    return (new Date(this.setDate(this.getDate() + 7 - this.getDay() + dayCounter)));
-	};
-
 	function nextWeekDays() {
 	    var today = new Date(year + '/' + firstDayMonth2 + '/' + firstDayDate2);
 	    var nextWeekDays = new Date(today.getFullYear(), today.getMonth(), today.getDate()+ (dayCounter + 7));
