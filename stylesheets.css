@@ -1499,8 +1499,8 @@ select.week {
   z-index: 4 !important;
   font-size: 16px;
   margin-top: 5px;
+  cursor: pointer;
 }
-
 
 .hidden-day {
   display: none;

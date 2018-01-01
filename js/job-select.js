@@ -136,6 +136,13 @@ window.onresize = function() {
 
 
 
+$('#times').find('label').click(function() {
+	$('#timesWrapper').addClass('initial-hidden');
+	$('#times').addClass('initial-hidden');
+});
+
+
+
 //Adds the dates of the current and next week to 'Choose a day' section
 Date.prototype.getWeek = function(start) {
 
