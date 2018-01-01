@@ -1,7 +1,7 @@
 var formArray = [];
 var radioBtnForms = $('.initial-hidden');
 var counter = 0;
-
+var selectedTime;
 
 //Click event listener for #first-next-btn
 $('#first-next-btn').click(function() {
@@ -81,6 +81,27 @@ $('.back-btn').click(function() {
 });
 
 
+//Adds the dates of the current and next week to 'Choose a day' section
+Date.prototype.getWeek = function(start) {
+
+    start = start || 0;
+    var today = new Date(this.setHours(0, 0, 0, 0));
+    var day = today.getDay() - start;
+    var date = today.getDate() - day;
+
+    var StartDate = new Date(today.setDate(date));
+    var EndDate = new Date(today.setDate(date + 6));
+    return [StartDate, EndDate];
+}
+
+var Dates = new Date().getWeek();
+var thisWeek = (Dates[0].getMonth() + 1) + '.' + Dates[0].getDate() + ' - '+ (Dates[1].getMonth() + 1) + '.' + Dates[1].getDate();
+var nextWeek = (Dates[1].getMonth() + 1) + '.' + (Dates[1].getDate() + 1) + ' - '+ (Dates[1].getMonth() + 1) + '.' + (Dates[1].getDate() + 7);
+
+$('#thisWeek').text('This week (' +  thisWeek  +')');
+$('#nextWeek').text('Next week (' +  nextWeek  +')');
+
+
 //Changes color of selected day of the week and opens time pop-up
 $('.dayOfWeek').click(function() {
 	var dayOfWeek = $('.dayOfWeek').find('input');
@@ -142,6 +163,7 @@ $('#times').find('label').click(function() {
 	for (i = 0; i < allTimes.length; i++) {
 		if ($(allTimes[i]).is(':checked')) {
 			$(allTimes[i]).parent().css('background-color', '#099C6F');
+			$('#timeConfirm').text($(allTimes[i]).val());
 		} else {
 			$(allTimes[i]).parent().css('background-color', '#01D06F');
 		}
@@ -152,23 +174,15 @@ $('#times').find('label').click(function() {
 });
 
 
+//Miles Driven and Drive Time layout
+window.onresize = function() {
+  if($(window).width() < 600) {
+  	$('.calc').removeClass("col-xs-6");
+  	$('.calc').addClass("col-xs-12");
+  } else {
+  	$('.calc').removeClass("col-xs-12");
+  	$('.calc').addClass("col-xs-6");
+  }
+};
 
-//Adds the dates of the current and next week to 'Choose a day' section
-Date.prototype.getWeek = function(start) {
 
-    start = start || 0;
-    var today = new Date(this.setHours(0, 0, 0, 0));
-    var day = today.getDay() - start;
-    var date = today.getDate() - day;
-
-    var StartDate = new Date(today.setDate(date));
-    var EndDate = new Date(today.setDate(date + 6));
-    return [StartDate, EndDate];
-}
-
-var Dates = new Date().getWeek();
-var thisWeek = (Dates[0].getMonth() + 1) + '.' + Dates[0].getDate() + ' - '+ (Dates[1].getMonth() + 1) + '.' + Dates[1].getDate();
-var nextWeek = (Dates[1].getMonth() + 1) + '.' + (Dates[1].getDate() + 1) + ' - '+ (Dates[1].getMonth() + 1) + '.' + (Dates[1].getDate() + 7);
-
-$('#thisWeek').text('This week (' +  thisWeek  +')');
-$('#nextWeek').text('Next week (' +  nextWeek  +')');
