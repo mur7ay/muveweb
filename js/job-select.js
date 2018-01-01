@@ -87,7 +87,7 @@ Date.prototype.GetFirstDayOfWeek = function() {
 }
 
 Date.prototype.GetLastDayOfWeek = function() {
-    return (new Date(this.setDate(this.getDate() - this.getDay() +6)));
+    return (new Date(this.setDate(this.getDate() - this.getDay() + 6)));
 }
 
 var today = new Date();
@@ -135,19 +135,32 @@ $('#nextWeek').text('Next week (' +  nextWeek  +')');
 $('.dayOfWeek').find('input').click(function() {
 	var dayOfWeek = $('.dayOfWeek').find('input');
 	var dayCounter = 0;
-
+	// var nextWeekDayCounter = 7;
 
 	//#dateConfirm
 	while ($(dayOfWeek[dayCounter]).is(':checked') === false) {
 		dayCounter++;
+		// nextWeekDayCounter++;
+	}
+
+	Date.prototype.dayOfWeek = function() {
+    	return (new Date(this.setDate(this.getDate() - this.getDay() + dayCounter)));
+	};
+
+	Date.prototype.dayOfNextWeek = function() {
+	    return (new Date(this.setDate(this.getDate() + 7 - this.getDay() + dayCounter)));
+	};
+
+	function nextWeekDays() {
+	    var today = new Date(year + '/' + firstDayMonth2 + '/' + firstDayDate2);
+	    var nextWeekDays = new Date(today.getFullYear(), today.getMonth(), today.getDate()+ (dayCounter + 7));
+	    return nextWeekDays;
 	}
 
 	if ($('#thisWeek').is(':selected')) {
-		$('#dateConfirm').text();
-		$('#dateConfirm').text();
+		$('#dateConfirm').text(today.dayOfWeek().getMonth() + 1 + '.' + today.dayOfWeek().getDate());
 	} else if ($('#nextWeek').is(':selected')) {
-		$('#dateConfirm').text();
-		$('#dateConfirm').text();		
+		$('#dateConfirm').text(nextWeekDays().getMonth() + 1 + '.' + nextWeekDays().getDate());		
 	}
 
 	for (i = 0; i < dayOfWeek.length; i++) {
@@ -228,5 +241,3 @@ window.onresize = function() {
   	$('.calc').addClass("col-xs-6");
   }
 };
-
-
