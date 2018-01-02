@@ -167,7 +167,7 @@ $('.dayOfWeek').find('input').click(function() {
 		}
 	}
 
-	$(this).append($('#timesWrapper'));
+	$(this).parent().append($('#timesWrapper'));
 	$('#timesWrapper').removeClass('initial-hidden');
 	$('#times').removeClass('initial-hidden');
 
@@ -237,7 +237,3 @@ window.onresize = function() {
   	$('.calc').addClass("col-xs-6");
   }
 };
-
-window.onresize = function() {
- console.log($(window).width());
-}
