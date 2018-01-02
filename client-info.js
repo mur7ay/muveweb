@@ -85,6 +85,138 @@ function boxQuestion() {
   } else {
     alert('no');
   }
+}
+
+
+function stairQuestion() {
+
+  var jobForm = document.getElementById('stairs-input-form');
+  var stairsArray = [];
+
+  jobForm.querySelectorAll('input').forEach(function(input) {
+    if (input.type === 'radio' && input.checked) {
+      stairsArray.push(input.value);
+    }
+  })
+
+  localStorage.setItem('stairs-selected', stairsArray);
+  var jobsSelectedddd = localStorage.getItem("stairs-selected");
+
+  all.push(jobsSelectedddd);
+
+}
+
+
+function numOfMoversQuestion() {
+
+  var jobForm = document.getElementById('moverAmount-input-form');
+  var moversArray = [];
+
+  jobForm.querySelectorAll('input').forEach(function(input) {
+    if (input.type === 'radio' && input.checked) {
+      moversArray.push(input.value);
+    }
+  })
+
+  localStorage.setItem('movers-selected', moversArray);
+  var jobsSelecteddddd = localStorage.getItem("movers-selected");
+
+  all.push(jobsSelecteddddd);
+
+}
+
+
+function pianoQuestion() {
+
+  var jobForm = document.getElementById('typeOfPiano-input-form');
+  var pianoArray = [];
+
+  jobForm.querySelectorAll('input').forEach(function(input) {
+    if (input.type === 'radio' && input.checked) {
+      pianoArray.push(input.value);
+    }
+  })
+
+  localStorage.setItem('piano-selected', pianoArray);
+  var jobsSelectedddddd = localStorage.getItem("piano-selected");
+
+  all.push(jobsSelectedddddd);
+
+}
+
+
+function assemblyQuestion() {
+
+  var jobForm = document.getElementById('assemCount-input-form');
+  var assemblyArray = [];
+
+  jobForm.querySelectorAll('input').forEach(function(input) {
+    if (input.type === 'radio' && input.checked) {
+      assemblyArray.push(input.value);
+    }
+  })
+
+  localStorage.setItem('assembly-selected', assemblyArray);
+  var jobsSelecteddddddd = localStorage.getItem("assembly-selected");
+
+  all.push(jobsSelecteddddddd);
+
+}
+
+
+function numOfAssemblersQuestion() {
+
+  var jobForm = document.getElementById('numberOfAssemblers-input-form');
+  var numOfAssemArray = [];
+
+  jobForm.querySelectorAll('input').forEach(function(input) {
+    if (input.type === 'radio' && input.checked) {
+      numOfAssemArray.push(input.value);
+    }
+  })
+
+  localStorage.setItem('assemblers-selected', numOfAssemArray);
+  var jobsSelectedddddddd = localStorage.getItem("assemblers-selected");
+
+  all.push(jobsSelectedddddddd);
+
+}
+
+
+function storePickupQuestion() {
+
+  var jobForm = document.getElementById('storePickup-input-form');
+  var storePickupArray = [];
+
+  jobForm.querySelectorAll('input').forEach(function(input) {
+    if (input.type === 'radio' && input.checked) {
+      storePickupArray.push(input.value);
+    }
+  })
+
+  localStorage.setItem('pickup-selected', storePickupArray);
+  var jobsSelecteddddddddd = localStorage.getItem("pickup-selected");
+
+  all.push(jobsSelecteddddddddd);
+
+}
+
+
+function homeTypeQuestion() {
+
+  var jobForm = document.getElementById('typeOfHome-input-form');
+  var homeTypeArray = [];
+
+  jobForm.querySelectorAll('input').forEach(function(input) {
+    if (input.type === 'radio' && input.checked) {
+      homeTypeArray.push(input.value);
+    }
+  })
+
+  localStorage.setItem('home-selected', homeTypeArray);
+  var jobsSelectedddddddddd = localStorage.getItem("home-selected");
+
+  all.push(jobsSelectedddddddddd);
 
   // Sending user data to Firebase ** Will need to move to last question in series (user contact info page) **
   var firebaseRef = firebase.database().ref();

@@ -123,7 +123,7 @@
 
   <div class="body-container">
 
-3387404 cell
+
     <!-- Job Selection -->
     <div id="jobSelect" class="question-wrapper">
       <div class="inline field question-container">
@@ -262,35 +262,35 @@
         <form role="form" id="boxes-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="boxes1" name="boxes" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="boxes1" name="boxes" class="checkbox-circle margin-right" value="1-10" />
               1-10
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="boxes2" name="boxes" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="boxes2" name="boxes" class="checkbox-circle margin-right" value="11-20" />
               11-20
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="boxes3" name="boxes" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="boxes3" name="boxes" class="checkbox-circle margin-right" value="21-30" />
               21-30
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="boxes4" name="boxes" class="checkbox-circle margin-right" value="true" />
-              31-40
+              <input type="radio" id="boxes4" name="boxes" class="checkbox-circle margin-right" value="31-49" />
+              31-49
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="boxes5" name="boxes" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="boxes5" name="boxes" class="checkbox-circle margin-right" value="50+" />
               50+
             </label>
           </div>
@@ -305,45 +305,45 @@
     </div>
 
 
-    <!-- Elevator Question -->
+    <!-- Stair Question -->
     <div id="elevatorQ" class="question-wrapper initial-hidden 0 2 5">
       <div class="inline field question-container">
 
         <h4 class="question-header"><strong>WILL THE MOVER NEED TO USE STAIRS AT THE PICKUP LOCATION?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="stairs-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="elevator1" name="elevator" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="elevator1" name="elevator" class="checkbox-circle margin-right" value="Yes, the movers will need to move items up/down stairs." />
               Yes, the movers will need to move items up/down stairs.
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="elevator2" name="elevator" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="elevator2" name="elevator" class="checkbox-circle margin-right" value="No, the move is on the ground floor." />
               No, the move is on the ground floor.
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="elevator3" name="elevator" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="elevator3" name="elevator" class="checkbox-circle margin-right" value="No, the movers will have access to a passenger elevator." />
               No, the movers will have access to a passenger elevator.
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="elevator4" name="elevator" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="elevator4" name="elevator" class="checkbox-circle margin-right" value="No, the movers will have access to a fright elevator." />
               No, the movers will have access to a fright elevator.
             </label>
           </div>
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" onclick="stairQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -357,38 +357,38 @@
         <h4 class="question-header"><strong>HOW MANY MOVERS WOULD YOU LIKE TO HIRE?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="moverAmount-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="movers1" name="movers" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="movers1" name="movers" class="checkbox-circle margin-right" value="2" />
               2
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="movers2" name="movers" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="movers2" name="movers" class="checkbox-circle margin-right" value="3" />
               3
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="movers3" name="movers" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="movers3" name="movers" class="checkbox-circle margin-right" value="4" />
               4
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="movers4" name="movers" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="movers4" name="movers" class="checkbox-circle margin-right" value="5" />
               5
             </label>
           </div>
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" onclick="numOfMoversQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -402,38 +402,38 @@
         <h4 class="question-header"><strong>WHAT TYPE OF PIANO WILL YOU BE MOVING?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="typeOfPiano-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="piano1" name="piano" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="piano1" name="piano" class="checkbox-circle margin-right" value="Spinet" />
               Spinet
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="piano2" name="piano" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="piano2" name="piano" class="checkbox-circle margin-right" value="Upright" />
               Upright
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="piano3" name="piano" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="piano3" name="piano" class="checkbox-circle margin-right" value="Baby Grand" />
               Baby Grand
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="piano4" name="piano" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="piano4" name="piano" class="checkbox-circle margin-right" value="Concert Grand" />
               Concert Grand
             </label>
           </div>
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" onclick="pianoQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -447,52 +447,52 @@
         <h4 class="question-header"><strong>HOW MANY ITEMS WILL NEED TO BE ASSEMBLED?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="assemCount-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="items1" name="items" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="items1" name="items" class="checkbox-circle margin-right" value="1" />
               1
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="items2" name="items" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="items2" name="items" class="checkbox-circle margin-right" value="2" />
               2
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="items3" name="items" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="items3" name="items" class="checkbox-circle margin-right" value="3" />
               3
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="items4" name="items" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="items4" name="items" class="checkbox-circle margin-right" value="4" />
               4
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="items5" name="items" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="items5" name="items" class="checkbox-circle margin-right" value="5" />
               5
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="items6" name="items" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="items6" name="items" class="checkbox-circle margin-right" value="6+" />
               6+
             </label>
           </div>
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" onclick="assemblyQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -506,31 +506,31 @@
         <h4 class="question-header"><strong>HOW MANY ASSEMBLERS WILL YOU NEED?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="numberOfAssemblers-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="assemblers1" name="assemblers" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="assemblers1" name="assemblers" class="checkbox-circle margin-right" value="1" />
               1
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="assemblers2" name="assemblers" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="assemblers2" name="assemblers" class="checkbox-circle margin-right" value="2" />
               2
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="assemblers3" name="assemblers" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="assemblers3" name="assemblers" class="checkbox-circle margin-right" value="3" />
               3
             </label>
           </div>
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" onclick="numOfAssemblersQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -544,24 +544,24 @@
         <h4 class="question-header"><strong>IS THIS AN IN-STORE PICKUP?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="storePickup-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="instore1" name="instore" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="instore1" name="instore" class="checkbox-circle margin-right" value="Yes, the movers will need to pickup my item from a store/retailer." />
               Yes, the movers will need to pickup my item from a store/retailer.
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="instore2" name="instore" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="instore2" name="instore" class="checkbox-circle margin-right" value="No, the item(s) will be moved from my home or similar location." />
               No, the item(s) will be moved from my home or similar location.
             </label>
           </div>
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" onclick="storePickupQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -575,45 +575,45 @@
         <h4 class="question-header"><strong>WHAT TYPE OF HOME ARE YOU MOVING FROM?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="typeOfHome-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="hometype1" name="hometype" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="hometype1" name="hometype" class="checkbox-circle margin-right" value="Apartment" />
               Apartment
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="hometype2" name="hometype" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="hometype2" name="hometype" class="checkbox-circle margin-right" value="House" />
               House
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="hometype3" name="hometype" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="hometype3" name="hometype" class="checkbox-circle margin-right" value="Condo" />
               Condo
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="hometype4" name="hometype" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="hometype4" name="hometype" class="checkbox-circle margin-right" value="Townhouse" />
               Townhouse
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="hometype5" name="hometype" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="hometype5" name="hometype" class="checkbox-circle margin-right" value="Storage Unit" />
               Storage Unit
             </label>
           </div>
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" onclick="homeTypeQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -627,7 +627,7 @@
         <h4 class="question-header"><strong>TELL US ABOUT YOUR MOVE.</strong></h4>
         <p class="text-danger initial-hidden">Please fill all required fields</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="userInfo-input-form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label text-input">
               <input class="input__field input__field--hoshi request-form" type="text" id="address1" placeholder="Pick-up Address" />
@@ -708,11 +708,11 @@
             <div id="times" class="times initial-hidden">
               <p>Choose a time</p>
 
-              <label>08:00 AM 
+              <label>08:00 AM
                 <input type="radio" name="time" value="08:00" class="initial-hidden" />
               </label>
 
-              <label>08:30 AM  
+              <label>08:30 AM
                 <input type="radio" name="time" value="08:30" class="initial-hidden" />
               </label>
 
@@ -724,11 +724,11 @@
                 <input type="radio" name="time" value="09:30" class="initial-hidden" />
               </label>
 
-              <label>10:00 AM  
+              <label>10:00 AM
                 <input type="radio" name="time" value="10:00" class="initial-hidden" />
               </label>
 
-              <label>10:30 AM  
+              <label>10:30 AM
                 <input type="radio" name="time" value="10:30" class="initial-hidden" />
               </label>
 
@@ -740,76 +740,75 @@
                 <input type="radio" name="time" value="11:30" class="initial-hidden" />
               </label>
 
-              <label>12:00 PM 
+              <label>12:00 PM
                 <input type="radio" name="time" value="12:00" class="initial-hidden" />
               </label>
 
-              <label>12:30 PM 
+              <label>12:30 PM
                 <input type="radio" name="time" value="12:30" class="initial-hidden" />
               </label>
 
-              <label>01:00 PM  
+              <label>01:00 PM
                 <input type="radio" name="time" value="13:00" class="initial-hidden" />
               </label>
 
-              <label>01:30 PM  
+              <label>01:30 PM
                 <input type="radio" name="time" value="13:30" class="initial-hidden" />
               </label>
 
-              <label>02:00 PM  
+              <label>02:00 PM
                 <input type="radio" name="time" value="14:00" class="initial-hidden" />
               </label>
 
-              <label>02:30 PM  
+              <label>02:30 PM
                 <input type="radio" name="time" value="14:30" class="initial-hidden" />
               </label>
 
-              <label>03:00 PM  
+              <label>03:00 PM
                 <input type="radio" name="time" value="15:00" class="initial-hidden" />
               </label>
 
-              <label>03:30 PM 
+              <label>03:30 PM
                 <input type="radio" name="time" value="15:30" class="initial-hidden" />
               </label>
 
-              <label>04:00 PM 
+              <label>04:00 PM
                 <input type="radio" name="time" value="16:00" class="initial-hidden" />
               </label>
 
-              <label>04:30 PM  
+              <label>04:30 PM
                 <input type="radio" name="time" value="16:30" class="initial-hidden" />
               </label>
 
-              <label>15:00 PM  
+              <label>15:00 PM
                 <input type="radio" name="time" value="17:00" class="initial-hidden" />
               </label>
 
-              <label>15:30 PM  
+              <label>15:30 PM
                 <input type="radio" name="time" value="17:30" class="initial-hidden" />
               </label>
 
-              <label>06:00 PM  
+              <label>06:00 PM
                 <input type="radio" name="time" value="18:00" class="initial-hidden" />
               </label>
 
-              <label>06:30 PM  
+              <label>06:30 PM
                 <input type="radio" name="time" value="18:30" class="initial-hidden" />
               </label>
 
-              <label>07:00 PM  
+              <label>07:00 PM
                 <input type="radio" name="time" value="19:00" class="initial-hidden" />
               </label>
 
-              <label>07:30 PM  
+              <label>07:30 PM
                 <input type="radio" name="time" value="19:30" class="initial-hidden" />
               </label>
 
-              <label>08:00 PM  
+              <label>08:00 PM
                 <input type="radio" name="time" value="20:00" class="initial-hidden" />
               </label>
             </div>
           </div>
-
 
 
         </form>
