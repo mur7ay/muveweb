@@ -237,3 +237,7 @@ window.onresize = function() {
   	$('.calc').addClass("col-xs-6");
   }
 };
+
+window.onresize = function() {
+ console.log($(window).width());
+}

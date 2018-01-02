@@ -488,13 +488,12 @@ button:hover {
 .progress2 {
   height: 5px;
   width: 100%;
-  margin-top: 56px;
 }
 
 .progress-bar {
   background-color: #476DFD;
   position: fixed;
-  height: 5px;
+  height: 3px;
   z-index: 1;
 }
 
@@ -1091,7 +1090,7 @@ span.hidden {
   }
 }
 
-/*============ Media Queries for index2.html cover photo ============*/
+/*============ Media Queries for index.html cover photo ============*/
 
 @media screen and (min-width: 1600px) {
   .index-header {
@@ -1205,7 +1204,6 @@ span.hidden {
     background-position: -65px 0;
   }
 }
-
 
 @media screen and (max-width: 540px) {
   .index-header {
@@ -1549,8 +1547,6 @@ select.week {
     margin-top: 80px;
   }
 }
-
-
 
 .text-input {
   padding-right: 20px;
