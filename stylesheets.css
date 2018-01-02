@@ -1414,16 +1414,24 @@ h4.question-header {
 .week-label {
   text-align: center;
   width: 50%;
+  height: 50px;
   font-weight: 900 !important;
   display: block;
   position: relative;
-  top: 5px;
+  top: 11px;
   padding: 0 !important;
+  font-size: 16px;
+}
+
+.week-label img {
+  width: 30px;
+  margin-top: -5px;
+  margin-right: 5px;
 }
 
 select.week {
-  width: 200px;
-  height: 30px;
+  max-width: 250px;
+  height: 40px;
   position: absolute;
   right: 0;
   top: 1px;
@@ -1431,6 +1439,7 @@ select.week {
   text-align-last: right;
   padding-right: 20px;
   direction: ltr;
+  font-size: 16px;
 }
 
 .days-div {
@@ -1482,8 +1491,18 @@ select.week {
   overflow: auto;
 }
 
+.times img {
+  width: 25px;
+  margin-right: 5px;
+  display: inline;
+}
+
+
 .times p {
   font-size: 16px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
 }
 
 .times label {
@@ -1491,7 +1510,7 @@ select.week {
   width: 95%;
   background-color: #01D06F;
   color: #FFF;
-  padding: 8px 0;
+  padding: 10px 0;
   border-radius: 5px;
   text-align: center;
   margin: 3px auto;
@@ -1527,7 +1546,7 @@ select.week {
   }
 
   .days-div {
-    margin-top: 30px;
+    margin-top: 80px;
   }
 }
 

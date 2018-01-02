@@ -2,7 +2,6 @@ var formArray = [];
 var radioBtnForms = $('.initial-hidden');
 var counter = 0;
 
-
 //Click event listener for #first-next-btn
 $('#first-next-btn').click(function() {
 	formArray = [];
@@ -81,9 +80,84 @@ $('.back-btn').click(function() {
 });
 
 
+// Adds the dates of the current and next week to 'Choose a day' section
+//Gets dates for this week
+Date.prototype.GetFirstDayOfWeek = function() {
+    return (new Date(this.setDate(this.getDate() - this.getDay())));
+}
+
+Date.prototype.GetLastDayOfWeek = function() {
+    return (new Date(this.setDate(this.getDate() - this.getDay() + 6)));
+}
+
+var today = new Date();
+
+var firstDayMonth = today.GetFirstDayOfWeek().getMonth() + 1;
+var firstDayDate = today.GetFirstDayOfWeek().getDate();
+var lastDayMonth = today.GetLastDayOfWeek().getMonth() + 1;
+var lastDayDate = today.GetLastDayOfWeek().getDate();
+var year = today.GetFirstDayOfWeek().getFullYear().toString();
+
+
+//Gets dates for next week
+var firstDayDate2 = firstDayDate.toString();
+if (firstDayDate2.length === 1) {
+	firstDayDate2 = '0' + firstDayDate2
+}
+
+var firstDayMonth2 = firstDayMonth.toString();
+if (firstDayMonth2.length === 1) {
+	firstDayMonth2 = '0' + firstDayMonth2
+}
+
+function nextWeekStart() {
+    var today = new Date(year + '/' + firstDayMonth2 + '/' + firstDayDate2);
+    var nextWeekStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()+7);
+    return nextWeekStart;
+}
+
+function nextWeekEnd() {
+    var today = new Date(year + '/' + firstDayMonth2 + '/' + firstDayDate2);
+    var nextWeekEnd = new Date(today.getFullYear(), today.getMonth(), today.getDate()+13);
+    return nextWeekEnd;
+}
+
+
+//Adds to select element
+var thisWeek = firstDayMonth + '.' + firstDayDate + ' - ' + lastDayMonth + '.' + lastDayDate;
+var nextWeek = (nextWeekStart().getMonth() + 1) + '.' + (nextWeekStart().getDate()) + ' - ' + (nextWeekEnd().getMonth() + 1) + '.' + (nextWeekEnd().getDate());
+
+$('#thisWeek').text('This week (' +  thisWeek  +')');
+$('#nextWeek').text('Next week (' +  nextWeek  +')');
+
+
 //Changes color of selected day of the week and opens time pop-up
-$('.dayOfWeek').click(function() {
+$('.dayOfWeek').find('input').click(function() {
 	var dayOfWeek = $('.dayOfWeek').find('input');
+	var dayCounter = 0;
+	// var nextWeekDayCounter = 7;
+
+	//#dateConfirm
+	while ($(dayOfWeek[dayCounter]).is(':checked') === false) {
+		dayCounter++;
+		// nextWeekDayCounter++;
+	}
+
+	Date.prototype.dayOfWeek = function() {
+    	return (new Date(this.setDate(this.getDate() - this.getDay() + dayCounter)));
+	};
+
+	function nextWeekDays() {
+	    var today = new Date(year + '/' + firstDayMonth2 + '/' + firstDayDate2);
+	    var nextWeekDays = new Date(today.getFullYear(), today.getMonth(), today.getDate()+ (dayCounter + 7));
+	    return nextWeekDays;
+	}
+
+	if ($('#thisWeek').is(':selected')) {
+		$('#dateConfirm').text(today.dayOfWeek().getMonth() + 1 + '.' + today.dayOfWeek().getDate());
+	} else if ($('#nextWeek').is(':selected')) {
+		$('#dateConfirm').text(nextWeekDays().getMonth() + 1 + '.' + nextWeekDays().getDate());		
+	}
 
 	for (i = 0; i < dayOfWeek.length; i++) {
 		if ($(dayOfWeek[i]).is(':checked')) {
@@ -135,30 +209,31 @@ window.onresize = function() {
 };
 
 
-
+//Makes changes color of selected time
 $('#times').find('label').click(function() {
+	var allTimes = $('#times').find('input');	
+
+	for (i = 0; i < allTimes.length; i++) {
+		if ($(allTimes[i]).is(':checked')) {
+			$(allTimes[i]).parent().css('background-color', '#099C6F');
+			$('#timeConfirm').text($(allTimes[i]).val());
+		} else {
+			$(allTimes[i]).parent().css('background-color', '#01D06F');
+		}
+	}
+
 	$('#timesWrapper').addClass('initial-hidden');
 	$('#times').addClass('initial-hidden');
 });
 
 
-
-//Adds the dates of the current and next week to 'Choose a day' section
-Date.prototype.getWeek = function(start) {
-
-    start = start || 0;
-    var today = new Date(this.setHours(0, 0, 0, 0));
-    var day = today.getDay() - start;
-    var date = today.getDate() - day;
-
-    var StartDate = new Date(today.setDate(date));
-    var EndDate = new Date(today.setDate(date + 6));
-    return [StartDate, EndDate];
-}
-
-var Dates = new Date().getWeek();
-var thisWeek = (Dates[0].getMonth() + 1) + '.' + Dates[0].getDate() + ' - '+ (Dates[1].getMonth() + 1) + '.' + Dates[1].getDate();
-var nextWeek = (Dates[1].getMonth() + 1) + '.' + (Dates[1].getDate() + 1) + ' - '+ (Dates[1].getMonth() + 1) + '.' + (Dates[1].getDate() + 7);
-
-$('#thisWeek').text('This week (' +  thisWeek  +')');
-$('#nextWeek').text('Next week (' +  nextWeek  +')');
+//Miles Driven and Drive Time layout
+window.onresize = function() {
+  if($(window).width() < 600) {
+  	$('.calc').removeClass("col-xs-6");
+  	$('.calc').addClass("col-xs-12");
+  } else {
+  	$('.calc').removeClass("col-xs-12");
+  	$('.calc').addClass("col-xs-6");
+  }
+};
