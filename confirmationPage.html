@@ -1,26 +1,32 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <title>Muve | Your Personal On-demand Mover</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/muve-logos/favicon-16x16.png">
+
+<!-- Styles -->
   <link rel="stylesheet" type="text/css" href="stylesheets.css" />
   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
+
+
+<!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Latest compiled and minified CSS -->
+
+
+<!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<!-- Meta Data -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Learn more about Muve, its team, value and our culture and how we're changing the way shipping is performed.">
 
-  <!-- Loading Goodle Places Library -->
+  <!-- Loading GooGle Places Library -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaZjppXXvLj8nilXgPX668oEFyC0ataBQ&libraries=places"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Analytics -->
   <script>
@@ -40,14 +46,16 @@
     ga('send', 'pageview');
   </script>
 
-  <!-- Google Web Font -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-  <!-- Font Awesome -->
+<!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300|Raleway" rel="stylesheet">
+
+
+<!-- Font Awesome -->
   <script src="https://use.fontawesome.com/ad4b507575.js"></script>
 
-  <!-- Start of Async Drift Code -->
+
+<!-- Start of Async Drift Code -->
   <script>
     ! function() {
       var t;
@@ -90,54 +98,67 @@
 
 <body>
 
+<!-- Navigation Bar -->
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid" style="background-color: #fff;">
-      <div class="navbar-header" style="background-color: #fff; border-color: #fff;">
-        <button type="button" class="navbar-toggle collapsed" style="border-color: #fff;" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <div class="container-fluid background-color-fff">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed border-color-fff" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle Navigator</span>
-          	<span class="icon-bar"></span>
-          	<span class="icon-bar"></span>
-          	<span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="index.html" style="background-color: #fff; font-weight: 300;">MUVE</a>
-        <!-- <div class="centered-navbar" style="position:absolute; left:25%; width:50%; text-align:center;"><a href="#"><img src="m-icon.png" style="width: 36px; margin-top: 5px;"></a></div> -->
+        <a class="navbar-brand" href="index.html">MUVE</a>
       </div>
 
-      <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1" style="background-color: #fff;">
+      <div class="collapse navbar-collapse navbar-right  background-color-fff" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">Mover Login</a></li>
-          <li><a href="https://medium.com/@shawnmurray_45503/understanding-our-services-942d5248cb02">Blog</a></li>
-          <li style="background-color: #F58A74;"><a href="jobSelection.html" style="color: #fff; letter-spacing: 1px;">Request Now</a></li>
+          <li><a href="#" title="link to the mover login screen">Mover Login</a></li>
+          <li><a href="about.html" title="link to the about page">About</a></li>
+          <li><a href="blog.html" title="link to Muve's blog">Blog</a></li>
+          <li class="background-color-01D06F"><a class="color-01D06F" href="jobSelection.html" title="link to the job/move service selection page.">Free Instant Quote</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div id="red" class="colors red">
-    <div class="container" style="background: #FFF;">
-      <div style="display: block; margin: 0 auto; width: 320px;">
-        <img src="fistBump.png" style="display: block; margin: 100px auto; width: 160px;" />
-        <h4 style="text-align: center; margin-top: -80px; margin-bottom: 50px; color: #2ECC71;">Success! Your request has been received. Fist bump!</h4>
+  <div class="container container-about margin-top-eightypx">
 
-        <div class="grey-background" style="background-color: #EAEAEA; border-radius: 6px;">
-          <h4 style="text-align: center; padding-top: 60px;">Here's what happens next:</h4>
-          <ol style="display: block; margin: 0 auto 100px; padding-bottom: 60px;">
-            <li style="margin-top: 30px; color: #838383; padding-right: 10px;">Now that we have your requesting information, we'll contact you just to confirm the address and the specified date. No shenanigans.</li>
-            <li style="margin-top: 20px; color: #838383; padding-right: 10px;">Twenty-four hours before the scheduled timeframe, we'll contact you with the names of your Muve helpers for the requested date. You'll be notified one last time when we're on the way.</li>
-            <li style="margin-top: 20px; color: #838383; padding-right: 10px;">Once the move has been completed, you can pay for the service either by cash, check, or card. </li>
-          </ol>
-        </div>
-      </div>
+
+<!-- Our Mission and Vision -->
+    <div class="white-container about-text confirm-container bottom-padding-fortypx">
+      <img src="fistBump.png" />
+
+      <h1 class="text-center">Success! Your request has been received.</h1>
+      <h1 class="text-center">Fist bump!</h1>
+
+      <p class="margin-top-fortypx text-center">Here's what happens next&#58;</p> 
+
+      <ol>
+        <li>
+          <span>Now that we have your requesting information, we'll contact you just to confirm the address and the specified date. No shenanigans.</span>
+        </li>
+        <li>
+          <span>Twenty-four hours before the scheduled timeframe, we'll contact you with the names of your Muve helpers for the requested date. You'll be notified one last time when we're on the way.</span>
+        </li>
+        <li>
+          <span>Once the move has been completed, you can pay for the service either by cash, check, or card.</span>
+        </li>
+      </ol>
     </div>
-  </div>
+</div>
 
-  <footer style="margin-top: 80px; width: 100%;">
+
+<!-- Footer -->
+  <footer class="margin-top-eightypx">
     <div class="container">
       <div class="row">
 
+
+<!-- Logo and Summary -->
         <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
           <ul class="adress">
-            <img src="footer-logo.png" style="width: 80px; margin-bottom: 20px;" />
+            <img class="footer-logo" src="footer-logo.png" />
             <li>
               <p>Muve is your solution for on-demand furniture delivery and other moving services in the Cincinnati, Ohio area.</p>
             </li>
@@ -148,19 +169,21 @@
           </ul>
         </div>
 
+
+<!-- Footer Menu -->
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <ul class="contact">
-            <span style="margin-top: 20px;">Menu</span>
+            <span class="margin-top-twentypx">Menu</span>
             <li>
               <a href="index.html">Request</a>
             </li>
 
             <li>
-              <a href="#">About Us</a>
+              <a href="about.html">About Us</a>
             </li>
 
             <li>
-              <a href="https://medium.com/@shawnmurray_45503/understanding-our-services-942d5248cb02">Blog</a>
+              <a href="#">Blog</a>
             </li>
 
             <li>
@@ -173,9 +196,11 @@
           </ul>
         </div>
 
+
+<!-- Social Media Icons -->
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
           <ul class="social">
-            <span style="margin-top: 20px;">Social</span>
+            <span class="margin-top-twentypx">Social</span>
             <li>
               <a href="https://www.facebook.com/muvenow"><i class="fa fa-facebook fa-2x"></i></a>
             </li>
@@ -195,10 +220,8 @@
             <li>
               <a href="https://www.linkedin.com/company/16254206/"><i class="fa fa-linkedin fa-2x"></i></a>
             </li>
-
           </ul>
         </div>
-
 
       </div>
     </div>

@@ -344,7 +344,6 @@ h1 {
   color: #474747;
   font-weight: 400;
   margin-top: 40px;
-  /*line-height: 0;*/
 }
 
 .zero-top {
@@ -1070,7 +1069,7 @@ span.hidden {
 	background: #0077b5;
 }
 
-/* Media Queries for index2.html FAQ */
+/* Media Queries for index.html FAQ */
 .faq-padding {
   padding-right: 5%;
   padding-left: 5%;
@@ -1584,5 +1583,52 @@ select.week {
   }
   button.next-btn {
     width: 190px;
+  }
+}
+
+
+
+/* ============ Confirmation Page Styles ============*/
+.confirm-container {
+  padding-top: 60px;
+}
+
+.confirm-container img {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 160px;
+}
+
+.confirm-container h1 {
+  color: #01D06F;
+  font-size: 1.5em;
+  margin: 0 0;
+}
+
+.confirm-container p {
+  margin-bottom: 20px;
+}
+
+.confirm-container ol {
+  padding: 10px;
+  position: relative;
+}
+
+.confirm-container li {
+  margin-bottom: 20px;
+  position: relative;
+  left: 12px;
+  padding-left: 10px;
+}
+
+.confirm-container span {
+}
+
+@media screen and (max-width: 350px) {
+  .confirm-container li {
+    margin-bottom: 20px;
+    position: relative;
+    left: 0;
+    padding-left: 10px;
   }
 }
