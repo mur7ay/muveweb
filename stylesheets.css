@@ -1652,7 +1652,7 @@ select.week {
   background-color: #FFF;
   color: #01D06F;
   display: block;
-  margin: 80px auto 40px;
+  margin: 80px auto 0;
   border: 3px solid #01D06F;
   border-radius: 5px;
   letter-spacing: 1px;
