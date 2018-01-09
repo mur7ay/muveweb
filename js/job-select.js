@@ -1,13 +1,14 @@
 var formArray = [];
 var radioBtnForms = $('.initial-hidden');
 var counter = 0;
+var checkboxArr = [];
 
 //Click event listener for #first-next-btn
 $('#first-next-btn').click(function() {
 	formArray = [];
 
 	//Assigns all checkboxes to checkboxArr
-	var checkboxArr = $('.checkbox-js');
+	checkboxArr = $('.checkbox-js');
 
 		//Loops through the checkboxes and determines which are checked
 		for (i = 0; i < checkboxArr.length; i++) {
@@ -21,15 +22,12 @@ $('#first-next-btn').click(function() {
 				for (j = 0; j < forms[0].length; j++) {
 					if ($.inArray(forms[0][j], formArray) === -1) {
 						formArray.push(forms[0][j]);
-						
-						if (forms.length === 1 && forms[0] === 'Assembly') {
-							console.log('yolo');
-						}
 					}
 				}
 			}
 		}
 		formArray.push('#finalInfoQ');
+
 
 	//Form validation
 	if (formArray.length > 1) {
@@ -45,6 +43,10 @@ $('#first-next-btn').click(function() {
 
 //Click event listener for .next-btn
 $('.next-btn').click(function() {
+	var finalAddressChanger = 0;
+	var instorePickup = false;
+	$('#pickupAddress').removeClass('initial-hidden');
+	$('#address2').attr('placeholder', 'Drop-off Address');
 
 	//Form validation
 	var currentForm = $(this).parent().parent().parent();
@@ -58,12 +60,36 @@ $('.next-btn').click(function() {
 		//Progress bar
 		var progress = Math.round((counter/formArray.length) * 100);
 		$('#progressBar').width(progress + '%');
-
 	} else {
 		var formValidate = currentForm.find('.text-danger');
 		formValidate.removeClass('initial-hidden');
 	}
+
+	//Removes pickup address when necessary
+	if (counter === formArray.length - 1) {
+
+		if ($('#instore1').is(':checked')) {
+			instorePickup = true;
+		}
+
+		for (i = 0; i < checkboxArr.length; i++) {
+			if ($(checkboxArr[i]).is(':checked')) {
+				if ($(checkboxArr[i]).val() === 'whole home' || $(checkboxArr[i]).val() === 'furniture delivery' || $(checkboxArr[i]).val() === 'piano' || $(checkboxArr[i]).val() === 'curb-to-curb') {
+					finalAddressChanger++;
+				} else if ($(checkboxArr[i]).val() === 'assembly' && instorePickup) {
+					finalAddressChanger++;
+				}
+			}
+		}
+				
+		if (finalAddressChanger === 0) {
+			$('#pickupAddress').addClass('initial-hidden');
+			$('#address2').attr('placeholder', 'Address');
+		}
+	}
 });
+
+
 
 
 //Click event listener for .back-btn
