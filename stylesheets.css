@@ -1326,6 +1326,10 @@ span.hidden {
   display: none !important;
 }
 
+#invoice {
+  display: none;
+}
+
 div.body-container {
   background: #FFF;
   width: 90%;

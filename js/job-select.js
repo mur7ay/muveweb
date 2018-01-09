@@ -21,11 +21,14 @@ $('#first-next-btn').click(function() {
 				for (j = 0; j < forms[0].length; j++) {
 					if ($.inArray(forms[0][j], formArray) === -1) {
 						formArray.push(forms[0][j]);
+						
+						if (forms.length === 1 && forms[0] === 'Assembly') {
+							console.log('yolo');
+						}
 					}
 				}
 			}
 		}
-
 		formArray.push('#finalInfoQ');
 
 	//Form validation
@@ -123,7 +126,7 @@ function nextWeekEnd() {
 }
 
 
-//Adds to select element
+//Adds dates to select element
 var thisWeek = firstDayMonth + '.' + firstDayDate + ' - ' + lastDayMonth + '.' + lastDayDate;
 var nextWeek = (nextWeekStart().getMonth() + 1) + '.' + (nextWeekStart().getDate()) + ' - ' + (nextWeekEnd().getMonth() + 1) + '.' + (nextWeekEnd().getDate());
 
@@ -209,7 +212,7 @@ window.onresize = function() {
 };
 
 
-//Makes changes color of selected time
+//Changes color of selected time
 $('#times').find('label').click(function() {
 	var allTimes = $('#times').find('input');	
 
@@ -237,3 +240,17 @@ window.onresize = function() {
   	$('.calc').addClass("col-xs-6");
   }
 };
+
+
+//Invoice number
+$('#instore1').on('click', function() {
+	if ($('#instore1').is(':checked')) {
+		$('#invoice').slideDown('fast');
+	}
+});
+
+$('#instore2').on('click', function() {
+	if ($('#instore2').is(':checked')) {
+		$('#invoice').slideUp('fast');
+	}
+});
