@@ -15,12 +15,12 @@ function submit() {
     Email: _email,
     Date_Created: date
   }).then(function() {
-    // secondStep();
+    secondStep();
   });
 };
 
 
-// Link to confirm page
-// function secondStep() {
-//   window.location.href = 'index.html';
-// }
+/* todo -  Link to confirm page */ 
+function secondStep() {
+  window.location.href = 'index.html';
+}
