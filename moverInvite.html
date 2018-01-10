@@ -5,27 +5,24 @@
   <title>Muve | Your Personal On-demand Mover</title>
   <link rel="icon" type="image/png" sizes="16x16" href="img/muve-logos/favicon-16x16.png">
 
-<!-- Styles -->
+  <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="stylesheets.css" />
   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
 
 
-<!-- Jquery -->
+  <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-<!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<!-- Meta Data -->
+  <!-- Meta Data -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Learn more about Muve, its team, value and our culture and how we're changing the way shipping is performed.">
-
-  <!-- Loading GooGle Places Library -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaZjppXXvLj8nilXgPX668oEFyC0ataBQ&libraries=places"></script>
 
 
   <!-- Analytics -->
@@ -47,15 +44,30 @@
   </script>
 
 
-<!-- Google Web Fonts -->
+  <!-- Google Web Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300|Raleway" rel="stylesheet">
 
 
-<!-- Font Awesome -->
+  <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/ad4b507575.js"></script>
 
 
-<!-- Start of Async Drift Code -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+      apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
+      authDomain: "muve-ce0b0.firebaseapp.com",
+      databaseURL: "https://muve-ce0b0.firebaseio.com",
+      storageBucket: "muve-ce0b0.appspot.com",
+      messagingSenderId: "274894158485",
+    };
+    firebase.initializeApp(config);
+  </script>
+
+
+  <!-- Start of Async Drift Code -->
   <script>
     ! function() {
       var t;
@@ -80,25 +92,11 @@
   </script>
   <!-- End of Async Drift Code -->
 
-  <script type="text/javascript">
-    (function(a, e, f, g, b, c, d) {
-      a[b] = a[b] || function() {
-        (a[b].q = a[b].q || []).push(arguments)
-      };
-      c = e.createElement(f);
-      d = e.getElementsByTagName(f)[0];
-      c.async = 1;
-      c.src = g;
-      d.parentNode.insertBefore(c, d)
-    })(window, document, "script", "//cdn.app.exitmonitor.com/em.js", "em");
-
-    em('set', 'campaign', '59dae76b396332000a000000');
-  </script>
 </head>
 
 <body>
 
-<!-- Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid background-color-fff">
       <div class="navbar-header">
@@ -129,26 +127,21 @@
       <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
         <img src="contract.png" style="width: 100px;" />
         <h2>Zero Risk</h2>
-        <p>There's absolutely no risk when your company uses Muve. We don't require you to sign any contract nor do we charge you any monthly fees. We only charge 15% of the overall estimated time for each move only taking our percentage when you're guareented the job. As always, you're able to cancel the service at any time.</p>
+        <p>There's absolutely no risk. That means no contract, no monthly fees, and no fee for leads. As always, you're able to cancel the service at any time.</p>
       </div>
 
       <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
         <img src="guarantee.png" style="width: 100px;" />
         <h2>Guaranteed Jobs</h2>
-        <p>Unlike lead services, we check and automatically populate holes in your calendar with move jobs.</p>
+        <p>Unlike lead services, we check and automatically populate holes in your calendar with quality, prescreened move jobs.</p>
       </div>
 
       <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
         <img src="remote.png" style="width: 100px;" />
         <h2>You're In Control</h2>
-        <p>You're entirely in control with your service radius, rates for the services you offer, availability, and everything else.</p>
+        <p>You're entirely in control of your service radius, rates for the services you offer, availability, and everything else.</p>
       </div>
 
-      <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
-        <img src="http://via.placeholder.com/50x50" />
-        <h2>Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </div> -->
     </div>
 
 
@@ -176,7 +169,7 @@
             </label>
           </div>
 
-          <input type="submit" value="Request Invite Form" class="request-form-invite"></input>
+          <input type="submit" id="submit" value="Request Invite Form" class="request-form-invite"></input>
         </form>
       </div>
     </div>
@@ -184,13 +177,13 @@
   </div>
 
 
-<!-- Footer -->
+  <!-- Footer -->
   <footer class="margin-top-eightypx">
     <div class="container">
       <div class="row">
 
 
-<!-- Logo and Summary -->
+        <!-- Logo and Summary -->
         <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
           <ul class="adress">
             <img class="footer-logo" src="footer-logo.png" />
@@ -205,7 +198,7 @@
         </div>
 
 
-<!-- Footer Menu -->
+        <!-- Footer Menu -->
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <ul class="contact">
             <span class="margin-top-twentypx">Menu</span>
@@ -232,7 +225,7 @@
         </div>
 
 
-<!-- Social Media Icons -->
+        <!-- Social Media Icons -->
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
           <ul class="social">
             <span class="margin-top-twentypx">Social</span>
@@ -262,20 +255,8 @@
     </div>
   </footer>
 
-  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
-      authDomain: "muve-ce0b0.firebaseapp.com",
-      databaseURL: "https://muve-ce0b0.firebaseio.com",
-      projectId: "muve-ce0b0",
-      storageBucket: "muve-ce0b0.appspot.com",
-      messagingSenderId: "274894158485"
-    };
-    firebase.initializeApp(config);
-  </script>
-  <script src="index.js"></script>
+  <script src="moverInvite.js"></script>
+
   <script type="text/javascript" src="js/foundation-datepicker.js"></script>
 
 </body>
