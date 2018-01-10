@@ -231,7 +231,7 @@
 
 
     <!-- Home Type From Question-->
-    <div id="homeTypeFromQ" class="question-wrapper initial-hidden 0">
+    <div id="homeTypeFromQ" class="question-wrapper initial-hidden 0 5">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>WHAT TYPE OF HOME ARE YOU MOVING FROM?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -400,6 +400,98 @@
     </div>
 
 
+    <!-- Stairs at Pickup Question -->
+    <div id="elevatorPickUpQ" class="question-wrapper initial-hidden 0 1 2 5">
+      <div class="inline field question-container">
+
+        <h4 class="question-header"><strong>WILL THE MOVER NEED TO USE STAIRS AT THE PICKUP LOCATION?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="stairs-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator1" name="elevator" class="checkbox-circle margin-right" value="Yes, the movers will need to move items up/down stairs." />
+              Yes, the movers will need to move items up/down stairs.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator2" name="elevator" class="checkbox-circle margin-right" value="No, the move is on the ground floor." />
+              No, the move is on the ground floor.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator3" name="elevator" class="checkbox-circle margin-right" value="No, the movers will have access to a passenger elevator." />
+              No, the movers will have access to a passenger elevator.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator4" name="elevator" class="checkbox-circle margin-right" value="No, the movers will have access to a fright elevator." />
+              No, the movers will have access to a fright elevator.
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="stairQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Stairs at Dropoff Question -->
+    <div id="elevatorDropOffQ" class="question-wrapper initial-hidden 0 1 2">
+      <div class="inline field question-container">
+
+        <h4 class="question-header"><strong>WILL THE MOVER NEED TO USE STAIRS AT THE DROPOFF LOCATION?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="stairs-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator1" name="elevator" class="checkbox-circle margin-right" value="Yes, the movers will need to move items up/down stairs." />
+              Yes, the movers will need to move items up/down stairs.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator2" name="elevator" class="checkbox-circle margin-right" value="No, the move is on the ground floor." />
+              No, the move is on the ground floor.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator3" name="elevator" class="checkbox-circle margin-right" value="No, the movers will have access to a passenger elevator." />
+              No, the movers will have access to a passenger elevator.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator4" name="elevator" class="checkbox-circle margin-right" value="No, the movers will have access to a fright elevator." />
+              No, the movers will have access to a fright elevator.
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="stairQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
     <!-- Boxes Question-->
     <div id="boxesQ" class="question-wrapper initial-hidden 0 5">
       <div class="inline field question-container">
@@ -452,52 +544,6 @@
     </div>
 
 
-    <!-- Stair Question -->
-    <div id="elevatorQ" class="question-wrapper initial-hidden 0 1 2 5">
-      <div class="inline field question-container">
-
-        <h4 class="question-header"><strong>WILL THE MOVER NEED TO USE STAIRS AT THE PICKUP LOCATION?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" id="stairs-input-form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="elevator1" name="elevator" class="checkbox-circle margin-right" value="Yes, the movers will need to move items up/down stairs." />
-              Yes, the movers will need to move items up/down stairs.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="elevator2" name="elevator" class="checkbox-circle margin-right" value="No, the move is on the ground floor." />
-              No, the move is on the ground floor.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="elevator3" name="elevator" class="checkbox-circle margin-right" value="No, the movers will have access to a passenger elevator." />
-              No, the movers will have access to a passenger elevator.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="elevator4" name="elevator" class="checkbox-circle margin-right" value="No, the movers will have access to a fright elevator." />
-              No, the movers will have access to a fright elevator.
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" onclick="stairQuestion()" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
     <!-- Number of Movers Question -->
     <div id="numberOfMoversQ" class="question-wrapper initial-hidden 0 5">
       <div class="inline field question-container">
@@ -536,6 +582,81 @@
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
             <button type="button" onclick="numOfMoversQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- In-store Pickup Question -->
+    <div id="instorePickupQ" class="question-wrapper initial-hidden 1 3 4">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>IS THIS AN IN-STORE PICKUP?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="storePickup-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="instore1" name="instore" class="checkbox-circle margin-right" value="Yes, the movers will need to pickup my item from a store/retailer." />
+              Yes, the movers will need to pickup my item from a store/retailer.
+            </label>
+          </div>
+
+          <div id="invoice" class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi request-form" type="text" id="invoiceNumber" placeholder="Invoice number" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="instore2" name="instore" class="checkbox-circle margin-right" value="No, the item(s) will be moved from my home or similar location." />
+              No, the item(s) will be moved from my home or similar location.
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="storePickupQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Number of Furniture to Move Question -->
+    <div id="howFurnituresToMoveQ" class="question-wrapper initial-hidden 1">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY ITEMS WILL NEED TO BE MOVED?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="assemCount-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items1" name="items" class="checkbox-circle margin-right" value="1" />
+              1
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items2" name="items" class="checkbox-circle margin-right" value="2" />
+              2
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items3" name="items" class="checkbox-circle margin-right" value="3" />
+              3
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="assemblyQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -678,95 +799,6 @@
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
             <button type="button" onclick="numOfAssemblersQuestion()" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- In-store Pickup Question -->
-    <div id="instorePickupQ" class="question-wrapper initial-hidden 1 3 4">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>IS THIS AN IN-STORE PICKUP?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" id="storePickup-input-form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="instore1" name="instore" class="checkbox-circle margin-right" value="Yes, the movers will need to pickup my item from a store/retailer." />
-              Yes, the movers will need to pickup my item from a store/retailer.
-            </label>
-          </div>
-
-          <div id="invoice" class="checkbox checkbox-container">
-            <label class="checkbox-label text-input">
-              <input class="input__field input__field--hoshi request-form" type="text" id="invoiceNumber" placeholder="Invoice number" />
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="instore2" name="instore" class="checkbox-circle margin-right" value="No, the item(s) will be moved from my home or similar location." />
-              No, the item(s) will be moved from my home or similar location.
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" onclick="storePickupQuestion()" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- Home Type Question -->
-    <div id="homeTypeQ" class="question-wrapper initial-hidden 5">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>WHAT TYPE OF HOME ARE YOU MOVING FROM?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" id="typeOfHome-input-form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="hometype1" name="hometype" class="checkbox-circle margin-right" value="Apartment" />
-              Apartment
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="hometype2" name="hometype" class="checkbox-circle margin-right" value="House" />
-              House
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="hometype3" name="hometype" class="checkbox-circle margin-right" value="Condo" />
-              Condo
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="hometype4" name="hometype" class="checkbox-circle margin-right" value="Townhouse" />
-              Townhouse
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="hometype5" name="hometype" class="checkbox-circle margin-right" value="Storage Unit" />
-              Storage Unit
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" onclick="homeTypeQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -974,7 +1006,7 @@
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div id="dropoffAddress" class="checkbox checkbox-container">
             <label class="checkbox-label text-input">
               <input class="input__field input__field--hoshi request-form" type="text" id="address2" placeholder="Drop-off Address" onfocusout="GetRoute()" />
             </label>
@@ -1214,19 +1246,82 @@
     </div>
 
 
-    <!-- Confirm -->
-    <div id="confirm" class="question-wrapper">
-      <p>Move Details</p>
+  <!-- Confirm -->
+    <!-- <div id="howManyBoxesNeededQ" class="question-wrapper">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>MOVE DETAILS</strong></h4>
 
-      <p>Type</p>
+        <div id="typeWholeHomeConfirm" class="padding-top-fortypx">
+          <p class="confirm-title">Type</p>
+            <p class="confirm-answer">Whole Home</p>
 
-      <p></p>
+          <p class="confirm-title">Number of movers</p>
+          <p class="confirm-title">Number of boxes</p>
+
+
+          <div class="row margin-top-twentypx">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="confirm-title">At Pick-up</p>
+              <p class="confirm-title">Home Type</p>
+              <p class="confirm-title">Stairs</p>
+              <p class="confirm-title">Address</p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="confirm-title">At Drop-off</p>
+              <p class="confirm-title">Home Type</p>              
+              <p class="confirm-title">Stairs</p>
+              <p class="confirm-title">Address</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="typeFurnitureDeliveryConfirm" class="padding-top-fortypx">
+          <p class="confirm-title margin-top-fortypx">Type</p>
+            <p class="confirm-answer">Furniture Delivery</p>
+
+          <p class="confirm-title">In-Store Pickup</p>
+
+          <p class="confirm-title">Number of items</p>
+
+          <p class="confirm-title">Stairs</p>
+
+          <div class="row margin-top-twentypx">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="confirm-title">At Pick-up</p>
+              <p class="confirm-title">Home Type</p>
+              <p class="confirm-title">Stairs</p>
+              <p class="confirm-title">Address</p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="confirm-title">At Drop-off</p>
+              <p class="confirm-title">Home Type</p>              
+              <p class="confirm-title">Stairs</p>
+              <p class="confirm-title">Address</p>
+            </div>
+          </div>
+        </div>
 
 
 
-    </div>
+
+
+<p class="confirm-title">Date</p>
+<p class="confirm-title">Time</p>
+
+
+          <div style="margin-top: 50px;">
+            <button class="back-btn">BACK</button>
+            <button id="finalSubmit" type="button" class="text-center next-btn">Submit</button>
+          </div>
+
+      </div>
+    </div> -->
 
   </div>
+
 
   <!-- Footer -->
   <footer>

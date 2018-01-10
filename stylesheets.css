@@ -793,6 +793,10 @@ hr.green-underline {
   margin-top: 80px;
 }
 
+.padding-top-fortypx {
+  padding-top: 40px;
+}
+
 /* ========== Styles for blog.html ============*/
 img.blog-img {
   padding: 0 40px;
@@ -1644,8 +1648,26 @@ select.week {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .mover-invite-center {
+    margin-left: 0 !important;
+    margin-top: 20px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mover-invite-center {
+    margin-left: 25%;
+    margin-top: 40px;
+  }
+
+  .mover-invite-text-center {
+    text-align: center;
+  }
+}
+
 .moverInvite-padding {
-  padding: 0 40px!important;
+  padding: 0 40px !important;
 }
 
 .request-form-invite {
@@ -1667,4 +1689,22 @@ select.week {
 .request-form-invite:hover {
   background-color: #01D06F;
   color: #FFF;
+}
+
+@media screen and (min-width: 769px) {
+  .moverInvite-padding {
+    width: 1345.190px!important;
+    padding: 0 80px !important;
+  }
+}
+
+.confirm-title {
+  color: grey !important;
+  text-transform: uppercase;
+  margin: 10px 0 0;
+}
+
+.confirm-answer {
+  text-indent: 1em;
+  margin-top: 0;
 }
