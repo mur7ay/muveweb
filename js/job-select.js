@@ -3,10 +3,11 @@ var radioBtnForms = $('.initial-hidden');
 var counter = 0;
 var checkboxArr = [];
 
-var homeTo = $('#homeTypeToQ')
-var homeFrom = $('#homeTypeFromQ')
-var stairsPickup = $('#elevatorPickUpQ')
-var stairsDropOff = $('#elevatorDropOffQ')
+var homeTo = $('#homeTypeToQ');
+var homeFrom = $('#homeTypeFromQ');
+var stairsPickup = $('#elevatorPickUpQ');
+var stairsDropOff = $('#elevatorDropOffQ');
+var supplyingBoxes = $('#howManyBoxesNeededQ');
 
 
 //Click event listener for #first-next-btn
@@ -147,17 +148,21 @@ $('#laborType3').click(function() {
 		formArray.splice(1, 1);
 		formArray.splice(3, 1);
 	}
-
 });
 
 
+//Removes extra questions if Packing and customer IS supplying packing supplies
+$('#supplying').click(function() {
+	if ($('#supplying').is(':checked') && formArray.length === 4 && !$('#checkbox1').is(':checked') && !$('#checkbox2').is(':checked') && !$('#checkbox3').is(':checked') && !$('#checkbox4').is(':checked') && !$('#checkbox5').is(':checked') && !$('#checkbox6').is(':checked')) {
+		formArray.splice(3, 0, supplyingBoxes);
+	}
+});
 
-
-
-
-
-
-
+$('#notSupplying').click(function() {
+	if ($('#notSupplying').is(':checked') && formArray.length === 5 && !$('#checkbox1').is(':checked') && !$('#checkbox2').is(':checked') && !$('#checkbox3').is(':checked') && !$('#checkbox4').is(':checked') && !$('#checkbox5').is(':checked') && !$('#checkbox6').is(':checked')) {
+		formArray.splice(3, 1);
+	}
+});
 
 
 // Adds the dates of the current and next week to 'Choose a day' section
