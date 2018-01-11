@@ -797,6 +797,10 @@ hr.green-underline {
   padding-top: 40px;
 }
 
+.final-info-padding {
+  padding-bottom: 40px;
+}
+
 /* ========== Styles for blog.html ============*/
 img.blog-img {
   padding: 0 40px;
@@ -1341,6 +1345,11 @@ div.body-container {
   display: block;
   margin: 100px auto;
   overflow: auto;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+  padding-top: 1px;
 }
 
 div.question-wrapper {
