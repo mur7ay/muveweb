@@ -201,21 +201,21 @@
         <form role="form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="laborType1" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="laborType1" name="load" class="checkbox-circle margin-right" value="true" />
               I need help loading and unloading.
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="laborType2" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right" value="true" />
               I only need help loading.
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="laborType3" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right" value="true" />
               I only need help unloading.
             </label>
           </div>
@@ -815,21 +815,21 @@
         <form role="form" action="" class="margin-top-fortypx">
                     <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="" name="pack" class="checkbox-circle margin-right" value="true" />
               Packing
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="" name="pack" class="checkbox-circle margin-right" value="true" />
               Unpacking
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="" name="pack" class="checkbox-circle margin-right" value="true" />
               Packing and unpacking
             </label>
           </div>
@@ -995,7 +995,7 @@
 
     <!-- Final Info -->
     <div id="finalInfoQ" class="question-wrapper initial-hidden">
-      <div class="inline field question-container">
+      <div id="lastQuestionsQ" class="inline field question-container">
         <h4 class="question-header"><strong>TELL US ABOUT YOUR MOVE.</strong></h4>
         <p class="text-danger initial-hidden">Please fill all required fields</p>
 
@@ -1187,86 +1187,132 @@
             </div>
           </div>
         </form>
-
       </div>
+
+      <!-- Map -->
+      <div class="container-fluid" id="dv">
+        <div id="dvMap"></div>
+      </div>
+
+      <div style="margin-top: 50px; max-width: 500px; margin-left: auto; margin-right: auto;">
+        <button type="button" class="back-btn">BACK</button>
+        <button type="button" class="text-center next-btn">NEXT</button>
+      </div>
+
     </div>
 
 
     <!-- Confirm -->
-    <div id="howManyBoxesNeededQ" class="question-wrapper">
+    <div id="moveDetails" class="question-wrapper initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>MOVE DETAILS</strong></h4>
 
         <div id="typeWholeHomeConfirm" class="padding-top-fortypx">
-          <p class="confirm-title">Type</p>
-            <p id="jobTypeA"  class="confirm-answer">&#45;&#45;</p>
 
-          <p class="confirm-title">Number of bedrooms moving from</p>
-            <p id="numRoomsFromA" class="confirm-answer">&#45;&#45;</p>
+          <div class="jobTypeA">
+            <p class="confirm-title">Type</p>
+            <p id="jobTypeA"  class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">Number of movers</p>
-            <p id="numMoversA" class="confirm-answer">&#45;&#45;</p>
+          <div class="numRoomsFromA initial-hidden">
+            <p class="confirm-title">Number of bedrooms moving from</p>
+            <p id="numRoomsFromA" class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">Number of assemblers</p>
-            <p id="numAssemblersA" class="confirm-answer">&#45;&#45;</p>
+          <div class="numMoversA initial-hidden">
+            <p class="confirm-title">Number of movers</p>
+            <p id="numMoversA" class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">Number of boxes</p>
-            <p id="numBoxesA" class="confirm-answer">&#45;&#45;</p>
+          <div class="numAssemblersA initial-hidden">
+            <p class="confirm-title">Number of assemblers</p>
+            <p id="numAssemblersA" class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">In-store pickup</p>
-            <p id="instorePickupA" class="confirm-answer">&#45;&#45;</p>
+          <div class="numBoxesA initial-hidden">
+            <p class="confirm-title">Number of boxes</p>
+            <p id="numBoxesA" class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">Number of items to be moved</p>
-            <p id="numItemsMovedA" class="confirm-answer">&#45;&#45;</p>
+          <div class="instorePickupA initial-hidden">
+            <p class="confirm-title">In-store pickup</p>
+            <p id="instorePickupA" class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">Number of items to be assembled</p>
-            <p id="numItemsAssembledA" class="confirm-answer">&#45;&#45;</p>
+          <div class="numItemsMovedA initial-hidden">
+            <p class="confirm-title">Number of items to be moved</p>
+            <p id="numItemsMovedA" class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">Type of Piano</p>
-            <p id="typePianoA" class="confirm-answer">&#45;&#45;</p>
+          <div class="numItemsAssembledA initial-hidden">
+            <p class="confirm-title">Number of items to be assembled</p>
+            <p id="numItemsAssembledA" class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">Number of rooms to pack/unpack</p>
-            <p id="numRoomsPackA" class="confirm-answer">&#45;&#45;</p>
+          <div class="typePianoA initial-hidden">
+            <p class="confirm-title">Type of Piano</p>
+            <p id="typePianoA" class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">Packer supplying supplies</p>
-            <p id="supplySuppliesA" class="confirm-answer">&#45;&#45;</p>
+          <div class="loadA initial-hidden">
+            <p class="confirm-title">Loading and&#47;or unloading</p>
+            <p id="loadA" class="confirm-answer"></p>
+          </div>
 
-          <p class="confirm-title">Number of boxes needed</p>
-            <p id="boxesNeededA" class="confirm-answer">&#45;&#45;</p>
+          <div class="packA initial-hidden">
+            <p class="confirm-title">Packing and&#47;or unpacking</p>
+            <p id="packA" class="confirm-answer"></p>
+          </div>
+
+          <div class="numRoomsPackA initial-hidden">
+            <p class="confirm-title">Number of rooms to pack/unpack</p>
+            <p id="numRoomsPackA" class="confirm-answer"></p>
+          </div>
+
+          <div class="supplySuppliesA initial-hidden">
+            <p class="confirm-title">Packer supplying supplies</p>
+            <p id="supplySuppliesA" class="confirm-answer"></p>
+          </div>
+
+          <div class="boxesNeededA initial-hidden">
+            <p class="confirm-title">Number of boxes needed</p>
+            <p id="boxesNeededA" class="confirm-answer"></p>
+          </div>
 
           <div class="row margin-top-twentypx">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
               <p class="confirm-title">At Pick-up</p>
 
-              <p class="confirm-title">Home Type</p>
-                <p id="homeTypeFromA" class="confirm-answer">&#45;&#45;</p>
+              <div class="homeTypeFromA initial-hidden">
+                <p class="confirm-title">Home Type</p>
+                <p id="homeTypeFromA" class="confirm-answer"></p>
+              </div>
 
-              <p class="confirm-title">Stairs</p>
-                <p id="pickupStairs" class="confirm-answer">&#45;&#45;</p>
-
-              <p class="confirm-title">Address</p>
+              <div class="pickupStairsA initial-hidden">
+                <p class="confirm-title">Stairs</p>
+                <p id="pickupStairsA" class="confirm-answer"></p>
+              </div>
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
               <p class="confirm-title">At Drop-off</p>
 
-              <p class="confirm-title">Home Type</p>  
-                <p id="homeTypeToA" class="confirm-answer">&#45;&#45;</p>
+              <div class="homeTypeToA initial-hidden">
+                <p class="confirm-title">Home Type</p>  
+                <p id="homeTypeToA" class="confirm-answer"></p>
+              </div>
 
-              <p class="confirm-title">Stairs</p>
-                <p id="dropoffStairs" class="confirm-answer">&#45;&#45;</p>
-
-              <p class="confirm-title">Address</p>
+              <div class="dropoffStairsA initial-hidden">
+                <p class="confirm-title">Stairs</p>
+                <p id="dropoffStairsA" class="confirm-answer"></p>
+              </div>
             </div>
           </div>
         </div>
 
 
-      <!-- Map -->
-      <div class="container-fluid" id="dv">
-        <div id="dvMap"></div>
 
-        <div class="row" style="text-align: center;" onload="doSomething()">
+        <div id="milesDriveTime" class="row" style="text-align: center;" onload="doSomething()">
           <div class="calc col-xs-6 col-sm-6 col-md-4 col-md-offset-2">
             <div id="dvDistance">
               <h3 id="miles" style="margin-top: 30px; font-size: 40px; color: #01D06F;">&#45;&#45;</h3>
@@ -1297,27 +1343,78 @@
             </div>
           </div>
         </div>
+
+        <br style="clear: both;" />
+
+        <div class="text-center" style="margin-top: 60px;">
+          <h2 style="margin-top: 50px;">Estimated total $<span id="new_text">35</span> USD</h2>
+        </div>
+
+        <p class="home-p" style="text-align: center;">
+            By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
+        </p>
+
+        <div class="question-container" style="margin-top: 50px;">
+          <button type="button" class="back-btn">BACK</button>
+          <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
+        </div>
+
       </div>
 
-      <br style="clear: both;" />
 
-      <div class="text-center" style="margin-top: 60px;">
-        <h2 style="margin-top: 50px;">Estimated total $<span id="new_text">35</span> USD</h2>
-      </div>
+<!--         
+        <div class="container-fluid" id="dv">
+          <div id="dvMap"></div>
 
-      <p class="home-p" style="text-align: center;">
-        By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
-      </p>
+          <div id="milesDriveTime" class="row" style="text-align: center;" onload="doSomething()">
+            <div class="calc col-xs-6 col-sm-6 col-md-4 col-md-offset-2">
+              <div id="dvDistance">
+                <h3 id="miles" style="margin-top: 30px; font-size: 40px; color: #01D06F;">&#45;&#45;</h3>
+                <h6 style="color: #B1B1B1; font-size: 20px;">Miles Driven</h6>
+              </div>
+            </div>
 
-      <div style="margin-top: 50px;">
-        <button class="back-btn">BACK</button>
-        <button id="finalSubmit" type="button" class="text-center next-btn">Submit</button>
-      </div>
+            <div class="calc col-xs-6 col-sm-6 col-md-4">
+              <div id="dvDistance">
+                <h3 id="time" style="margin-top: 30px; font-size: 40px; color: #01D06F;">&#45;&#45;</h3>
+                <h6 style="color: #B1B1B1; font-size: 20px;">Drive Time</h6>
+              </div>
+            </div>
+          </div>
 
+          <div class="row" style="text-align: center;" onload="doSomething()">
+            <div class="calc col-xs-6 col-sm-6 col-md-4 col-md-offset-2">
+              <div id="dvDistance">
+                <h3 id="dateConfirm" style="margin-top: 30px; font-size: 40px; color: #01D06F;">&#45;&#45;</h3>
+                <h6 style="color: #B1B1B1; font-size: 20px;">Date</h6>
+              </div>
+            </div>
+
+            <div class="calc col-xs-6 col-sm-6 col-md-4">
+              <div id="dvDistance" class="text-center">
+                <h3 id="timeConfirm" style="margin-top: 30px; font-size: 40px; color: #01D06F;">&#45;&#45;</h3>
+                <h6 style="color: #B1B1B1; font-size: 20px;">Time</h6>
+              </div>
+            </div>
+          </div>
+
+          <br style="clear: both;" />
+
+          <div class="text-center" style="margin-top: 60px;">
+            <h2 style="margin-top: 50px;">Estimated total $<span id="new_text">35</span> USD</h2>
+          </div>
+
+          <p class="home-p" style="text-align: center;">
+            By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
+          </p>
+
+          <div class="question-container" style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
+          </div>
+        </div> -->
     </div>
-
   </div>
-</div>
 
 
   <!-- Footer -->

@@ -41,7 +41,7 @@ $('#first-next-btn').click(function() {
 			}
 		}
 		formArray.push('#finalInfoQ');
-
+		formArray.push('#moveDetails');
 
 	//Form validation
 	if (formArray.length > 1) {
@@ -81,7 +81,7 @@ $('.next-btn').click(function() {
 	}
 
 	//Removes pickup address when necessary
-	if (counter === formArray.length - 1) {
+	if (counter === formArray.length - 2) {
 
 		if ($('#instore1').is(':checked')) {
 			instorePickup = true;
@@ -106,6 +106,8 @@ $('.next-btn').click(function() {
 		if (finalAddressChanger === 0) {
 			$('#pickupAddress').addClass('initial-hidden');
 			$('#address2').attr('placeholder', 'Address');
+			$('#dvMap').addClass('initial-hidden')
+			$('#milesDriveTime').addClass('initial-hidden')
 		}
 	}
 });
@@ -349,52 +351,108 @@ $('#instore2').on('click', function() {
 $('.next-btn').on('click', function() {
 
 	//Number of bedrooms moving from
-	$('#numRoomsFromA').text($('input[name=bedroom]:checked').parent().text());
+	if ($('input[name=bedroom]:checked').val() !== undefined) {
+		$('.numRoomsFromA').removeClass('initial-hidden');
+		$('#numRoomsFromA').text($('input[name=bedroom]:checked').parent().text());
+	}
 
 	//Number of movers
-	$('#numMoversA').text($('input[name=movers]:checked').parent().text());
+	if ($('input[name=movers]:checked').val() !== undefined) {
+		$('.numMoversA').removeClass('initial-hidden');
+		$('#numMoversA').text($('input[name=movers]:checked').parent().text());
+	}
 
 	//Number of assemblers
-	$('#numAssemblersA').text($('input[name=assemblers]:checked').parent().text());
+	if ($('input[name=assemblers]:checked').val() !== undefined) {
+		$('.numAssemblersA').removeClass('initial-hidden');		
+		$('#numAssemblersA').text($('input[name=assemblers]:checked').parent().text());
+	}
 
 	//Number of boxes
-	$('#numBoxesA').text($('input[name=boxes]:checked').parent().text());
+	if ($('input[name=boxes]:checked').val() !== undefined) {
+		$('.numBoxesA').removeClass('initial-hidden');		
+		$('#numBoxesA').text($('input[name=boxes]:checked').parent().text());
+	}
 
 	//In-store pickup
-	$('#instorePickupA').text($('input[name=instore]:checked').parent().text());
+	if ($('input[name=instore]:checked').val() !== undefined) {
+		$('.instorePickupA').removeClass('initial-hidden');	
+		$('#instorePickupA').text($('input[name=instore]:checked').parent().text());
+	}
 
 	//Number of items to be moved
-	$('#numItemsMovedA').text($('input[name=items]:checked').parent().text());
+	if ($('input[name=items]:checked').val() !== undefined) {
+		$('.numItemsMovedA').removeClass('initial-hidden');	
+		$('#numItemsMovedA').text($('input[name=items]:checked').parent().text());
+	}
 
 	//Number of items to be assembled
-	$('#numItemsAssembledA').text($('input[name=assembleItems]:checked').parent().text());
+	if ($('input[name=assembleItems]:checked').val() !== undefined) {
+		$('.numItemsAssembledA').removeClass('initial-hidden');	
+		$('#numItemsAssembledA').text($('input[name=assembleItems]:checked').parent().text());
+	}
 
 	//Type of piano
-	$('#typePianoA').text($('input[name=piano]:checked').parent().text());
+	if ($('input[name=piano]:checked').val() !== undefined) {
+		$('.typePianoA').removeClass('initial-hidden');	
+		$('#typePianoA').text($('input[name=piano]:checked').parent().text());
+	}
+
+	//Loading and/or unloading
+	if ($('input[name=load]:checked').val() !== undefined) {
+		$('.loadA').removeClass('initial-hidden');	
+		$('#loadA').text($('input[name=load]:checked').parent().text());
+	}
+
+	//Packing and/or unpacking
+	if ($('input[name=pack]:checked').val() !== undefined) {
+		$('.packA').removeClass('initial-hidden');	
+		$('#packA').text($('input[name=pack]:checked').parent().text());
+	}
 
 	//Number of rooms to pack/unpack
-	$('#numRoomsPackA').text($('input[name=roomsToPack]:checked').parent().text());
+	if ($('input[name=roomsToPack]:checked').val() !== undefined) {
+		$('.numRoomsPackA').removeClass('initial-hidden');	
+		$('#numRoomsPackA').text($('input[name=roomsToPack]:checked').parent().text());
+	}
 
 	//Packer Supplying Supplies
-	$('#supplySuppliesA').text($('input[name=supply]:checked').parent().text());
+	if ($('input[name=supply]:checked').val() !== undefined) {
+		$('.supplySuppliesA').removeClass('initial-hidden');	
+		$('#supplySuppliesA').text($('input[name=supply]:checked').parent().text());
+	}
 
 	//Number of boxes needed
-	$('#boxesNeededA').text($('input[name=boxesNeeded]:checked').parent().text());
+	if ($('input[name=boxesNeeded]:checked').val() !== undefined) {
+		$('.boxesNeededA').removeClass('initial-hidden');
+		$('#boxesNeededA').text($('input[name=boxesNeeded]:checked').parent().text());
+	}
 
 	//At pick-up
 	//Home type
-	$('#homeTypeFromA').text($('input[name=homeTypeFrom]:checked').parent().text());
+	if ($('input[name=homeTypeFrom]:checked').val() !== undefined) {
+		$('.homeTypeFromA').removeClass('initial-hidden');
+		$('#homeTypeFromA').text($('input[name=homeTypeFrom]:checked').parent().text());		
+	}
 
 	//Stairs
-	$('#pickupStairs').text($('input[name=elevatorPickup]:checked').parent().text());
-
+	if ($('input[name=elevatorPickup]:checked').val() !== undefined) {
+		$('.pickupStairsA').removeClass('initial-hidden');	
+		$('#pickupStairsA').text($('input[name=elevatorPickup]:checked').parent().text());
+	}
 
 	//At drop-off
-	$('#homeTypeToA').text($('input[name=homeTypeTo]:checked').parent().text());
+	//Home type
+	if ($('input[name=homeTypeTo]:checked').val() !== undefined) {
+		$('.homeTypeToA').removeClass('initial-hidden');		
+		$('#homeTypeToA').text($('input[name=homeTypeTo]:checked').parent().text());
+	}
 
 	//Stairs
-	$('#dropoffStairs').text($('input[name=elevatorDropOff]:checked').parent().text());
-
+	if ($('input[name=elevatorDropOff]:checked').val() !== undefined) {
+		$('.dropoffStairsA').removeClass('initial-hidden');		
+		$('#dropoffStairsA').text($('input[name=elevatorDropOff]:checked').parent().text());
+	}
 
 
 
