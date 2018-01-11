@@ -158,7 +158,7 @@ $('#laborType3').click(function() {
 });
 
 
-//Removes extra questions if Packing and customer IS supplying packing supplies
+//Removes extra questions if Packing and customer needs/doesn't need packing supplies
 $('#supplying').click(function() {
 	if ($('#supplying').is(':checked') && formArray.length === 4 && !$('#checkbox1').is(':checked') && !$('#checkbox2').is(':checked') && !$('#checkbox3').is(':checked') && !$('#checkbox4').is(':checked') && !$('#checkbox5').is(':checked') && !$('#checkbox6').is(':checked')) {
 		formArray.splice(3, 0, supplyingBoxes);
@@ -346,3 +346,56 @@ $('#instore2').on('click', function() {
 
 
 //Confirmation
+$('.next-btn').on('click', function() {
+
+	//Number of bedrooms moving from
+	$('#numRoomsFromA').text($('input[name=bedroom]:checked').parent().text());
+
+	//Number of movers
+	$('#numMoversA').text($('input[name=movers]:checked').parent().text());
+
+	//Number of assemblers
+	$('#numAssemblersA').text($('input[name=assemblers]:checked').parent().text());
+
+	//Number of boxes
+	$('#numBoxesA').text($('input[name=boxes]:checked').parent().text());
+
+	//In-store pickup
+	$('#instorePickupA').text($('input[name=instore]:checked').parent().text());
+
+	//Number of items to be moved
+	$('#numItemsMovedA').text($('input[name=items]:checked').parent().text());
+
+	//Number of items to be assembled
+	$('#numItemsAssembledA').text($('input[name=assembleItems]:checked').parent().text());
+
+	//Type of piano
+	$('#typePianoA').text($('input[name=piano]:checked').parent().text());
+
+	//Number of rooms to pack/unpack
+	$('#numRoomsPackA').text($('input[name=roomsToPack]:checked').parent().text());
+
+	//Packer Supplying Supplies
+	$('#supplySuppliesA').text($('input[name=supply]:checked').parent().text());
+
+	//Number of boxes needed
+	$('#boxesNeededA').text($('input[name=boxesNeeded]:checked').parent().text());
+
+	//At pick-up
+	//Home type
+	$('#homeTypeFromA').text($('input[name=homeTypeFrom]:checked').parent().text());
+
+	//Stairs
+	$('#pickupStairs').text($('input[name=elevatorPickup]:checked').parent().text());
+
+
+	//At drop-off
+	$('#homeTypeToA').text($('input[name=homeTypeTo]:checked').parent().text());
+
+	//Stairs
+	$('#dropoffStairs').text($('input[name=elevatorDropOff]:checked').parent().text());
+
+
+
+
+});

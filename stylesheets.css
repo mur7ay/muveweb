@@ -1705,6 +1705,6 @@ select.week {
 }
 
 .confirm-answer {
-  text-indent: 1em;
+  margin-left: 1em;
   margin-top: 0;
 }
