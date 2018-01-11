@@ -45,6 +45,7 @@ $('#first-next-btn').click(function() {
 $('.next-btn').click(function() {
 	var finalAddressChanger = 0;
 	var instorePickup = false;
+	var laborTypeBoth = false;	
 	$('#pickupAddress').removeClass('initial-hidden');
 	$('#address2').attr('placeholder', 'Drop-off Address');
 
@@ -55,6 +56,14 @@ $('.next-btn').click(function() {
 	if (currentSelectedRB) {
 		$(formArray[counter]).addClass('initial-hidden');
 		counter++;
+
+
+
+		console.log('counter: ' + counter);
+
+
+
+
 		$(formArray[counter]).removeClass('initial-hidden');
 
 		//Progress bar
@@ -72,11 +81,17 @@ $('.next-btn').click(function() {
 			instorePickup = true;
 		}
 
+		if ($('#laborType1').is(':checked')) {
+			laborTypeBoth = true;
+		}
+
 		for (i = 0; i < checkboxArr.length; i++) {
 			if ($(checkboxArr[i]).is(':checked')) {
 				if ($(checkboxArr[i]).val() === 'whole home' || $(checkboxArr[i]).val() === 'furniture delivery' || $(checkboxArr[i]).val() === 'piano' || $(checkboxArr[i]).val() === 'curb-to-curb') {
 					finalAddressChanger++;
 				} else if ($(checkboxArr[i]).val() === 'assembly' && instorePickup) {
+					finalAddressChanger++;
+				} else if ($(checkboxArr[i]).val() === 'just labor' && laborTypeBoth) {
 					finalAddressChanger++;
 				}
 			}
@@ -88,8 +103,6 @@ $('.next-btn').click(function() {
 		}
 	}
 });
-
-
 
 
 //Click event listener for .back-btn

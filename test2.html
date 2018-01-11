@@ -176,7 +176,7 @@
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label" for="checkbox7">
-              <input type="checkbox" id="checkbox7" name="checkbox-labor" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="packing" />
+              <input type="checkbox" id="checkbox7" name="checkbox-packing" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="packing" />
               PACKING
             </label>
           </div>
@@ -201,21 +201,21 @@
         <form role="form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="laborType1" class="checkbox-circle margin-right" value="true" />
               I need help loading and unloading.
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="laborType2" class="checkbox-circle margin-right" value="true" />
               I only need help loading.
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="laborType3" class="checkbox-circle margin-right" value="true" />
               I only need help unloading.
             </label>
           </div>
@@ -223,6 +223,140 @@
           <div style="margin-top: 50px;">
             <button class="back-btn">BACK</button>
             <button type="button" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Number of Items to Assemble Question -->
+    <div id="howManyItemsAssembleQ" class="question-wrapper initial-hidden 4">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY ITEMS WILL NEED TO BE ASSEMBLED?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="assemCount-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items1" name="items" class="checkbox-circle margin-right" value="1" />
+              1
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items2" name="items" class="checkbox-circle margin-right" value="2" />
+              2
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items3" name="items" class="checkbox-circle margin-right" value="3" />
+              3
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items4" name="items" class="checkbox-circle margin-right" value="4" />
+              4
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items5" name="items" class="checkbox-circle margin-right" value="5" />
+              5
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items6" name="items" class="checkbox-circle margin-right" value="6+" />
+              6+
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="assemblyQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- In-store Pickup Question -->
+    <div id="instorePickupQ" class="question-wrapper initial-hidden 1 3 4">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>IS THIS AN IN-STORE PICKUP?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="storePickup-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="instore1" name="instore" class="checkbox-circle margin-right" value="Yes, the movers will need to pickup my item from a store/retailer." />
+              Yes, the movers will need to pickup my item from a store/retailer.
+            </label>
+          </div>
+
+          <div id="invoice" class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi request-form" type="text" id="invoiceNumber" placeholder="Invoice number" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="instore2" name="instore" class="checkbox-circle margin-right" value="No, the item(s) will be moved from my home or similar location." />
+              No, the item(s) will be moved from my home or similar location.
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="storePickupQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Number of Furniture to Move Question -->
+    <div id="howFurnituresToMoveQ" class="question-wrapper initial-hidden 1">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY ITEMS WILL NEED TO BE MOVED?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="assemCount-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items1" name="items" class="checkbox-circle margin-right" value="1" />
+              1
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items2" name="items" class="checkbox-circle margin-right" value="2" />
+              2
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items3" name="items" class="checkbox-circle margin-right" value="3" />
+              3
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="assemblyQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -273,60 +407,8 @@
           </div>
 
           <div style="margin-top: 50px;">
-            <button class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- Home Type To Question-->
-    <div id="homeTypeToQ" class="question-wrapper initial-hidden 0">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>WHAT TYPE OF HOME ARE YOU MOVING TO?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
-              Apartment
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
-              House
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
-              Condo
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
-              Townhouse
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
-              Storage Unit
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -337,7 +419,7 @@
     <!-- Bedroom Question-->
     <div id="bedroomQ" class="question-wrapper initial-hidden 0 5">
       <div class="inline field question-container">
-        <h4 class="question-header"><strong>HOW MANY BEDROOMS DOES THE HOME HAVE?</strong></h4>
+        <h4 class="question-header"><strong>HOW MANY BEDROOMS DOES THE HOME YOU'RE MOVING FROM HAVE?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
         <form role="form" id="bedroom-input-form" action="" class="margin-top-fortypx">
@@ -393,6 +475,103 @@
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
             <button type="button" onclick="bedroomQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Home Type To Question-->
+    <div id="homeTypeToQ" class="question-wrapper initial-hidden 0 5">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>WHAT TYPE OF HOME ARE YOU MOVING TO?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              Apartment
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              House
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              Condo
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              Townhouse
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              Storage Unit
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Type of Piano Question -->
+    <div id="typeOfPianoQ" class="question-wrapper initial-hidden 2">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>WHAT TYPE OF PIANO WILL YOU BE MOVING?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="typeOfPiano-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="piano1" name="piano" class="checkbox-circle margin-right" value="Spinet" />
+              Spinet
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="piano2" name="piano" class="checkbox-circle margin-right" value="Upright" />
+              Upright
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="piano3" name="piano" class="checkbox-circle margin-right" value="Baby Grand" />
+              Baby Grand
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="piano4" name="piano" class="checkbox-circle margin-right" value="Concert Grand" />
+              Concert Grand
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="pianoQuestion()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -589,185 +768,6 @@
     </div>
 
 
-    <!-- In-store Pickup Question -->
-    <div id="instorePickupQ" class="question-wrapper initial-hidden 1 3 4">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>IS THIS AN IN-STORE PICKUP?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" id="storePickup-input-form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="instore1" name="instore" class="checkbox-circle margin-right" value="Yes, the movers will need to pickup my item from a store/retailer." />
-              Yes, the movers will need to pickup my item from a store/retailer.
-            </label>
-          </div>
-
-          <div id="invoice" class="checkbox checkbox-container">
-            <label class="checkbox-label text-input">
-              <input class="input__field input__field--hoshi request-form" type="text" id="invoiceNumber" placeholder="Invoice number" />
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="instore2" name="instore" class="checkbox-circle margin-right" value="No, the item(s) will be moved from my home or similar location." />
-              No, the item(s) will be moved from my home or similar location.
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" onclick="storePickupQuestion()" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- Number of Furniture to Move Question -->
-    <div id="howFurnituresToMoveQ" class="question-wrapper initial-hidden 1">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>HOW MANY ITEMS WILL NEED TO BE MOVED?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" id="assemCount-input-form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="items1" name="items" class="checkbox-circle margin-right" value="1" />
-              1
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="items2" name="items" class="checkbox-circle margin-right" value="2" />
-              2
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="items3" name="items" class="checkbox-circle margin-right" value="3" />
-              3
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" onclick="assemblyQuestion()" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- Type of Piano Question -->
-    <div id="typeOfPianoQ" class="question-wrapper initial-hidden 2">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>WHAT TYPE OF PIANO WILL YOU BE MOVING?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" id="typeOfPiano-input-form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="piano1" name="piano" class="checkbox-circle margin-right" value="Spinet" />
-              Spinet
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="piano2" name="piano" class="checkbox-circle margin-right" value="Upright" />
-              Upright
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="piano3" name="piano" class="checkbox-circle margin-right" value="Baby Grand" />
-              Baby Grand
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="piano4" name="piano" class="checkbox-circle margin-right" value="Concert Grand" />
-              Concert Grand
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" onclick="pianoQuestion()" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- Number of Items to Assemble Question -->
-    <div id="howManyItemsAssembleQ" class="question-wrapper initial-hidden 4">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>HOW MANY ITEMS WILL NEED TO BE ASSEMBLED?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" id="assemCount-input-form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="items1" name="items" class="checkbox-circle margin-right" value="1" />
-              1
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="items2" name="items" class="checkbox-circle margin-right" value="2" />
-              2
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="items3" name="items" class="checkbox-circle margin-right" value="3" />
-              3
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="items4" name="items" class="checkbox-circle margin-right" value="4" />
-              4
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="items5" name="items" class="checkbox-circle margin-right" value="5" />
-              5
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="items6" name="items" class="checkbox-circle margin-right" value="6+" />
-              6+
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" onclick="assemblyQuestion()" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
     <!-- Nummber of Assemblers Question -->
     <div id="howManyAssemblersQ" class="question-wrapper initial-hidden 4">
       <div class="inline field question-container">
@@ -806,14 +806,14 @@
     </div>
 
 
-    <!-- Packing Type Question-->
+    <!-- Packing Type Question -->
     <div id="packingTypeQ" class="question-wrapper initial-hidden 6">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>WHAT TYPE OF PACKING HELP DO YOU NEED?</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
 
         <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
+                    <div class="checkbox checkbox-container">
             <label class="checkbox-label">
               <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
               Packing
@@ -835,8 +835,8 @@
           </div>
 
           <div style="margin-top: 50px;">
-            <button class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -844,7 +844,7 @@
     </div>
 
 
-    <!-- Packing Room Count Question-->
+    <!-- Packing Room Count Question -->
     <div id="packingRoomCountQ" class="question-wrapper initial-hidden 6">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>HOW MANY ROOMS DO YOU NEED HELP PACKING OR UNPACKING?</strong></h4>
@@ -894,8 +894,8 @@
           </div>
 
           <div style="margin-top: 50px;">
-            <button class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -925,7 +925,7 @@
           </div>
 
           <div style="margin-top: 50px;">
-            <button class="back-btn">BACK</button>
+            <button type="button" class="back-btn">BACK</button>
             <button type="button" class="text-center next-btn">NEXT</button>
           </div>
         </form>
@@ -943,48 +943,48 @@
         <form role="form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="" name="" class="checkbox-circle margin-right" value="true" />
               1-10
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="" name="" class="checkbox-circle margin-right" value="true" />
               11-20
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="" name="" class="checkbox-circle margin-right" value="true" />
               21-40
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="" name="" class="checkbox-circle margin-right" value="true" />
               41-60
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="" name="" class="checkbox-circle margin-right" value="true" />
               61-80
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="" name="radio" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="" name="" class="checkbox-circle margin-right" value="true" />
               81-100+
             </label>
           </div>
 
           <div style="margin-top: 50px;">
-            <button class="back-btn">BACK</button>
+            <button type="button" class="back-btn">BACK</button>
             <button type="button" class="text-center next-btn">NEXT</button>
           </div>
         </form>
