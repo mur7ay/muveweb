@@ -3,6 +3,12 @@ var radioBtnForms = $('.initial-hidden');
 var counter = 0;
 var checkboxArr = [];
 
+var homeTo = $('#homeTypeToQ')
+var homeFrom = $('#homeTypeFromQ')
+var stairsPickup = $('#elevatorPickUpQ')
+var stairsDropOff = $('#elevatorDropOffQ')
+
+
 //Click event listener for #first-next-btn
 $('#first-next-btn').click(function() {
 	formArray = [];
@@ -56,14 +62,6 @@ $('.next-btn').click(function() {
 	if (currentSelectedRB) {
 		$(formArray[counter]).addClass('initial-hidden');
 		counter++;
-
-
-
-		console.log('counter: ' + counter);
-
-
-
-
 		$(formArray[counter]).removeClass('initial-hidden');
 
 		//Progress bar
@@ -120,6 +118,46 @@ $('.back-btn').click(function() {
 		$('#progressBar').width(progress + '%');
 	}
 });
+
+
+//Removes extra questions if Just Labor and only loading / only unloading are selected
+$('#laborType2').click(function() {
+	if ($('#laborType2').is(':checked') && formArray.length === 7 && !$('#checkbox1').is(':checked') && !$('#checkbox2').is(':checked') && !$('#checkbox3').is(':checked') && !$('#checkbox4').is(':checked') && !$('#checkbox5').is(':checked') && !$('#checkbox7').is(':checked')) {
+		formArray.splice(1, 0, homeFrom);
+		formArray.splice(3, 0, stairsPickup);
+		formArray.splice(4, 1);
+		formArray.splice(4, 1);
+	}
+
+	if ($('#laborType2').is(':checked') && formArray.length === 9 && !$('#checkbox1').is(':checked') && !$('#checkbox2').is(':checked') && !$('#checkbox3').is(':checked') && !$('#checkbox4').is(':checked') && !$('#checkbox5').is(':checked') && !$('#checkbox7').is(':checked')) {
+		formArray.splice(3, 1);
+		formArray.splice(4, 1);
+	}
+});
+
+$('#laborType3').click(function() {
+	if ($('#laborType3').is(':checked') && formArray.length === 7 && !$('#checkbox1').is(':checked') && !$('#checkbox2').is(':checked') && !$('#checkbox3').is(':checked') && !$('#checkbox4').is(':checked') && !$('#checkbox5').is(':checked') && !$('#checkbox7').is(':checked')) {
+		formArray.splice(3, 0, homeTo);
+		formArray.splice(5, 0, stairsDropOff);
+		formArray.splice(1, 1);
+		formArray.splice(3, 1);
+	}
+
+	if ($('#laborType3').is(':checked') && formArray.length === 9 && !$('#checkbox1').is(':checked') && !$('#checkbox2').is(':checked') && !$('#checkbox3').is(':checked') && !$('#checkbox4').is(':checked') && !$('#checkbox5').is(':checked') && !$('#checkbox7').is(':checked')) {
+		formArray.splice(1, 1);
+		formArray.splice(3, 1);
+	}
+
+});
+
+
+
+
+
+
+
+
+
 
 
 // Adds the dates of the current and next week to 'Choose a day' section
