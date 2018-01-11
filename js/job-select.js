@@ -9,10 +9,13 @@ var stairsPickup = $('#elevatorPickUpQ');
 var stairsDropOff = $('#elevatorDropOffQ');
 var supplyingBoxes = $('#howManyBoxesNeededQ');
 
+var jobTypes = ['Whole Home', 'Furniture Delivery', 'Piano', 'Curb-to-Curb', 'Assembly', 'Just Labor', 'Packing'];
+var jobTypesArr = [];
 
 //Click event listener for #first-next-btn
 $('#first-next-btn').click(function() {
 	formArray = [];
+	jobTypesArr = [];
 
 	//Assigns all checkboxes to checkboxArr
 	checkboxArr = $('.checkbox-js');
@@ -24,6 +27,10 @@ $('#first-next-btn').click(function() {
 				//Determines which forms needs to be displayed
 				var forms = [];
 				forms.push($('.' + i));
+
+				//Adds job types to confirmation page
+				jobTypesArr.push(jobTypes[i]);
+				$('#jobTypeA').text(jobTypesArr.join(', '));
 
 				//Pushes forms to formArray without adding duplicates
 				for (j = 0; j < forms[0].length; j++) {
@@ -336,3 +343,6 @@ $('#instore2').on('click', function() {
 		$('#invoice').slideUp('fast');
 	}
 });
+
+
+//Confirmation
