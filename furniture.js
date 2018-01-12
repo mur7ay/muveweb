@@ -175,7 +175,7 @@ function GetRoute() {
       var numMiles = Number.parseInt(distance);
       var numMins = Number.parseFloat(duration);
 
-      document.getElementById("new_text").innerHTML = 35 + numMiles + numMins + 40 + " - " + (35 + numMiles + numMins + 60);
+      // document.getElementById("new_text").innerHTML = 35 + numMiles + numMins + 40 + " - " + (35 + numMiles + numMins + 60);
 
       dvMiles.innerHTML = distance;
       dvTime.innerHTML = duration;

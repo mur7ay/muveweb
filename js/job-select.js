@@ -461,9 +461,46 @@ $(document).ready(function() {
 	//Pricing Calc
 
 	//Vars
-	var minutesDriven;
-	var milesDriven;
 	var longDistancePrice = 1800;
+
+	var durationInMinutes = () => {
+	//Returns the duration of travel in minutes
+		var duration = $('#time').text();
+		var arr = duration.split(' ');
+		var minutesArr = [];
+		var durationInMinutes = 0;
+
+		if (arr.indexOf('days') !== -1) {
+			arr[arr.indexOf('days') - 1] = arr[arr.indexOf('days') - 1] * 24* 60;
+		} else if (arr.indexOf('day') !== -1) {
+			arr[arr.indexOf('day') - 1] = arr[arr.indexOf('day') - 1] * 24 * 60;
+		}
+
+		if (arr.indexOf('hours') !== -1) {
+			arr[arr.indexOf('hours') - 1] = arr[arr.indexOf('hours') - 1] * 60;
+		} else if (arr.indexOf('hour') !== -1) {
+			arr[arr.indexOf('hour') - 1] = arr[arr.indexOf('hour') - 1] * 60;
+		}
+
+		if (arr.indexOf('mins') !== -1) {
+			arr[arr.indexOf('mins') - 1] = parseInt(arr[arr.indexOf('mins') - 1]);
+		}
+
+		minutesArr = arr.filter(num => !isNaN(num));
+
+		for (i = 0; i < minutesArr.length; i++) {
+			durationInMinutes = durationInMinutes + minutesArr[i];
+		}
+
+		return durationInMinutes;
+	}
+
+	var milesToDrive = () => {
+	//Returns the duration of travel in minutes
+		var miles = parseInt($('#miles').text().replace(/,/g, ''), 10);
+		return miles;
+	}
+
 
 	//Whole Home mover vars
 	var movers;
@@ -473,6 +510,7 @@ $(document).ready(function() {
 	var wholeHomeTotal;
 
 	var wholeHome = () => {
+	//Returns wholeHomeTotal;
 		if ($('#sunday').is(':checked') || $('#saturday').is(':checked')) {
 			weekendRates = true;
 		}
@@ -507,7 +545,7 @@ $(document).ready(function() {
 			}
 		}
 
-		if (milesDriven > 100) {
+		if (milesToDrive() > 100) {
 			wholeHomeTotal = moversPerHour * hours + longDistancePrice;
 		} else {
 			wholeHomeTotal = moversPerHour * hours;
@@ -516,6 +554,15 @@ $(document).ready(function() {
 		return wholeHomeTotal;
 	};
 
+
+	//Furniture Delivery ane Curb-to-Curb vars
+	var furnDelBase = 35;
+	var furnDelTotal;
+
+	var getFurnDelTotal = function()  {
+		furnDelTotal = furnDelBase + durationInMinutes() + milesToDrive();
+		return furnDelTotal;
+	}
 
 	//Assembly vars
 	var assemBase = 50;
@@ -526,6 +573,7 @@ $(document).ready(function() {
 	var assemTotal;
 
 	var assembly = () => {
+	// Returns assemTotal
 		assemblers = parseInt($('input[name=assemblers]:checked').val());
 		assemNumItems = parseInt($('input[name=assembleItems]:checked').val());
 
@@ -545,35 +593,22 @@ $(document).ready(function() {
 
 	//Pricing calcs
 	$('#finalNextBtn').on('click', function() {
+		var total = 0;
 	
-		milesDriven = parseInt($('#miles').text().replace(/,/g, ''), 10);
-
 		if (jobTypesArr.indexOf('Whole Home') !== -1) {
-			wholeHome();
-			console.log(wholeHome());
+			total = total + wholeHome();
 		}
 
 		if (jobTypesArr.indexOf('Assembly') !== -1) {
-			assembly();
-			console.log(assembly());
+			total = total + assembly();
+		}
+
+		if (jobTypesArr.indexOf('Furniture Delivery') !== -1 || jobTypesArr.indexOf('Curb-to-Curb') !== -1) {
+			total = total + getFurnDelTotal();
 		}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		$('#new_text').text(total);
 	});
 });
