@@ -59,16 +59,17 @@ nav {
 /* ============ Main Section Styles ============*/
 #dv {
   display: none;
+  padding: 0;
   height: 100%;
 }
 
 #dvMap {
   width: 100%;
   height: 300px;
-  margin-top: 48px;
+  margin-top: 20px;
 }
 
-.home-p, .home-o {
+.home-p, {
   font-size: 11px;
 }
 
@@ -1716,4 +1717,10 @@ select.week {
 .confirm-answer {
   margin-left: 1em;
   margin-top: 0;
+  font-size: 14px;
+}
+
+.calc {
+  width: 100%;
+  padding: 0;
 }
