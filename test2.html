@@ -20,6 +20,10 @@
   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
 
 
+  <!-- Scripts -->
+  <script src="js/job-select.js"></script>
+
+
   <!-- Meta Data -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1043,7 +1047,7 @@
           <div class="text-center days-div">
             <label class="dayOfWeek">
               <span class="day">S</span>
-              <input class="hidden-day" type="radio" name="day" value="Sunday" />
+              <input id="sunday" class="hidden-day" type="radio" name="day" value="Sunday" />
               <div id="timesWrapper" class="initial-hidden">
                 <div class="outer-triangle"></div>
                 <div class="inner-triangle"></div>
@@ -1077,7 +1081,7 @@
 
             <label class="dayOfWeek">
               <span class="day">S</span>
-              <input class="hidden-day" type="radio" name="day" value="Saturday" />
+              <input id="saturday" class="hidden-day" type="radio" name="day" value="Saturday" />
             </label>
 
             <div id="times" class="times initial-hidden">
@@ -1190,7 +1194,7 @@
 
       <div style="margin-top: 50px; max-width: 500px; margin-left: auto; margin-right: auto;">
         <button type="button" class="back-btn">BACK</button>
-        <button type="button" class="text-center next-btn">NEXT</button>
+        <button id="finalNextBtn" type="button" class="text-center next-btn">NEXT</button>
       </div>
 
     </div>
@@ -1209,7 +1213,7 @@
           </div>
 
           <div class="numRoomsFromA initial-hidden">
-            <p class="confirm-title">Number of bedrooms moving from</p>
+            <p class="confirm-title">Bedrooms moving from</p>
             <p id="numRoomsFromA" class="confirm-answer"></p>
           </div>
 
@@ -1234,12 +1238,12 @@
           </div>
 
           <div class="numItemsMovedA initial-hidden">
-            <p class="confirm-title">Number of items to be moved</p>
+            <p class="confirm-title">Items to be moved</p>
             <p id="numItemsMovedA" class="confirm-answer"></p>
           </div>
 
           <div class="numItemsAssembledA initial-hidden">
-            <p class="confirm-title">Number of items to be assembled</p>
+            <p class="confirm-title">Items to be assembled</p>
             <p id="numItemsAssembledA" class="confirm-answer"></p>
           </div>
 
@@ -1249,17 +1253,17 @@
           </div>
 
           <div class="loadA initial-hidden">
-            <p class="confirm-title">Loading and&#47;or unloading</p>
+            <p class="confirm-title">Load&#47;unload</p>
             <p id="loadA" class="confirm-answer"></p>
           </div>
 
           <div class="packA initial-hidden">
-            <p class="confirm-title">Packing and&#47;or unpacking</p>
+            <p class="confirm-title">Pack&#47;unpack</p>
             <p id="packA" class="confirm-answer"></p>
           </div>
 
           <div class="numRoomsPackA initial-hidden">
-            <p class="confirm-title">Number of rooms to pack/unpack</p>
+            <p class="confirm-title">Rooms to pack/unpack</p>
             <p id="numRoomsPackA" class="confirm-answer"></p>
           </div>
 
@@ -1269,12 +1273,12 @@
           </div>
 
           <div class="boxesNeededA initial-hidden">
-            <p class="confirm-title">Number of boxes needed</p>
+            <p class="confirm-title">Boxes needed</p>
             <p id="boxesNeededA" class="confirm-answer"></p>
           </div>
 
-          <div class="calc row margin-top-twentypx">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="calc row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
               <p class="confirm-title">At Pick-up</p>
 
               <div class="homeTypeFromA initial-hidden">
@@ -1288,7 +1292,7 @@
               </div>
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
               <p class="confirm-title">At Drop-off</p>
 
               <div class="homeTypeToA initial-hidden">
@@ -1302,29 +1306,29 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div id="milesDriveTime" class="calc row margin-top-twentypx" onload="doSomething()">
-          <div id="dvDistance" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <p class="confirm-title">Miles Driven</p>
-            <p id="miles" class="confirm-answer"></p>            
+          <div class="calc row" onload="doSomething()">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">Miles Driven</p>
+              <p id="miles" class="confirm-answer"></p>            
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">Drive Time</p>
+              <p id="time" class="confirm-answer"></p>
+            </div>
           </div>
 
-          <div id="dvDistance" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <p class="confirm-title">Drive Time</p>
-            <p id="time" class="confirm-answer"></p>
-          </div>
-        </div>
+          <div class="calc row" onload="doSomething()">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">Date</p>
+              <p id="dateConfirm" class="confirm-answer"></p>
+            </div>
 
-        <div class="calc row" onload="doSomething()">
-          <div id="dvDistance" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <p class="confirm-title">Date</p>
-            <p id="dateConfirm" class="confirm-answer"></p>
-          </div>
-
-          <div id="dvDistance" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <p class="confirm-title">Time</p>
-            <p id="timeConfirm" class="confirm-answer"></p>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">Time</p>
+              <p id="timeConfirm" class="confirm-answer"></p>
+            </div>
           </div>
         </div>
 
@@ -1350,8 +1354,8 @@
         </div>
 
       </div>
-
     </div>
+
   </div>
 
 
@@ -1434,7 +1438,6 @@
   </footer>
 
   <script src="js/number-pressed.js"></script>
-  <script src="js/job-select.js"></script>
 
   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
   <script>

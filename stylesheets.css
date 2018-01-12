@@ -1711,16 +1711,20 @@ select.week {
 .confirm-title {
   color: grey !important;
   text-transform: uppercase;
-  margin: 10px 0 0;
+  margin: 20px 0 0;
 }
 
 .confirm-answer {
-  margin-left: 1em;
   margin-top: 0;
   font-size: 14px;
 }
 
 .calc {
   width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.no-padding {
   padding: 0;
 }
