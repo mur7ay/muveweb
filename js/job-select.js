@@ -772,6 +772,7 @@ $(document).ready(function() {
 
 	//Pricing calcs
 	$('#finalNextBtn').on('click', function() {
+		GetRoute();
 		var total = 0;
 	
 		if (jobTypesArr.indexOf('Whole Home') !== -1) {
