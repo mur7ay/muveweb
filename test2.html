@@ -212,14 +212,14 @@
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
               I only need help loading.
             </label>
           </div>
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label">
-              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
               I only need help unloading.
             </label>
           </div>
@@ -427,50 +427,50 @@
         <p class="text-danger initial-hidden">Please choose one</p>
 
         <form role="form" id="bedroom-input-form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
+          <div class="checkbox checkbox-container noFiveMovers noFourMovers">
             <label class="checkbox-label">
               <input type="radio" id="bedroom1" name="bedroom" class="checkbox-circle margin-right" value="studio" />
               Studio
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div class="checkbox checkbox-container noFiveMovers noFourMovers">
             <label class="checkbox-label">
               <input type="radio" id="bedroom2" name="bedroom" class="checkbox-circle margin-right" value="1 bedroom home" />
               1 Bedroom Home
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div class="checkbox checkbox-container noFiveMovers yesFourMovers">
             <label class="checkbox-label">
               <input type="radio" id="bedroom3" name="bedroom" class="checkbox-circle margin-right" value="2 bedroom home" />
               2 Bedroom Home
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div class="checkbox checkbox-container noFiveMovers yesFourMovers">
             <label class="checkbox-label">
               <input type="radio" id="bedroom4" name="bedroom" class="checkbox-circle margin-right" value="3 bedroom home" />
               3 Bedroom Home
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div class="checkbox checkbox-container noFiveMovers yesFourMovers">
             <label class="checkbox-label">
               <input type="radio" id="bedroom5" name="bedroom" class="checkbox-circle margin-right" value="4 bedroom home" />
               4 Bedroom Home
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div class="checkbox checkbox-container yesFourMovers">
             <label class="checkbox-label">
               <input type="radio" id="bedroom6" name="bedroom" class="checkbox-circle margin-right" value="5 bedroom home" />
               5 Bedroom Home
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
+          <div class="checkbox checkbox-container noFiveMovers noFourMovers">
+            <label class="checkbox-label ">
               <input type="radio" id="bedroom7" name="bedroom" class="checkbox-circle margin-right" value="just a few things" />
               Just A Few Things
             </label>
@@ -748,14 +748,14 @@
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div id="fourMoversDiv" class="checkbox checkbox-container">
             <label class="checkbox-label">
               <input type="radio" id="movers3" name="movers" class="checkbox-circle margin-right" value="4" />
               4
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div id="fiveMoversDiv" class="checkbox checkbox-container initial-hidden">
             <label class="checkbox-label">
               <input type="radio" id="movers4" name="movers" class="checkbox-circle margin-right" value="5" />
               5
@@ -998,7 +998,7 @@
 
 
     <!-- Final Info -->
-    <div id="finalInfoQ" class="question-wrapper">
+    <div id="finalInfoQ" class="question-wrapper initial-hidden">
       <div id="lastQuestionsQ" class="inline field question-container">
         <h4 class="question-header"><strong>TELL US ABOUT YOUR MOVE.</strong></h4>
         <p class="text-danger initial-hidden">Please fill all required fields</p>
@@ -1201,7 +1201,7 @@
 
 
     <!-- Confirm -->
-    <div id="moveDetails" class="question-wrapper">
+    <div id="moveDetails" class="question-wrapper initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>MOVE DETAILS</strong></h4>
 

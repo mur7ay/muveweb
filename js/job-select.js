@@ -133,6 +133,32 @@ $(document).ready(function() {
 	});
 
 
+	//Adds option to hire 5 movers if moving from a 5 bedroom home
+	$('#bedroom6').on('click', function() {
+		if ( $('#bedroom6').is(':checked') ) {
+			$('#fiveMoversDiv').removeClass('initial-hidden');
+		}
+	});
+
+	$('.noFiveMovers').on('click', function() {
+		if (!$('#fiveMoversDiv').hasClass('initial-hidden')) {
+			$('#fiveMoversDiv').addClass('initial-hidden');
+		}
+	});
+
+
+	//Removes option to hire 4 movers if moving from a 1 bedroom home or smaller
+	$('.noFourMovers').on('click', function() {
+		$('#fourMoversDiv').addClass('initial-hidden');
+	});
+
+	$('.yesFourMovers').on('click', function() {
+		if ($('#fourMoversDiv').hasClass('initial-hidden'))	{	
+			$('#fourMoversDiv').removeClass('initial-hidden');
+		}
+	});
+
+
 	//Removes extra questions if Just Labor and only loading / only unloading are selected
 	$('#laborType2').click(function() {
 		if ($('#laborType2').is(':checked') && formArray.length === 7 && !$('#checkbox1').is(':checked') && !$('#checkbox2').is(':checked') && !$('#checkbox3').is(':checked') && !$('#checkbox4').is(':checked') && !$('#checkbox5').is(':checked') && !$('#checkbox7').is(':checked')) {
@@ -459,8 +485,7 @@ $(document).ready(function() {
 	});
 
 
-	//Pricing Calc
-	//Vars
+	//Pricing Calc Section
 	var longDistancePrice = 1800;
 
 	var durationInMinutes = () => {
@@ -501,12 +526,23 @@ $(document).ready(function() {
 		return miles;
 	}
 
+	var isWeekend;
+	var weekendRates = false;
+
+	var isWeekendFunc = () => {
+		isWeekend = false;
+		if ($('#sunday').is(':checked') || $('#saturday').is(':checked') && (weekendRates)) {
+			isWeekend = true;
+		}
+		return isWeekend
+	}
+
 	var getHours = movers => {
 	//Returns hours of work by number of movers and number of rooms
-		numBedrooms = parseInt($('input[name=movers]:checked').val());
+		numBedrooms = $('input[name=movers]:checked').val();
 
 		switch (numBedrooms) {
-			case 2:
+			case '2 bedroom home':
 				switch (movers) {
 					case 2:
 						hours = 5;
@@ -517,12 +553,12 @@ $(document).ready(function() {
 					case 4:
 						hours = 3;
 						break;
-					case 5:
-						// hours = ;
-						break;
+					// case 5:
+					// 	hours = ;
+					// 	break;
 				}
 				break;
-			case 3:
+			case '3 bedroom home':
 				switch (movers) {
 					case 2:
 						hours = 6;
@@ -533,12 +569,12 @@ $(document).ready(function() {
 					case 4:
 						hours = 4;
 						break;
-					case 5:
-						// hours = ;
-						break;
+					// case 5:
+					// 	hours = ;
+					// 	break;
 				}
 				break;
-			case 4:
+			case '4 bedroom home':
 				switch (movers) {
 					case 2:
 						hours = 8;
@@ -549,12 +585,12 @@ $(document).ready(function() {
 					case 4:
 						hours = 6;
 						break;
-					case 5:
-						// hours = ;
-						break;
+					// case 5:
+					// 	hours = ;
+					// 	break;
 				}
 				break;
-			case 5:
+			case '5 bedroom home':
 				switch (movers) {
 					case 2:
 						hours = 11;
@@ -578,12 +614,6 @@ $(document).ready(function() {
 					case 3:
 						hours = 2;
 						break;
-					case 4:
-						// hours = ;
-						break;
-					case 5:
-						// hours = ;
-						break;
 				}
 
 		return hours;
@@ -591,7 +621,7 @@ $(document).ready(function() {
 	}
 
 
-	//Whole Home mover vars
+	//Whole Home vars
 	var movers;
 	var moversPerHour;
 	var isWeekend = false;
@@ -601,13 +631,9 @@ $(document).ready(function() {
 
 	var wholeHome = () => {
 	//Returns wholeHomeTotals;
-		if ($('#sunday').is(':checked') || $('#saturday').is(':checked') && (weekendRates)) {
-			isWeekend = true;
-		}
-
 		movers = parseInt($('input[name=movers]:checked').val());
 
-		if (isWeekend) {
+		if (false) {
 			switch (movers) {
 				case 2:
 					moversPerHour = 99;
@@ -645,7 +671,7 @@ $(document).ready(function() {
 		} else {
 			wholeHomeTotal = moversPerHour * hours;
 		}
-
+		console.log('hours in whole home: ' + hours)
 		return wholeHomeTotal;
 	}
 
@@ -692,6 +718,58 @@ $(document).ready(function() {
 	}
 
 
+	//Just Labor vars
+	var justLaborTotal;
+	var laborType;
+
+	var justLabor = () => {
+	//Returns wholeHomeTotals;
+		movers = parseInt($('input[name=movers]:checked').val());
+		laborType = $('input[name=load]:checked');
+
+		if (false) {
+			switch (movers) {
+				case 2:
+					moversPerHour = 79;
+					break;	
+				case 3:
+					moversPerHour = 105;
+					break;
+				case 4:
+					moversPerHour = 120;
+					break;
+				case 5:
+					moversPerHour = 150;
+					break;
+			}
+		} else {
+			switch (movers) {
+				case 2:
+					moversPerHour = 89;
+					break;	
+				case 3:
+					moversPerHour = 115;
+					break;
+				case 4:
+					moversPerHour = 130;
+					break;
+				case 5:
+					moversPerHour = 160;
+			}
+		}
+
+		getHours(movers);
+
+		if (laborType.hasClass('laborHalf')) {
+			justLaborTotal = moversPerHour * (hours / 2);
+		} else {
+			justLaborTotal = moversPerHour * hours;
+		}
+
+		return justLaborTotal;
+	}
+
+
 	//Pricing calcs
 	$('#finalNextBtn').on('click', function() {
 		var total = 0;
@@ -708,7 +786,9 @@ $(document).ready(function() {
 			total = total + getFurnDelTotal(); 
 		}
 
-
+		if (jobTypesArr.indexOf('Just Labor') !== -1 && jobTypesArr.indexOf('Whole Home') === -1) {
+			total = total + justLabor();
+		}
 
 		$('#new_text').text(total);
 		$('#new_text2').text((total * .15).toFixed(2));	
