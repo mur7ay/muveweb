@@ -14,6 +14,7 @@ $(document).ready(function() {
 	var jobTypes = ['Whole Home', 'Furniture Delivery', 'Piano', 'Curb-to-Curb', 'Assembly', 'Just Labor', 'Packing'];
 	var jobTypesArr = [];
 
+
 	//Click event listener for #first-next-btn
 	$('#first-next-btn').click(function() {
 		formArray = [];
@@ -459,7 +460,6 @@ $(document).ready(function() {
 
 
 	//Pricing Calc
-
 	//Vars
 	var longDistancePrice = 1800;
 
@@ -501,23 +501,113 @@ $(document).ready(function() {
 		return miles;
 	}
 
+	var getHours = movers => {
+	//Returns hours of work by number of movers and number of rooms
+		numBedrooms = parseInt($('input[name=movers]:checked').val());
+
+		switch (numBedrooms) {
+			case 2:
+				switch (movers) {
+					case 2:
+						hours = 5;
+						break;
+					case 3:
+						hours = 4;
+						break;
+					case 4:
+						hours = 3;
+						break;
+					case 5:
+						// hours = ;
+						break;
+				}
+				break;
+			case 3:
+				switch (movers) {
+					case 2:
+						hours = 6;
+						break;
+					case 3:
+						hours = 5;
+						break;
+					case 4:
+						hours = 4;
+						break;
+					case 5:
+						// hours = ;
+						break;
+				}
+				break;
+			case 4:
+				switch (movers) {
+					case 2:
+						hours = 8;
+						break;
+					case 3:
+						hours = 7;
+						break;
+					case 4:
+						hours = 6;
+						break;
+					case 5:
+						// hours = ;
+						break;
+				}
+				break;
+			case 5:
+				switch (movers) {
+					case 2:
+						hours = 11;
+						break;
+					case 3:
+						hours = 10;
+						break;
+					case 4:
+						hours = 9;
+						break;
+					case 5:
+						hours = 7;
+						break;
+				}
+				break;
+			default:
+				switch (movers) {
+					case 2:
+						hours = 3;
+						break;
+					case 3:
+						hours = 2;
+						break;
+					case 4:
+						// hours = ;
+						break;
+					case 5:
+						// hours = ;
+						break;
+				}
+
+		return hours;
+		}
+	}
+
 
 	//Whole Home mover vars
 	var movers;
 	var moversPerHour;
+	var isWeekend = false;
 	var weekendRates = false;
-	var hours = 1;
+	var numBedrooms;
 	var wholeHomeTotal;
 
 	var wholeHome = () => {
-	//Returns wholeHomeTotal;
-		if ($('#sunday').is(':checked') || $('#saturday').is(':checked')) {
-			weekendRates = true;
+	//Returns wholeHomeTotals;
+		if ($('#sunday').is(':checked') || $('#saturday').is(':checked') && (weekendRates)) {
+			isWeekend = true;
 		}
 
 		movers = parseInt($('input[name=movers]:checked').val());
 
-		if (weekendRates) {
+		if (isWeekend) {
 			switch (movers) {
 				case 2:
 					moversPerHour = 99;
@@ -528,7 +618,9 @@ $(document).ready(function() {
 				case 4:
 					moversPerHour = 149;
 					break;
-				default:
+				case 5:
+					moversPerHour = 185;
+					break;
 			}
 		} else {
 			switch (movers) {
@@ -541,9 +633,12 @@ $(document).ready(function() {
 				case 4:
 					moversPerHour = 139;
 					break;
-				default:
+				case 5:
+					moversPerHour = 175;
 			}
 		}
+
+		getHours(movers);
 
 		if (milesToDrive() > 100) {
 			wholeHomeTotal = moversPerHour * hours + longDistancePrice;
@@ -552,7 +647,7 @@ $(document).ready(function() {
 		}
 
 		return wholeHomeTotal;
-	};
+	}
 
 
 	//Furniture Delivery ane Curb-to-Curb vars
@@ -560,9 +655,16 @@ $(document).ready(function() {
 	var furnDelTotal;
 
 	var getFurnDelTotal = function()  {
-		furnDelTotal = furnDelBase + durationInMinutes() + milesToDrive();
-		return furnDelTotal;
+	//Returns furnDelTotals
+		if (milesToDrive() > 100) {
+			furnDelTotal = furnDelBase + durationInMinutes() + milesToDrive() + longDistancePrice + 40 //for labor;
+			return furnDelTotal;
+		} else {
+			furnDelTotal = furnDelBase + durationInMinutes() + milesToDrive() + 40 //for labor;
+			return furnDelTotal;
+		}
 	}
+
 
 	//Assembly vars
 	var assemBase = 50;
@@ -578,15 +680,14 @@ $(document).ready(function() {
 		assemNumItems = parseInt($('input[name=assembleItems]:checked').val());
 
 		if (assemblers === 1 && assemNumItems === 1) {
-			assemTotal = assemBase;
+			assemTotal = assemBase + 20;
 		} else if (assemblers > 1 && assemNumItems === 1) {
-			assemTotal = assemBase + ((assemblers - 1) * perAdditionalAssembler);
+			assemTotal = assemBase + ((assemblers - 1) * perAdditionalAssembler) + 20;
 		} else if (assemblers === 1 && assemNumItems > 1) {
-			assemTotal = assemBase + ((assemNumItems - 1) * perAdditionalAssembler);
+			assemTotal = assemBase + ((assemNumItems - 1) * perAdditionalAssembler) + 20;
 		} else {
-			assemTotal = assemBase + ((assemblers - 1) * perAdditionalAssembler) + ((assemNumItems - 1) * perAdditionalAssembler);
+			assemTotal = assemBase + ((assemblers - 1) * perAdditionalAssembler) + ((assemNumItems - 1) * perAdditionalAssembler) + 20;
 		}
-
 		return assemTotal;
 	}
 
@@ -604,11 +705,12 @@ $(document).ready(function() {
 		}
 
 		if (jobTypesArr.indexOf('Furniture Delivery') !== -1 || jobTypesArr.indexOf('Curb-to-Curb') !== -1) {
-			total = total + getFurnDelTotal();
+			total = total + getFurnDelTotal(); 
 		}
 
 
 
 		$('#new_text').text(total);
+		$('#new_text2').text((total * .15).toFixed(2));	
 	});
 });

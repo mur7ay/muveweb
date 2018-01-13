@@ -1714,6 +1714,15 @@ select.week {
   margin: 20px 0 0;
 }
 
+.confirm-title-special {
+  margin-top: 10px
+}
+
+.left-padding-fivepx {
+  padding-left: 10px !important;
+  padding-right: 10px;
+}
+
 .confirm-answer {
   margin-top: 0;
   font-size: 14px;
@@ -1727,4 +1736,13 @@ select.week {
 
 .no-padding {
   padding: 0;
+}
+
+h2.quote-info {
+  margin: 5px 0;
+  font-size: 1.2em;
+  }
+
+.agree-to-terms {
+  margin-top: 40px;
 }

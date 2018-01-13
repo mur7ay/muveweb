@@ -150,9 +150,9 @@
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div class="checkbox checkbox-container initial-hidden">
             <label class="checkbox-label" for="checkbox3">
-              <input type="checkbox" id="checkbox3" name="checkbox-piano" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="piano" />
+              <input type="checkbox" id="checkbox3" name="checkbox-piano" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="piano" disabled/>
               PIANO
             </label>
           </div>
@@ -178,9 +178,9 @@
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
+          <div class="checkbox checkbox-container initial-hidden">
             <label class="checkbox-label" for="checkbox7">
-              <input type="checkbox" id="checkbox7" name="checkbox-packing" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="packing" />
+              <input type="checkbox" id="checkbox7" name="checkbox-packing" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="packing" disabled />
               PACKING
             </label>
           </div>
@@ -1205,7 +1205,7 @@
       <div class="inline field question-container">
         <h4 class="question-header"><strong>MOVE DETAILS</strong></h4>
 
-        <div id="typeWholeHomeConfirm" class="padding-top-fortypx">
+        <div id="typeWholeHomeConfirm" class="margin-top-fortypx">
 
           <div class="jobTypeA">
             <p class="confirm-title">Type</p>
@@ -1279,30 +1279,30 @@
 
           <div class="calc row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
-              <p class="confirm-title">At Pick-up</p>
+              <p class="confirm-title">At Pick-up&#58;</p>
 
               <div class="homeTypeFromA initial-hidden">
-                <p class="confirm-title">Home Type</p>
-                <p id="homeTypeFromA" class="confirm-answer"></p>
+                <p class="confirm-title confirm-title-special left-padding-fivepx">Home Type</p>
+                <p id="homeTypeFromA" class="confirm-answer left-padding-fivepx"></p>
               </div>
 
               <div class="pickupStairsA initial-hidden">
-                <p class="confirm-title">Stairs</p>
-                <p id="pickupStairsA" class="confirm-answer"></p>
+                <p class="confirm-title left-padding-fivepx">Stairs</p>
+                <p id="pickupStairsA" class="confirm-answer left-padding-fivepx"></p>
               </div>
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
-              <p class="confirm-title">At Drop-off</p>
+              <p class="confirm-title">At Drop-off&#58;</p>
 
               <div class="homeTypeToA initial-hidden">
-                <p class="confirm-title">Home Type</p>  
-                <p id="homeTypeToA" class="confirm-answer"></p>
+                <p class="confirm-title confirm-title-special left-padding-fivepx">Home Type</p>  
+                <p id="homeTypeToA" class="confirm-answer left-padding-fivepx"></p>
               </div>
 
               <div class="dropoffStairsA initial-hidden">
-                <p class="confirm-title">Stairs</p>
-                <p id="dropoffStairsA" class="confirm-answer"></p>
+                <p class="confirm-title left-padding-fivepx">Stairs</p>
+                <p id="dropoffStairsA" class="confirm-answer left-padding-fivepx"></p>
               </div>
             </div>
           </div>
@@ -1340,15 +1340,17 @@
           <div id="dvMap"></div>
         </div>
 
-        <div class="text-center" style="margin-top: 60px;">
-          <h2 style="margin-top: 50px;">Estimated total $<span id="new_text">0</span> USD</h2>
+        <div class="" style="margin-top: 60px;">
+          <h2 class="quote-info">Company&#58; Muve</h2>
+          <h2 class="quote-info">Estimated total&#58; $<span id="new_text"></span> USD</h2>
+          <h2 class="quote-info">Reservation deposit&#58; $<span id="new_text2"></span> USD</h2>
         </div>
 
-        <p class="home-o" style="text-align: center;">
+        <p class="agree-to-terms text-center">
             By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
         </p>
 
-        <div class="question-container" style="margin-top: 50px;">
+        <div class="question-container" style="margin-top: 30px;">
           <button type="button" class="back-btn">BACK</button>
           <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
         </div>
