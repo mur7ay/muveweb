@@ -783,8 +783,12 @@ $(document).ready(function() {
 			total = total + assembly();
 		}
 
-		if (jobTypesArr.indexOf('Furniture Delivery') !== -1 || jobTypesArr.indexOf('Curb-to-Curb') !== -1) {
+		if (jobTypesArr.indexOf('Furniture Delivery') !== -1 || (jobTypesArr.indexOf('Furniture Delivery') !== -1 && jobTypesArr.indexOf('Curb-to-Curb') !== -1)) {
 			total = total + getFurnDelTotal(); 
+		}
+
+		if (jobTypesArr.indexOf('Curb-to-Curb') !== -1 && jobTypesArr.indexOf('Furniture Delivery') === -1) {
+			total = total + (getFurnDelTotal() - 30); 
 		}
 
 		if (jobTypesArr.indexOf('Just Labor') !== -1 && jobTypesArr.indexOf('Whole Home') === -1) {
