@@ -777,6 +777,7 @@ $(document).ready(function() {
 	
 		if (jobTypesArr.indexOf('Whole Home') !== -1) {
 			total = total + wholeHome();
+			//$('#new_text2').text((wholeHome() * .15).toFixed(2));	
 		}
 
 		if (jobTypesArr.indexOf('Assembly') !== -1) {
@@ -796,6 +797,6 @@ $(document).ready(function() {
 		}
 
 		$('#new_text').text(total);
-		$('#new_text2').text((total * .15).toFixed(2));	
+		$('#new_text2').text((total * .15).toFixed(2));
 	});
 });
