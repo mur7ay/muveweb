@@ -730,21 +730,6 @@ $(document).ready(function() {
 		if (false) {
 			switch (movers) {
 				case 2:
-					moversPerHour = 79;
-					break;	
-				case 3:
-					moversPerHour = 105;
-					break;
-				case 4:
-					moversPerHour = 120;
-					break;
-				case 5:
-					moversPerHour = 150;
-					break;
-			}
-		} else {
-			switch (movers) {
-				case 2:
 					moversPerHour = 89;
 					break;	
 				case 3:
@@ -755,6 +740,21 @@ $(document).ready(function() {
 					break;
 				case 5:
 					moversPerHour = 160;
+					break;
+			}
+		} else {
+			switch (movers) {
+				case 2:
+					moversPerHour = 79;
+					break;	
+				case 3:
+					moversPerHour = 105;
+					break;
+				case 4:
+					moversPerHour = 120;
+					break;
+				case 5:
+					moversPerHour = 150;
 			}
 		}
 
