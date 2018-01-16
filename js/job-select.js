@@ -537,13 +537,19 @@ $(document).ready(function() {
 		return isWeekend
 	}
 
+	var hours;
+
 	var getHours = movers => {
 	//Returns hours of work by number of movers and number of rooms
-		numBedrooms = $('input[name=movers]:checked').val();
+		numBedrooms = $('input[name=bedroom]:checked').val();
+		moversInt = parseInt(movers);
+
+		console.log('numBedrooms: ' + numBedrooms);
+		console.log(moversInt);
 
 		switch (numBedrooms) {
 			case '2 bedroom home':
-				switch (movers) {
+				switch (moversInt) {
 					case 2:
 						hours = 5;
 						break;
@@ -559,7 +565,7 @@ $(document).ready(function() {
 				}
 				break;
 			case '3 bedroom home':
-				switch (movers) {
+				switch (moversInt) {
 					case 2:
 						hours = 6;
 						break;
@@ -575,7 +581,7 @@ $(document).ready(function() {
 				}
 				break;
 			case '4 bedroom home':
-				switch (movers) {
+				switch (moversInt) {
 					case 2:
 						hours = 8;
 						break;
@@ -591,7 +597,7 @@ $(document).ready(function() {
 				}
 				break;
 			case '5 bedroom home':
-				switch (movers) {
+				switch (moversInt) {
 					case 2:
 						hours = 11;
 						break;
@@ -607,7 +613,7 @@ $(document).ready(function() {
 				}
 				break;
 			default:
-				switch (movers) {
+				switch (moversInt) {
 					case 2:
 						hours = 3;
 						break;
