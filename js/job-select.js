@@ -675,7 +675,7 @@ $(document).ready(function() {
 		if (milesToDrive() > 100) {
 			wholeHomeTotal = moversPerHour * hours + longDistancePrice;
 		} else {
-			wholeHomeTotal = moversPerHour * hours;
+			wholeHomeTotal = moversPerHsour * hours;
 		}
 		console.log('hours in whole home: ' + hours)
 		return wholeHomeTotal;
@@ -716,9 +716,9 @@ $(document).ready(function() {
 		} else if (assemblers > 1 && assemNumItems === 1) {
 			assemTotal = assemBase + ((assemblers - 1) * perAdditionalAssembler) + 20;
 		} else if (assemblers === 1 && assemNumItems > 1) {
-			assemTotal = assemBase + ((assemNumItems - 1) * perAdditionalAssembler) + 20;
+			assemTotal = assemBase + ((assemNumItems - 1) * assemPerAdditionalItem) + 20;
 		} else {
-			assemTotal = assemBase + ((assemblers - 1) * perAdditionalAssembler) + ((assemNumItems - 1) * perAdditionalAssembler) + 20;
+			assemTotal = assemBase + ((assemblers - 1) * perAdditionalAssembler) + ((assemNumItems - 1) * assemPerAdditionalItem) + 20;
 		}
 		return assemTotal;
 	}
