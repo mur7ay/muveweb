@@ -16,6 +16,7 @@
 
 
   <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="css/stripe.css" />
   <link rel="stylesheet" type="text/css" href="stylesheets.css" />
   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
 
@@ -1416,34 +1417,23 @@
           By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
         </p>
 
-        <form action="/charge" method="post" id="payment-form" class="margin-top-twentypx payment-form">
+
+        <!-- Stripe -->
+        <form action="/charge" method="post" id="payment-form" class="payment-form">
           <div class="form-row">
-            <label for="card-element" class="payment-center">
+            <label for="card-element">
               Credit or debit card
             </label>
             <div id="card-element">
-              <!-- a Stripe Element will be inserted here. -->
+              a Stripe Element will be inserted here.
             </div>
 
             <!-- Used to display form errors -->
             <div id="card-errors" role="alert"></div>
           </div>
-          
-          <div class="payment-center">
-            <div class="payment-background">
-              <input id="creditCard" type="text" class="payment cc" placeholder="Card number"></input>
-              <input id="ccExpire" type="text" class="payment cc-expire" placeholder="MM/YY"></input>
-              <input id="ccSec" type="text" class="payment cc-cvc" placeholder="CVC"></input>
-            </div>
 
-            <button type="button" class="payment-button">Submit Payment</button>
-          </div>
+          <button class="payment-button">Submit Payment</button>
         </form>
-
-<!--         <div class="question-container" style="margin-top: 30px;">
-          <button type="button" class="back-btn">BACK</button>
-          <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button> -->
-        </div>
 
       </div>
     </div>
@@ -1529,6 +1519,8 @@
     </div>
   </footer>
 
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="js/stripe.js"></script>
   <script src="js/number-pressed.js"></script>
 
   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
