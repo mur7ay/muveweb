@@ -774,6 +774,10 @@ hr.green-underline {
   background-color: #2ECC71;
 }
 
+.margin-top-tenpx {
+  margin-top: 10px;
+}
+
 .margin-top-twentypx {
   margin-top: 20px;
 }
@@ -1367,14 +1371,35 @@ div.question-container {
 }
 
 div.checkbox-container {
-  height: 50px;
   border: 2px solid #f8f8f8;
   border-radius: 2px;
+  padding: 14px 28px 14px 14px;
+}
+
+@media screen and (max-width: 700px) {
+div.checkbox-container {
+  border: 2px solid #f8f8f8;
+  border-radius: 2px;
+  padding: 14px 14px 14px 0;
+}
+}
+
+
+
+
+div.checkbox-container2 {
+  border: 2px solid #f8f8f8;
+  border-radius: 2px;
+  padding: 0 0 14px 20px;
+}
+
+div.checkbox-container3 {
+  border: 2px solid #f8f8f8;
+  border-radius: 2px;
+  padding: 14px 20px;
 }
 
 label.checkbox-label {
-  height: 46px;
-  padding-top: 14px;
   width: 500px;
   -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1382,6 +1407,30 @@ label.checkbox-label {
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+}
+
+label.checkbox-label2 {
+  width: 500px;
+  margin-top: 10px;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+label.no-left-padding {
+  padding-left: 0 !important;
+}
+
+.mover-question {
+  margin-bottom: 0;
+}
+
+.input_field2 {
+  margin-top: 10px;
+  padding-left: 14px !important;
 }
 
 input.margin-right {
