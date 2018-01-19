@@ -1377,20 +1377,18 @@ div.checkbox-container {
 }
 
 @media screen and (max-width: 700px) {
-div.checkbox-container {
-  border: 2px solid #f8f8f8;
-  border-radius: 2px;
-  padding: 14px 14px 14px 0;
+  div.checkbox-container {
+    border: 2px solid #f8f8f8;
+    border-radius: 2px;
+    padding: 14px 14px 14px 0;
+  }
 }
-}
-
-
 
 
 div.checkbox-container2 {
   border: 2px solid #f8f8f8;
   border-radius: 2px;
-  padding: 0 0 14px 20px;
+  padding: 14px 0 14px 20px;
 }
 
 div.checkbox-container3 {
@@ -1411,7 +1409,6 @@ label.checkbox-label {
 
 label.checkbox-label2 {
   width: 500px;
-  margin-top: 10px;
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
@@ -1434,7 +1431,7 @@ label.no-left-padding {
 }
 
 input.margin-right {
-  margin-right: 20px;
+  margin-right: 20px !important;
 }
 
 input[type="checkbox"].remove-bootstrap {

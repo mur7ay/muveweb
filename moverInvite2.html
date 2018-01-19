@@ -157,33 +157,33 @@
 
         <form role="form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container3">
-            <label class="checkbox-label2 text-input no-left-padding">Contact Name</label>
-              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverContactName" placeholder="Your answer" />
+            <label class="checkbox-label2 text-input no-left-padding" for="moverContactName">Contact Name</label>
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverContactName" placeholder="Your answer" />
             </label>
           </div>
 
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="moverBusinessName">Business Name</label>
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverBusinessName" placeholder="Your answer" />
+          </div>
 
-
-
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label text-input">
-              <input class="input__field input__field--hoshi request-form" type="text" id="moverBusinessName" placeholder="Business Name" />
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="moverPhone">Phone
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverPhone" placeholder="Your answer" onkeypress="numberPressed(event);"/>
             </label>
           </div>
 
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label text-input">
-              <input class="input__field input__field--hoshi" type="text" id="moverPhone" placeholder="Phone" onkeypress="numberPressed(event);"/>
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label text-input">
-              <input class="input__field input__field--hoshi" type="text" id="moverEmail" placeholder="Email" />
-            </label>
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="moverEmail">Email</label>
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverEmail" placeholder="Your answer" />
           </div>
         </form>
+
+        <div style="margin-top: 50px;">
+          <div id="first-next-btn" onclick="jobType()" class="first-next-btn">
+            <p class="text-center next-btn-txt">NEXT</p>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -196,9 +196,9 @@
         <p class="text-danger initial-hidden">Please choose one</p>
 
         <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container2">
+          <div class="checkbox checkbox-container3">
             <p class="mover-question">Do you charge per mile?</p>
-            <label class="checkbox-label2">
+            <label class="checkbox-label2 margin-top-tenpx">
               <input type="radio" id="chargePerMileYes" name="chargePerMile" class="checkbox-circle margin-right" value="true" />
               Yes
             </label>
@@ -215,34 +215,22 @@
             <input class="input__field input__field--hoshi" type="text" id="chargePerMileOtherAnswer" placeholder="Your answer" />
           </div>
 
-
-
-
-
-
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">What is your rate per mile?</label>
               <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverRatePerMile" placeholder="Your answer" />
             </label>
           </div>
 
-
-
-
-
-
-
-
-          <div class="checkbox checkbox-container2">
+          <div class="checkbox checkbox-container3">
             <p class="mover-question">When do you start charging per mile?</p>
-            <label class="checkbox-label2">
+            <label class="checkbox-label2 margin-top-tenpx">
               <input type="radio" id="chargePerMileYes" name="chargePerMile" class="checkbox-circle margin-right" value="true" />
               When I leave the facility until I get back
             </label>
 
             <label class="checkbox-label2">
               <input type="radio" id="chargePerMileNo" name="chargePerMile" class="checkbox-circle margin-right" value="false" />
-              When I arrive at the customer's location until I get back to the facility
+              From the customer's location until I get back to the facility
             </label>
 
             <label class="checkbox-label2">
@@ -257,10 +245,6 @@
             <input class="input__field input__field--hoshi" type="text" id="chargePerMileOtherAnswer" placeholder="Your answer" />
           </div>
 
-
-
-
-
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
             <button type="button" class="text-center next-btn">NEXT</button>
@@ -269,253 +253,6 @@
 
       </div>
     </div>
-
-
-    <!-- Labor Type Question-->
-    <div id="laborTypeQ" class="question-wrapper">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>DO YOU NEED HELP LOADING OR UNLOADING?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType1" name="load" class="checkbox-circle margin-right" value="true" />
-              I need help loading and unloading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help loading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help unloading.
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- Labor Type Question-->
-    <div id="laborTypeQ" class="question-wrapper">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>DO YOU NEED HELP LOADING OR UNLOADING?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType1" name="load" class="checkbox-circle margin-right" value="true" />
-              I need help loading and unloading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help loading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help unloading.
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- Labor Type Question-->
-    <div id="laborTypeQ" class="question-wrapper">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>DO YOU NEED HELP LOADING OR UNLOADING?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType1" name="load" class="checkbox-circle margin-right" value="true" />
-              I need help loading and unloading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help loading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help unloading.
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-
-    <!-- Labor Type Question-->
-    <div id="laborTypeQ" class="question-wrapper">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>DO YOU NEED HELP LOADING OR UNLOADING?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType1" name="load" class="checkbox-circle margin-right" value="true" />
-              I need help loading and unloading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help loading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help unloading.
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- Labor Type Question-->
-    <div id="laborTypeQ" class="question-wrapper">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>DO YOU NEED HELP LOADING OR UNLOADING?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType1" name="load" class="checkbox-circle margin-right" value="true" />
-              I need help loading and unloading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help loading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help unloading.
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-    <!-- Labor Type Question-->
-    <div id="laborTypeQ" class="question-wrapper">
-      <div class="inline field question-container">
-        <h4 class="question-header"><strong>DO YOU NEED HELP LOADING OR UNLOADING?</strong></h4>
-        <p class="text-danger initial-hidden">Please choose one</p>
-
-        <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType1" name="load" class="checkbox-circle margin-right" value="true" />
-              I need help loading and unloading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help loading.
-            </label>
-          </div>
-
-          <div class="checkbox checkbox-container">
-            <label class="checkbox-label">
-              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
-              I only need help unloading.
-            </label>
-          </div>
-
-          <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   </div>
 
