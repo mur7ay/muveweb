@@ -774,8 +774,12 @@ hr.green-underline {
   background-color: #2ECC71;
 }
 
+.margin-top-fivepx {
+  margin-top: 5px;
+}
+
 .margin-top-tenpx {
-  margin-top: 10px;
+  margin-top: 10px !important;
 }
 
 .margin-top-twentypx {
@@ -1797,4 +1801,15 @@ h2.quote-info {
 
 .agree-to-terms {
   margin-top: 40px;
+}
+
+
+/* Mover Invite */
+.label-other {
+  display: inline !important;
+}
+
+.text-other {
+  display: inline-block !important;
+  width: auto !important;
 }
