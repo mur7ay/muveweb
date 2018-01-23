@@ -5,10 +5,6 @@
   <title>Muve | Your Personal On-demand Mover</title>
   <link rel="icon" type="image/png" sizes="16x16" href="img/muve-logos/favicon-16x16.png">
 
-  <!-- Styles -->
-  <link rel="stylesheet" type="text/css" href="stylesheets.css" />
-  <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
-
 
   <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -17,6 +13,13 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="stylesheets.css" />
+  <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
+
 
   <!-- Meta Data -->
   <meta charset="UTF-8">
@@ -51,7 +54,7 @@
   <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/ad4b507575.js"></script>
 
-
+  <script src="js/mover-invite.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -109,7 +112,7 @@
         <a class="navbar-brand" href="index.html">MUVE</a>
       </div>
 
-      <div class="collapse navbar-collapse navbar-right  background-color-fff" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse navbar-right background-color-fff" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="moverInvite.html" title="link to the mover invite screen">Mover Invite</a></li>
           <li><a href="about.html" title="link to the about page">About</a></li>
@@ -126,33 +129,33 @@
 
   <div class="container container-about margin-top-eightypx white-container moverInvite-padding">
 
-    <div class="row mover-invite-text-center">
-      <h1 class="container-headers" style="margin-bottom: 50px;">Get Started With Muve</h1>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
-        <img src="contract.png" style="width: 100px;" />
-        <h2>Absolutely Zero Risk</h2>
-        <p>There's absolutely no risk. That means no contract, no monthly fees, and no fee for leads. As always, you're able to cancel the service at any time.</p>
+    <div id="moverInviteInfo" class="padding-bottom-fortypx mover-form">
+      <div class="row mover-invite-text-center">
+        <h1 class="container-headers" style="margin-bottom: 50px;">Get Started With Muve</h1>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
+          <img src="contract.png" style="width: 100px;" />
+          <h2>Absolutely Zero Risk</h2>
+          <p>There's absolutely no risk. That means no contract, no monthly fees, and no fee for leads. As always, you're able to cancel the service at any time.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
+          <img src="guarantee.png" style="width: 100px;" />
+          <h2>Guaranteed Jobs</h2>
+          <p>Unlike lead services, we check and automatically populate holes in your calendar with quality, prescreened move jobs.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mover-invite-center margin-top-twentypx">
+          <img src="remote.png" style="width: 100px;" />
+          <h2>You're In Control</h2>
+          <p>You're entirely in control of your service radius, rates for the services you offer, availability, and everything else.</p>
+        </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
-        <img src="guarantee.png" style="width: 100px;" />
-        <h2>Guaranteed Jobs</h2>
-        <p>Unlike lead services, we check and automatically populate holes in your calendar with quality, prescreened move jobs.</p>
-      </div>
-
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mover-invite-center margin-top-twentypx">
-        <img src="remote.png" style="width: 100px;" />
-        <h2>You're In Control</h2>
-        <p>You're entirely in control of your service radius, rates for the services you offer, availability, and everything else.</p>
-      </div>
-
+      <input id="moverInviteStart" type="button" value="Get Started" class="request-form-invite"></input>
     </div>
 
-    <input type="button" value="Get Started" class="request-form-invite"></input>
-
-
     <!-- Contact Info-->
-    <div id="contactInfoQ" class="question-wrapper initial-hidden">
+    <div id="contactInfoQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Contact Information</strong></h4>
         <p class="text-danger initial-hidden">Required</p>
@@ -181,9 +184,8 @@
           </div>
 
           <div style="margin-top: 50px;">
-            <div id="first-next-btn" onclick="jobType()" class="first-next-btn">
-              <p class="text-center next-btn-txt">NEXT</p>
-            </div>
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -192,7 +194,7 @@
 
 
     <!-- Per Mile -->
-    <div id="perMileQ" class="question-wrapper initial-hidden">
+    <div id="perMileQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Per Mile</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -258,7 +260,7 @@
 
 
     <!-- Per Hour -->
-    <div id="perHourQ" class="question-wrapper initial-hidden">
+    <div id="perHourQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Per Hour</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -344,7 +346,7 @@
 
 
     <!-- Heavy Items -->
-    <div id="heavyItemsQ" class="question-wrapper initial-hidden">
+    <div id="heavyItemsQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Heavy Items</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -404,7 +406,7 @@
 
 
     <!-- Making Progress -->
-    <div id="makingProgressQ" class="question-wrapper initial-hidden">
+    <div id="makingProgressQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>We're making progress</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -468,7 +470,7 @@
 
 
     <!-- Per Obstacle -->
-    <div id="perObstacleQ" class="question-wrapper initial-hidden">
+    <div id="perObstacleQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Per Obstacle</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -509,7 +511,7 @@
 
 
     <!-- Questions Our Customers Ask -->
-    <div id="customerQ" class="question-wrapper initial-hidden">
+    <div id="customerQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Per Obstacle</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -582,8 +584,8 @@
     </div>
 
 
-    <!-- Before We Finsih -->
-    <div id="perObstacleQ" class="question-wrapper initial-hidden">
+    <!-- Before We Finish -->
+    <div id="perObstacleQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Before we finish</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -603,7 +605,7 @@
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn">NEXT</button>
+            <button type="button" class="text-center next-btn">Submit</button>
           </div>
         </form>
 
@@ -611,26 +613,31 @@
     </div>
 
 
+    <!-- Confirm -->
+    <div id="moverInviteConfirm" class="white-container about-text confirm-container bottom-padding-fortypx initial-hidden">
+      <img src="fistBump.png" />
+
+      <h1 class="text-center lato">Success! Your invite request has been received.</h1>
+      <h1 class="text-center lato">Fist bump!</h1>
+
+      <p class="margin-top-fortypx text-center">Here's what happens next&#58;</p> 
+
+      <ol>
+        <li>
+          <span>.</span>
+        </li>
+        <li>
+          <span>.</span>
+        </li>
+        <li>
+          <span>.</span>
+        </li>
+      </ol>
+    </div>
+
+
+
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
