@@ -1,41 +1,35 @@
 const express = require('express');
-const stripe = require('stripe')('sk_test_LZJGwg1WdZXEKRig7xEMM2eC');
+const keys = require('./config/keys');
+const stripe = require('stripe')(keys.stripeSecretKey);
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
-
 const app = express();
-
-// Handlebars Middleware
-app.engine('handlebars',exphbs({defaultLayout:'main'}));
-app.set('view engine', 'handlebars');
-
-// Body Parser Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
 
 // Set Static Folder
-app.use(express.static('${__dirname}/public'));
+app.use(express.static('public'));
 
 // Index route
 app.get('/', (req, res) => {
-  res.render('index');
+  res.send();
 });
 
 // charge route
 app.post('/charge', (req, res) => {
-  const amount = 2500;
+  // const amount = 2500;
+  const amount = req.body.totalAmount;
 
   stripe.customers.create({
-    email: req.body.stripeEmail,
-    source: req.body.stripeToken
+    email: "random-email@gmail.com",
+    source: req.body.mytoken
   })
-  .then(customer => stripe.charges.create({
+  .then(customer =>  {
+    stripe.charges.create({
     amount,
-    description:'large move',
-    currency:'usd',
+    description:'Muve deposit request',
+    currency:'USD',
     customer:customer.id
-  }))
-  .then(charge => res.render('success'));
+  })})
+  .then(charge => res.send('success'));
 });
 
 const port = process.env.PORT || 5000;
