@@ -1,6 +1,6 @@
 const express = require('express');
 const keys = require('./config/keys');
-const stripe = require('stripe')(keys.stripeSecretKey);
+const stripe = require('stripe')('sk_test_LZJGwg1WdZXEKRig7xEMM2eC');
 const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
@@ -32,10 +32,10 @@ app.post('/charge', (req, res) => {
   .then(charge => res.send('success'));
 });
 
-// const port = process.env.PORT || 5000;
-//
-// app.listen(port, () => {
-//   console.log(`Server started on port ${port}`);
-// });
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
 
 //kade
