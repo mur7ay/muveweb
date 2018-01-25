@@ -32,10 +32,10 @@ app.post('/charge', (req, res) => {
   .then(charge => res.send('success'));
 });
 
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
-});
+// const port = process.env.PORT || 5000;
+//
+// app.listen(port, () => {
+//   console.log(`Server started on port ${port}`);
+// });
 
 //kade
