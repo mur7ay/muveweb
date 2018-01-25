@@ -1,5 +1,4 @@
 const express = require('express');
-const keys = require('./config/keys');
 const stripe = require('stripe')('sk_test_LZJGwg1WdZXEKRig7xEMM2eC');
 const bodyParser = require('body-parser');
 const app = express();
@@ -7,8 +6,6 @@ app.use(bodyParser.json());
 
 // Set Static Folder
 app.use(express.static('public'));
-
-app.set('port', process.env.PORT || 8081);
 
 // Index route
 app.get('/', (req, res) => {
