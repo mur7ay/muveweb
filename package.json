@@ -16,6 +16,9 @@
   "scripts": {
     "start": "node app.js"
   },
+  "engines": {
+    "node":"4.2.4"
+  }
   "author": "Shawn Murray",
   "license": "ISC",
   "repository": {
