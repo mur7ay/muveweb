@@ -17,7 +17,7 @@
     "start": "node app.js"
   },
   "engines": {
-    "node":"4.2.4"
+    "node":"8.8.1"
   },
   "author": "Shawn Murray",
   "license": "ISC",
