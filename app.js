@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 // Index route
 app.get('/', (req, res) => {
-  res.sendFile('public/test.html');
+  res.sendFile('../public/test.html', {root: __dirname});
 });
 
 // charge route
