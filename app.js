@@ -10,12 +10,17 @@ const port = process.env.PORT || 13441;
 app.use(express.static('public'));
 
 // Index route
-app.get('/', (req, res) => {
-  res.sendFile('public/test.html', {root: __dirname});
-});
+// app.get('/', (req, res) => {
+//   // res.send('public/test.html', {root: __dirname});
+//   res.sendFile('public/test.html', {root: __dirname});
+// });
+//
+// app.get('/about', (req, res) => {
+//   res.sendFile('public/about.html', {root: __dirname});
+// });
 
-app.get('/about', (req, res) => {
-  res.sendFile('public/about.html', {root: __dirname});
+app.get('/', function (req, res) {
+  res.sendFile( __dirname + '/public/test.html' );
 });
 
 // charge route
