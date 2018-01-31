@@ -5,10 +5,6 @@
   <title>Muve | Your Personal On-demand Mover</title>
   <!-- <link rel="icon" type="image/png" sizes="16x16" href="img/muve-logos/favicon-16x16.png"> -->
 
-  <!-- Styles -->
-  <link rel="stylesheet" type="text/css" href="stylesheets.css" />
-  <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
-
 
   <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -17,6 +13,13 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="stylesheets.css" />
+  <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
+
 
   <!-- Meta Data -->
   <meta charset="UTF-8">
@@ -51,7 +54,7 @@
   <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/ad4b507575.js"></script>
 
-
+  <script src="js/mover-invite.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -109,7 +112,7 @@
         <a class="navbar-brand" href="index.html">MUVE</a>
       </div>
 
-      <div class="collapse navbar-collapse navbar-right  background-color-fff" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse navbar-right background-color-fff" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="moverInvite.html" title="link to the mover invite screen">Mover Invite</a></li>
           <li><a href="about.html" title="link to the about page">About</a></li>
@@ -126,31 +129,33 @@
 
   <div class="container container-about margin-top-eightypx white-container moverInvite-padding">
 
-    <div class="row mover-invite-text-center">
-      <h1 class="container-headers" style="margin-bottom: 50px;">Get Started With Muve</h1>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
-        <img src="contract.png" style="width: 100px;" />
-        <h2>Absolutely Zero Risk</h2>
-        <p>There's absolutely no risk. That means no contract, no monthly fees, and no fee for leads. As always, you're able to cancel the service at any time.</p>
+    <div id="moverInviteInfo" class="padding-bottom-fortypx mover-form">
+      <div class="row mover-invite-text-center">
+        <h1 class="container-headers" style="margin-bottom: 50px;">Get Started With Muve</h1>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
+          <img src="contract.png" style="width: 100px;" />
+          <h2>Absolutely Zero Risk</h2>
+          <p>There's absolutely no risk. That means no contract, no monthly fees, and no fee for leads. As always, you're able to cancel the service at any time.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
+          <img src="guarantee.png" style="width: 100px;" />
+          <h2>Guaranteed Jobs</h2>
+          <p>Unlike lead services, we check and automatically populate holes in your calendar with quality, prescreened move jobs.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mover-invite-center margin-top-twentypx">
+          <img src="remote.png" style="width: 100px;" />
+          <h2>You're In Control</h2>
+          <p>You're entirely in control of your service radius, rates for the services you offer, availability, and everything else.</p>
+        </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
-        <img src="guarantee.png" style="width: 100px;" />
-        <h2>Guaranteed Jobs</h2>
-        <p>Unlike lead services, we check and automatically populate holes in your calendar with quality, prescreened move jobs.</p>
-      </div>
-
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mover-invite-center margin-top-twentypx">
-        <img src="remote.png" style="width: 100px;" />
-        <h2>You're In Control</h2>
-        <p>You're entirely in control of your service radius, rates for the services you offer, availability, and everything else.</p>
-      </div>
-
+      <input id="moverInviteStart" type="button" value="Get Started" class="request-form-invite"></input>
     </div>
 
-
     <!-- Contact Info-->
-    <div id="contactInfoQ" class="question-wrapper">
+    <div id="contactInfoQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Contact Information</strong></h4>
         <p class="text-danger initial-hidden">Required</p>
@@ -177,20 +182,19 @@
             <label class="checkbox-label2 text-input no-left-padding" for="moverEmail">Email</label>
             <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverEmail" placeholder="Your answer" />
           </div>
-        </form>
 
-        <div style="margin-top: 50px;">
-          <div id="first-next-btn" onclick="jobType()" class="first-next-btn">
-            <p class="text-center next-btn-txt">NEXT</p>
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
           </div>
-        </div>
+        </form>
 
       </div>
     </div>
 
 
     <!-- Per Mile -->
-    <div id="perMileQ" class="question-wrapper">
+    <div id="perMileQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Per Mile</strong></h4>
         <p class="text-danger initial-hidden">Please choose one</p>
@@ -208,11 +212,11 @@
               No
             </label>
 
-            <label class="checkbox-label2">
-              <input type="radio" id="chargePerMileOther" name="chargePerMile" class="checkbox-circle margin-right" value="other" />
+            <label class="checkbox-label2 label-other">
+              <input type="radio" id="chargePerMileOther" name="chargePerMileOther" class="checkbox-circle margin-right" value="other" />
               Other
             </label>
-            <input class="input__field input__field--hoshi" type="text" id="chargePerMileOtherAnswer" placeholder="Your answer" />
+            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerMileOtherAnswer" placeholder="Your answer" />
           </div>
 
           <div class="checkbox checkbox-container3">
@@ -224,25 +228,25 @@
           <div class="checkbox checkbox-container3">
             <p class="mover-question">When do you start charging per mile?</p>
             <label class="checkbox-label2 margin-top-tenpx">
-              <input type="radio" id="chargePerMileYes" name="chargePerMile" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="chargePerMileYes" name="chargePerMile" class="checkbox-circle margin-right" value="when leaving facility until returning" />
               When I leave the facility until I get back
             </label>
 
             <label class="checkbox-label2">
-              <input type="radio" id="chargePerMileNo" name="chargePerMile" class="checkbox-circle margin-right" value="false" />
+              <input type="radio" id="chargePerMileNo" name="chargePerMile" class="checkbox-circle margin-right" value="customer location to facility" />
               From the customer's location until I get back to the facility
             </label>
 
             <label class="checkbox-label2">
-              <input type="radio" id="chargePerMileOther" name="chargePerMile" class="checkbox-circle margin-right" value="other" />
+              <input type="radio" id="chargePerMileOther" name="chargePerMile" class="checkbox-circle margin-right" value="distance from pick-up to delivery" />
               Only the distace from pick-up to delivery
             </label>
 
-            <label class="checkbox-label2">
+            <label class="checkbox-label2 label-other">
               <input type="radio" id="chargePerMileOther" name="chargePerMile" class="checkbox-circle margin-right" value="other" />
               Other
             </label>
-            <input class="input__field input__field--hoshi" type="text" id="chargePerMileOtherAnswer" placeholder="Your answer" />
+            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerMileOtherAnswer" placeholder="Your answer" />
           </div>
 
           <div style="margin-top: 50px;">
@@ -254,26 +258,386 @@
       </div>
     </div>
 
+
+    <!-- Per Hour -->
+    <div id="perHourQ" class="question-wrapper mover-form initial-hidden">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>Per Hour</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container3">
+            <p class="mover-question">Do you charge per hour?</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="chargePerHourYes" name="chargePerHour" class="checkbox-circle margin-right" value="true" />
+              Yes
+            </label>
+
+            <label class="checkbox-label2">
+              <input type="radio" id="chargePerHourNo" name="chargePerHour" class="checkbox-circle margin-right" value="false" />
+              No
+            </label>
+
+            <label class="checkbox-label2 label-other">
+              <input type="radio" id="chargePerHourOther" name="chargePerHourOther" class="checkbox-circle margin-right" value="other" />
+              Other
+            </label>
+            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerHourOtherAnswer" placeholder="Your answer" />
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">What is your hourly rate for two movers with a truck? Without a truck?</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="twoMoversTruck" placeholder="Your answer" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">What is your hourly rate for three movers with a truck? Without a truck?</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="threeMoversTruck" placeholder="Your answer" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">What is your hourly rate for four movers with a truck? Without a truck?</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="fourMoversTruck" placeholder="Your answer" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <p class="mover-question">When do you start charging your hourly rate?</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="chargePerMileYes" name="chargePerMile" class="checkbox-circle margin-right" value="when leaving the facility" />
+              When leaving the facility
+            </label>
+
+            <label class="checkbox-label2">
+              <input type="radio" id="chargePerMileNo" name="chargePerMile" class="checkbox-circle margin-right" value="when work begins" />
+              When work begins
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <p class="mover-question">Does your hourly rate include heavy items like pool tables and pianos?</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="chargePerHourYes" name="chargePerHour" class="checkbox-circle margin-right" value="true" />
+              Yes
+            </label>
+
+            <label class="checkbox-label2">
+              <input type="radio" id="chargePerHourNo" name="chargePerHour" class="checkbox-circle margin-right" value="false" />
+              No
+            </label>
+
+            <label class="checkbox-label2 label-other">
+              <input type="radio" id="chargePerHourOther" name="chargePerHourOther" class="checkbox-circle margin-right" value="other" />
+              Other
+            </label>
+            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerHourOtherAnswer" placeholder="Your answer" />
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Heavy Items -->
+    <div id="heavyItemsQ" class="question-wrapper mover-form initial-hidden">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>Heavy Items</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container3">
+            <p class="mover-question">Do you charge extra for heavy items (pianos, pool tables, kitchen appliances, etc.)?</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="chargeHeavyYes" name="chargeHeavy" class="checkbox-circle margin-right" value="true" />
+              Yes
+            </label>
+
+            <label class="checkbox-label2">
+              <input type="radio" id="chargeHeavyNo" name="chargeHeavy" class="checkbox-circle margin-right" value="false" />
+              No
+            </label>
+
+            <label class="checkbox-label2 label-other">
+              <input type="radio" id="chargeHeavyOther" name="chargeHeavy" class="checkbox-circle margin-right" value="other" />
+              Other
+            </label>
+            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerHourOtherAnswer" placeholder="Your answer" />
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Cost per piano:</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="pianoCost" placeholder="Your answer" />
+            </label>
+          </div>
+
+         <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Cost per pool table:</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="poolTableCost" placeholder="Your answer" />
+            </label>
+          </div>
+
+         <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Cost per kitchen appliance:</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="applianceCost" placeholder="Your answer" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Other items:</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="otherHeavyItemCost" placeholder="Your answer" />
+            </label>
+          </div>        
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Making Progress -->
+    <div id="makingProgressQ" class="question-wrapper mover-form initial-hidden">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>We're making progress</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container3">
+            <p class="mover-question">Does your hourly rate include obstacles like stairs and elevators?</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="obstaclesIncludedYes" name="obstaclesIncluded" class="checkbox-circle margin-right" value="true" />
+              Yes
+            </label>
+
+            <label class="checkbox-label2">
+              <input type="radio" id="obstaclesIncludedNo" name="obstaclesIncluded" class="checkbox-circle margin-right" value="false" />
+              No
+            </label>
+
+            <label class="checkbox-label2 label-other">
+              <input type="radio" id="obstaclesIncludedOther" name="obstaclesIncludedOther" class="checkbox-circle margin-right" value="other" />
+              Other
+            </label>
+            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerHourOtherAnswer" placeholder="Your answer" />
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <p class="mover-question">Do you have a truck fee? If so, how much do you charge?</p>
+            <label class="checkbox-label2 margin-top-tenpx label-other">
+              <input type="radio" id="truckFeeYes" name="truckFee" class="checkbox-circle margin-right" value="true" />
+              Yes
+            </label>
+            <input class="input__field input__field--hoshi text-other margin-top-tenpx" type="text" id="truckFeeAnswer" placeholder="Your answer" />
+
+            <label class="checkbox-label2">
+              <input type="radio" id="truckFeeNo" name="truckFee" class="checkbox-circle margin-right" value="false" />
+              No
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <p class="mover-question">Do you have an hourly minimum? If so, what's your hourly minimum?</p>
+            <label class="checkbox-label2 margin-top-tenpx label-other">
+              <input type="radio" id="hourlyMinimumYes" name="hourlyMinimum" class="checkbox-circle margin-right" value="true" />
+              Yes
+            </label>
+            <input class="input__field input__field--hoshi text-other margin-top-tenpx" type="text" id="hourlyMinimumAnswer" placeholder="Your answer" />
+
+            <label class="checkbox-label2">
+              <input type="radio" id="hourlyMinimumNo" name="hourlyMinimum" class="checkbox-circle margin-right" value="false" />
+              No
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Per Obstacle -->
+    <div id="perObstacleQ" class="question-wrapper mover-form initial-hidden">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>Per Obstacle</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Cost per flight of stairs:</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="stairsCost" placeholder="Your answer" />
+            </label>
+          </div>
+
+         <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Cost per elevator:</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="elevatorCost" placeholder="Your answer" />
+            </label>
+          </div>
+
+         <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Cost per extra distance from truck:</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="DistFromTruckCost" placeholder="Your answer" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">How much do you charge on tariff?</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="onTariffCost" placeholder="Your answer" />
+            </label>
+          </div>        
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Questions Our Customers Ask -->
+    <div id="customerQ" class="question-wrapper mover-form initial-hidden">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>Per Obstacle</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container3">          
+            <p class="mover-question">Do you have cargo and liability insurance?</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="cargoLiabilityInsurYes" name="cargoLiabilityInsur" class="checkbox-circle margin-right" value="true" />
+              Yes
+            </label>
+
+            <label class="checkbox-label2">
+              <input type="radio" id="obstaclesIncludedNo" name="cargoLiabilityInsur" class="checkbox-circle margin-right" value="false" />
+              No
+            </label>
+
+            <label class="checkbox-label2 label-other">
+              <input type="radio" id="obstaclesIncludedOther" name="cargoLiabilityInsur" class="checkbox-circle margin-right" value="other" />
+              Other
+            </label>
+            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerHourOtherAnswer" placeholder="Your answer" />
+          </div>
+
+          <div class="checkbox checkbox-container3">          
+            <p class="mover-question">Are you bonded?</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="bondedYes" name="bonded" class="checkbox-circle margin-right" value="true" />
+              Yes
+            </label>
+
+            <label class="checkbox-label2">
+              <input type="radio" id="bondedNo" name="bonded" class="checkbox-circle margin-right" value="false" />
+              No
+            </label>
+
+            <label class="checkbox-label2 label-other">
+              <input type="radio" id="bondedOther" name="bonded" class="checkbox-circle margin-right" value="other" />
+              Other
+            </label>
+            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerHourOtherAnswer" placeholder="Your answer" />
+          </div>
+
+          <div class="checkbox checkbox-container3">          
+            <p class="mover-question">Do you have a business license?</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="businessLicenseYes" name="businessLicense" class="checkbox-circle margin-right" value="true" />
+              Yes
+            </label>
+
+            <label class="checkbox-label2">
+              <input type="radio" id="businessLicenseNo" name="businessLicense" class="checkbox-circle margin-right" value="false" />
+              No
+            </label>
+
+            <label class="checkbox-label2 label-other">
+              <input type="radio" id="businessLicenseOther" name="businessLicense" class="checkbox-circle margin-right" value="other" />
+              Other
+            </label>
+            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerHourOtherAnswer" placeholder="Your answer" />
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Before We Finish -->
+    <div id="perObstacleQ" class="question-wrapper mover-form initial-hidden">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>Before we finish</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Is there anything else you would like customers to know about you?</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="customerShouldKnow" placeholder="Your answer" />
+            </label>
+          </div>
+
+         <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Is there anything else to be considered in regards to cost for your services?</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="servicesShouldKnow" placeholder="Your answer" />
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">SUBMIT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Confirm -->
+    <div id="moverInviteConfirm" class="white-container about-text confirm-container bottom-padding-fortypx initial-hidden">
+      <img src="fistBump.png" />
+
+      <h1 class="text-center lato">Success! Your invite request has been received.</h1>
+      <h1 class="text-center lato">Fist bump!</h1>
+
+      <p class="margin-top-fortypx text-center">Here's what happens next&#58;</p> 
+
+      <ol>
+        <li>
+          <span>.</span>
+        </li>
+        <li>
+          <span>.</span>
+        </li>
+        <li>
+          <span>.</span>
+        </li>
+      </ol>
+    </div>
+
+
+
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

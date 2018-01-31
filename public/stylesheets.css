@@ -493,7 +493,7 @@ button:hover {
 .progress-bar {
   background-color: #476DFD;
   position: fixed;
-  height: 3px;
+  height: 3px !important;
   z-index: 1;
 }
 
@@ -774,8 +774,12 @@ hr.green-underline {
   background-color: #2ECC71;
 }
 
+.margin-top-fivepx {
+  margin-top: 5px;
+}
+
 .margin-top-tenpx {
-  margin-top: 10px;
+  margin-top: 10px !important;
 }
 
 .margin-top-twentypx {
@@ -796,6 +800,10 @@ hr.green-underline {
 
 .margin-top-eightypx {
   margin-top: 80px;
+}
+
+.padding-bottom-fortypx {
+  padding-bottom: 40px;
 }
 
 .padding-top-fortypx {
@@ -1797,4 +1805,19 @@ h2.quote-info {
 
 .agree-to-terms {
   margin-top: 40px;
+}
+
+
+/* Mover Invite */
+.label-other {
+  display: inline !important;
+}
+
+.text-other {
+  display: inline-block !important;
+  width: auto !important;
+}
+
+h1.lato {
+  font-family: Lato, sans-serif;
 }
