@@ -376,13 +376,23 @@ $(document).ready(function() {
 	});
 
 
-
-	//['Whole Home', 'Furniture Delivery', 'Piano', 'Curb-to-Curb', 'Assembly', 'Just Labor', 'Packing'];
-
-
-
 	//Confirmation
 	$('.next-btn').on('click', function() {
+
+		//Name
+		if ($('#name').val() !== undefined) {	
+			$('#nameA').text($('#name').val());
+		}
+
+		//Phone
+		if ($('#phone').val() !== undefined) {	
+			$('#phoneA').text($('#phone').val());
+		}
+
+		//Email
+		if ($('#email').val() !== undefined) {	
+			$('#emailA').text($('#email').val());
+		}
 
 		//Number of bedrooms moving from
 		if ($('input[name=bedroom]:checked').val() !== undefined && (jobTypesArr.indexOf('Whole Home') !== -1 || jobTypesArr.indexOf('Just Labor') !== -1)){
@@ -490,16 +500,17 @@ $(document).ready(function() {
 	});
 
 
+	//Hides all confirmation info when last back button is clicked
+	$('#finalBackBtn').on('click', function() {
+		var hideAll = $('.confirmation');
 
-		$('#finalBackBtn').on('click', function() {
-			var hideAll = $('.confirmation');
-
-			for (i = 0; i < hideAll.length; i++) {
-				if (!$(hideAll[i]).hasClass('initial-hidden')) {
-					$(hideAll[i]).addClass('initial-hidden');
-				}
+		for (i = 0; i < hideAll.length; i++) {
+			if (!$(hideAll[i]).hasClass('initial-hidden')) {
+				$(hideAll[i]).addClass('initial-hidden');
 			}
-		});
+		}
+	});
+
 
 	//Pricing Calc Section
 	var longDistancePrice = 1800;
