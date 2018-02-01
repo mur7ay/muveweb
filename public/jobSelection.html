@@ -1101,7 +1101,7 @@
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label text-input">
-              <input class="input__field input__field--hoshi" type="text" id="email" placeholder="Email" />
+              <!-- <input class="input__field input__field--hoshi" type="text" id="email" placeholder="Email" /> -->
             </label>
           </div>
 
@@ -1417,6 +1417,8 @@
           <h2 class="quote-info">Reservation deposit&#58; $<span id="new_text2"></span> USD</h2>
         </div>
 
+        <h2 id="email">mur7ay@me.com</h2>
+
 
         <!-- <h3 id="work" value="400">50000</h3> -->
 
@@ -1676,6 +1678,9 @@
       var form = document.getElementById('payment-form');
       var hiddenInput = document.createElement('input');
       var totalAmount = document.createElement('input');
+      var customerEmail = document.createElement('input');
+
+      // var customerEmail = document.getElementById('email').textContent;
 
       hiddenInput.setAttribute('type', 'hidden');
       hiddenInput.setAttribute('name', 'stripeToken');
@@ -1685,13 +1690,21 @@
       totalAmount.setAttribute('name', 'totalAmount');
       totalAmount.setAttribute('value', Number(document.getElementById('new_text2').innerHTML) * 100);
 
+      customerEmail.setAttribute('type', 'hidden');
+      customerEmail.setAttribute('name', 'email2');
+      customerEmail.setAttribute('value', document.getElementById('email').textContent);
+
       form.appendChild(hiddenInput);
       form.appendChild(totalAmount);
+      form.appendChild(customerEmail);
 
       var formData = JSON.stringify({
         mytoken: token.id,
-        totalAmount: totalAmount.value
+        totalAmount: totalAmount.value,
+        email: customerEmail.value
       });
+
+      console.log(formData);
 
       $.ajax({
         type: "POST",
@@ -1705,7 +1718,7 @@
       });
 
       // alert("Created a token with value: "+token.id)
-      form.submit();
+      // form.submit();
     }
   </script>
 

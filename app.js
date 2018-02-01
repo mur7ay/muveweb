@@ -38,10 +38,10 @@ app.get('/', function (req, res) {
 app.post('/charge', (req, res) => {
   // const amount = 2500;
   const amount = req.body.totalAmount;
-  const email = req.body.
+  // const email = req.body.customerEmail;
 
   stripe.customers.create({
-    email: "random-email@gmail.com",
+    email: req.body.customerEmail,
     source: req.body.mytoken
   })
   .then(customer =>  {
@@ -51,7 +51,7 @@ app.post('/charge', (req, res) => {
     currency:'USD',
     customer:customer.id
   })})
-  .then(charge => res.send('success'));
+  .then(charge => res.sendFile('public/confirmationPage.html', {root: __dirname}));
 });
 
 app.listen(port, () => {
@@ -60,8 +60,9 @@ app.listen(port, () => {
 
 //kade
 
-// add more app.gets to link to other pages
+
 // Change hosting to Heroku
-// Have payment confirmation link to confirmation page
-// Have one button submission on payment page
 // grab email on payment page
+// confirmation page text
+
+// send intiail four questions for moverinvite to database
