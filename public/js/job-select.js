@@ -379,56 +379,71 @@ $(document).ready(function() {
 	//Confirmation
 	$('.next-btn').on('click', function() {
 
+		//Name
+		if ($('#name').val() !== undefined) {	
+			$('#nameA').text($('#name').val());
+		}
+
+		//Phone
+		if ($('#phone').val() !== undefined) {	
+			$('#phoneA').text($('#phone').val());
+		}
+
+		//Email
+		if ($('#email').val() !== undefined) {	
+			$('#emailA').text($('#email').val());
+		}
+
 		//Number of bedrooms moving from
-		if ($('input[name=bedroom]:checked').val() !== undefined) {
+		if ($('input[name=bedroom]:checked').val() !== undefined && (jobTypesArr.indexOf('Whole Home') !== -1 || jobTypesArr.indexOf('Just Labor') !== -1)){
 			$('.numRoomsFromA').removeClass('initial-hidden');
 			$('#numRoomsFromA').text($('input[name=bedroom]:checked').parent().text());
 		}
 
 		//Number of movers
-		if ($('input[name=movers]:checked').val() !== undefined) {
+		if ($('input[name=movers]:checked').val() !== undefined && (jobTypesArr.indexOf('Whole Home') !== -1 || jobTypesArr.indexOf('Just Labor') !== -1)) {
 			$('.numMoversA').removeClass('initial-hidden');
 			$('#numMoversA').text($('input[name=movers]:checked').parent().text());
 		}
 
 		//Number of assemblers
-		if ($('input[name=assemblers]:checked').val() !== undefined) {
+		if ($('input[name=assemblers]:checked').val() !== undefined && jobTypesArr.indexOf('Assembly') !== -1) {
 			$('.numAssemblersA').removeClass('initial-hidden');		
 			$('#numAssemblersA').text($('input[name=assemblers]:checked').parent().text());
 		}
 
 		//Number of boxes
-		if ($('input[name=boxes]:checked').val() !== undefined) {
+		if ($('input[name=boxes]:checked').val() !== undefined && (jobTypesArr.indexOf('Whole Home') !== -1 || jobTypesArr.indexOf('Just Labor') !== -1)) {
 			$('.numBoxesA').removeClass('initial-hidden');		
 			$('#numBoxesA').text($('input[name=boxes]:checked').parent().text());
 		}
 
 		//In-store pickup
-		if ($('input[name=instore]:checked').val() !== undefined) {
+		if ($('input[name=instore]:checked').val() !== undefined && (jobTypesArr.indexOf('Furniture Delivery') !== -1 || jobTypesArr.indexOf('Curb-to-Curb') !== -1 || jobTypesArr.indexOf('Assembly') !== -1)) {
 			$('.instorePickupA').removeClass('initial-hidden');	
 			$('#instorePickupA').text($('input[name=instore]:checked').parent().text());
 		}
 
 		//Number of items to be moved
-		if ($('input[name=items]:checked').val() !== undefined) {
+		if ($('input[name=items]:checked').val() !== undefined && (jobTypesArr.indexOf('Furniture Delivery') !== -1 || jobTypesArr.indexOf('Curb-to-Curb') !== -1 )) {
 			$('.numItemsMovedA').removeClass('initial-hidden');	
 			$('#numItemsMovedA').text($('input[name=items]:checked').parent().text());
 		}
 
 		//Number of items to be assembled
-		if ($('input[name=assembleItems]:checked').val() !== undefined) {
+		if ($('input[name=assembleItems]:checked').val() !== undefined && jobTypesArr.indexOf('Assembly') !== -1) {
 			$('.numItemsAssembledA').removeClass('initial-hidden');	
 			$('#numItemsAssembledA').text($('input[name=assembleItems]:checked').parent().text());
 		}
 
 		//Type of piano
-		if ($('input[name=piano]:checked').val() !== undefined) {
+		if ($('input[name=piano]:checked').val() !== undefined && jobTypesArr.indexOf('Piano') !== -1) {
 			$('.typePianoA').removeClass('initial-hidden');	
 			$('#typePianoA').text($('input[name=piano]:checked').parent().text());
 		}
 
 		//Loading and/or unloading
-		if ($('input[name=load]:checked').val() !== undefined) {
+		if ($('input[name=load]:checked').val() !== undefined && jobTypesArr.indexOf('Just Labor') !== -1) {
 			$('.loadA').removeClass('initial-hidden');	
 			$('#loadA').text($('input[name=load]:checked').parent().text());
 		}
@@ -459,28 +474,40 @@ $(document).ready(function() {
 
 		//At pick-up
 		//Home type
-		if ($('input[name=homeTypeFrom]:checked').val() !== undefined) {
+		if ($('input[name=homeTypeFrom]:checked').val() !== undefined && (jobTypesArr.indexOf('Whole Home') !== -1 || jobTypesArr.indexOf('Just Labor') !== -1)) {
 			$('.homeTypeFromA').removeClass('initial-hidden');
 			$('#homeTypeFromA').text($('input[name=homeTypeFrom]:checked').parent().text());		
 		}
 
 		//Stairs
-		if ($('input[name=elevatorPickup]:checked').val() !== undefined) {
+		if ($('input[name=elevatorPickup]:checked').val() !== undefined && (jobTypesArr.indexOf('Whole Home') !== -1 || jobTypesArr.indexOf('Just Labor') !== -1 || jobTypesArr.indexOf('Furniture Delivery') !== -1 || jobTypesArr.indexOf('Piano') !== -1)) {
 			$('.pickupStairsA').removeClass('initial-hidden');	
 			$('#pickupStairsA').text($('input[name=elevatorPickup]:checked').parent().text());
 		}
 
 		//At drop-off
 		//Home type
-		if ($('input[name=homeTypeTo]:checked').val() !== undefined) {
+		if ($('input[name=homeTypeTo]:checked').val() !== undefined && (jobTypesArr.indexOf('Whole Home') !== -1 || jobTypesArr.indexOf('Just Labor') !== -1)) {
 			$('.homeTypeToA').removeClass('initial-hidden');		
 			$('#homeTypeToA').text($('input[name=homeTypeTo]:checked').parent().text());
 		}
 
 		//Stairs
-		if ($('input[name=elevatorDropOff]:checked').val() !== undefined) {
+		if ($('input[name=elevatorDropOff]:checked').val() !== undefined && (jobTypesArr.indexOf('Whole Home') !== -1 || jobTypesArr.indexOf('Just Labor') !== -1 || jobTypesArr.indexOf('Furniture Delivery') !== -1 || jobTypesArr.indexOf('Piano') !== -1)) {
 			$('.dropoffStairsA').removeClass('initial-hidden');		
 			$('#dropoffStairsA').text($('input[name=elevatorDropOff]:checked').parent().text());
+		}
+	});
+
+
+	//Hides all confirmation info when last back button is clicked
+	$('#finalBackBtn').on('click', function() {
+		var hideAll = $('.confirmation');
+
+		for (i = 0; i < hideAll.length; i++) {
+			if (!$(hideAll[i]).hasClass('initial-hidden')) {
+				$(hideAll[i]).addClass('initial-hidden');
+			}
 		}
 	});
 
