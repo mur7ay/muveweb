@@ -36,12 +36,11 @@ app.get('/', function (req, res) {
 
 // charge route
 app.post('/charge', (req, res) => {
-  // const amount = 2500;
   const amount = req.body.totalAmount;
-  // const email = req.body.customerEmail;
+  const email = req.body.customerEmail;
 
   stripe.customers.create({
-    email: req.body.customerEmail,
+    email: email,
     source: req.body.mytoken
   })
   .then(customer =>  {
@@ -62,7 +61,4 @@ app.listen(port, () => {
 
 
 // Change hosting to Heroku
-// grab email on payment page
 // confirmation page text
-
-// send intiail four questions for moverinvite to database
