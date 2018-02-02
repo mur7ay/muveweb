@@ -47,7 +47,7 @@ $(document).ready(function() {
 			formArray.push('#moveDetails');
 
 		//Form validation
-		if (formArray.length > 1) {
+		if (formArray.length > 2) {
 			$('#jobSelect').addClass('initial-hidden');
 			$(formArray[counter]).removeClass('initial-hidden');
 		} else {
@@ -58,17 +58,95 @@ $(document).ready(function() {
 	});
 
 
+	// Email validation function
+	function validateEmail(email) {
+		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+		return  (email.length > 0 && emailReg.test(email));
+	};
+
+	//Name validation function
+	function validateName(name) {
+		if (name.split(' ').length < 2) {
+			return false;
+		}
+		var nameReg = /^[a-zA-Z ,.'-]+$/;
+		return  (name.length > 0 && nameReg.test(name));
+	};
+
+	$('#finalInfoQ').validate({
+	 	rules: {
+			phone: {
+	    		required: true,
+	    		phoneUS: true
+	    	},
+	  	}
+	});
+
+
 	//Click event listener for .next-btn
 	$('.next-btn').click(function() {
 		var finalAddressChanger = 0;
 		var instorePickup = false;
 		var laborTypeBoth = false;	
-		$('#pickupAddress').removeClass('initial-hidden');
-		$('#address2').attr('placeholder', 'Drop-off Address');
 
 		//Form validation
-		var currentForm = $(this).parent().parent().parent();
+		var currentForm = $(this).parent().parent();
 		var currentSelectedRB = currentForm.find(':radio').is(":checked");
+
+		//finalForm validation
+		if (parseInt(counter) + 2 === formArray.length) {
+
+			//Validates email
+			if (!validateEmail($('#email').val())) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+
+			//Validates name
+			if (!validateName($('#name').val())) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+
+			//Validates phone length
+			if ($('#phone').val().length !== 12) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+
+			//Validates address1 is not empty
+			if (!$('#pickupAddress').hasClass('initial-hidden')) {
+				if (!$('#address1').val()) {
+					var formValidate = currentForm.find('.text-danger');
+					formValidate.removeClass('initial-hidden');					
+					return false;
+				}
+			}
+
+			//Validates address2 is not empty
+			if (!$('#address2').val()) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');						
+				return false;
+			}
+
+			//Validates a day has been selected
+			if (!$('input[name=day]:checked').val()) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');	
+				return false;
+			}
+
+			//Validates a time has been selected
+			if (!$('input[name=time]:checked').val()) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+		}
 
 		if (currentSelectedRB) {
 			$(formArray[counter]).addClass('initial-hidden');
@@ -78,6 +156,7 @@ $(document).ready(function() {
 			//Progress bar
 			var progress = Math.round((counter/formArray.length) * 100);
 			$('#progressBar').width(progress + '%');
+
 		} else {
 			var formValidate = currentForm.find('.text-danger');
 			formValidate.removeClass('initial-hidden');
@@ -111,6 +190,11 @@ $(document).ready(function() {
 				$('#address2').attr('placeholder', 'Address');
 				$('#dvMap').addClass('initial-hidden')
 				$('#milesDriveTime').addClass('initial-hidden')
+			} else if ($('#pickupAddress').hasClass('initial-hidden')) {
+				$('#pickupAddress').removeClass('initial-hidden');
+				$('#address2').attr('placeholder', 'Drop-off Address');
+				$('#dvMap').removeClass('initial-hidden')
+				$('#milesDriveTime').removeClass('initial-hidden')		
 			}
 		}
 	});
@@ -832,4 +916,5 @@ $(document).ready(function() {
 		$('#new_text').text(total);
 		$('#new_text2').text((total * .15).toFixed(2));
 	});
+
 });
