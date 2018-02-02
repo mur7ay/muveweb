@@ -47,7 +47,7 @@ $(document).ready(function() {
 			formArray.push('#moveDetails');
 
 		//Form validation
-		if (formArray.length > 1) {
+		if (formArray.length > 2) {
 			$('#jobSelect').addClass('initial-hidden');
 			$(formArray[counter]).removeClass('initial-hidden');
 		} else {
@@ -70,6 +70,25 @@ $(document).ready(function() {
 		var currentForm = $(this).parent().parent().parent();
 		var currentSelectedRB = currentForm.find(':radio').is(":checked");
 
+		if (parseInt(counter) + 2 === formArray.length) {
+
+			function validateEmail($email) {
+				var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+				return  ($email.length > 0 && emailReg.test($email));
+			}
+
+			if (!validateEmail($('#email').val())) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+
+
+		}
+
+
+
+
 		if (currentSelectedRB) {
 			$(formArray[counter]).addClass('initial-hidden');
 			counter++;
@@ -78,6 +97,7 @@ $(document).ready(function() {
 			//Progress bar
 			var progress = Math.round((counter/formArray.length) * 100);
 			$('#progressBar').width(progress + '%');
+
 		} else {
 			var formValidate = currentForm.find('.text-danger');
 			formValidate.removeClass('initial-hidden');
