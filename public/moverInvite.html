@@ -7,7 +7,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="stylesheets.css" />
-  <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" />
+  <link rel="stylesheet" type="text/css" href="../css/foundation-datepicker.css" />
 
 
   <!-- Jquery -->
@@ -50,22 +50,6 @@
 
   <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/ad4b507575.js"></script>
-
-
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    // TODO: Replace with your project's customized code snippet
-    var config = {
-      apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
-      authDomain: "muve-ce0b0.firebaseapp.com",
-      databaseURL: "https://muve-ce0b0.firebaseio.com",
-      storageBucket: "muve-ce0b0.appspot.com",
-      messagingSenderId: "274894158485",
-    };
-    firebase.initializeApp(config);
-  </script>
-
 
   <!-- Start of Async Drift Code -->
   <script>
@@ -152,6 +136,7 @@
     <div id="finalInfoQ" class="question-wrapper">
       <div class="inline field question-container">
         <h4 class="question-header text-center"><strong>Request for mover invite form.</strong></h4>
+        <p style="text-align: center;">(Not a company? No problem, signup as an individual)</p>
         <p class="text-danger initial-hidden">Please fill all required fields</p>
 
         <form role="form" id="userInfo-input-form" action="" class="margin-top-fortypx">
@@ -174,7 +159,7 @@
           </div>
 
         </form>
-        <input type="submit" id="poo" value="Request Invite Form" class="request-form-invite"></input>
+        <input type="submit" id="inviteBtn" value="Request Invite Form" class="request-form-invite"></input>
       </div>
     </div>
 
@@ -215,7 +200,7 @@
             </li>
 
             <li>
-              <a href="#">Blog</a>
+              <a href="blog.html">Blog</a>
             </li>
 
             <li>
@@ -259,8 +244,21 @@
     </div>
   </footer>
 
-  <script src="js/moverInvite.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+      apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
+      authDomain: "muve-ce0b0.firebaseapp.com",
+      databaseURL: "https://muve-ce0b0.firebaseio.com",
+      storageBucket: "muve-ce0b0.appspot.com",
+      messagingSenderId: "274894158485",
+    };
+    firebase.initializeApp(config);
+  </script>
 
+  <script src="js/moverInvite.js"></script>
   <script type="text/javascript" src="js/foundation-datepicker.js"></script>
 
 </body>

@@ -23,16 +23,6 @@ app.get('/', function (req, res) {
 // app.get('/about', (req, res) => {
 //   res.sendFile('public/about.html', {root: __dirname});
 // });
-//
-// // About page link
-// app.get('/blog', (req, res) => {
-//   res.sendFile('public/blog.html', {root: __dirname});
-// });
-//
-// // About page link
-// app.get('/moverInvite', (req, res) => {
-//   res.sendFile('public/moverInvite.html', {root: __dirname});
-// });
 
 // charge route
 app.post('/charge', (req, res) => {
@@ -58,7 +48,3 @@ app.listen(port, () => {
 });
 
 //kade
-
-
-// Change hosting to Heroku
-// confirmation page text

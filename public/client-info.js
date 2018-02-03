@@ -1,4 +1,5 @@
 var all = [];
+var date = Date();
 
 function jobType() {
 
@@ -221,6 +222,7 @@ function homeTypeQuestion() {
   // Sending user data to Firebase ** Will need to move to last question in series (user contact info page) **
   var firebaseRef = firebase.database().ref();
   firebaseRef.child("itWork").push({
-    work: all
+    work: all,
+    date: date
   });
 }
