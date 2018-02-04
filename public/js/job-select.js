@@ -655,9 +655,6 @@ $(document).ready(function() {
 		numBedrooms = $('input[name=bedroom]:checked').val();
 		moversInt = parseInt(movers);
 
-		console.log('numBedrooms: ' + numBedrooms);
-		console.log(moversInt);
-
 		switch (numBedrooms) {
 			case '2 bedroom home':
 				switch (moversInt) {
@@ -786,7 +783,7 @@ $(document).ready(function() {
 		if (milesToDrive() > 100) {
 			wholeHomeTotal = moversPerHour * hours + longDistancePrice;
 		} else {
-			wholeHomeTotal = moversPerHsour * hours;
+			wholeHomeTotal = moversPerHour * hours;
 		}
 		console.log('hours in whole home: ' + hours)
 		return wholeHomeTotal;
