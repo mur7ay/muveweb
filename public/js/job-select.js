@@ -66,9 +66,9 @@ $(document).ready(function() {
 
 	//Name validation function
 	function validateName(name) {
-		if (name.split(' ').length < 2) {
-			return false;
-		}
+		// if (name.split(' ').length < 2) {
+		// 	return false;
+		// }
 		var nameReg = /^[a-zA-Z ,.'-]+$/;
 		return  (name.length > 0 && nameReg.test(name));
 	};
