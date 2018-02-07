@@ -133,19 +133,19 @@
       <div class="row mover-invite-text-center">
         <h1 class="container-headers" style="margin-bottom: 50px;">Get Started With Muve</h1>
         <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
-          <img src="contract.png" style="width: 100px;" />
+          <img src="img/contract.png" style="width: 100px;" />
           <h2>Absolutely Zero Risk</h2>
           <p>There's absolutely no risk. That means no contract, no monthly fees, and no fee for leads. As always, you're able to cancel the service at any time.</p>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
-          <img src="guarantee.png" style="width: 100px;" />
+          <img src="img/guarantee.png" style="width: 100px;" />
           <h2>Guaranteed Jobs</h2>
           <p>Unlike lead services, we check and automatically populate holes in your calendar with quality, prescreened move jobs.</p>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mover-invite-center margin-top-twentypx">
-          <img src="remote.png" style="width: 100px;" />
+          <img src="img/remote.png" style="width: 100px;" />
           <h2>You're In Control</h2>
           <p>You're entirely in control of your service radius, rates for the services you offer, availability, and everything else.</p>
         </div>
@@ -180,12 +180,12 @@
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverEmail">Email</label>
-            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverEmail" placeholder="Your answer" />
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" id="moverEmail" placeholder="Your answer" />
           </div>
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" onclick="submit()" onsubmit="submit()" class="text-center next-btn">NEXT</button>
+            <button type="button" onsubmit="submit()" class="text-center next-btn">NEXT</button>
           </div>
         </form>
 
@@ -200,10 +200,10 @@
         <p class="text-danger initial-hidden">Please choose one</p>
 
         <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container3">
+          <div class="checkbox checkbox-container3 moverInvite-required">
             <p class="mover-question">Do you charge per mile?</p>
             <label class="checkbox-label2 margin-top-tenpx">
-              <input type="radio" id="chargePerMileYes" name="chargePerMile" class="checkbox-circle margin-right" value="true" />
+              <input type="radio" id="chargePerMileYes" name="chargePerMile" class=" moverInvite-required checkbox-circle margin-right" value="true" />
               Yes
             </label>
 
@@ -221,7 +221,7 @@
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">What is your rate per mile?</label>
-              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverRatePerMile" placeholder="Your answer" />
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" id="moverRatePerMile" placeholder="Your answer" />
             </label>
           </div>
 
@@ -299,7 +299,7 @@
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">What is your hourly rate for four movers with a truck? Without a truck?</label>
-              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="fourMoversTruck" placeholder="Your answer" />
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" id="fourMoversTruck" placeholder="Your answer" />
             </label>
           </div>
 
