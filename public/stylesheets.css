@@ -1821,3 +1821,10 @@ h2.quote-info {
 h1.lato {
   font-family: Lato, sans-serif;
 }
+
+.mover-quote {
+  border: 1px solid #D8D8D8;
+  padding: 8px 15px;
+  border-radius: 10px;
+  box-shadow: 1px 4px 10px #D8D8D8;
+}
