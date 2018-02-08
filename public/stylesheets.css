@@ -1652,6 +1652,7 @@ select.week {
   width: 100%;
   display: block;
   border: none;
+  border-bottom: 2px solid transparent;
   padding-left: 10px;
   outline: none;
 }
