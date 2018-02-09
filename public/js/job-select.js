@@ -73,14 +73,14 @@ $(document).ready(function() {
 		return  (name.length > 0 && nameReg.test(name));
 	};
 
-	$('#finalInfoQ').validate({
-	 	rules: {
-			phone: {
-	    		required: true,
-	    		phoneUS: true
-	    	},
-	  	}
-	});
+	// $('#finalInfoQ').validate({
+	//  	rules: {
+	// 		phone: {
+	//     		required: true,
+	//     		phoneUS: true
+	//     	},
+	//   	}
+	// });
 
 
 	//Click event listener for .next-btn

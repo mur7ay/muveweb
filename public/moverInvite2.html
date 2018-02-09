@@ -158,29 +158,29 @@
     <div id="contactInfoQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
         <h4 class="question-header"><strong>Contact Information</strong></h4>
-        <p class="text-danger initial-hidden">Required</p>
+        <p class="text-danger initial-hidden">Please fill all fields</p>
 
-        <form role="form" action="" class="margin-top-fortypx">
+        <form role="form" id="contactInfo" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverContactName">Contact Name</label>
-            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverContactName" placeholder="Your answer" />
+            <input id="contactName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverContactName" placeholder="Your answer" />
             </label>
           </div>
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverBusinessName">Business Name</label>
-            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverBusinessName" placeholder="Your answer" />
+            <input id="businessName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverBusinessName" placeholder="Your answer" />
           </div>
 
           <div class="checkbox checkbox-container3">
-            <label class="checkbox-label2 text-input no-left-padding" for="moverPhone">Phone
-            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverPhone" placeholder="Your answer" onkeypress="numberPressed(event);"/>
+            <label class="checkbox-label2 text-input no-left-padding">Phone
+            <input id="phone" name="phone" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" onkeypress="numberPressed(event);"/>
             </label>
           </div>
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverEmail">Email</label>
-            <input class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" id="moverEmail" placeholder="Your answer" />
+            <input id="email" class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" id="moverEmail" placeholder="Your answer" />
           </div>
 
           <div style="margin-top: 50px;">
@@ -720,8 +720,73 @@
   </footer>
 
   <script src="moverInvite.js"></script>
+  <script>
+    // Formatting the phone number as the individual types
+document.getElementById('phone').addEventListener('keyup', function(evt) {
+  var phoneNumber = document.getElementById('phone');
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  phoneNumber.value = phoneFormat(phoneNumber.value);
+});
 
+// Manually formatting the phone number on page load
+document.getElementById('phone').value = phoneFormat(document.getElementById('phone').value);
+
+// function to determine if the pressed key is an integer
+function numberPressed(evt) {
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)) {
+    return false;
+  }
+  return true;
+}
+
+// Formatting the phone number as the individual types
+document.getElementById('phone').addEventListener('keyup', function(evt) {
+  var phoneNumb = document.getElementById('phone');
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  phoneNumb.value = phoneFormat(phoneNumb.value);
+});
+
+// Manually formatting the phone number on page load
+document.getElementById('phone').value = phoneFormat(document.getElementById('phone').value);
+
+// function to determine if the pressed key is an integer
+function numberPress(evt) {
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)) {
+    return false;
+  }
+  return true;
+}
+
+// Formatting as a phone number
+function phoneFormat(input) {
+  // Strip all characters from the input except digits
+  input = input.replace(/\D/g, '');
+
+  // Trim the remaining input to ten characters, to preserve phone number format
+  input = input.substring(0, 10);
+
+  // Based upon the length of the string, we add formatting as necessary
+  var size = input.length;
+  if (size === 0) {
+    input = input;
+  } else if (size < 4) {
+    input = input;
+  } else if (size < 7) {
+    input = input.substring(0, 3) + '-' + input.substring(3, 6);
+  } else {
+    input = input.substring(0, 3) + '-' + input.substring(3, 6) + '-' + input.substring(6, 10);
+  }
+  return input;
+}
+
+    
+  </script>
   <script type="text/javascript" src="js/foundation-datepicker.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 
 </body>
 
