@@ -910,6 +910,9 @@ $(document).ready(function() {
 			total = total + justLabor();
 		}
 
+		console.log($('#address1').val());
+		console.log($('#address2').val());
+
 		$('#new_text').text(total);
 		$('#new_text2').text((total * .15).toFixed(2));
 	});

@@ -316,25 +316,6 @@
             </label>
           </div>
 
-          <div class="checkbox checkbox-container3">
-            <p class="mover-question">Does your hourly rate include heavy items like pool tables and pianos?</p>
-            <label class="checkbox-label2 margin-top-tenpx">
-              <input type="radio" id="chargePerHourYes" name="chargePerHour" class="checkbox-circle margin-right" value="true" />
-              Yes
-            </label>
-
-            <label class="checkbox-label2">
-              <input type="radio" id="chargePerHourNo" name="chargePerHour" class="checkbox-circle margin-right" value="false" />
-              No
-            </label>
-
-            <label class="checkbox-label2 label-other">
-              <input type="radio" id="chargePerHourOther" name="chargePerHourOther" class="checkbox-circle margin-right" value="other" />
-              Other
-            </label>
-            <input class="input__field input__field--hoshi text-other" type="text" id="chargePerHourOtherAnswer" placeholder="Your answer" />
-          </div>
-
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
             <button type="button" class="text-center next-btn">NEXT</button>
@@ -354,42 +335,42 @@
         <form role="form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container3">
             <p class="mover-question">Do you charge extra for heavy items (pianos, pool tables, kitchen appliances, etc.)?</p>
-            <label class="checkbox-label2 margin-top-tenpx">
+            <label id="heavyItemsYes" class="checkbox-label2 margin-top-tenpx">
               <input type="radio" id="chargeHeavyYes" name="chargeHeavy" class="checkbox-circle margin-right" value="true" />
               Yes
             </label>
 
-            <label class="checkbox-label2">
+            <label id="heavyItemsNo" class="checkbox-label2">
               <input type="radio" id="chargeHeavyNo" name="chargeHeavy" class="checkbox-circle margin-right" value="false" />
               No
             </label>
 
-            <label class="checkbox-label2 label-other">
+            <label id="heavyItemsOther" class="checkbox-label2 label-other">
               <input type="radio" id="chargeHeavyOther" name="chargeHeavy" class="checkbox-circle margin-right" value="other" />
               Other
             </label>
             <input class="input__field input__field--hoshi text-other" type="text" id="chargePerHourOtherAnswer" placeholder="Your answer" />
           </div>
 
-          <div class="checkbox checkbox-container3">
+          <div class="heavyItemObj checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Cost per piano:</label>
               <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="pianoCost" placeholder="Your answer" />
             </label>
           </div>
 
-         <div class="checkbox checkbox-container3">
+         <div class="heavyItemObj checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Cost per pool table:</label>
               <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="poolTableCost" placeholder="Your answer" />
             </label>
           </div>
 
-         <div class="checkbox checkbox-container3">
+         <div class="heavyItemObj checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Cost per kitchen appliance:</label>
               <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="applianceCost" placeholder="Your answer" />
             </label>
           </div>
 
-          <div class="checkbox checkbox-container3">
+          <div class="heavyItemObj checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Other items:</label>
               <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="otherHeavyItemCost" placeholder="Your answer" />
             </label>
@@ -414,17 +395,17 @@
         <form role="form" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container3">
             <p class="mover-question">Does your hourly rate include obstacles like stairs and elevators?</p>
-            <label class="checkbox-label2 margin-top-tenpx">
+            <label id="stairsYes" class="checkbox-label2 margin-top-tenpx">
               <input type="radio" id="obstaclesIncludedYes" name="obstaclesIncluded" class="checkbox-circle margin-right" value="true" />
               Yes
             </label>
 
             <label class="checkbox-label2">
-              <input type="radio" id="obstaclesIncludedNo" name="obstaclesIncluded" class="checkbox-circle margin-right" value="false" />
+              <input id="stairsNo" type="radio" id="obstaclesIncludedNo" name="obstaclesIncluded" class="checkbox-circle margin-right" value="false" />
               No
             </label>
 
-            <label class="checkbox-label2 label-other">
+            <label id="stairsOther" class="checkbox-label2 label-other">
               <input type="radio" id="obstaclesIncludedOther" name="obstaclesIncludedOther" class="checkbox-circle margin-right" value="other" />
               Other
             </label>
@@ -476,13 +457,13 @@
         <p class="text-danger initial-hidden">Please choose one</p>
 
         <form role="form" action="" class="margin-top-fortypx">
-          <div class="checkbox checkbox-container3">
+          <div class="stairsQ checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Cost per flight of stairs:</label>
               <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="stairsCost" placeholder="Your answer" />
             </label>
           </div>
 
-         <div class="checkbox checkbox-container3">
+         <div class="stairsQ checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Cost per elevator:</label>
               <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="elevatorCost" placeholder="Your answer" />
             </label>
@@ -591,6 +572,12 @@
         <p class="text-danger initial-hidden">Please choose one</p>
 
         <form role="form" action="" class="margin-top-fortypx">
+         <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">How do you currently manage your scheduling?</label>
+              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="servicesShouldKnow" placeholder="Your answer" />
+            </label>
+          </div>
+
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Is there anything else you would like customers to know about you?</label>
               <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="customerShouldKnow" placeholder="Your answer" />
@@ -614,13 +601,13 @@
 
 
     <!-- Confirm -->
-    <div id="moverInviteConfirm" class="white-container about-text confirm-container bottom-padding-fortypx initial-hidden">
+    <div id="moverInviteConfirm" class="white-container about-text confirm-container bottom-padding-sixtypx initial-hidden">
       <img src="fistBump.png" />
 
       <h1 class="text-center lato">Success! Your invite request has been received.</h1>
       <h1 class="text-center lato">Fist bump!</h1>
 
-      <p class="margin-top-eightypx text-center">The team will review your information and reach out shortly to finish the onboarding process. </p>
+      <p class="margin-top-eightypx text-center">The team will review your information and reach out shortly to finish the onboarding process.</p>
 
 <!--       <ol>
         <li>
