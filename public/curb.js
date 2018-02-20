@@ -70,23 +70,23 @@ function numberPressed(evt) {
 }
 
 // Formatting the phone number as the individual types
-document.getElementById('phone').addEventListener('keyup', function(evt) {
-  var phoneNumb = document.getElementById('phone');
-  var charCode = (evt.which) ? evt.which : evt.keyCode;
-  phoneNumb.value = phoneFormat(phoneNumb.value);
-});
-
-// Manually formatting the phone number on page load
-document.getElementById('phone').value = phoneFormat(document.getElementById('phone').value);
-
-// function to determine if the pressed key is an integer
-function numberPress(evt) {
-  var charCode = (evt.which) ? evt.which : evt.keyCode;
-  if (charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)) {
-    return false;
-  }
-  return true;
-}
+// document.getElementById('phone').addEventListener('keyup', function(evt) {
+//   var phoneNumb = document.getElementById('phone');
+//   var charCode = (evt.which) ? evt.which : evt.keyCode;
+//   phoneNumb.value = phoneFormat(phoneNumb.value);
+// });
+//
+// // Manually formatting the phone number on page load
+// document.getElementById('phone').value = phoneFormat(document.getElementById('phone').value);
+//
+// // function to determine if the pressed key is an integer
+// function numberPress(evt) {
+//   var charCode = (evt.which) ? evt.which : evt.keyCode;
+//   if (charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)) {
+//     return false;
+//   }
+//   return true;
+// }
 
 // Formatting as a phone number
 function phoneFormat(input) {
