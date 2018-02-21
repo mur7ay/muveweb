@@ -92,6 +92,30 @@ $(document).ready(function() {
 		let progress = Math.round((counter/formsArr[0].length) * 100);
 		$('#progressBar').width(progress + '%');
 	};
+
+	$('#heavyItemsNo').on('click', function() {
+		$('.heavyItemObj').addClass('initial-hidden');
+	});
+
+	$('#heavyItemsYes').on('click', function() {
+		$('.heavyItemObj').removeClass('initial-hidden');
+	});
+
+	$('#heavyItemsOther').on('click', function() {
+		$('.heavyItemObj').removeClass('initial-hidden');
+	});
+
+	$('#stairsYes').on('click', function() {
+		$('.stairsQ').addClass('initial-hidden');
+	});
+
+	$('#stairsNo').on('click', function() {
+		$('.stairsQ').removeClass('initial-hidden');
+	});
+
+	$('#stairsOther').on('click', function() {
+		$('.stairsQ').removeClass('initial-hidden');
+	});
 });
 
 
