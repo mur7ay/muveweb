@@ -17,15 +17,6 @@
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="../public/stylesheets.css" />
   <link rel="stylesheet" type="text/css" href="calendar.css" />
-<!--   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" /> -->
-
-
-  <!-- Full Calendar -->
-  <link rel='stylesheet' href='fullcalendar-3.8.2/fullcalendar.css' />
-  <script src='fullcalendar-3.8.2/lib/jquery.min.js'></script>
-  <script src='fullcalendar-3.8.2/lib/moment.min.js'></script>
-  <script src='fullcalendar-3.8.2/fullcalendar.js'></script>
-  <script src="calendar.js"></script>
 
 
   <!-- Meta Data -->
@@ -95,7 +86,6 @@
 
 <body>
 
-
   <!-- Navigation Bar -->
   <nav class="navbar navbar-default navbar-fixed-top no-box-shadow" role="navigation">
     <div class="container-fluid background-color-fff">
@@ -120,42 +110,32 @@
     </div>
   </nav>
 
-  <nav class="navbar navbar2 navbar-default navbar-fixed-top no-box-shadow" role="navigation">
-    <div class="container-fluid background-color-fff">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed border-color-fff" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle Navigator</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+
+<!-- Log In -->
+  <div class="container container-about container-login margin-top-eightypx">
+
+    <div class="white-container about-text2 confirm-container bottom-padding-fortypx">
+      <h1 class="login-h1 text-center">Log In</h1>
+      <input class="mover-username" type="text" placeholder="username" />
+      <input class="mover-password" type="password" placeholder="password" />
+      <div class="mover-log-in" type="button">
+        <p>Log In</p>
       </div>
 
-      <div class="collapse navbar-collapse navbar-right background-color-fff" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="#" title="link to the mover invite screen">Pricing</a></li>
-          <li><a href="#" title="link to the about page">Profile</a></li>
-          <li><a href="#" title="link to the about page">Info</a></li>
-        </ul>
+      <div class="password-forgot-div">
+        <a href="#" class="mover-forgot-password">Forgot Password?</a>
       </div>
     </div>
-  </nav>
-
-	<div class="container-fluid calendars-container">
-		<div class="row">
-			<div id='task-list' class='task-list calendar col-md-4 col-sm-12 col-xs-12'></div>
-			<div id='calendar' class='calendar col-md-8 col-sm-12 col-xs-12'></div>
-		</div>
-	</div>
+  </div>
 
 
-  <!-- Footer -->
-  <footer>
+<!-- Footer -->
+  <footer class="margin-top-eightypx">
     <div class="container">
       <div class="row">
 
 
-        <!-- Logo and Summary -->
+<!-- Logo and Summary -->
         <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
           <ul class="adress">
             <img class="footer-logo" src="../public/footer-logo.png" />
@@ -170,34 +150,34 @@
         </div>
 
 
-        <!-- Footer Menu -->
+<!-- Footer Menu -->
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <ul class="contact">
             <span class="margin-top-twentypx">Menu</span>
             <li>
-              <a href="../public/index.html">Request</a>
+              <a href="index.html">Request</a>
             </li>
 
             <li>
-              <a href="../public/about.html">About Us</a>
+              <a href="about.html">About Us</a>
             </li>
 
             <li>
-              <a href="../public/blog.html">Blog</a>
+              <a href="#">Blog</a>
             </li>
 
             <li>
-              <a href="../public/terms.html">Terms & Conditions</a>
+              <a href="terms.html">Terms & Conditions</a>
             </li>
 
             <li>
-              <a href="../public/privacy.html">Privacy Policy</a>
+              <a href="privacy.html">Privacy Policy</a>
             </li>
           </ul>
         </div>
 
 
-        <!-- Social Media Icons -->
+<!-- Social Media Icons -->
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
           <ul class="social">
             <span class="margin-top-twentypx">Social</span>
@@ -227,7 +207,6 @@
     </div>
   </footer>
 
+
 </body>
-
-
 </html>
