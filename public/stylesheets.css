@@ -42,6 +42,13 @@ nav {
   font-size: 18px;
 }
 
+.navbar2 {
+  border-top: 1px solid grey !important;
+  border-bottom: 1px solid grey !important;
+  margin-top: 56px;
+  text-align: center;
+}
+
 .background-color-01D06F {
   background-color: #FFF;
   color: #01D06F;
@@ -55,6 +62,77 @@ nav {
   background-color: #01D06F;
 }
 
+
+/* ============ Calendar Styles ============*/
+
+div.calendars-container {
+  margin-top: 125px !important;
+}
+
+
+/* ============ Log In Styles ============*/
+.mover-username, .mover-password {
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  width: 60%;
+  height: 35px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  border: 1px solid grey;
+}
+
+.mover-username, .mover-password, .mover-log-in, .password-forgot-div {
+  min-width: 250px;
+}
+
+.mover-username {
+  margin-top: 25px;
+}
+
+.mover-log-in {
+  width: 60%;
+  margin: 15px auto;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid #01D06F;
+  height: 33px;
+  color: #01D06F;
+}
+
+.mover-log-in:hover {
+  background-color: #01D06F;
+  color: white;
+  cursor: pointer;
+}
+
+.mover-log-in p {
+  padding-top: 2px;
+}
+
+.mover-password {
+  margin-top: 15px;
+}
+
+.password-forgot-div {
+  width: 60%;
+  margin: 15px auto;
+  position: relative;
+  margin-bottom: 45px;
+}
+
+a.mover-forgot-password {
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+}
+
+.about-text2 {
+  font-size: 18px;
+  color: #5F5F5F;
+  font-family: 'Lato', sans-serif;
+}
 
 /* ============ Main Section Styles ============*/
 #dv {
