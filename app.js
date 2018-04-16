@@ -9,6 +9,44 @@ const port = process.env.PORT || 13441;
 // Set Static Folder
 app.use(express.static('public'));
 
+if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    if (!req.secure && req.headers['X-forwarded-proto'] !== 'https') {
+      console.log('condition check!!!!')
+      res.redirect('https://' + req.headers.host + req.url)
+    } else {
+      next();
+    }
+  })
+}
+
+// app.use(function (req, res, next) {
+//   var sslUrl;
+//
+//   if (process.env.NODE_ENV === 'production' &&
+//     req.headers['x-forwarded-proto'] !== 'https') {
+//
+//     sslUrl = ['https://muveapp.com', req.url].join('');
+//     return res.redirect(sslUrl);
+//   }
+//
+//   return next();
+// });
+//
+// app.use(function (req, res, next) {
+//   var newURL;
+//
+//   // If not on HTTPS, or not on the main domain, redirect
+//   if (process.env.NODE_ENV === 'production' &&
+//     (req.headers['x-forwarded-proto'] !== 'https' || req.headers.host !== 'hjnilsson.com')) {
+//
+//     newURL = ['https://muveapp.com', req.url].join('');
+//     return res.redirect(newURL);
+//   }
+//
+//   return next();
+// });
+
 // Index route - working with Heroku but not Stripe
 // app.get('/', (req, res) => {
 //   res.sendFile('public/test.html', {root: __dirname});
@@ -43,8 +81,28 @@ app.post('/charge', (req, res) => {
   .then(charge => res.sendFile('public/confirmationPage.html', {root: __dirname}));
 });
 
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
-});
+
+// const accountSid = 'AC79e7044c931e917688e13f14a88a59de';
+// const authToken = 'e74672ad5524970753d4c58085ed288d';
+//
+// const client = require('twilio')(accountSid, authToken);
+//
+// client.messages.create(
+//   {
+//     to: '+15137816780',
+//     from: '+13854744952',
+//     body: 'New Move Request',
+//   },
+//   (err, message) => {
+//     console.log(message.sid);
+//   }
+// );
+//
+// app.listen(port, () => {
+//   console.log(`Server started on port ${port}`);
+// });
+
+
+
 
 //kade
