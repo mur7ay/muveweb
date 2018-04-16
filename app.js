@@ -10,6 +10,8 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
   app.use((req, res, next) => {
     if (!req.secure && req.headers['X-forwarded-proto'] !== 'https') {
       console.log('condition check!!!! - not secure')
+      console.log('req.headers.host', req.headers.host);
+      console.log('req.url', req.url);
       res.redirect('https://' + req.headers.host + req.url)
     } else {
       console.log('condition check!!!! - secured already')
