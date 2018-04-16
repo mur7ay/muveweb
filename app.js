@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const port = process.env.PORT || 13441;
-
+app.use(express.static('public'));
 
 if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
   app.use((req, res, next) => {
@@ -19,6 +19,11 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
     }
   })
 }
+
+app.get('/test', (req, res) => {
+  console.log('got here!!!!!!!')
+  res.send('works on HTTPS!!!');
+})
 
 // Set Static Folder
 
@@ -101,12 +106,6 @@ app.post('/charge', (req, res) => {
 //   }
 // );
 ///
-
-app.get('/test', (req, res) => {
-  res.send('works on HTTPS!!!');
-})
-
-app.use(express.static('public'));
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
