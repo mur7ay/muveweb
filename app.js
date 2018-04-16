@@ -19,7 +19,7 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
 }
 
 // Set Static Folder
-app.use(express.static('public'));
+
 
 app.use(bodyParser.json());
 
@@ -98,7 +98,13 @@ app.post('/charge', (req, res) => {
 //     console.log(message.sid);
 //   }
 // );
-//
+///
+
+app.get('/test', (req, res) => {
+  res.send('works on HTTPS!!!');
+})
+
+app.use(express.static('public'));
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
