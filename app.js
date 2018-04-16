@@ -8,28 +8,16 @@ const port = process.env.PORT || 13441;
 
 if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
   app.use((req, res, next) => {
-    console.log('req.secureeee', req.secure);
-    console.log('req.headers[x-forwarded-proto]', req.headers['x-forwarded-proto']);
     if (!req.secure && req.headers['x-forwarded-proto'] !== 'https') {
-      console.log('condition check!!!! - not secure')
-      console.log('req.headers.host', req.headers.host);
-      console.log('req.url', req.url);
       res.redirect('https://' + req.headers.host + req.url)
     } else {
-      console.log('condition check!!!! - secured already')
       next();
     }
   })
 }
 
-app.use(express.static('public'));
-
-app.get('/test', (req, res) => {
-  console.log('got here!!!!!!!')
-  res.send('works on HTTPS!!!');
-})
-
 // Set Static Folder
+app.use(express.static('public'));
 
 
 app.use(bodyParser.json());
