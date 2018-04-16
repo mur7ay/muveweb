@@ -8,6 +8,8 @@ app.use(express.static('public'));
 
 if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
   app.use((req, res, next) => {
+    console.log('req.secureeee', req.secure);
+    console.log('req.headers[X-forwarded-proto]', req.headers['X-forwarded-proto']);
     if (!req.secure && req.headers['X-forwarded-proto'] !== 'https') {
       console.log('condition check!!!! - not secure')
       console.log('req.headers.host', req.headers.host);
