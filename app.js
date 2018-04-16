@@ -53,9 +53,7 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
 // });
 
 // Payment route
-app.get('/', function (req, res) {
-  res.sendFile( __dirname + '/public/test.html' );
-});
+
 
 // // About page link
 // app.get('/about', (req, res) => {
@@ -98,9 +96,15 @@ app.post('/charge', (req, res) => {
 //   }
 // );
 //
-// app.listen(port, () => {
-//   console.log(`Server started on port ${port}`);
-// });
+
+app.get('*', function (req, res) {
+  res.sendFile( __dirname + '/public/index.html' );
+});
+
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
 
 
 
