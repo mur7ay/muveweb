@@ -2,23 +2,26 @@ const express = require('express');
 const stripe = require('stripe')('sk_test_LZJGwg1WdZXEKRig7xEMM2eC');
 const bodyParser = require('body-parser');
 const app = express();
-app.use(bodyParser.json());
 
 const port = process.env.PORT || 13441;
 
-// Set Static Folder
-app.use(express.static('public'));
 
 if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
   app.use((req, res, next) => {
     if (!req.secure && req.headers['X-forwarded-proto'] !== 'https') {
-      console.log('condition check!!!!')
+      console.log('condition check!!!! - not secure')
       res.redirect('https://' + req.headers.host + req.url)
     } else {
+      console.log('condition check!!!! - secured already')
       next();
     }
   })
 }
+
+// Set Static Folder
+app.use(express.static('public'));
+
+app.use(bodyParser.json());
 
 // app.use(function (req, res, next) {
 //   var sslUrl;
@@ -96,11 +99,6 @@ app.post('/charge', (req, res) => {
 //   }
 // );
 //
-
-app.get('*', function (req, res) {
-  res.sendFile( __dirname + '/public/index.html' );
-});
-
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
