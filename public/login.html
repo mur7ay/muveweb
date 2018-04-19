@@ -9,6 +9,10 @@
   <!-- <link rel="icon" type="image/png" sizes="16x16" href="img/muve-logos/favicon-16x16.png"> -->
 
 
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -56,7 +60,7 @@
 
 
   <!-- Start of Async Drift Code -->
-<!--   <script>
+  <!--   <script>
     ! function() {
       var t;
       if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void(window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
@@ -111,31 +115,38 @@
   </nav>
 
 
-<!-- Log In -->
+  <!-- Log In -->
   <div class="container container-about container-login margin-top-eightypx">
 
-    <div class="white-container about-text2 confirm-container bottom-padding-fortypx">
+    <div class="white-container about-text2 confirm-container bottom-padding-fortypx" id="login_div">
       <h1 class="login-h1 text-center">Log In</h1>
-      <input class="mover-username" type="text" placeholder="username" />
-      <input class="mover-password" type="password" placeholder="password" />
-      <div class="mover-log-in" type="button">
+      <input class="mover-username" id="email" type="text" placeholder="username" />
+      <input class="mover-password" id="password" type="password" placeholder="password" />
+      <button id="button">Login</button>
+      <!-- <div class="mover-log-in" id="button" type="button">
         <p>Log In</p>
-      </div>
+      </div> -->
 
       <div class="password-forgot-div">
         <a href="#" class="mover-forgot-password">Forgot Password?</a>
       </div>
     </div>
+
+    <div class="loggedin-div" id="user_div">
+      <h3>welcome</h3>
+      <button onclick="logout()">Logout</button>
+    </div>
+
   </div>
 
 
-<!-- Footer -->
+  <!-- Footer -->
   <footer class="margin-top-eightypx">
     <div class="container">
       <div class="row">
 
 
-<!-- Logo and Summary -->
+        <!-- Logo and Summary -->
         <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
           <ul class="adress">
             <img class="footer-logo" src="../public/footer-logo.png" />
@@ -150,7 +161,7 @@
         </div>
 
 
-<!-- Footer Menu -->
+        <!-- Footer Menu -->
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <ul class="contact">
             <span class="margin-top-twentypx">Menu</span>
@@ -177,7 +188,7 @@
         </div>
 
 
-<!-- Social Media Icons -->
+        <!-- Social Media Icons -->
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
           <ul class="social">
             <span class="margin-top-twentypx">Social</span>
@@ -208,5 +219,22 @@
   </footer>
 
 
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
+    authDomain: "muve-ce0b0.firebaseapp.com",
+    databaseURL: "https://muve-ce0b0.firebaseio.com",
+    projectId: "muve-ce0b0",
+    storageBucket: "muve-ce0b0.appspot.com",
+    messagingSenderId: "274894158485"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="login.js"></script>
+
+
 </body>
+
 </html>
