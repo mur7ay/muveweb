@@ -30,6 +30,11 @@ object.onclick = function() {
   });
 }
 
+function forgotPassword() {
+  var userEmail = document.getElementById('email3').value;
+  firebase.auth().sendPasswordResetEmail(userEmail);
+}
+
 function logout() {
   firebase.auth().signOut();
 }

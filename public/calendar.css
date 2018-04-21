@@ -1,0 +1,14 @@
+div.calendars-container {
+	margin-top: 80px;
+	margin-bottom: 40px;
+	max-width: 1500px;
+}
+
+div.task-list {
+	height: 100% !important;
+	border-right: 1px solid black;
+}
+
+button {
+	.width: 209px;
+}
