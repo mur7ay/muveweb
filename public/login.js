@@ -38,3 +38,17 @@ function forgotPassword() {
 function logout() {
   firebase.auth().signOut();
 }
+
+
+var ref = firebase.database().ref('moving-requests');
+ref.on('value', function(snapshot) {
+  snapshot.forEach(function(child) {
+    var datas = child.val();
+    var email = child.val().Email;
+    var name = child.val().Name;
+    var date = child.val().Scheduled_Date;
+    date = date.replace('.', '/');
+    $('#helement').append('<ul><li>' + email + ' ' + name + ' ' + date + '</li></ul>');
+    // console.log(datas);
+  });
+});
