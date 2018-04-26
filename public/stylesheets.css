@@ -121,10 +121,26 @@ div.calendars-container {
   margin-bottom: 45px;
 }
 
-a.mover-forgot-password {
-  font-size: 16px;
+.user-login-button {
   position: absolute;
   right: 0;
+  border-radius: 5px;
+  border: 1px solid #01D06F;
+  color: #01D06F;
+  padding: 1px 35px 5px;
+  background-color: transparent;
+}
+
+.user-login-button:hover {
+  background-color: #01D06F;
+  color: white;
+}
+
+a.mover-forgot-password {
+  font-size: 14px;
+  position: absolute;
+  top: 5px;
+  left: 0;
   text-decoration: none;
 }
 
