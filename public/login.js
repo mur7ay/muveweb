@@ -1,6 +1,9 @@
 var object = document.getElementById('button');
 // var logout = document.getElementById('logoutBtn');
 
+// var pushedRef = firebase.database().ref('/moving-requests').push({ email: email });
+// console.log(pushedRef.key);
+
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -40,6 +43,7 @@ function logout() {
 }
 
 
+var element;
 var ref = firebase.database().ref('moving-requests');
 ref.on('value', function(snapshot) {
   snapshot.forEach(function(child) {
@@ -48,7 +52,20 @@ ref.on('value', function(snapshot) {
     var name = child.val().Name;
     var date = child.val().Scheduled_Date;
     date = date.replace('.', '/');
-    $('#helement').append('<ul><li>' + email + ' ' + name + ' ' + date + '</li></ul>');
+
+    element = document.createElement("div");
+    element.appendChild(document.createTextNode(name));
+    document.getElementById('parentDiv').appendChild(element);
+
+    element = document.createElement("div");
+    element.appendChild(document.createTextNode(email));
+    document.getElementById('parentDiv').appendChild(element);
+
+    element = document.createElement("div");
+    element.appendChild(document.createTextNode(date));
+    document.getElementById('parentDiv').appendChild(element);
+
+    // $('#helement').append('<ul><li>' + email + ' ' + name + ' ' + date + '</li></ul>');
     // console.log(datas);
   });
 });
