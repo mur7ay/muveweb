@@ -18,7 +18,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="stylesheets.css" />
-<!--   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" /> -->
+  <!--   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" /> -->
 
 
   <!-- Scripts -->
@@ -1447,37 +1447,39 @@
           <h2 class="quote-info">Reservation deposit&#58; $<span id="new_text2"></span> USD</h2>
         </div>
 
+        <div class="alert alert-success" style="margin-top: 20px;">
+          <strong>100% Money Back Guarantee</strong>- Your reservation deposit is fully refundable when canceled before 48 hours of your scheduled move. The reservation deposit is necessary to hold your time slot for the specified date you requested.<a href="terms.html" class="alert-link">Terms of Use</a>.
+        </div>
+
 
         <form action="/charge" method="post" id="payment-form" style="margin-top: 40px;">
           <div class="form-row">
             <label for="card-element">
-            Credit or debit card
+            Reservation Deposit (Credit or Debit Card)
           </label>
-            <div id="card-element">
-              <!-- a Stripe Element will be inserted here. -->
-            </div>
+            <div id="card-element"><!-- a Stripe Element will be inserted here. --></div>
 
             <div id="card-errors"></div>
           </div>
 
-        <p class="agree-to-terms text-center">
-          By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
-        </p>
+          <p class="agree-to-terms text-center">
+            By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
+          </p>
 
-        <div class="question-container" style="margin-top: 30px;">
-          <button id="finalBackBtn" type="button" class="back-btn">BACK</button>
-          <button id="furnitureBtn" type="submit" class="text-center next-btn">PAY</button>
-        </div>
+          <div class="question-container" style="margin-top: 30px;">
+            <button id="finalBackBtn" type="button" class="back-btn">BACK</button>
+            <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
+          </div>
 
 
 
-<!--           <button>Submit Payment</button> -->
+          <!--           <button>Submit Payment</button> -->
         </form>
 
 
 
 
-<!--         <div class="question-container" style="margin-top: 30px;">
+        <!--         <div class="question-container" style="margin-top: 30px;">
           <button type="button" class="back-btn">BACK</button>
           <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
         </div> -->
@@ -1741,7 +1743,7 @@
       form.submit();
     }
   </script>
-<!--   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!--   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
 
