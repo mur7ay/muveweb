@@ -937,6 +937,10 @@ h1.margin-bottom-thirtypx {
   padding: 0;
 }
 
+.margin-bottom-twentypx {
+  margin-bottom: 20px;
+}
+
 .margin-bottom-fortypx {
   margin-bottom: 40px;
 }
@@ -1926,4 +1930,59 @@ h1.lato {
   padding: 8px 15px;
   border-radius: 10px;
   box-shadow: 1px 4px 10px #D8D8D8;
+}
+
+/* ============ Contractor Dashboard Styles ============*/
+.contractor-dash-div {
+  width: 50%;
+  float: left;
+  padding: 0 20px 10px;
+}
+
+.avail-accept-jobs-div {
+  border-radius: 10px;
+  border: 1px solid grey;
+  background-color: #f8f8f8;
+  position: relative;
+  padding: 15px;
+}
+
+.avail-accept-jobs-div p {
+  margin-bottom: 0;
+}
+
+.delete-job {
+  border: 1px solid grey;
+  background-color: white;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: grey;
+}
+
+.delete-job:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 1px darkgrey;
+}
+
+.clear {
+  clear: both;
+}
+
+.accept-job-button {
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #01D06F;
+  color: #01D06F;
+  padding: 1px 35px 5px;
+  background-color: transparent;
+}
+
+.accept-job-button:hover {
+  color: white;
+  background-color: #01D06F;
+  cursor: pointer;
 }

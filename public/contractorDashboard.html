@@ -19,6 +19,10 @@
   <link rel="stylesheet" type="text/css" href="stylesheets.css" />
 
 
+  <!-- Custom Scripts -->
+  <script src="js/contractorDashboard.js"></script>
+
+
   <!-- Meta Data -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -110,37 +114,23 @@
     </div>
   </nav>
 
-
   <!-- Log In -->
   <div class="container container-about container-login margin-top-eightypx">
+    <div class="white-container about-text2 confirm-container bottom-padding-fortypx">
 
-    <div class="white-container about-text2 confirm-container bottom-padding-fortypx" id="login_div">
-      <h1 class="login-h1 text-center">Log In</h1>
-      <input class="mover-username" id="email" type="text" placeholder="username" />
-      <input class="mover-password" id="password" type="password" placeholder="password" />
-    
-      <!-- <div class="mover-log-in" id="button" type="button">
-        <p>Log In</p>
-      </div> -->
-
-      <div class="password-forgot-div">
-        <a href="#" class="mover-forgot-password">Forgot Password?</a>
-        <button class="user-login-button" id="button">Login</button>
+      <div id="availableJobs" class="contractor-dash-div available-jobs">
+        <p class="text-center">Available</p>
       </div>
+
+
+
+      <div id="acceptedJobs" class="contractor-dash-div accepted-jobs">
+        <p class="text-center">Accepted</p>
+      </div>
+      
+      <div class="clear"></div>
+
     </div>
-
-    <input type="text" name="" value="" placeholder="hi" id="email3">
-    <button onclick="forgotPassword()">Submit</button>
-
-    <div class="loggedin-div" id="user_div">
-      <h3>welcome</h3>
-      <button onclick="logout()">Logout</button>
-    </div>
-
-  </div>
-
-  <div id="helement">
-    
   </div>
 
 
@@ -221,23 +211,6 @@
       </div>
     </div>
   </footer>
-
-
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
-    authDomain: "muve-ce0b0.firebaseapp.com",
-    databaseURL: "https://muve-ce0b0.firebaseio.com",
-    projectId: "muve-ce0b0",
-    storageBucket: "muve-ce0b0.appspot.com",
-    messagingSenderId: "274894158485"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="login.js"></script>
-<!-- <script src="getMovingData.js"></script> -->
 
 
 </body>
