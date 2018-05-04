@@ -1932,7 +1932,20 @@ h1.lato {
   box-shadow: 1px 4px 10px #D8D8D8;
 }
 
+
 /* ============ Contractor Dashboard Styles ============*/
+.confirm-container-mover-dash {
+  padding-top: 60px;
+}
+
+p.avail-jobs-title, p.accept-jobs-title {
+  width: 50%;
+  float: left;
+  font-size: 24px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
 .contractor-dash-div {
   width: 50%;
   float: left;
@@ -1985,4 +1998,38 @@ h1.lato {
   color: white;
   background-color: #01D06F;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .confirm-container-mover-dash {
+    padding-top: 0;
+  }
+
+  p.avail-jobs-title, p.accept-jobs-title {
+    margin-bottom: 20px;
+    padding: 15px 0;
+  }
+
+  p.avail-jobs-title:hover, p.accept-jobs-title:hover {
+    cursor: pointer;
+  }
+
+  p.accept-jobs-title {
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+  }
+
+  div.contractor-dash-div {
+    width: 100%;
+  }
+
+  div.accepted-jobs {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  p.avail-jobs-title, p.accept-jobs-title {
+    font-size: 20px;
+  }
 }
