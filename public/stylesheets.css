@@ -937,6 +937,10 @@ h1.margin-bottom-thirtypx {
   padding: 0;
 }
 
+.margin-bottom-twentypx {
+  margin-bottom: 20px;
+}
+
 .margin-bottom-fortypx {
   margin-bottom: 40px;
 }
@@ -1926,4 +1930,106 @@ h1.lato {
   padding: 8px 15px;
   border-radius: 10px;
   box-shadow: 1px 4px 10px #D8D8D8;
+}
+
+
+/* ============ Contractor Dashboard Styles ============*/
+.confirm-container-mover-dash {
+  padding-top: 60px;
+}
+
+p.avail-jobs-title, p.accept-jobs-title {
+  width: 50%;
+  float: left;
+  font-size: 24px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.contractor-dash-div {
+  width: 50%;
+  float: left;
+  padding: 0 20px 10px;
+}
+
+.avail-accept-jobs-div {
+  border-radius: 10px;
+  border: 1px solid grey;
+  background-color: #f8f8f8;
+  position: relative;
+  padding: 15px;
+}
+
+.avail-accept-jobs-div p {
+  margin-bottom: 0;
+}
+
+.delete-job {
+  border: 1px solid grey;
+  background-color: white;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: grey;
+}
+
+.delete-job:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 1px darkgrey;
+}
+
+.clear {
+  clear: both;
+}
+
+.accept-job-button {
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #01D06F;
+  color: #01D06F;
+  padding: 1px 35px 5px;
+  background-color: transparent;
+}
+
+.accept-job-button:hover {
+  color: white;
+  background-color: #01D06F;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .confirm-container-mover-dash {
+    padding-top: 0;
+  }
+
+  p.avail-jobs-title, p.accept-jobs-title {
+    margin-bottom: 20px;
+    padding: 15px 0;
+  }
+
+  p.avail-jobs-title:hover, p.accept-jobs-title:hover {
+    cursor: pointer;
+  }
+
+  p.accept-jobs-title {
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+  }
+
+  div.contractor-dash-div {
+    width: 100%;
+  }
+
+  div.accepted-jobs {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  p.avail-jobs-title, p.accept-jobs-title {
+    font-size: 20px;
+  }
 }
