@@ -42,30 +42,55 @@ function logout() {
   firebase.auth().signOut();
 }
 
+let jobsArray = [];
 
 var element;
 var ref = firebase.database().ref('moving-requests');
 ref.on('value', function(snapshot) {
   snapshot.forEach(function(child) {
     var datas = child.val();
-    var email = child.val().Email;
+    var time = child.val().Scheduled_Time;
     var name = child.val().Name;
+    var timeDriven = child.val().Time_Driven;
     var date = child.val().Scheduled_Date;
-    date = date.replace('.', '/');
+    // date = date.replace('.', '/');
+    console.log(name);
 
-    element = document.createElement("div");
-    element.appendChild(document.createTextNode(name));
-    document.getElementById('parentDiv').appendChild(element);
+    $('<div>',{id:'available', class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
+    $('#available').append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+    $('#available').append('<p>Name: ' + name + '</p>');
+    $('#available').append('<p>Move Date: ' + date + '</p>');
+    $('#available').append('<p>Move Time: ' + time + '</p>');
+    $('#available').append('<p>Drive Time: ' + timeDriven + '</p>');
+    $('#available').append('<div class="accept-job-button text-center"><p>Accept</p></div>');
 
-    element = document.createElement("div");
-    element.appendChild(document.createTextNode(email));
-    document.getElementById('parentDiv').appendChild(element);
+    // const generateAvailableJobs = (jobsArray) => {
+    // 	for (i = 0; i < jobsArray.length; i++) {
+    // 		$('<div>',{id:'available' + i, class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
+    // 		$('#available' + i).append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+    // 		$('#available' + i).append('<p>Name: ' + jobsArray[i].Name + '</p>');
+    // 		// $('#available' + i).append('<p>Move Date: ' + jobsArray[i].Scheduled_Date + '</p>');
+    // 		// $('#available' + i).append('<p>Move Time: ' + jobsArray[i].Scheduled_Time + '</p>');
+    // 		// $('#available' + i).append('<p>Drive Time: ' + jobsArray[i].Time_Driven + '</p>');
+    // 		$('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
+    // 	}
+    // }
 
-    element = document.createElement("div");
-    element.appendChild(document.createTextNode(date));
-    document.getElementById('parentDiv').appendChild(element);
 
-    // $('#helement').append('<ul><li>' + email + ' ' + name + ' ' + date + '</li></ul>');
-    // console.log(datas);
+
+    // element = document.createElement("div");
+    // element.appendChild(document.createTextNode(name));
+    // document.getElementById('parentDiv').appendChild(element);
+
+    // element = document.createElement("div");
+    // element.appendChild(document.createTextNode(email));
+    // document.getElementById('parentDiv').appendChild(element);
+    //
+    // element = document.createElement("div");
+    // element.appendChild(document.createTextNode(date));
+    // document.getElementById('parentDiv').appendChild(element);
+
   });
 });
+
+// generateAvailableJobs(jobsArray);
