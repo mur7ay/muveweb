@@ -54,9 +54,10 @@ ref.on('value', function(snapshot) {
     var name = child.val().Name;
     var timeDriven = child.val().Time_Driven;
     var date = child.val().Scheduled_Date;
-    // date = date.replace('.', '/');
-    // console.log(name);
-    // console.log('jobsArray', jobsArray);
+    date = date.replace('.', '/');
+    console.log(name);
+
+
     i++;
     $('<div>', {id:'available' + i, class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
     $('#available' + i).append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
