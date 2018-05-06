@@ -43,6 +43,7 @@ function logout() {
 }
 
 let jobsArray = [];
+let i = 0;
 
 var element;
 var ref = firebase.database().ref('moving-requests');
@@ -54,15 +55,16 @@ ref.on('value', function(snapshot) {
     var timeDriven = child.val().Time_Driven;
     var date = child.val().Scheduled_Date;
     // date = date.replace('.', '/');
-    console.log(name);
-
-    $('<div>',{id:'available', class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
-    $('#available').append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
-    $('#available').append('<p>Name: ' + name + '</p>');
-    $('#available').append('<p>Move Date: ' + date + '</p>');
-    $('#available').append('<p>Move Time: ' + time + '</p>');
-    $('#available').append('<p>Drive Time: ' + timeDriven + '</p>');
-    $('#available').append('<div class="accept-job-button text-center"><p>Accept</p></div>');
+    // console.log(name);
+    // console.log('jobsArray', jobsArray);
+    i++;
+    $('<div>', {id:'available' + i, class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
+    $('#available' + i).append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+    $('#available' + i).append('<p>Name: ' + name + '</p>');
+    $('#available' + i).append('<p>Move Date: ' + date + '</p>');
+    $('#available' + i).append('<p>Move Time: ' + time + '</p>');
+    $('#available' + i).append('<p>Drive Time: ' + timeDriven + '</p>');
+    $('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
 
     // const generateAvailableJobs = (jobsArray) => {
     // 	for (i = 0; i < jobsArray.length; i++) {
