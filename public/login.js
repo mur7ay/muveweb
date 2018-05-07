@@ -5,17 +5,25 @@ var object = document.getElementById('button');
 // console.log(pushedRef.key);
 
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    document.getElementById("user_div").style.display = "block";
-    document.getElementById("login_div").style.display = "none";
-  } else {
-    // No user is signed in.
-    document.getElementById("user_div").style.display = "none";
-    document.getElementById("login_div").style.display = "block";
+//Handle Account Status
+firebase.auth().onAuthStateChanged(user => {
+  if(user) {
+    window.location = 'contractorDashboard.html'; //After successful login, user will be redirected to home.html
   }
 });
+
+
+// firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     // User is signed in.
+//     document.getElementById("user_div").style.display = "block";
+//     document.getElementById("login_div").style.display = "none";
+//   } else {
+//     // No user is signed in.
+//     document.getElementById("user_div").style.display = "none";
+//     document.getElementById("login_div").style.display = "block";
+//   }
+// });
 
 
 object.onclick = function() {
@@ -39,34 +47,45 @@ function forgotPassword() {
 }
 
 function logout() {
-  firebase.auth().signOut();
+  firebase.auth().signOut().then(function() {
+    window.location.replace("login.html");
+  }).catch(function(error) {
+    // An error happened.
+  });
 }
 
-let jobsArray = [];
-let i = 0;
 
-var element;
-var ref = firebase.database().ref('moving-requests');
-ref.on('value', function(snapshot) {
-  snapshot.forEach(function(child) {
-    var datas = child.val();
-    var time = child.val().Scheduled_Time;
-    var name = child.val().Name;
-    var timeDriven = child.val().Time_Driven;
-    var date = child.val().Scheduled_Date;
-    var earnings = child.val().Estimated_Cost;
-    date = date.replace('.', '/');
-    console.log(name);
+// firebase.auth().onAuthStateChanged(user => {
+//   if(user) {
+//     window.location = 'contractorDashboard.html'; //After successful login, user will be redirected to home.html
+//   }
+// });
 
-    i++;
-    $('<div>', {id:'available' + i, class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
-    $('#available' + i).append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
-    $('#available' + i).append('<p>Name: ' + name + '</p>');
-    $('#available' + i).append('<p>Move Date: ' + date + '</p>');
-    $('#available' + i).append('<p>Move Time: ' + time + '</p>');
-    $('#available' + i).append('<p>Drive Time: ' + timeDriven + '</p>');
-    $('#available' + i).append('<p>Potential Earnings: $' + earnings + '</p>');
-    $('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
-
-  });
-});
+// let jobsArray = [];
+// let i = 0;
+//
+// var element;
+// var ref = firebase.database().ref('moving-requests');
+// ref.on('value', function(snapshot) {
+//   snapshot.forEach(function(child) {
+//     var datas = child.val();
+//     var time = child.val().Scheduled_Time;
+//     var name = child.val().Name;
+//     var timeDriven = child.val().Time_Driven;
+//     var date = child.val().Scheduled_Date;
+//     var earnings = child.val().Estimated_Cost;
+//     date = date.replace('.', '/');
+//     console.log(name);
+//
+//     i++;
+//     $('<div>', {id:'available' + i, class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
+//     $('#available' + i).append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+//     $('#available' + i).append('<p>Name: ' + name + '</p>');
+//     $('#available' + i).append('<p>Move Date: ' + date + '</p>');
+//     $('#available' + i).append('<p>Move Time: ' + time + '</p>');
+//     $('#available' + i).append('<p>Drive Time: ' + timeDriven + '</p>');
+//     $('#available' + i).append('<p>Potential Earnings: $' + earnings + '</p>');
+//     $('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
+//
+//   });
+// });
