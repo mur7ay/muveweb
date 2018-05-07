@@ -54,9 +54,9 @@ ref.on('value', function(snapshot) {
     var name = child.val().Name;
     var timeDriven = child.val().Time_Driven;
     var date = child.val().Scheduled_Date;
+    var earnings = child.val().Estimated_Cost;
     date = date.replace('.', '/');
     console.log(name);
-
 
     i++;
     $('<div>', {id:'available' + i, class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
@@ -65,35 +65,8 @@ ref.on('value', function(snapshot) {
     $('#available' + i).append('<p>Move Date: ' + date + '</p>');
     $('#available' + i).append('<p>Move Time: ' + time + '</p>');
     $('#available' + i).append('<p>Drive Time: ' + timeDriven + '</p>');
+    $('#available' + i).append('<p>Potential Earnings: $' + earnings + '</p>');
     $('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
-
-    // const generateAvailableJobs = (jobsArray) => {
-    // 	for (i = 0; i < jobsArray.length; i++) {
-    // 		$('<div>',{id:'available' + i, class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
-    // 		$('#available' + i).append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
-    // 		$('#available' + i).append('<p>Name: ' + jobsArray[i].Name + '</p>');
-    // 		// $('#available' + i).append('<p>Move Date: ' + jobsArray[i].Scheduled_Date + '</p>');
-    // 		// $('#available' + i).append('<p>Move Time: ' + jobsArray[i].Scheduled_Time + '</p>');
-    // 		// $('#available' + i).append('<p>Drive Time: ' + jobsArray[i].Time_Driven + '</p>');
-    // 		$('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
-    // 	}
-    // }
-
-
-
-    // element = document.createElement("div");
-    // element.appendChild(document.createTextNode(name));
-    // document.getElementById('parentDiv').appendChild(element);
-
-    // element = document.createElement("div");
-    // element.appendChild(document.createTextNode(email));
-    // document.getElementById('parentDiv').appendChild(element);
-    //
-    // element = document.createElement("div");
-    // element.appendChild(document.createTextNode(date));
-    // document.getElementById('parentDiv').appendChild(element);
 
   });
 });
-
-// generateAvailableJobs(jobsArray);

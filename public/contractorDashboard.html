@@ -19,10 +19,6 @@
   <link rel="stylesheet" type="text/css" href="stylesheets.css" />
 
 
-  <!-- Custom Scripts -->
-  <script src="js/contractorDashboard.js"></script>
-
-
   <!-- Meta Data -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -118,20 +114,11 @@
   <div class="container container-about container-login margin-top-eightypx">
     <div class="white-container about-text2 confirm-container-mover-dash bottom-padding-fortypx">
 
-        <p id="availableTitle" class="text-center avail-jobs-title">Available</p>
+      <p id="availableTitle" class="text-center avail-jobs-title">Available</p>
+      <p id="acceptedTitle" class="text-center accept-jobs-title">Accepted</p>
 
-
-        <p id="acceptedTitle" class="text-center accept-jobs-title">Accepted</p>
-
-
-      <div id="availableJobs" class="contractor-dash-div available-jobs">
-        
-      </div>
-
-
-
-      <div id="acceptedJobs" class="contractor-dash-div accepted-jobs">
-      </div>
+      <div id="availableJobs" class="contractor-dash-div available-jobs"></div>
+      <div id="acceptedJobs" class="contractor-dash-div accepted-jobs"></div>
 
       <div class="clear"></div>
 
@@ -216,6 +203,22 @@
       </div>
     </div>
   </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
+      authDomain: "muve-ce0b0.firebaseapp.com",
+      databaseURL: "https://muve-ce0b0.firebaseio.com",
+      projectId: "muve-ce0b0",
+      storageBucket: "muve-ce0b0.appspot.com",
+      messagingSenderId: "274894158485"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!-- Custom Scripts -->
+  <script src="js/contractorDashboard.js"></script>
 
 
 </body>

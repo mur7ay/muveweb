@@ -1954,8 +1954,8 @@ p.avail-jobs-title, p.accept-jobs-title {
 
 .avail-accept-jobs-div {
   border-radius: 10px;
-  border: 1px solid grey;
-  background-color: #f8f8f8;
+  border: 1px solid #F9F9F9;
+  background-color: #FEFEFE;
   position: relative;
   padding: 15px;
 }
@@ -2015,8 +2015,9 @@ p.avail-jobs-title, p.accept-jobs-title {
   }
 
   p.accept-jobs-title {
-    border-bottom: 1px solid grey;
-    border-left: 1px solid grey;
+    border-bottom: 1px solid #F1F1F1;
+    border-left: 1px solid #F1F1F1;
+    border-bottom-left-radius: 6px;
   }
 
   div.contractor-dash-div {
