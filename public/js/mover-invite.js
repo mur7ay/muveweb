@@ -11,6 +11,12 @@ $(document).ready(function() {
 		counter++;
 	});
 
+	$('#contractorInviteStart').on('click', function() {
+		$(this).parent().addClass('initial-hidden');
+		$('#contactInfoContractorQ').removeClass('initial-hidden');
+		counter++;
+	});
+
 	// Email validation function
 	function validateEmail(email) {
 		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
@@ -84,6 +90,9 @@ $(document).ready(function() {
 		counter--;
 		$(formsArr[0][counter]).removeClass('initial-hidden');
 		
+		if (counter === 0) {
+			$(this).parent().parent().parent().parent().addClass('initial-hidden');
+		}
 		progressBar();
 	});
 

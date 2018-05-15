@@ -159,6 +159,60 @@
 
     </div>
 
+
+    <!-- Contractor Contact Info-->
+    <div id="contactInfoContractorQ" class="question-wrapper mover-form initial-hidden">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>Contact Information</strong></h4>
+        <p class="text-danger initial-hidden">Please fill all fields</p>
+
+        <form role="form" id="contractorContactInfo" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="moverContactName">Contact Name</label>
+            <input id="contractorName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Phone
+            <input id="contractorphone" name="phone" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" onkeypress="numberPressed(event);"/>
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="moverEmail">Email</label>
+            <input id="contractoremail" class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" placeholder="Your answer" />
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="moverBusinessName">City</label>
+            <input id="cityName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" />
+          </div>
+          
+          <div class="checkbox checkbox-container3 moverInvite-required">
+            <p class="mover-question">Muve requires all contractors be 21 or older</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="geRequirement" name="ageRequirement" class=" moverInvite-required checkbox-circle margin-right" value="true" />
+              I confirm that I am 21 or older
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="moverBusinessName">Please upload a photo of your drivers license</label>
+            <input id="licensePhoto" class="input__field input__field2 input__field--hoshi request-form margin-top-tenpx" type="file" accept="image/*" />
+          </div>
+
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn" onclick="submitForm()">SUBMIT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
     <!-- Contact Info-->
     <div id="contactInfoQ" class="question-wrapper mover-form initial-hidden">
       <div class="inline field question-container">
@@ -168,13 +222,13 @@
         <form role="form" id="contactInfo" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverContactName">Contact Name</label>
-            <input id="contactName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverContactName" placeholder="Your answer" />
+            <input id="contactName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" />
             </label>
           </div>
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverBusinessName">Business Name</label>
-            <input id="businessName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverBusinessName" placeholder="Your answer" />
+            <input id="businessName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" />
           </div>
 
           <div class="checkbox checkbox-container3">
@@ -185,11 +239,11 @@
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverEmail">Email</label>
-            <input id="email" class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" id="moverEmail" placeholder="Your answer" />
+            <input id="email" class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" placeholder="Your answer" />
           </div>
 
           <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
+            <button id="firstBackBtn" type="button" class="back-btn">BACK</button>
             <button type="button" class="text-center next-btn" onclick="submitContactInfo()">NEXT</button>
           </div>
         </form>

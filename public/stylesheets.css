@@ -1768,6 +1768,10 @@ select.week {
   border-bottom: #1AD26F 2px solid;
 }
 
+.input__field2:hover, .input__field2:active {
+  outline: none;
+  border-bottom: 2px solid transparent;
+}
 
 @media screen and (max-width: 440px) {
   button.back-btn {
