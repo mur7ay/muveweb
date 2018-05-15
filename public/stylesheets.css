@@ -1579,6 +1579,16 @@ h4.question-header {
   border: none;
 }
 
+.next-btn2 {
+  float: right;
+  background: #01D06F;
+  color: #FFF;
+  padding: 0;
+  height: 40px;
+  width: 200px;
+  border: none;
+}
+
 .next-btn-txt {
   padding-top: 10px;
 }
@@ -1778,6 +1788,10 @@ select.week {
     width: 120px;
   }
   button.next-btn {
+    width: 190px;
+  }
+
+  button.next-btn2 {
     width: 190px;
   }
 }

@@ -175,24 +175,24 @@
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Phone
-            <input id="contractorphone" name="phone" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" onkeypress="numberPressed(event);"/>
+            <input id="contractorPhone" name="contractorPhone" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" onkeypress="numberPressed(event);"/>
             </label>
           </div>
 
           <div class="checkbox checkbox-container3">
-            <label class="checkbox-label2 text-input no-left-padding" for="moverEmail">Email</label>
-            <input id="contractoremail" class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" placeholder="Your answer" />
+            <label class="checkbox-label2 text-input no-left-padding" for="">Email</label>
+            <input id="contractorEmail" class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" placeholder="Your answer" />
           </div>
 
           <div class="checkbox checkbox-container3">
-            <label class="checkbox-label2 text-input no-left-padding" for="moverBusinessName">City</label>
+            <label class="checkbox-label2 text-input no-left-padding" for="">City</label>
             <input id="cityName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" />
           </div>
           
           <div class="checkbox checkbox-container3 moverInvite-required">
             <p class="mover-question">Muve requires all contractors be 21 or older</p>
             <label class="checkbox-label2 margin-top-tenpx">
-              <input type="radio" id="geRequirement" name="ageRequirement" class=" moverInvite-required checkbox-circle margin-right" value="true" />
+              <input type="radio" id="ageRequirement" name="ageRequirement" class=" moverInvite-required checkbox-circle margin-right" value="true" />
               I confirm that I am 21 or older
             </label>
           </div>
@@ -205,7 +205,7 @@
 
           <div style="margin-top: 50px;">
             <button type="button" class="back-btn">BACK</button>
-            <button type="button" class="text-center next-btn" onclick="submitForm()">SUBMIT</button>
+            <button id="contractorSubmit" type="button" class="text-center next-btn2" onclick="">SUBMIT</button>
           </div>
         </form>
 
@@ -780,8 +780,16 @@
       phoneNumber.value = phoneFormat(phoneNumber.value);
     });
 
+    document.getElementById('contractorPhone').addEventListener('keyup', function(evt) {
+      var contractorPhoneNumber = document.getElementById('contractorPhone');
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      contractorPhoneNumber.value = phoneFormat(contractorPhoneNumber.value);
+    });
+
     // Manually formatting the phone number on page load
     document.getElementById('phone').value = phoneFormat(document.getElementById('phone').value);
+
+    document.getElementById('contractorPhone').value = phoneFormat(document.getElementById('contractorPhone').value);
 
     // function to determine if the pressed key is an integer
     function numberPressed(evt) {
