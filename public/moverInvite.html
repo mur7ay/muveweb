@@ -130,7 +130,7 @@
   <div class="container container-about margin-top-eightypx white-container moverInvite-padding">
 
     <div id="moverInviteInfo" class="padding-bottom-fortypx mover-form">
-      <div class="row mover-invite-text-center">
+      <div class="row mover-invite-text-center margin-bottom-70px">
         <h1 class="container-headers" style="margin-bottom: 50px;">Get Started With Muve</h1>
         <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6 col-xs-12 margin-top-twentypx">
           <img src="img/contract.png" style="width: 100px;" />
@@ -151,8 +151,67 @@
         </div>
       </div>
 
-      <input id="moverInviteStart" type="button" value="Get Started" class="request-form-invite"></input>
+      <input id="contractorInviteStart" type="button" value="Contractors" class="request-form-invite"></input>
+
+      <input id="moverInviteStart" type="button" value="Moving Companies" class="request-form-invite request-form-invite2"></input>
+
+      <div class="request-form-clear-div"></div>
+
     </div>
+
+
+    <!-- Contractor Contact Info-->
+    <div id="contactInfoContractorQ" class="question-wrapper mover-form initial-hidden">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>Contact Information</strong></h4>
+        <p class="text-danger initial-hidden">Please fill all fields</p>
+
+        <form role="form" id="contractorContactInfo" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="moverContactName">Contact Name</label>
+            <input id="contractorName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding">Phone
+            <input id="contractorPhone" name="contractorPhone" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" onkeypress="numberPressed(event);"/>
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="">Email</label>
+            <input id="contractorEmail" class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" placeholder="Your answer" />
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="">City</label>
+            <input id="cityName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" />
+          </div>
+          
+          <div class="checkbox checkbox-container3 moverInvite-required">
+            <p class="mover-question">Muve requires all contractors be 18 or older</p>
+            <label class="checkbox-label2 margin-top-tenpx">
+              <input type="radio" id="ageRequirement" name="ageRequirement" class=" moverInvite-required checkbox-circle margin-right" value="true" />
+              I confirm that I am 18 or older
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container3">
+            <label class="checkbox-label2 text-input no-left-padding" for="moverBusinessName">Please upload a photo of your drivers license</label>
+            <input id="licensePhoto" class="input__field input__field2 input__field--hoshi request-form margin-top-tenpx" type="file" accept="image/*" />
+          </div>
+
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button id="contractorSubmit" type="button" class="text-center next-btn2" onclick="">SUBMIT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
 
     <!-- Contact Info-->
     <div id="contactInfoQ" class="question-wrapper mover-form initial-hidden">
@@ -163,13 +222,13 @@
         <form role="form" id="contactInfo" action="" class="margin-top-fortypx">
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverContactName">Contact Name</label>
-            <input id="contactName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverContactName" placeholder="Your answer" />
+            <input id="contactName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" />
             </label>
           </div>
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverBusinessName">Business Name</label>
-            <input id="businessName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="moverBusinessName" placeholder="Your answer" />
+            <input id="businessName" class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" placeholder="Your answer" />
           </div>
 
           <div class="checkbox checkbox-container3">
@@ -180,11 +239,11 @@
 
           <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding" for="moverEmail">Email</label>
-            <input id="email" class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" id="moverEmail" placeholder="Your answer" />
+            <input id="email" class="input__field input__field--hoshi request-form margin-top-tenpx moverInvite-required" type="text" placeholder="Your answer" />
           </div>
 
           <div style="margin-top: 50px;">
-            <button type="button" class="back-btn">BACK</button>
+            <button id="firstBackBtn" type="button" class="back-btn">BACK</button>
             <button type="button" class="text-center next-btn" onclick="submitContactInfo()">NEXT</button>
           </div>
         </form>
@@ -721,8 +780,16 @@
       phoneNumber.value = phoneFormat(phoneNumber.value);
     });
 
+    document.getElementById('contractorPhone').addEventListener('keyup', function(evt) {
+      var contractorPhoneNumber = document.getElementById('contractorPhone');
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      contractorPhoneNumber.value = phoneFormat(contractorPhoneNumber.value);
+    });
+
     // Manually formatting the phone number on page load
     document.getElementById('phone').value = phoneFormat(document.getElementById('phone').value);
+
+    document.getElementById('contractorPhone').value = phoneFormat(document.getElementById('contractorPhone').value);
 
     // function to determine if the pressed key is an integer
     function numberPressed(evt) {

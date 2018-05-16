@@ -4,10 +4,17 @@ $(document).ready(function() {
 	let counter = 0;
 
 	formsArr.push($('.mover-form'));
+	formsArr[0] = [formsArr[0][0], formsArr[0][2], formsArr[0][3], formsArr[0][4], formsArr[0][5], formsArr[0][6], formsArr[0][7], formsArr[0][8]];
 
 	$('#moverInviteStart').on('click', function() {
 		$(this).parent().addClass('initial-hidden');
 		$('#contactInfoQ').removeClass('initial-hidden');
+		counter++;
+	});
+
+	$('#contractorInviteStart').on('click', function() {
+		$(this).parent().addClass('initial-hidden');
+		$('#contactInfoContractorQ').removeClass('initial-hidden');
 		counter++;
 	});
 
@@ -24,6 +31,12 @@ $(document).ready(function() {
 		// }
 		var nameReg = /^[a-zA-Z ,.'-]+$/;
 		return  (name.length > 0 && nameReg.test(name));
+	};
+
+	//City Name validation function
+	function validateCity(city) {
+		var cityReg = /^[a-zA-Z ,'-]+$/;
+		return  (city.length > 0 && cityReg.test(city));
 	};
 
 	//Name validation function
@@ -79,17 +92,67 @@ $(document).ready(function() {
 		progressBar();
 	});
 
+	$('#contractorSubmit').on('click', function() {
+		if (!$('#contactInfoContractorQ').hasClass('initial-hidden')) {
+			var currentForm = $(this).parent().parent().parent();
+
+			// Validates email
+			if (!validateEmail($('#contractorEmail').val())) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+
+			//Validates name
+			if (!validateName($('#contractorName').val())) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+
+			if (!validateCity($('#cityName').val())) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+
+			// Validates phone length
+			if ($('#contractorPhone').val().length !== 12) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+
+			// Validates Age Requirement is checked
+			if (!$('#ageRequirement').is(':checked')) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+				return false;
+			}
+
+			// Validates file has been uploaded
+			if ($('#licensePhoto').get(0).files.length === 0) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+    			return false;
+			}
+		}
+	});
+
 	$('.back-btn').on('click', function() {
 		$(formsArr[0][counter]).addClass('initial-hidden');
 		counter--;
 		$(formsArr[0][counter]).removeClass('initial-hidden');
 		
+		if (counter === 0) {
+			$(this).parent().parent().parent().parent().addClass('initial-hidden');
+		}
 		progressBar();
 	});
 
 
 	var progressBar = () => {
-		let progress = Math.round((counter/formsArr[0].length) * 100);
+		let progress = Math.round(counter/(formsArr[0].length) * 100);
 		$('#progressBar').width(progress + '%');
 	};
 

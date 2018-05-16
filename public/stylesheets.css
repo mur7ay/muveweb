@@ -945,6 +945,10 @@ h1.margin-bottom-thirtypx {
   margin-bottom: 40px;
 }
 
+.margin-bottom-70px {
+  margin-bottom: 70px;
+}
+
 .padding-bottom-sixtypx {
   padding-bottom: 60px;
 }
@@ -1575,6 +1579,16 @@ h4.question-header {
   border: none;
 }
 
+.next-btn2 {
+  float: right;
+  background: #01D06F;
+  color: #FFF;
+  padding: 0;
+  height: 40px;
+  width: 200px;
+  border: none;
+}
+
 .next-btn-txt {
   padding-top: 10px;
 }
@@ -1764,12 +1778,20 @@ select.week {
   border-bottom: #1AD26F 2px solid;
 }
 
+.input__field2:hover, .input__field2:active {
+  outline: none;
+  border-bottom: 2px solid transparent;
+}
 
 @media screen and (max-width: 440px) {
   button.back-btn {
     width: 120px;
   }
   button.next-btn {
+    width: 190px;
+  }
+
+  button.next-btn2 {
     width: 190px;
   }
 }
@@ -1851,12 +1873,16 @@ select.week {
   background-color: #FFF;
   color: #01D06F;
   display: block;
-  margin: 80px auto 0;
+  margin: 10px auto 0;
   border: 3px solid #01D06F;
   border-radius: 5px;
   letter-spacing: 1px;
   font-family: lato, sans-serif;
   font-weight: bold;
+}
+
+.request-form-invite2 {
+  margin-top: 20px;
 }
 
 .request-form-invite:hover {
@@ -1868,6 +1894,20 @@ select.week {
   .moverInvite-padding {
     width: 1345.190px!important;
     padding: 0 80px !important;
+  }
+
+  .request-form-invite {
+    float: left;
+  }
+
+  .request-form-invite2 {
+    float: right;
+    margin-top: 10px;
+  }
+
+  .request-form-clear-div {
+    clear: both;
+    height: 40px;
   }
 }
 
