@@ -129,6 +129,13 @@ $(document).ready(function() {
 				formValidate.removeClass('initial-hidden');
 				return false;
 			}
+
+			// Validates file has been uploaded
+			if ($('#licensePhoto').get(0).files.length === 0) {
+				var formValidate = currentForm.find('.text-danger');
+				formValidate.removeClass('initial-hidden');
+    			return false;
+			}
 		}
 	});
 
