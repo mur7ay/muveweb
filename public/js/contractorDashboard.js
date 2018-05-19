@@ -113,7 +113,7 @@ $(document).ready(function() {
     $('#available' + i).append('<p>Potential Earnings: $' + earnings + '</p>');
     $('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
 
-  });
+  // });
 
 
   //Uses JSON data to populate list of available jobs
@@ -133,21 +133,21 @@ $(document).ready(function() {
 
 
   //Uses JSON data to populate list of accepted jobs
-  const generateAcceptedJobs = (acceptedJobsArray) => {
-    for (i = 0; i < acceptedJobsArray.length; i++) {
-      $('<div>', {
-        id: 'accepted' + i,
-        class: "avail-accept-jobs-div margin-bottom-twentypx"
-      }).appendTo('#acceptedJobs');
-      $('#accepted' + i).append('<div class="delete-job delete-accept-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
-      $('#accepted' + i).append('<p>Name: ' + acceptedJobsArray[i].Name + '</p>');
-      $('#accepted' + i).append('<p>Move Date: ' + acceptedJobsArray[i].Scheduled_Date + '</p>');
-      $('#accepted' + i).append('<p>Move Time: ' + acceptedJobsArray[i].Scheduled_Time + '</p>');
-      $('#accepted' + i).append('<p>Drive Time: ' + jobsArray[i].Time_Driven + '</p>');
-    }
-  }
+  // const generateAcceptedJobs = (acceptedJobsArray) => {
+  //   for (i = 0; i < acceptedJobsArray.length; i++) {
+  //     $('<div>', {
+  //       id: 'accepted' + i,
+  //       class: "avail-accept-jobs-div margin-bottom-twentypx"
+  //     }).appendTo('#acceptedJobs');
+  //     $('#accepted' + i).append('<div class="delete-job delete-accept-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+  //     $('#accepted' + i).append('<p>Name: ' + acceptedJobsArray[i].Name + '</p>');
+  //     $('#accepted' + i).append('<p>Move Date: ' + acceptedJobsArray[i].Scheduled_Date + '</p>');
+  //     $('#accepted' + i).append('<p>Move Time: ' + acceptedJobsArray[i].Scheduled_Time + '</p>');
+  //     $('#accepted' + i).append('<p>Drive Time: ' + jobsArray[i].Time_Driven + '</p>');
+  //   }
+  // }
 
-  generateAcceptedJobs(acceptedJobsArray);
+  // generateAcceptedJobs(acceptedJobsArray);
 
 
   //Moves job from available to accepted
@@ -156,6 +156,7 @@ $(document).ready(function() {
       $(this).parent().appendTo('#acceptedJobs');
       $(this).parent().children(':first-child').attr('class', 'delete-job delete-accept-job');
       $(this).remove();
+      console.log('testing');
       assignDeleteAcceptJob();
     });
   };
@@ -265,5 +266,7 @@ $(document).ready(function() {
   };
 
   mobileAcceptJobs();
+
+});
 
 });
