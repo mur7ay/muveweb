@@ -1978,6 +1978,10 @@ h1.lato {
   padding-top: 60px;
 }
 
+.customer-name {
+  text-transform: capitalize;
+}
+
 p.avail-jobs-title, p.accept-jobs-title {
   width: 50%;
   float: left;
@@ -2025,7 +2029,7 @@ p.avail-jobs-title, p.accept-jobs-title {
   clear: both;
 }
 
-.accept-job-button {
+.accept-job-button, .details-job-button {
   margin-top: 10px;
   border-radius: 5px;
   border: 1px solid #01D06F;
@@ -2034,7 +2038,7 @@ p.avail-jobs-title, p.accept-jobs-title {
   background-color: transparent;
 }
 
-.accept-job-button:hover {
+.accept-job-button:hover, .details-job-button:hover {
   color: white;
   background-color: #01D06F;
   cursor: pointer;

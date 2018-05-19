@@ -98,22 +98,34 @@ $(document).ready(function() {
     var date = snapshot.val().Scheduled_Date;
     var earnings = snapshot.val().Estimated_Cost;
     date = date.replace('.', '/');
-    // console.log(name);
+
+    let partialName = name;
+    let spaceInName = name.split(' ');
+    let lastInitial;;
+
+    if (spaceInName.length > 1) {
+      lastInitial = spaceInName[1].split('');
+      lastInitial = lastInitial[0];
+      partialName = `${spaceInName[0]} ${lastInitial}.`
+    }
+
+    if (!lastInitial) {
+      partialName = name;
+    }
 
     i++;
     $('<div>', {
       id: 'available' + i,
       class: "avail-accept-jobs-div margin-bottom-twentypx"
     }).appendTo('#availableJobs');
-    $('#available' + i).append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
-    $('#available' + i).append('<p>Name: ' + name + '</p>');
+    $('#available' + i).append('<div class="delete-job initial-hidden"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+    $('#available' + i).append('<p class="customer-name partial-name">Name: ' + partialName + '</p>');
+    $('#available' + i).append('<p class="customer-name full-name initial-hidden">Name: ' + name + '</p>');
     $('#available' + i).append('<p>Move Date: ' + date + '</p>');
     $('#available' + i).append('<p>Move Time: ' + time + '</p>');
     $('#available' + i).append('<p>Drive Time: ' + timeDriven + '</p>');
     $('#available' + i).append('<p>Potential Earnings: $' + earnings + '</p>');
     $('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
-
-  // });
 
 
   //Uses JSON data to populate list of available jobs
@@ -154,9 +166,11 @@ $(document).ready(function() {
   function acceptJob() {
     $('.accept-job-button').off('click').on('click', function() {
       $(this).parent().appendTo('#acceptedJobs');
+      $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name initial-hidden');
+      $(this).parent().find('.full-name').attr('class', 'customer-name full-name');
       $(this).parent().children(':first-child').attr('class', 'delete-job delete-accept-job');
+      $(this).parent().append('<div class="details-job-button text-center"><p>Details</p></div>');
       $(this).remove();
-      console.log('testing');
       assignDeleteAcceptJob();
     });
   };
@@ -165,23 +179,26 @@ $(document).ready(function() {
 
 
   //Delete available job from the list
-  function deleteAvailJob() {
-    $('.delete-avail-job').off('click').on('click', function() {
-      $(this).parent().remove();
-    });
-  };
+  // function deleteAvailJob() {
+  //   $('.delete-avail-job').off('click').on('click', function() {
+  //     $(this).parent().remove();
+  //   });
+  // };
 
-  deleteAvailJob()
+  // deleteAvailJob()
 
 
   //Delete from accepted job list, moves back to available jobs list
   function assignDeleteAcceptJob() {
     $('.delete-accept-job').off('click').on('click', function() {
       $(this).parent().appendTo('#availableJobs');
-      $(this).parent().children(':first-child').attr('class', 'delete-job delete-avail-job');
+      $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name');
+      $(this).parent().find('.full-name').attr('class', 'customer-name full-name initial-hidden');
+      $(this).parent().children(':first-child').attr('class', 'delete-job initial-hidden');
       $(this).parent().append('<div class="accept-job-button text-center"><p>Accept</p></div>');
+      $(this).parent().find('.details-job-button').remove();
       acceptJob();
-      deleteAvailJob();
+      // deleteAvailJob();
     });
   };
 
