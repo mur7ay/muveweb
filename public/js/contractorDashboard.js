@@ -226,8 +226,8 @@ $(document).ready(function() {
         'border-right': 'none'
       });
       $('#acceptedTitle').css({
-        'border-bottom': '1px solid grey',
-        'border-left': '1px solid grey'
+        'border-bottom': '1px solid #F1F1F1',
+        'border-left': '1px solid #F1F1F1'
       });
       $('.accepted-jobs').css('display', 'none');
       $('.available-jobs').css('display', 'block');
@@ -246,8 +246,8 @@ $(document).ready(function() {
     if (screenWidth < 768) {
       $('#acceptedTitle').on('click', function() {
         $('#availableTitle').css({
-          'border-bottom': '1px solid grey',
-          'border-right': '1px solid grey'
+          'border-bottom': '1px solid #F1F1F1',
+          'border-right': '1px solid #F1F1F1'
         });
         $('#acceptedTitle').css({
           'border-bottom': 'none',
@@ -269,8 +269,8 @@ $(document).ready(function() {
     if (screenWidth < 768) {
       $('#availableTitle').on('click', function() {
         $('#acceptedTitle').css({
-          'border-bottom': '1px solid grey',
-          'border-left': '1px solid grey'
+          'border-bottom': '1px solid #F1F1F1',
+          'border-left': '1px solid #F1F1F1'
         });
         $('#availableTitle').css({
           'border-bottom': 'none',

@@ -2018,6 +2018,12 @@ p.avail-jobs-title, p.accept-jobs-title {
   right: 10px;
   top: 10px;
   color: grey;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .delete-job:hover {
@@ -2036,6 +2042,12 @@ p.avail-jobs-title, p.accept-jobs-title {
   color: #01D06F;
   padding: 1px 35px 5px;
   background-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .accept-job-button:hover, .details-job-button:hover {
@@ -2052,6 +2064,12 @@ p.avail-jobs-title, p.accept-jobs-title {
   p.avail-jobs-title, p.accept-jobs-title {
     margin-bottom: 20px;
     padding: 15px 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   p.avail-jobs-title:hover, p.accept-jobs-title:hover {
