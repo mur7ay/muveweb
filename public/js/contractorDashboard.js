@@ -84,7 +84,7 @@ $(document).ready(function() {
   // let jobsArray = [fakeJSON1, fakeJSON2, fakeJSON3];
   // let acceptedJobsArray = [fakeJSON1, fakeJSON2, fakeJSON3]
 
-  let screenWidth;
+  let screenWidth = $(window).width();
   let jobsArray = [];
   let i = 0;
 
@@ -162,20 +162,20 @@ $(document).ready(function() {
   // generateAcceptedJobs(acceptedJobsArray);
 
 
-  //Moves job from available to accepted
-  function acceptJob() {
-    $('.accept-job-button').off('click').on('click', function() {
-      $(this).parent().appendTo('#acceptedJobs');
-      $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name initial-hidden');
-      $(this).parent().find('.full-name').attr('class', 'customer-name full-name');
-      $(this).parent().children(':first-child').attr('class', 'delete-job delete-accept-job');
-      $(this).parent().append('<div class="details-job-button text-center"><p>Details</p></div>');
-      $(this).remove();
-      assignDeleteAcceptJob();
-    });
-  };
+    //Moves job from available to accepted
+    function acceptJob() {
+      $('.accept-job-button').off('click').on('click', function() {
+        $(this).parent().appendTo('#acceptedJobs');
+        $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name initial-hidden');
+        $(this).parent().find('.full-name').attr('class', 'customer-name full-name');
+        $(this).parent().children(':first-child').attr('class', 'delete-job delete-accept-job');
+        $(this).parent().append('<div class="details-job-button text-center"><p>Details</p></div>');
+        $(this).remove();
+        assignDeleteAcceptJob();
+      });
+    };
 
-  acceptJob();
+    acceptJob();
 
 
   //Delete available job from the list
@@ -188,26 +188,79 @@ $(document).ready(function() {
   // deleteAvailJob()
 
 
-  //Delete from accepted job list, moves back to available jobs list
-  function assignDeleteAcceptJob() {
-    $('.delete-accept-job').off('click').on('click', function() {
-      $(this).parent().appendTo('#availableJobs');
-      $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name');
-      $(this).parent().find('.full-name').attr('class', 'customer-name full-name initial-hidden');
-      $(this).parent().children(':first-child').attr('class', 'delete-job initial-hidden');
-      $(this).parent().append('<div class="accept-job-button text-center"><p>Accept</p></div>');
-      $(this).parent().find('.details-job-button').remove();
-      acceptJob();
-      // deleteAvailJob();
-    });
+    //Delete from accepted job list, moves back to available jobs list
+    function assignDeleteAcceptJob() {
+      $('.delete-accept-job').off('click').on('click', function() {
+        $(this).parent().appendTo('#availableJobs');
+        $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name');
+        $(this).parent().find('.full-name').attr('class', 'customer-name full-name initial-hidden');
+        $(this).parent().children(':first-child').attr('class', 'delete-job initial-hidden');
+        $(this).parent().append('<div class="accept-job-button text-center"><p>Accept</p></div>');
+        $(this).parent().find('.details-job-button').remove();
+        acceptJob();
+        // deleteAvailJob();
+      });
+    };
+
+    assignDeleteAcceptJob();
+  });
+
+
+
+  //Gets screen width
+  const getScreenWidth = () => {
+    screenWidth = $(window).width();
+  }
+
+  //Shows accepted jobs, hides available jobs on mobile
+  const mobileAcceptJobs = () => {
+    getScreenWidth();
+
+    if (screenWidth < 768) {
+      $('#availableTitle').off('click').on('click', function() {
+        $('#acceptedTitle').css({
+          'border-bottom': '1px solid #F1F1F1',
+          'border-left': '1px solid #F1F1F1'
+        });
+        $('#availableTitle').css({
+          'border-bottom': 'none',
+          'border-right': 'none'
+        });
+        $('.accepted-jobs').css('display', 'none');
+        $('.available-jobs').css('display', 'block');
+      });
+    } else {
+        $('#availableTitle').off('click');
+    }
   };
 
-  assignDeleteAcceptJob();
+
+  //Shows available jobs, hides accepted jobs on mobile
+  const mobileAvailJobs = () => {
+    getScreenWidth();
+
+    if (screenWidth < 768) {
+      $('#acceptedTitle').off('click').on('click', function() {
+        $('#availableTitle').css({
+          'border-bottom': '1px solid #F1F1F1',
+          'border-right': '1px solid #F1F1F1'
+        });
+        $('#acceptedTitle').css({
+          'border-bottom': 'none',
+          'border-left': 'none'
+        });
+        $('.accepted-jobs').css('display', 'block');
+        $('.available-jobs').css('display', 'none');
+      });
+    } else {
+        $('#acceptedTitle').off('click');
+    }
+  };
 
 
   //Gets screen width, sets CSS for column titles
   $(window).resize(function() {
-    screenWidth = $(window).width();
+    getScreenWidth();
 
     if (screenWidth > 751) {
       $('#availableTitle').css({
@@ -232,58 +285,10 @@ $(document).ready(function() {
       $('.accepted-jobs').css('display', 'none');
       $('.available-jobs').css('display', 'block');
     };
+
+    mobileAvailJobs();
+    mobileAcceptJobs();
   });
 
-  const getScreenWidth = () => {
-    screenWidth = $(window).width();
-  }
-
-
-  //Shows available jobs, hides accepted jobs on mobile
-  const mobileAvailJobs = () => {
-    getScreenWidth();
-
-    if (screenWidth < 768) {
-      $('#acceptedTitle').on('click', function() {
-        $('#availableTitle').css({
-          'border-bottom': '1px solid #F1F1F1',
-          'border-right': '1px solid #F1F1F1'
-        });
-        $('#acceptedTitle').css({
-          'border-bottom': 'none',
-          'border-left': 'none'
-        });
-        $('.accepted-jobs').css('display', 'block');
-        $('.available-jobs').css('display', 'none');
-      });
-    };
-  };
-
-  mobileAvailJobs();
-
-
-  //Shows accepted jobs, hides available jobs on mobile
-  const mobileAcceptJobs = () => {
-    getScreenWidth();
-
-    if (screenWidth < 768) {
-      $('#availableTitle').on('click', function() {
-        $('#acceptedTitle').css({
-          'border-bottom': '1px solid #F1F1F1',
-          'border-left': '1px solid #F1F1F1'
-        });
-        $('#availableTitle').css({
-          'border-bottom': 'none',
-          'border-right': 'none'
-        });
-        $('.accepted-jobs').css('display', 'none');
-        $('.available-jobs').css('display', 'block');
-      });
-    };
-  };
-
-  mobileAcceptJobs();
-
-});
 
 });

@@ -1988,6 +1988,12 @@ p.avail-jobs-title, p.accept-jobs-title {
   font-size: 24px;
   padding-bottom: 10px;
   margin-bottom: 10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .contractor-dash-div {
@@ -2006,6 +2012,12 @@ p.avail-jobs-title, p.accept-jobs-title {
 
 .avail-accept-jobs-div p {
   margin-bottom: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .delete-job {
@@ -2056,20 +2068,20 @@ p.avail-jobs-title, p.accept-jobs-title {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .confirm-container-mover-dash {
     padding-top: 0;
+  }
+
+  .avail-accept-jobs-div {
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto;
   }
 
   p.avail-jobs-title, p.accept-jobs-title {
     margin-bottom: 20px;
     padding: 15px 0;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 
   p.avail-jobs-title:hover, p.accept-jobs-title:hover {
