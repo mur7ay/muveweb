@@ -1974,6 +1974,35 @@ h1.lato {
 
 
 /* ============ Contractor Dashboard Styles ============*/
+.secondary-nav {
+  margin: 57px 0 20px;
+  height: 35px;
+  background-color: white;
+  border-top: 1px solid #F1F1F1;
+  border-bottom: 1px solid #F1F1F1;
+  font-size: 17px;
+}
+
+.secondary-nav-ul {
+  list-style-type: none;
+  text-align: right;
+  padding: 5px 20px 0 0;
+}
+
+.secondary-nav-ul li {
+  display: inline;
+  padding-left: 25px;
+}
+
+.secondary-nav-ul li a {
+  color: #5F5F5F;
+}
+
+.secondary-nav-ul li a:hover {
+  color: black;
+  text-decoration: none;
+}
+
 .confirm-container-mover-dash {
   padding-top: 60px;
 }
@@ -2069,6 +2098,14 @@ p.avail-jobs-title, p.accept-jobs-title {
 }
 
 @media screen and (max-width: 767px) {
+  .secondary-nav {
+    margin-top: 47px;
+  }
+
+  .secondary-nav-ul {
+    text-align: center;
+  }
+
   .confirm-container-mover-dash {
     padding-top: 0;
   }

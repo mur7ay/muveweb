@@ -178,6 +178,22 @@ $(document).ready(function() {
     acceptJob();
 
 
+    //Shows job details
+    function jobDetails() {
+      $('.details-job-button').off('click').on('click', function() {
+        $(this).parent().appendTo('#acceptedJobs');
+        $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name initial-hidden');
+        $(this).parent().find('.full-name').attr('class', 'customer-name full-name');
+        $(this).parent().children(':first-child').attr('class', 'delete-job delete-accept-job');
+        $(this).parent().append('<div class="details-job-button text-center"><p>Details</p></div>');
+        $(this).remove();
+        assignDeleteAcceptJob();
+      });
+    };
+
+    acceptJob();
+
+
   //Delete available job from the list
   // function deleteAvailJob() {
   //   $('.delete-avail-job').off('click').on('click', function() {
@@ -257,6 +273,8 @@ $(document).ready(function() {
     }
   };
 
+  mobileAvailJobs();
+  mobileAcceptJobs();
 
   //Gets screen width, sets CSS for column titles
   $(window).resize(function() {
