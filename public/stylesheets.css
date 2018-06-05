@@ -896,6 +896,10 @@ hr.green-underline {
   margin-top: 80px;
 }
 
+.margin-bottom-twentypx {
+  margin-bottom: 20px;
+}
+
 .padding-bottom-fortypx {
   padding-bottom: 40px;
 }
@@ -1974,13 +1978,21 @@ h1.lato {
 
 
 /* ============ Contractor Dashboard Styles ============*/
+.secondary-nav-container {
+  margin-top: 56px;
+  height: 35px;
+  margin-bottom: 25px
+}
+
 .secondary-nav {
-  margin: 57px 0 20px;
   height: 35px;
   background-color: white;
   border-top: 1px solid #F1F1F1;
   border-bottom: 1px solid #F1F1F1;
   font-size: 17px;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
 }
 
 .secondary-nav-ul {
@@ -2005,6 +2017,7 @@ h1.lato {
 
 .confirm-container-mover-dash {
   padding-top: 60px;
+  position: relative;
 }
 
 .customer-name {
@@ -2098,6 +2111,12 @@ p.avail-jobs-title, p.accept-jobs-title {
 }
 
 @media screen and (max-width: 767px) {
+  .secondary-nav-container {
+    margin-top: 0;
+    height: 35px;
+    margin-bottom: 70px
+  }
+
   .secondary-nav {
     margin-top: 47px;
   }
