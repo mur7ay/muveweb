@@ -33,13 +33,6 @@ var date = Date();
 
 var pickup, dropoff;
 
-// function jobType() {
-//
-//   localStorage.setItem('jobs-selected', pickup);
-//   var jobsSelected = localStorage.getItem("jobs-selected");
-//
-// }
-
 document.getElementById("furnitureBtn").onclick = function() {
   pickup = pickupAddress.value;
   dropoff = dropoffAddress.value;

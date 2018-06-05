@@ -53,33 +53,6 @@ $(document).ready(function() {
   // 	"Supplies_Needed": "",
   // 	"Time_Driven": "30 mins",
   // };
-  //
-  // const fakeJSON3 = {
-  // 	"Load_Help": "",
-  // 	"Muves_Fee": "15.01",
-  // 	"Name": "Joe",
-  // 	"Num_Of_Assemblers": "",
-  // 	"Num_Of_Boxes": "",
-  // 	"Num_Of_Items": "1",
-  // 	"Num_Of_Movers": "",
-  // 	"Pack_Help": "",
-  // 	"Phone": "777-777-7777",
-  // 	"Piano_Type": "",
-  // 	"Pickup_Address": "Blue Ash, OH, USA",
-  // 	"Pickup_Home_Type": "",
-  // 	"Pickup_Room_Count": "",
-  // 	"Pickup_Stairs": "",
-  // 	"Dropoff_Address": "Blue Ash, OH, USA",
-  // 	"Dropoff_Home_Type": "",
-  // 	"Dropoff_Room_Count": "",
-  // 	"Dropoff_Stairs": "",
-  // 	"Rooms_To_Pack": "",
-  // 	"Scheduled_Date": "5.05",
-  // 	"Scheduled_Time": "15:00",
-  // 	"Store_Pickup": "No",
-  // 	"Supplies_Needed": "",
-  // 	"Time_Driven": "12 mins",
-  // };
 
   // let jobsArray = [fakeJSON1, fakeJSON2, fakeJSON3];
   // let acceptedJobsArray = [fakeJSON1, fakeJSON2, fakeJSON3]
@@ -97,7 +70,10 @@ $(document).ready(function() {
     var timeDriven = snapshot.val().Time_Driven;
     var date = snapshot.val().Scheduled_Date;
     var earnings = snapshot.val().Estimated_Cost;
+    var keys = snapshot.key;
+    // console.log(snapshot.key);
     date = date.replace('.', '/');
+
 
     let partialName = name;
     let spaceInName = name.split(' ');
@@ -125,41 +101,42 @@ $(document).ready(function() {
     $('#available' + i).append('<p>Move Time: ' + time + '</p>');
     $('#available' + i).append('<p>Drive Time: ' + timeDriven + '</p>');
     $('#available' + i).append('<p>Potential Earnings: $' + earnings + '</p>');
+    $('#available' + i).append('<p>Potential Earnings:' + keys + '</p>');
     $('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
 
 
-  //Uses JSON data to populate list of available jobs
-  // const generateAvailableJobs = (jobsArray) => {
-  // 	for (i = 0; i < jobsArray.length; i++) {
-  // 		$('<div>',{id:'available' + i, class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
-  // 		$('#available' + i).append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
-  // 		$('#available' + i).append('<p>Name: ' + jobsArray[i].Name + '</p>');
-  // 		$('#available' + i).append('<p>Move Date: ' + jobsArray[i].Scheduled_Date + '</p>');
-  // 		$('#available' + i).append('<p>Move Time: ' + jobsArray[i].Scheduled_Time + '</p>');
-  // 		$('#available' + i).append('<p>Drive Time: ' + jobsArray[i].Time_Driven + '</p>');
-  // 		$('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
-  // 	}
-  // }
+    //Uses JSON data to populate list of available jobs
+    // const generateAvailableJobs = (jobsArray) => {
+    // 	for (i = 0; i < jobsArray.length; i++) {
+    // 		$('<div>',{id:'available' + i, class:"avail-accept-jobs-div margin-bottom-twentypx"}).appendTo('#availableJobs');
+    // 		$('#available' + i).append('<div class="delete-job delete-avail-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+    // 		$('#available' + i).append('<p>Name: ' + jobsArray[i].Name + '</p>');
+    // 		$('#available' + i).append('<p>Move Date: ' + jobsArray[i].Scheduled_Date + '</p>');
+    // 		$('#available' + i).append('<p>Move Time: ' + jobsArray[i].Scheduled_Time + '</p>');
+    // 		$('#available' + i).append('<p>Drive Time: ' + jobsArray[i].Time_Driven + '</p>');
+    // 		$('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
+    // 	}
+    // }
 
-  // generateAvailableJobs(jobsArray);
+    // generateAvailableJobs(jobsArray);
 
 
-  //Uses JSON data to populate list of accepted jobs
-  // const generateAcceptedJobs = (acceptedJobsArray) => {
-  //   for (i = 0; i < acceptedJobsArray.length; i++) {
-  //     $('<div>', {
-  //       id: 'accepted' + i,
-  //       class: "avail-accept-jobs-div margin-bottom-twentypx"
-  //     }).appendTo('#acceptedJobs');
-  //     $('#accepted' + i).append('<div class="delete-job delete-accept-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
-  //     $('#accepted' + i).append('<p>Name: ' + acceptedJobsArray[i].Name + '</p>');
-  //     $('#accepted' + i).append('<p>Move Date: ' + acceptedJobsArray[i].Scheduled_Date + '</p>');
-  //     $('#accepted' + i).append('<p>Move Time: ' + acceptedJobsArray[i].Scheduled_Time + '</p>');
-  //     $('#accepted' + i).append('<p>Drive Time: ' + jobsArray[i].Time_Driven + '</p>');
-  //   }
-  // }
+    //Uses JSON data to populate list of accepted jobs
+    // const generateAcceptedJobs = (acceptedJobsArray) => {
+    //   for (i = 0; i < acceptedJobsArray.length; i++) {
+    //     $('<div>', {
+    //       id: 'accepted' + i,
+    //       class: "avail-accept-jobs-div margin-bottom-twentypx"
+    //     }).appendTo('#acceptedJobs');
+    //     $('#accepted' + i).append('<div class="delete-job delete-accept-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+    //     $('#accepted' + i).append('<p>Name: ' + acceptedJobsArray[i].Name + '</p>');
+    //     $('#accepted' + i).append('<p>Move Date: ' + acceptedJobsArray[i].Scheduled_Date + '</p>');
+    //     $('#accepted' + i).append('<p>Move Time: ' + acceptedJobsArray[i].Scheduled_Time + '</p>');
+    //     $('#accepted' + i).append('<p>Drive Time: ' + jobsArray[i].Time_Driven + '</p>');
+    //   }
+    // }
 
-  // generateAcceptedJobs(acceptedJobsArray);
+    // generateAcceptedJobs(acceptedJobsArray);
 
 
     //Moves job from available to accepted
@@ -194,14 +171,14 @@ $(document).ready(function() {
     acceptJob();
 
 
-  //Delete available job from the list
-  // function deleteAvailJob() {
-  //   $('.delete-avail-job').off('click').on('click', function() {
-  //     $(this).parent().remove();
-  //   });
-  // };
+    //Delete available job from the list
+    // function deleteAvailJob() {
+    //   $('.delete-avail-job').off('click').on('click', function() {
+    //     $(this).parent().remove();
+    //   });
+    // };
 
-  // deleteAvailJob()
+    // deleteAvailJob()
 
 
     //Delete from accepted job list, moves back to available jobs list
@@ -220,6 +197,51 @@ $(document).ready(function() {
 
     assignDeleteAcceptJob();
   });
+
+
+
+
+
+
+
+  var ref = firebase.database().ref('moving-requests');
+  var ref2 = firebase.database().ref('Providers').child("City").child("Cincinnati");
+
+  var user = firebase.auth().currentUser;
+  console.log(user);
+  // var uid = user.uid;
+
+  // ref.on('value', function(snapshot) {
+  //   ref2.set(snapshot.val(), function(error) {
+  //     ref2.child(uid).set({
+  //       jobDetails: details
+  //     });
+  //   });
+  // });
+
+  // // copy user object
+  // ref1.once("value", function(snapshot) {
+  //
+  //   // copy user data to new gender tree
+  //   ref2.set(snapshot.val(), function(error) {
+  //     if (error) {
+  //       $log.info("could not copy user object." + error);
+  //     } else {
+  //       $log.info("user object copied successfully.");
+  //
+  //       // remove user object under old gender
+  //       ref1.remove(onComplete);
+  //     }
+  //   });
+  // }, function(errorObject) {
+  //   $log.info("The read failed: " + errorObject.code);
+  // });
+
+
+
+
+
+
 
 
 
@@ -246,7 +268,7 @@ $(document).ready(function() {
         $('.available-jobs').css('display', 'block');
       });
     } else {
-        $('#availableTitle').off('click');
+      $('#availableTitle').off('click');
     }
   };
 
@@ -269,7 +291,7 @@ $(document).ready(function() {
         $('.available-jobs').css('display', 'none');
       });
     } else {
-        $('#acceptedTitle').off('click');
+      $('#acceptedTitle').off('click');
     }
   };
 
@@ -309,4 +331,8 @@ $(document).ready(function() {
   });
 
 
+});
+
+firebase.auth().onAuthStateChanged(function(user) {
+  console.log(user.uid);
 });

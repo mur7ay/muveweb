@@ -1,6 +1,4 @@
 var object = document.getElementById('button');
-// var logout = document.getElementById('logoutBtn');
-
 
 //Handle Account Status
 // firebase.auth().onAuthStateChanged(user => {
