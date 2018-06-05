@@ -85,7 +85,7 @@ $(document).ready(function() {
   // let acceptedJobsArray = [fakeJSON1, fakeJSON2, fakeJSON3]
 
   let screenWidth = $(window).width();
-  let jobsArray = [];
+  // let jobsArray = [];
   let i = 0;
 
   var element;
@@ -172,6 +172,7 @@ $(document).ready(function() {
         $(this).parent().append('<div class="details-job-button text-center"><p>Details</p></div>');
         $(this).remove();
         assignDeleteAcceptJob();
+        showJobDetails();
       });
     };
 
@@ -308,5 +309,81 @@ $(document).ready(function() {
     mobileAcceptJobs();
   });
 
+
+
+  console.log(Supplies_Needed);
+
+  //Displays Job Details
+  function showJobDetails() {
+    let Name = "Evan Slaton";
+    let Phone = "555-555-5555";
+    let Scheduled_Date = undefined;
+    let Scheduled_Time = undefined;
+    let Time_Driven = undefined;
+    let Store_Pickup = undefined;
+    let Num_Of_Movers = undefined;
+    let Num_Of_Assemblers = undefined;
+    let Num_Of_Items = undefined;
+    let Num_Of_Boxes = undefined;
+    let Pickup_Address = undefined;
+    let Pickup_Home_Type = undefined;
+    let Pickup_Room_Count = undefined;
+    let Pickup_Stairs = undefined;
+    let Dropoff_Address = undefined;
+    let Dropoff_Home_Type = undefined;
+    let Dropoff_Room_Count = undefined;
+    let Dropoff_Stairs = undefined;
+    let Pack_Help = undefined;
+    let Rooms_To_Pack = undefined;
+    let Load_Help = undefined;
+    let Piano_Type = undefined;
+    let Supplies_Needed = '50,000 didgeridoos';
+
+    $('.details-job-button').off('click').on('click', function() {
+      $('#availableTitle').addClass('initial-hidden');
+      $('#acceptedTitle').addClass('initial-hidden');
+      $('#availableJobs').addClass('initial-hidden');
+      $('#acceptedJobs').addClass('initial-hidden');
+      $('#white-container').append('<div class="details-container"></div>');
+
+      if (Name) {$('.details-container').append('<p>Name: ' + Name + '</p>');}
+      if (Phone) {$('.details-container').append('<p>Phone: ' + Phone + '</p>');}
+      if (Scheduled_Date) {$('.details-container').append('<p>Move Date: ' + Scheduled_Date + '</p>');}
+      if (Scheduled_Time) {$('.details-container').append('<p>Move Time: ' + Scheduled_Time + '</p>');}
+      if (Time_Driven) {$('.details-container').append('<p>Drive Time: ' + Time_Driven + '</p>');}
+      if (Store_Pickup) {$('.details-container').append('<p>Store Pickup: ' + Store_Pickup + '</p>');}
+      if (Num_Of_Movers) {$('.details-container').append('<p>Movers: ' + Num_Of_Movers + '</p>');}
+      if (Num_Of_Assemblers) {$('.details-container').append('<p>Assemblers: ' + Num_Of_Assemblers + '</p>');}
+      if (Num_Of_Items) {$('.details-container').append('<p>Items: ' + Num_Of_Items + '</p>');}
+      if (Num_Of_Boxes) {$('.details-container').append('<p>Boxes: ' + Num_Of_Boxes + '</p>');}
+      if (Pickup_Address) {$('.details-container').append('<p>Pickup Address: ' + Pickup_Address + '</p>');}
+      if (Pickup_Home_Type) {$('.details-container').append('<p>Home Type: ' + Pickup_Home_Type + '</p>');}
+      if (Pickup_Room_Count) {$('.details-container').append('<p>Room Count: ' + Pickup_Room_Count + '</p>');}
+      if (Pickup_Stairs) {$('.details-container').append('<p>Stairs: ' + Pickup_Stairs + '</p>');}
+      if (Dropoff_Address) {$('.details-container').append('<p>Dropoff Address: ' + Dropoff_Address + '</p>');}
+      if (Dropoff_Home_Type) {$('.details-container').append('<p>Home Type: ' + Dropoff_Home_Type + '</p>');}
+      if (Dropoff_Room_Count) {$('.details-container').append('<p>Room Count: ' + Dropoff_Room_Count + '</p>');}
+      if (Dropoff_Stairs) {$('.details-container').append('<p>Stairs: ' + Dropoff_Stairs + '</p>');}
+      if (Pack_Help) {$('.details-container').append('<p>Help Pack: ' + Pack_Help + '</p>');}
+      if (Rooms_To_Pack) {$('.details-container').append('<p>Rooms to Pack: ' + Rooms_To_Pack + '</p>');}
+      if (Load_Help) {$('.details-container').append('<p>Load Help: ' + Load_Help + '</p>');}
+      if (Piano_Type) {$('.details-container').append('<p>Piano Type: ' + Piano_Type + '</p>');}
+      if (Supplies_Needed) {$('.details-container').append('<p>Supplies Needed: ' + Supplies_Needed + '</p>');}
+
+      $('.details-container').append('<div class="return-job-button text-center"><p>Return to List</p></div>');
+      showJobLists();
+    });
+  };
+
+  //Removes Job Details
+  function showJobLists() {
+    $('.return-job-button').off('click').on('click', function() {
+      $('#availableTitle').removeClass('initial-hidden');
+      $('#acceptedTitle').removeClass('initial-hidden');
+      $('#availableJobs').removeClass('initial-hidden');
+      $('#acceptedJobs').removeClass('initial-hidden');
+      $(this).parent().remove();
+    });
+  };
 
 });
