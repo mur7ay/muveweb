@@ -73,15 +73,6 @@ $(document).ready(function() {
 		return  (name.length > 0 && nameReg.test(name));
 	};
 
-	// $('#finalInfoQ').validate({
-	//  	rules: {
-	// 		phone: {
-	//     		required: true,
-	//     		phoneUS: true
-	//     	},
-	//   	}
-	// });
-
 
 	//Click event listener for .next-btn
 	$('.next-btn').click(function() {
@@ -468,6 +459,13 @@ $(document).ready(function() {
 			$('#nameA').text($('#name').val());
 		}
 
+
+		//Zip
+		if ($('#zip').val() !== undefined) {
+			$('#zipcodeA').text($('#zipcode2').val());
+		}
+
+
 		//Phone
 		if ($('#phone').val() !== undefined) {
 			$('#phoneA').text($('#phone').val());
@@ -555,16 +553,6 @@ $(document).ready(function() {
 			$('.boxesNeededA').removeClass('initial-hidden');
 			$('#boxesNeededA').text($('input[name=boxesNeeded]:checked').parent().text());
 		}
-
-
-
-		//Number of boxes needed
-		if ($('input[name=zipNeeded]:checked').val() !== undefined) {
-			$('.zipcodeA').removeClass('initial-hidden');
-			$('#zipcodeA').text($('input[name=zipNeeded]:checked').parent().text());
-		}
-
-
 
 		//At pick-up
 		//Home type

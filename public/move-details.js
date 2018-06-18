@@ -26,6 +26,7 @@ var _timeConfirm = document.getElementById("timeConfirm");
 var _new_text = document.getElementById("new_text");
 var _new_text2 = document.getElementById("new_text2");
 var _companySelected = document.getElementById("companySelected");
+var _zipcodeA = document.getElementById("zipcodeA");
 
 var pickupAddress = document.getElementById('address1');
 var dropoffAddress = document.getElementById('address2');
@@ -33,10 +34,14 @@ var date = Date();
 
 var pickup, dropoff;
 
+$(document).ready(function () {
+  // Your code
+
 document.getElementById("furnitureBtn").onclick = function() {
   pickup = pickupAddress.value;
   dropoff = dropoffAddress.value;
   _nameA = _nameA.innerHTML;
+  _zipcodeA = _zipcodeA.val;
   _phoneA = _phoneA.innerHTML;
   _emailA = _emailA.innerHTML;
   _jobTypeA = _jobTypeA.innerHTML;
@@ -65,8 +70,11 @@ document.getElementById("furnitureBtn").onclick = function() {
   _new_text2 = _new_text2.innerHTML;
   // _companySelected = _companySelected.innerHTML;
 
-  localStorage.setItem('jobs-selected', pickup);
-  var jobsSelected = localStorage.getItem("jobs-selected");
+  console.log(_nameA);
+  console.log(_zipcodeA);
+  
+  // localStorage.setItem('jobs-selected', pickup);
+  // var jobsSelected = localStorage.getItem("jobs-selected");
 
   var firebaseRef = firebase.database().ref();
   firebaseRef.child("moving-requests").push({
@@ -100,8 +108,10 @@ document.getElementById("furnitureBtn").onclick = function() {
     Company_Selected: _companySelected,
     Pickup_Address: pickup,
     Dropoff_Address: dropoff,
-    Date_Created: date
+    Date_Created: date,
+    Zip: _zipcodeA
   }).then(function() {
     // window.location.href = 'inviteConfirm.html';
   });
 };
+});

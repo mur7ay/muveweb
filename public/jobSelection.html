@@ -99,7 +99,6 @@
 
 <body>
 
-
   <!-- Navigation Bar -->
   <nav class="navbar navbar-default navbar-fixed-top no-box-shadow" role="navigation">
     <div class="container-fluid background-color-fff">
@@ -1110,6 +1109,12 @@
 
           <div class="checkbox checkbox-container">
             <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi" type="text" id="zip" name="zip" placeholder="Zipcode" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
               <input class="input__field input__field--hoshi" type="text" id="phone" name="phone" placeholder="Cell Phone" onkeypress="numberPressed(event);"/>
             </label>
           </div>
@@ -1298,6 +1303,11 @@
             <p id="nameA" class="confirm-answer"></p>
           </div>
 
+          <div class="zipcodeA">
+            <p class="confirm-title">Zip</p>
+            <p id="zipcodeA" class="confirm-answer"></p>
+          </div>
+
           <div class="phoneA">
             <p class="confirm-title">Phone</p>
             <p id="phoneA" class="confirm-answer"></p>
@@ -1470,23 +1480,9 @@
             <button id="finalBackBtn" type="button" class="back-btn">BACK</button>
             <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
           </div>
-
-
-
-          <!--           <button>Submit Payment</button> -->
         </form>
-
-
-
-
-        <!--         <div class="question-container" style="margin-top: 30px;">
-          <button type="button" class="back-btn">BACK</button>
-          <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
-        </div> -->
-
       </div>
     </div>
-
   </div>
 
 
@@ -1739,7 +1735,6 @@
         contentType: "application/json"
       });
 
-      // alert("Created a token with value: "+token.id)
       form.submit();
     }
   </script>
