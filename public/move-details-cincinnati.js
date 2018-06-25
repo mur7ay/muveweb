@@ -67,9 +67,13 @@ document.getElementById("furnitureBtn").onclick = function() {
   _timeConfirm = _timeConfirm.innerHTML;
   _new_text = _new_text.innerHTML;
   _new_text2 = _new_text2.innerHTML;
+  // _companySelected = _companySelected.innerHTML;
+
+  // console.log(_nameA);
+  // console.log(_zipcodeA);
 
   var firebaseRef = firebase.database().ref();
-  firebaseRef.child("moving-requests").push({
+  firebaseRef.child("cincinnati").push({
     Name: _nameA,
     Phone: _phoneA,
     Email: _emailA,

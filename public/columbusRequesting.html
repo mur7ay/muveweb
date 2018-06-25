@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Muve | Your Personal On-demand Mover</title>
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="img/muve-logos/favicon-16x16.png"> -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <!-- Jquery -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="stylesheets.css" />
+  <!--   <link rel="stylesheet" type="text/css" href="css/foundation-datepicker.css" /> -->
+
+
+  <!-- Scripts -->
+  <script src="js/job-select.js"></script>
+  <script src="js/determineCity.js"></script>
+
+
+  <!-- Payments -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+
+  <!-- Meta Data -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn more about Muve, its team, value and our culture and how we're changing the way moving is performed.">
+  <meta name="keywords" content="" />
+
+
+  <!-- Loading Google Places Library -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaZjppXXvLj8nilXgPX668oEFyC0ataBQ&libraries=places"></script>
+
+
+  <!-- Analytics -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-104462465-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300|Raleway" rel="stylesheet">
+
+
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/ad4b507575.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+
+
+  <!-- Start of Async Drift Code -->
+  <script>
+    ! function() {
+      var t;
+      if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void(window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
+        t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+        t.factory = function(e) {
+          return function() {
+            var n;
+            return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e, n, o, i;
+          e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
+            n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+        });
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('px6hbg4x3yfg');
+  </script>
+  <!-- End of Async Drift Code -->
+
+
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-default navbar-fixed-top no-box-shadow" role="navigation">
+    <div class="container-fluid background-color-fff">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed border-color-fff" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle Navigator</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="index.html">MUVE</a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-right  background-color-fff" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="moverInvite.html" title="link to the mover invite screen">Mover Invite</a></li>
+          <li><a href="about.html" title="link to the about page">About</a></li>
+          <li><a href="blog.html" title="link to Muve's blog">Blog</a></li>
+          <li class="background-color-01D06F"><a class="color-01D06F" href="jobSelection.html" title="link to the job/move service selection page.">Free Instant Quote</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="progress2">
+      <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </nav>
+
+  <div class="body-container overflow-visible">
+
+
+    <!-- Job Selection -->
+    <div id="jobSelect" class="question-wrapper">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>FIRST, SELECT THE JOB(S) YOU NEED SO WE CAN PROVIDE YOU WITH AN INSTANT ONLINE QUOTE.</strong></h4>
+        <a href="blog.html" class="no-deco">
+          <p>NEED HELP DECIDING?</p>
+        </a>
+        <p class="text-danger initial-hidden">Please choose at least one option</p>
+
+        <form id="job-input-form" role="form" action="" class="margin-top-fortypx">
+          <!-- <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox1">
+              <input type="checkbox" id="checkbox1" name="checkbox-home" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="whole home" />
+              WHOLE HOME
+              <p style="color:#9A9A9A;">
+                (The traditional move. Whether you're moving from a studio apartment to a six bedroom house, let our pros handle the moving for you.)
+              </p>
+            </label>
+          </div> -->
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox2">
+              <input type="checkbox" id="checkbox2" name="checkbox-furniture" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="furniture delivery" />
+              FURNITURE DELIVERY
+              <p style="color:#9A9A9A;">
+                (Great for furniture stores, yard sales, Craigslist purchases, and many other similar situations where you need to move just a few items.)
+              </p>
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container initial-hidden">
+            <label class="checkbox-label" for="checkbox3">
+              <input type="checkbox" id="checkbox3" name="checkbox-piano" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="piano" disabled/>
+              PIANO
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox4">
+              <input type="checkbox" id="checkbox4" name="checkbox-curb" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="curb-to-curb" />
+              CURB-TO-CURB
+              <p style="color:#9A9A9A;">
+                (Curb-to-curb means we pickup up your items at the curb and drop off your items at the curb. The result, you save money and get your items moved quickly.)
+              </p>
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox5">
+              <input type="checkbox" id="checkbox5" name="checkbox-assembly" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="assembly" />
+              ASSEMBLY
+              <p style="color:#9A9A9A;">
+                (Just need your furniture assembled or disassembled? Let a professional handle all your assembly needs.)
+              </p>
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label" for="checkbox6">
+              <input type="checkbox" id="checkbox6" name="checkbox-labor" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="just labor" />
+              JUST LABOR
+              <p style="color:#9A9A9A;">
+                (Just labor is perfect if you need a little extra help loading and/or unloading your truck. We can even assist with any of your in-home furniture moves.)
+              </p>
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container initial-hidden">
+            <label class="checkbox-label" for="checkbox7">
+              <input type="checkbox" id="checkbox7" name="checkbox-packing" class="remove-bootstrap checkbox-circle margin-right checkbox-js" value="packing" disabled />
+              PACKING
+            </label>
+          </div>
+        </form>
+
+        <div style="margin-top: 50px;">
+          <div id="first-next-btn" onclick="jobType()" class="first-next-btn">
+            <p class="text-center next-btn-txt">NEXT</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Labor Type Question-->
+    <div id="laborTypeQ" class="question-wrapper initial-hidden 5">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>DO YOU NEED HELP LOADING OR UNLOADING?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form id="lu-input-form" role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="laborType1" name="load" class="checkbox-circle margin-right" value="true" />
+              I need help loading and unloading.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="laborType2" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
+              I only need help loading.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="laborType3" name="load" class="checkbox-circle margin-right laborHalf" value="true" />
+              I only need help unloading.
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Number of Items to Assemble Question -->
+    <div id="howManyItemsAssembleQ" class="question-wrapper initial-hidden 4">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY ITEMS WILL NEED TO BE ASSEMBLED?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="assemCount-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items1" name="assembleItems" class="checkbox-circle margin-right" value="1" />
+              1
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items2" name="assembleItems" class="checkbox-circle margin-right" value="2" />
+              2
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items3" name="assembleItems" class="checkbox-circle margin-right" value="3" />
+              3
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items4" name="assembleItems" class="checkbox-circle margin-right" value="4" />
+              4
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items5" name="assembleItems" class="checkbox-circle margin-right" value="5" />
+              5
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items6" name="assembleItems" class="checkbox-circle margin-right" value="6+" />
+              6+
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="assemblyQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- In-store Pickup Question -->
+    <div id="instorePickupQ" class="question-wrapper initial-hidden 1 3 4">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>IS THIS AN IN-STORE PICKUP?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="storePickup-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="instore1" name="instore" class="checkbox-circle margin-right" value="Yes, the movers will need to pickup my item from a store/retailer." />
+              Yes, the movers will need to pickup my item from a store/retailer.
+            </label>
+          </div>
+
+          <div id="invoice" class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi request-form" type="text" id="invoiceNumber" placeholder="Invoice number" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="instore2" name="instore" class="checkbox-circle margin-right" value="No, the item(s) will be moved from my home or similar location." />
+              No, the item(s) will be moved from my home or similar location.
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="storePickupQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Number of Furniture to Move Question -->
+    <div id="howFurnituresToMoveQ" class="question-wrapper initial-hidden 1">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY ITEMS WILL NEED TO BE MOVED?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="assemCount-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items1" name="items" class="checkbox-circle margin-right" value="1" />
+              1
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items2" name="items" class="checkbox-circle margin-right" value="2" />
+              2
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="items3" name="items" class="checkbox-circle margin-right" value="3" />
+              3
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="assemblyQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Home Type From Question-->
+    <div id="homeTypeFromQ" class="question-wrapper initial-hidden 0 5">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>WHAT TYPE OF HOME ARE YOU MOVING FROM?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form id="movingFromType-input-form" role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeFrom" class="checkbox-circle margin-right" value="true" />
+              Apartment
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeFrom" class="checkbox-circle margin-right" value="true" />
+              House
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeFrom" class="checkbox-circle margin-right" value="true" />
+              Condo
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeFrom" class="checkbox-circle margin-right" value="true" />
+              Townhouse
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeFrom" class="checkbox-circle margin-right" value="true" />
+              Storage Unit
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Bedroom Question From -->
+    <div id="bedroomQ" class="question-wrapper initial-hidden 0 5">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY BEDROOMS DOES THE HOME YOU'RE MOVING FROM HAVE?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="bedroom-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container noFiveMovers noFourMovers">
+            <label class="checkbox-label">
+              <input type="radio" id="bedroom1" name="bedroom" class="checkbox-circle margin-right" value="studio" />
+              Studio
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container noFiveMovers noFourMovers">
+            <label class="checkbox-label">
+              <input type="radio" id="bedroom2" name="bedroom" class="checkbox-circle margin-right" value="1 bedroom home" />
+              1 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container noFiveMovers yesFourMovers">
+            <label class="checkbox-label">
+              <input type="radio" id="bedroom3" name="bedroom" class="checkbox-circle margin-right" value="2 bedroom home" />
+              2 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container noFiveMovers yesFourMovers">
+            <label class="checkbox-label">
+              <input type="radio" id="bedroom4" name="bedroom" class="checkbox-circle margin-right" value="3 bedroom home" />
+              3 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container noFiveMovers yesFourMovers">
+            <label class="checkbox-label">
+              <input type="radio" id="bedroom5" name="bedroom" class="checkbox-circle margin-right" value="4 bedroom home" />
+              4 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container yesFourMovers">
+            <label class="checkbox-label">
+              <input type="radio" id="bedroom6" name="bedroom" class="checkbox-circle margin-right" value="5 bedroom home" />
+              5 Bedroom Home
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container noFiveMovers noFourMovers">
+            <label class="checkbox-label ">
+              <input type="radio" id="bedroom7" name="bedroom" class="checkbox-circle margin-right" value="just a few things" />
+              Just A Few Things
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="bedroomQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Square Footage Question-->
+    <div id="squareFootageQ" class="question-wrapper initial-hidden 0 5">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY SQUARE FEET IS THE HOME YOU'RE MOVING FROM?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="squareFootage-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="sqFootage1" name="sqFootage" class="checkbox-circle margin-right" value="Less than 1,500 square feet" />
+              Less than 1,500 sq ft
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="sqFootage2" name="sqFootage" class="checkbox-circle margin-right" value="1,500 - 2,499 square feet" />
+              1,500 - 2,499 sq ft
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="sqFootage3" name="sqFootage" class="checkbox-circle margin-right" value="2,500 - 3,499 square feet" />
+              2,500 - 3,499 sq ft
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="sqFootage4" name="sqFootage" class="checkbox-circle margin-right" value="3,500 - 4,499 square feet" />
+              3,500 - 4,499 sq ft
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="sqFootage5" name="sqFootage" class="checkbox-circle margin-right" value="3,500 - 4,499 square feet" />
+              3,500 - 4,499 sq ft
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="sqFootage6" name="sqFootage" class="checkbox-circle margin-right" value="More than 4,500 square feet" />
+              More than 4,500 sq ft
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label ">
+              <input type="radio" id="sqFootage7" name="sqFootage" class="checkbox-circle margin-right" value="I don't know" />
+              I don't know
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="bedroomQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Home Type To Question-->
+    <div id="homeTypeToQ" class="question-wrapper initial-hidden 0 5">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>WHAT TYPE OF HOME ARE YOU MOVING TO?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form id="toHomeType-input-form" role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeTo" class="checkbox-circle margin-right" value="true" />
+              Apartment
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeTo" class="checkbox-circle margin-right" value="true" />
+              House
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeTo" class="checkbox-circle margin-right" value="true" />
+              Condo
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeTo" class="checkbox-circle margin-right" value="true" />
+              Townhouse
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="homeTypeTo" class="checkbox-circle margin-right" value="true" />
+              Storage Unit
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Type of Piano Question -->
+    <div id="typeOfPianoQ" class="question-wrapper initial-hidden 2">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>WHAT TYPE OF PIANO WILL YOU BE MOVING?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="typeOfPiano-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="piano1" name="piano" class="checkbox-circle margin-right" value="Spinet" />
+              Spinet
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="piano2" name="piano" class="checkbox-circle margin-right" value="Upright" />
+              Upright
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="piano3" name="piano" class="checkbox-circle margin-right" value="Baby Grand" />
+              Baby Grand
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="piano4" name="piano" class="checkbox-circle margin-right" value="Concert Grand" />
+              Concert Grand
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="pianoQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Stairs at Pickup Question -->
+    <div id="elevatorPickUpQ" class="question-wrapper initial-hidden 0 1 2 5">
+      <div class="inline field question-container">
+
+        <h4 class="question-header"><strong>WILL THE MOVER NEED TO USE STAIRS AT THE PICKUP LOCATION?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="stairs-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator1" name="elevatorPickup" class="checkbox-circle margin-right" value="Yes, the movers will need to move items up/down stairs." />
+              Yes, the movers will need to move items up/down stairs.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator2" name="elevatorPickup" class="checkbox-circle margin-right" value="No, the move is on the ground floor." />
+              No, the move is on the ground floor.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator3" name="elevatorPickup" class="checkbox-circle margin-right" value="No, the movers will have access to a passenger elevator." />
+              No, the movers will have access to a passenger elevator.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator4" name="elevatorPickup" class="checkbox-circle margin-right" value="No, the movers will have access to a fright elevator." />
+              No, the movers will have access to a fright elevator.
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="stairQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Stairs at Dropoff Question -->
+    <div id="elevatorDropOffQ" class="question-wrapper initial-hidden 0 1 2 5">
+      <div class="inline field question-container">
+
+        <h4 class="question-header"><strong>WILL THE MOVER NEED TO USE STAIRS AT THE DROPOFF LOCATION?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="stairs-at-dropoff-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator1" name="elevatorDropOff" class="checkbox-circle margin-right" value="Yes, the movers will need to move items up/down stairs." />
+              Yes, the movers will need to move items up/down stairs.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator2" name="elevatorDropOff" class="checkbox-circle margin-right" value="No, the move is on the ground floor." />
+              No, the move is on the ground floor.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator3" name="elevatorDropOff" class="checkbox-circle margin-right" value="No, the movers will have access to a passenger elevator." />
+              No, the movers will have access to a passenger elevator.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="elevator4" name="elevatorDropOff" class="checkbox-circle margin-right" value="No, the movers will have access to a fright elevator." />
+              No, the movers will have access to a fright elevator.
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="stairQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Boxes Question-->
+    <div id="boxesQ" class="question-wrapper initial-hidden 0 5">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY BOXES DO YOU PLAN ON MOVING?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="boxes-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="boxes1" name="boxes" class="checkbox-circle margin-right" value="1-10" />
+              1-10
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="boxes2" name="boxes" class="checkbox-circle margin-right" value="11-20" />
+              11-20
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="boxes3" name="boxes" class="checkbox-circle margin-right" value="21-30" />
+              21-30
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="boxes4" name="boxes" class="checkbox-circle margin-right" value="31-49" />
+              31-49
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="boxes5" name="boxes" class="checkbox-circle margin-right" value="50+" />
+              50+
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="boxQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Number of Movers Question -->
+    <div id="numberOfMoversQ" class="question-wrapper initial-hidden 0 5">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY MOVERS WOULD YOU LIKE TO HIRE?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="moverAmount-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="movers1" name="movers" class="checkbox-circle margin-right" value="2" />
+              2
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="movers2" name="movers" class="checkbox-circle margin-right" value="3" />
+              3
+            </label>
+          </div>
+
+          <div id="fourMoversDiv" class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="movers3" name="movers" class="checkbox-circle margin-right" value="4" />
+              4
+            </label>
+          </div>
+
+          <div id="fiveMoversDiv" class="checkbox checkbox-container initial-hidden">
+            <label class="checkbox-label">
+              <input type="radio" id="movers4" name="movers" class="checkbox-circle margin-right" value="5" />
+              5
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="numOfMoversQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Nummber of Assemblers Question -->
+    <div id="howManyAssemblersQ" class="question-wrapper initial-hidden 4">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY ASSEMBLERS WILL YOU NEED?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form role="form" id="numberOfAssemblers-input-form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="assemblers1" name="assemblers" class="checkbox-circle margin-right" value="1" />
+              1
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="assemblers2" name="assemblers" class="checkbox-circle margin-right" value="2" />
+              2
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="assemblers3" name="assemblers" class="checkbox-circle margin-right" value="3" />
+              3
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="numOfAssemblersQuestion()" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Packing Type Question -->
+    <div id="packingTypeQ" class="question-wrapper initial-hidden 6">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>WHAT TYPE OF PACKING HELP DO YOU NEED?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form id="type-of-packing-input-form" role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="pack" class="checkbox-circle margin-right" value="true" />
+              Packing
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="pack" class="checkbox-circle margin-right" value="true" />
+              Unpacking
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="pack" class="checkbox-circle margin-right" value="true" />
+              Packing and unpacking
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Packing Room Count Question -->
+    <div id="packingRoomCountQ" class="question-wrapper initial-hidden 6">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY ROOMS DO YOU NEED HELP PACKING OR UNPACKING?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form id="num-of-packing-rooms" role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="roomsToPack" class="checkbox-circle margin-right" value="true" />
+              1
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="roomsToPack" class="checkbox-circle margin-right" value="true" />
+              2
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="roomsToPack" class="checkbox-circle margin-right" value="true" />
+              3
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="roomsToPack" class="checkbox-circle margin-right" value="true" />
+              4
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="roomsToPack" class="checkbox-circle margin-right" value="true" />
+              5
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="roomsToPack" class="checkbox-circle margin-right" value="true" />
+              6+
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" onclick="" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Packer Supplying Supplies Question-->
+    <div id="packerSupplyingSuppliesQ" class="question-wrapper initial-hidden 6">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>WILL THE PACKER NEED TO SUPPLY THE PACKING SUPPLIES?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form id="packingSupplies" role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="supplying" name="supply" class="checkbox-circle margin-right" value="true" />
+              Yes, I'll need the mover to provide boxes and other supplies.
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="notSupplying" name="supply" class="checkbox-circle margin-right" value="true" />
+              No, I'll provide the packing supplies.
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- How Many Boxes Needed Question-->
+    <div id="howManyBoxesNeededQ" class="question-wrapper initial-hidden 6">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>HOW MANY BOXES WILL YOU NEED?</strong></h4>
+        <p class="text-danger initial-hidden">Please choose one</p>
+
+        <form id="box-count-input-count" role="form" action="" class="margin-top-fortypx">
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="boxesNeeded" class="checkbox-circle margin-right" value="true" />
+              1-10
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="boxesNeeded" class="checkbox-circle margin-right" value="true" />
+              11-20
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="boxesNeeded" class="checkbox-circle margin-right" value="true" />
+              21-40
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="boxesNeeded" class="checkbox-circle margin-right" value="true" />
+              41-60
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="boxesNeeded" class="checkbox-circle margin-right" value="true" />
+              61-80
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label">
+              <input type="radio" id="" name="boxesNeeded" class="checkbox-circle margin-right" value="true" />
+              81-100+
+            </label>
+          </div>
+
+          <div style="margin-top: 50px;">
+            <button type="button" class="back-btn">BACK</button>
+            <button type="button" class="text-center next-btn">NEXT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <!-- Final Info -->
+    <div id="finalInfoQ" class="question-wrapper initial-hidden">
+      <div id="lastQuestionsQ" class="inline field question-container">
+        <h4 class="question-header"><strong>TELL US ABOUT YOUR MOVE.</strong></h4>
+        <p class="text-danger initial-hidden">Please fill all fields</p>
+
+        <form role="form" id="userInfo-input-form" name="finalInfo" action="" class="margin-top-fortypx">
+          <div id="pickupAddress" class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi request-form" type="text" id="address1" placeholder="Pick-up Address" />
+            </label>
+          </div>
+
+          <div id="dropoffAddress" class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi request-form" type="text" id="address2" placeholder="Drop-off Address" onfocusout="GetRoute()" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi" type="text" id="name" name="name" placeholder="Name" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi" type="text" id="zip" name="zip" placeholder="Zipcode" />
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi" type="text" id="phone" name="phone" placeholder="Cell Phone" onkeypress="numberPressed(event);"/>
+            </label>
+          </div>
+
+          <div class="checkbox checkbox-container">
+            <label class="checkbox-label text-input">
+              <input class="input__field input__field--hoshi" type="text" name="email" id="email" placeholder="Email" />
+            </label>
+          </div>
+
+          <div class="checkbox select-div">
+            <label for="week" class="week-label">
+              <img src="img/calendar.png" alt="Image of a blank calendar" />
+              Choose a day</label>
+            <select name="week" class="select-styles week" name="week">
+              <option id="thisWeek" value="thisWeek" selected></option>
+              <option id="nextWeek" value="nextWeek"></option>
+            </select>
+          </div>
+
+          <div class="text-center days-div">
+            <label class="dayOfWeek">
+              <span class="day">S</span>
+              <input id="sunday" class="hidden-day" type="radio" name="day" value="Sunday" />
+              <div id="timesWrapper" class="initial-hidden">
+                <div class="outer-triangle"></div>
+                <div class="inner-triangle"></div>
+              </div>
+            </label>
+
+            <label class="dayOfWeek">
+              <span class="day">M</span>
+              <input class="hidden-day" type="radio" name="day" value="Monday" />
+            </label>
+
+            <label class="dayOfWeek">
+              <span class="day">T</span>
+              <input class="hidden-day" type="radio" name="day" value="Tuesdayday" />
+            </label>
+
+            <label class="dayOfWeek">
+              <span class="day">W</span>
+              <input class="hidden-day" type="radio" name="day" value="Wednesday" />
+            </label>
+
+            <label class="dayOfWeek">
+              <span class="day">T</span>
+              <input class="hidden-day" type="radio" name="day" value="Thursday" />
+            </label>
+
+            <label class="dayOfWeek">
+              <span class="day">F</span>
+              <input class="hidden-day" type="radio" name="day" value="Friday" />
+            </label>
+
+            <label class="dayOfWeek">
+              <span class="day">S</span>
+              <input id="saturday" class="hidden-day" type="radio" name="day" value="Saturday" />
+            </label>
+
+            <div id="times" class="times initial-hidden">
+              <img src="img/clock.png" alt="Image of a blank clock" />
+              <p>Choose a time</p>
+
+              <label>08:00 AM
+                <input type="radio" name="time" value="08:00" class="initial-hidden" />
+              </label>
+
+              <label>08:30 AM
+                <input type="radio" name="time" value="08:30" class="initial-hidden" />
+              </label>
+
+              <label>09:00 AM
+                <input type="radio" name="time" value="09:00" class="initial-hidden" />
+              </label>
+
+              <label>09:30 AM
+                <input type="radio" name="time" value="09:30" class="initial-hidden" />
+              </label>
+
+              <label>10:00 AM
+                <input type="radio" name="time" value="10:00" class="initial-hidden" />
+              </label>
+
+              <label>10:30 AM
+                <input type="radio" name="time" value="10:30" class="initial-hidden" />
+              </label>
+
+              <label>11:00 AM
+                <input type="radio" name="time" value="11:00" class="initial-hidden" />
+              </label>
+
+              <label>11:30 AM
+                <input type="radio" name="time" value="11:30" class="initial-hidden" />
+              </label>
+
+              <label>12:00 PM
+                <input type="radio" name="time" value="12:00" class="initial-hidden" />
+              </label>
+
+              <label>12:30 PM
+                <input type="radio" name="time" value="12:30" class="initial-hidden" />
+              </label>
+
+              <label>01:00 PM
+                <input type="radio" name="time" value="13:00" class="initial-hidden" />
+              </label>
+
+              <label>01:30 PM
+                <input type="radio" name="time" value="13:30" class="initial-hidden" />
+              </label>
+
+              <label>02:00 PM
+                <input type="radio" name="time" value="14:00" class="initial-hidden" />
+              </label>
+
+              <label>02:30 PM
+                <input type="radio" name="time" value="14:30" class="initial-hidden" />
+              </label>
+
+              <label>03:00 PM
+                <input type="radio" name="time" value="15:00" class="initial-hidden" />
+              </label>
+
+              <label>03:30 PM
+                <input type="radio" name="time" value="15:30" class="initial-hidden" />
+              </label>
+
+              <label>04:00 PM
+                <input type="radio" name="time" value="16:00" class="initial-hidden" />
+              </label>
+
+              <label>04:30 PM
+                <input type="radio" name="time" value="16:30" class="initial-hidden" />
+              </label>
+
+              <label>05:00 PM
+                <input type="radio" name="time" value="17:00" class="initial-hidden" />
+              </label>
+
+              <label>05:30 PM
+                <input type="radio" name="time" value="17:30" class="initial-hidden" />
+              </label>
+
+              <label>06:00 PM
+                <input type="radio" name="time" value="18:00" class="initial-hidden" />
+              </label>
+
+              <label>06:30 PM
+                <input type="radio" name="time" value="18:30" class="initial-hidden" />
+              </label>
+
+              <label>07:00 PM
+                <input type="radio" name="time" value="19:00" class="initial-hidden" />
+              </label>
+
+              <label>07:30 PM
+                <input type="radio" name="time" value="19:30" class="initial-hidden" />
+              </label>
+
+              <label>08:00 PM
+                <input type="radio" name="time" value="20:00" class="initial-hidden" />
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div style="margin-top: 50px; max-width: 500px; margin-left: auto; margin-right: auto;">
+        <button type="button" class="back-btn">BACK</button>
+        <button id="finalNextBtn" type="button" class="text-center next-btn">NEXT</button>
+      </div>
+
+    </div>
+
+
+    <!-- Confirm -->
+    <div id="moveDetails" class="question-wrapper initial-hidden">
+      <div class="inline field question-container">
+        <h4 class="question-header"><strong>MOVE DETAILS</strong></h4>
+
+        <div id="typeWholeHomeConfirm" class="margin-top-fortypx">
+
+          <div class="nameA">
+            <p class="confirm-title">Name</p>
+            <p id="nameA" class="confirm-answer"></p>
+          </div>
+
+          <div class="zipcodeA">
+            <p class="confirm-title">Zip</p>
+            <p id="zipcodeA" class="confirm-answer"></p>
+          </div>
+
+          <div class="phoneA">
+            <p class="confirm-title">Phone</p>
+            <p id="phoneA" class="confirm-answer"></p>
+          </div>
+
+          <div class="emailA">
+            <p class="confirm-title">Email</p>
+            <p id="emailA" class="confirm-answer"></p>
+          </div>
+
+          <div class="jobTypeA">
+            <p class="confirm-title">Type</p>
+            <p id="jobTypeA" class="confirm-answer"></p>
+          </div>
+
+          <div class="numRoomsFromA initial-hidden confirmation">
+            <p class="confirm-title">Bedrooms moving from</p>
+            <p id="numRoomsFromA" class="confirm-answer"></p>
+          </div>
+
+          <div class="numMoversA initial-hidden confirmation">
+            <p class="confirm-title">Number of movers</p>
+            <p id="numMoversA" class="confirm-answer"></p>
+          </div>
+
+          <div class="numAssemblersA initial-hidden confirmation">
+            <p class="confirm-title">Number of assemblers</p>
+            <p id="numAssemblersA" class="confirm-answer"></p>
+          </div>
+
+          <div class="numBoxesA initial-hidden confirmation">
+            <p class="confirm-title">Number of boxes</p>
+            <p id="numBoxesA" class="confirm-answer"></p>
+          </div>
+
+          <div class="instorePickupA initial-hidden confirmation">
+            <p class="confirm-title">In-store pickup</p>
+            <p id="instorePickupA" class="confirm-answer"></p>
+          </div>
+
+          <div class="numItemsMovedA initial-hidden confirmation">
+            <p class="confirm-title">Items to be moved</p>
+            <p id="numItemsMovedA" class="confirm-answer"></p>
+          </div>
+
+          <div class="numItemsAssembledA initial-hidden confirmation">
+            <p class="confirm-title">Items to be assembled</p>
+            <p id="numItemsAssembledA" class="confirm-answer"></p>
+          </div>
+
+          <div class="typePianoA initial-hidden confirmation">
+            <p class="confirm-title">Type of Piano</p>
+            <p id="typePianoA" class="confirm-answer"></p>
+          </div>
+
+          <div class="loadA initial-hidden confirmation">
+            <p class="confirm-title">Load&#47;unload</p>
+            <p id="loadA" class="confirm-answer"></p>
+          </div>
+
+          <div class="packA initial-hidden confirmation">
+            <p class="confirm-title">Pack&#47;unpack</p>
+            <p id="packA" class="confirm-answer"></p>
+          </div>
+
+          <div class="numRoomsPackA initial-hidden confirmation">
+            <p class="confirm-title">Rooms to pack/unpack</p>
+            <p id="numRoomsPackA" class="confirm-answer"></p>
+          </div>
+
+          <div class="supplySuppliesA initial-hidden confirmation">
+            <p class="confirm-title">Packer supplying supplies</p>
+            <p id="supplySuppliesA" class="confirm-answer"></p>
+          </div>
+
+          <div class="boxesNeededA initial-hidden confirmation">
+            <p class="confirm-title">Boxes needed</p>
+            <p id="boxesNeededA" class="confirm-answer"></p>
+          </div>
+
+          <div class="calc row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">At Pick-up&#58;</p>
+
+              <div class="homeTypeFromA initial-hidden confirmation">
+                <p class="confirm-title confirm-title-special left-padding-fivepx">Home Type</p>
+                <p id="homeTypeFromA" class="confirm-answer left-padding-fivepx"></p>
+              </div>
+
+              <div class="pickupStairsA initial-hidden confirmation">
+                <p class="confirm-title left-padding-fivepx">Stairs</p>
+                <p id="pickupStairsA" class="confirm-answer left-padding-fivepx"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">At Drop-off&#58;</p>
+
+              <div class="homeTypeToA initial-hidden confirmation">
+                <p class="confirm-title confirm-title-special left-padding-fivepx">Home Type</p>
+                <p id="homeTypeToA" class="confirm-answer left-padding-fivepx"></p>
+              </div>
+
+              <div class="dropoffStairsA initial-hidden confirmation">
+                <p class="confirm-title left-padding-fivepx">Stairs</p>
+                <p id="dropoffStairsA" class="confirm-answer left-padding-fivepx"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc row" onload="doSomething()">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">Miles Driven</p>
+              <p id="miles" class="confirm-answer"></p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">Drive Time</p>
+              <p id="time" class="confirm-answer"></p>
+            </div>
+          </div>
+
+          <div class="calc row" onload="doSomething()">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">Date</p>
+              <p id="dateConfirm" class="confirm-answer"></p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+              <p class="confirm-title">Time</p>
+              <p id="timeConfirm" class="confirm-answer"></p>
+            </div>
+          </div>
+        </div>
+
+        <br style="clear: both;" />
+
+
+        <!-- Map -->
+        <div class="container-fluid" id="dv">
+          <div id="dvMap"></div>
+        </div>
+
+        <div class="mover-quote" style="margin-top: 60px;">
+          <h2 class="quote-info">Company&#58; Muve</h2>
+          <h2 class="quote-info">Estimated total&#58; $<span id="new_text"></span> USD</h2>
+          <h2 class="quote-info">Reservation deposit&#58; $<span id="new_text2"></span> USD</h2>
+        </div>
+
+        <div class="alert alert-success" style="margin-top: 20px;">
+          <strong>100% Money Back Guarantee</strong>- Your reservation deposit is fully refundable when canceled before 48 hours of your scheduled move. The reservation deposit is necessary to hold your time slot for the specified date you requested.<a href="terms.html" class="alert-link">Terms of Use</a>.
+        </div>
+
+
+        <form action="/charge" method="post" id="payment-form" style="margin-top: 40px;">
+          <div class="form-row">
+            <label for="card-element">
+            Reservation Deposit (Credit or Debit Card)
+          </label>
+            <div id="card-element"><!-- a Stripe Element will be inserted here. --></div>
+
+            <div id="card-errors"></div>
+          </div>
+
+          <p class="agree-to-terms text-center">
+            By submitting the request, you agree to our <a href="terms.html">Terms of Use</a>
+          </p>
+
+          <div class="question-container" style="margin-top: 30px;">
+            <button id="finalBackBtn" type="button" class="back-btn">BACK</button>
+            <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+
+
+        <!-- Logo and Summary -->
+        <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+          <ul class="adress">
+            <img class="footer-logo" src="footer-logo.png" />
+            <li>
+              <p>Muve is your solution for on-demand furniture delivery and other moving services in the Cincinnati, Ohio area.</p>
+            </li>
+
+            <li>
+              <p>info@muveapp.com</p>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- Footer Menu -->
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <ul class="contact">
+            <span class="margin-top-twentypx">Menu</span>
+            <li>
+              <a href="index.html">Request</a>
+            </li>
+
+            <li>
+              <a href="about.html">About Us</a>
+            </li>
+
+            <li>
+              <a href="blog.html">Blog</a>
+            </li>
+
+            <li>
+              <a href="terms.html">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="privacy.html">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- Social Media Icons -->
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+          <ul class="social">
+            <span class="margin-top-twentypx">Social</span>
+            <li>
+              <a href="https://www.facebook.com/muvenow"><i class="fa fa-facebook fa-2x"></i></a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/muvenow"><i class="fa fa-instagram fa-2x"></i></a>
+            </li>
+
+            <li>
+              <a href="#"><i class="fa fa-pinterest-p fa-2x"></i></a>
+            </li>
+
+            <li>
+              <a href="https://www.twitter.com/muvenow"><i class="fa fa-twitter fa-2x"></i></a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/company/16254206/"><i class="fa fa-linkedin fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
+      authDomain: "muve-ce0b0.firebaseapp.com",
+      databaseURL: "https://muve-ce0b0.firebaseio.com",
+      projectId: "muve-ce0b0",
+      storageBucket: "muve-ce0b0.appspot.com",
+      messagingSenderId: "274894158485"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script src="furniture.js"></script>
+  <script src="move-details-columbus.js"></script>
+  <script src="js/classie.js"></script>
+  <script>
+    (function() {
+      // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+      if (!String.prototype.trim) {
+        (function() {
+          // Make sure we trim BOM and NBSP
+          var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+          String.prototype.trim = function() {
+            return this.replace(rtrim, '');
+          };
+        })();
+      }
+
+      [].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl) {
+        // in case the input is already filled..
+        if (inputEl.value.trim() !== '') {
+          classie.add(inputEl.parentNode, 'input--filled');
+        }
+
+        // events:
+        inputEl.addEventListener('focus', onInputFocus);
+        inputEl.addEventListener('blur', onInputBlur);
+      });
+
+      function onInputFocus(ev) {
+        classie.add(ev.target.parentNode, 'input--filled');
+      }
+
+      function onInputBlur(ev) {
+        if (ev.target.value.trim() === '') {
+          classie.remove(ev.target.parentNode, 'input--filled');
+        }
+      }
+    })();
+  </script>
+
+  <script src="js/selectFx.js"></script>
+  <script>
+    (function() {
+      [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
+        new SelectFx(el, {
+          stickyPlaceholder: false,
+          onChange: function(val) {
+            var img = document.createElement('img');
+            img.src = 'img/' + val + '.png';
+            img.onload = function() {
+              document.querySelector('span.cs-placeholder').style.backgroundImage = '#fff';
+            };
+          }
+        });
+      });
+    })();
+  </script>
+
+  <script type="text/javascript">
+    //Create a Stripe client
+    var stripe = Stripe('pk_live_i3RiTR70dEHOF70ZeY82vmJI');
+
+    // Create an instance of Elements
+    var elements = stripe.elements();
+
+    // Custom styling can be passed to options when creating an Element.
+    var style = {
+      base: {
+        color: '#32325d',
+        lineHeight: '24px',
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        fontSmoothing: 'antialiased',
+        fontSize: '16px',
+        '::placeholder': {
+          color: '#aab7c4'
+        }
+      },
+      invalid: {
+        color: '#fa755a',
+        iconColor: '#fa755a'
+      }
+    };
+
+    // Create an instance of the card Element
+    var card = elements.create('card', {
+      style: style
+    });
+
+    // Add an instance of the card Element into the `card-element` <div>
+    card.mount('#card-element');
+
+    // Handle real-time validation errors from the card Element.
+    card.addEventListener('change', function(event) {
+      var displayError = document.getElementById('card-errors');
+      if (event.error) {
+        displayError.textContent = event.error.message;
+      } else {
+        displayError.textContent = '';
+      }
+    });
+
+    // Handle form submission
+    var form = document.getElementById('payment-form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      stripe.createToken(card).then(function(result) {
+        if (result.error) {
+          // Inform the user if there was an error
+          var errorElement = document.getElementById('card-errors');
+          errorElement.textContent = result.error.message;
+        } else {
+          // Send the token to your server
+          stripeTokenHandler(result.token);
+        }
+      });
+    });
+
+    function stripeTokenHandler(token) {
+      // Insert the token ID into the form so it gets submitted to the server
+      var form = document.getElementById('payment-form');
+      var hiddenInput = document.createElement('input');
+      var totalAmount = document.createElement('input');
+      var customerEmail = document.createElement('input');
+
+      hiddenInput.setAttribute('type', 'hidden');
+      hiddenInput.setAttribute('name', 'stripeToken');
+      hiddenInput.setAttribute('value', token.id);
+
+      totalAmount.setAttribute('type', 'hidden');
+      totalAmount.setAttribute('name', 'totalAmount');
+      totalAmount.setAttribute('value', Number(document.getElementById('new_text2').innerHTML) * 100);
+
+      customerEmail.setAttribute('type', 'hidden');
+      customerEmail.setAttribute('name', 'email');
+      customerEmail.setAttribute('value', document.getElementById('emailA').innerHTML);
+
+      form.appendChild(hiddenInput);
+      form.appendChild(totalAmount);
+      form.appendChild(customerEmail);
+
+      var formData = JSON.stringify({
+        mytoken: token.id,
+        totalAmount: totalAmount.value,
+        customerEmail: customerEmail.value
+      });
+
+      $.ajax({
+        type: "POST",
+        url: "/charge",
+        data: formData,
+        success: function() {
+          alert("done")
+        },
+        dataType: "json",
+        contentType: "application/json"
+      });
+
+      form.submit();
+    }
+  </script>
+  <!--   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
+
+
+</body>
+
+</html>

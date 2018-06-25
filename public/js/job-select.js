@@ -66,21 +66,9 @@ $(document).ready(function() {
 
 	//Name validation function
 	function validateName(name) {
-		// if (name.split(' ').length < 2) {
-		// 	return false;
-		// }
 		var nameReg = /^[a-zA-Z ,.'-]+$/;
 		return  (name.length > 0 && nameReg.test(name));
 	};
-
-	// $('#finalInfoQ').validate({
-	//  	rules: {
-	// 		phone: {
-	//     		required: true,
-	//     		phoneUS: true
-	//     	},
-	//   	}
-	// });
 
 
 	//Click event listener for .next-btn
@@ -466,6 +454,11 @@ $(document).ready(function() {
 		//Name
 		if ($('#name').val() !== undefined) {
 			$('#nameA').text($('#name').val());
+		}
+
+		//Zip
+		if ($('#zip').val() !== undefined) {
+			$('#zipcodeA').text($('#zip').val());
 		}
 
 		//Phone

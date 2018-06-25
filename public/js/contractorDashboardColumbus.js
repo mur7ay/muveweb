@@ -5,7 +5,7 @@ $(document).ready(function() {
   let i = 0;
 
   var element;
-  var ref = firebase.database().ref('moving-requests');
+  var ref = firebase.database().ref('columbus');
   ref.on('child_added', function(snapshot) {
     var datas = snapshot.val();
     var time = snapshot.val().Scheduled_Time;
@@ -14,22 +14,22 @@ $(document).ready(function() {
     var date = snapshot.val().Scheduled_Date;
     var earnings = snapshot.val().Estimated_Cost;
     var keys = snapshot.key;
-    date = date.replace('.', '/');
+    // date = date.replace('.', '/');
 
 
     let partialName = name;
-    let spaceInName = name.split(' ');
+    // let spaceInName = name.split(' ');
     let lastInitial;;
 
-    if (spaceInName.length > 1) {
-      lastInitial = spaceInName[1].split('');
-      lastInitial = lastInitial[0];
-      partialName = `${spaceInName[0]} ${lastInitial}.`
-    }
-
-    if (!lastInitial) {
-      partialName = name;
-    }
+    // if (spaceInName.length > 1) {
+    //   lastInitial = spaceInName[1].split('');
+    //   lastInitial = lastInitial[0];
+    //   partialName = `${spaceInName[0]} ${lastInitial}.`
+    // }
+    //
+    // if (!lastInitial) {
+    //   partialName = name;
+    // }
 
 
     i++;
@@ -39,7 +39,7 @@ $(document).ready(function() {
     }).appendTo('#availableJobs');
     $('#available' + i).append('<div class="delete-job initial-hidden"><p class="text-center font-weight-bold"><b>X</b></p></div>');
     var x = document.getElementById("availableJobs");
-    // console.log(x);
+
     $('#available' + i).append('<p class="customer-name partial-name">Name: ' + partialName + '</p>');
     $('#available' + i).append('<p class="customer-name full-name initial-hidden">Name: ' + name + '</p>');
     $('#available' + i).append('<p>Move Date: ' + date + '</p>');
@@ -107,46 +107,46 @@ $(document).ready(function() {
 
 
 
-  var arr = [];
-
-  firebase.database().ref("Zips/Cincinnati").on('value', function(snap) {
-    snap.forEach(function(childNodes) {
-      console.log(childNodes.val());
-      arr.push(childNodes.val());
-      //This loop iterates over children of user_id
-      //childNodes.key is key of the children of userid such as (20170710)
-      //childNodes.val().name;
-      //childNodes.val().time;
-      //childNodes.val().rest_time;
-      //childNodes.val().interval_time;
-    });
-    console.log(arr);
-  });
-
-
-  // Listing current avaialable jobs.
-  var ref = firebase.database().ref('moving-requests');
-  // Current logged in user
-  var user = firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      var uid = user.uid;
-      // var ref2 = firebase.database().ref('Providers').child("City").child("Cincinnati");
-      var ref2 = firebase.database().ref('Cincinnati');
-
-      // userId = uid;
-
-      ref.on('value', function(snapshot) {
-        console.log(snapshot.val());
-
-        ref2.child(uid).set(snapshot.val(), function(error) {
-          // bt.addEventListener("click", myScript);
-        });
-      });
-    } else {
-      // No user is signed in.
-    }
-  });
+  // var arr = [];
+  //
+  // firebase.database().ref("Zips/Cincinnati").on('value', function(snap) {
+  //   snap.forEach(function(childNodes) {
+  //     console.log(childNodes.val());
+  //     arr.push(childNodes.val());
+  //     //This loop iterates over children of user_id
+  //     //childNodes.key is key of the children of userid such as (20170710)
+  //     //childNodes.val().name;
+  //     //childNodes.val().time;
+  //     //childNodes.val().rest_time;
+  //     //childNodes.val().interval_time;
+  //   });
+  //   console.log(arr);
+  // });
+  //
+  //
+  // // Listing current avaialable jobs.
+  // var ref = firebase.database().ref('moving-requests');
+  // // Current logged in user
+  // var user = firebase.auth().onAuthStateChanged(function(user) {
+  //   if (user) {
+  //     // User is signed in.
+  //     var uid = user.uid;
+  //     // var ref2 = firebase.database().ref('Providers').child("City").child("Cincinnati");
+  //     var ref2 = firebase.database().ref('Cincinnati');
+  //
+  //     // userId = uid;
+  //
+  //     ref.on('value', function(snapshot) {
+  //       console.log(snapshot.val());
+  //
+  //       ref2.child(uid).set(snapshot.val(), function(error) {
+  //         // bt.addEventListener("click", myScript);
+  //       });
+  //     });
+  //   } else {
+  //     // No user is signed in.
+  //   }
+  // });
 
 
 

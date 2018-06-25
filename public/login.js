@@ -1,14 +1,19 @@
 var object = document.getElementById('button');
 
-//Handle Account Status
-// firebase.auth().onAuthStateChanged(user => {
-//   if(user) {
-//     window.location = 'contractorDashboard.html'; //After successful login, user will be redirected to home.html
-//   } else {
-//     break;
-//   }
-// });
+var cincyArr = [];
+var columbusArr = [];
 
+firebase.database().ref("Zips/Cincinnati").on('value', function(snap) {
+  snap.forEach(function(childNodes) {
+    cincyArr.push(childNodes.val());
+  });
+});
+
+firebase.database().ref("Zips/Columbus").on('value', function(snap) {
+  snap.forEach(function(childNodes) {
+    columbusArr.push(childNodes.val());
+  });
+});
 
 object.onclick = function() {
 
@@ -16,12 +21,22 @@ object.onclick = function() {
   var password = document.getElementById('password').value;
 
   firebase.auth().signInWithEmailAndPassword(email, password).then(user => {
-        // Sign in success
-        window.location = 'contractorDashboard.html';
-    }).catch(error => {
-        console.error(error);
-    })
-}
+
+    var userId = firebase.auth().currentUser.uid;
+    return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+      var zipcode = (snapshot.val().zipcode);
+
+      if (cincyArr.indexOf(zipcode) !== -1) {
+        window.location = 'contractorDashboardCincy.html';
+      } else if (columbusArr.indexOf(zipcode) !== -1) {
+        window.location = 'contractorDashboardColumbus.html';
+      }
+    });
+  }).catch(error => {
+    console.error(error);
+  });
+};
+
 
 function forgotPassword() {
   var userEmail = document.getElementById('email3').value;

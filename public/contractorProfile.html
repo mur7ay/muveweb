@@ -48,11 +48,11 @@
 
   <!-- Google Web Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300|Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
 
   <!-- Font Awesome -->
-  <script src="https://use.fontawesome.com/ad4b507575.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 </head>
 
@@ -83,23 +83,40 @@
     </div>
   </nav>
 
-
-  <!-- Log In -->
-  <div class="container container-about container-login margin-top-eightypx">
-    <div class="white-container about-text2 confirm-container bottom-padding-fortypx" id="login_div">
-      <h1 class="login-h1 text-center">Log In</h1>
-      <input class="mover-username" id="email" type="text" placeholder="username" />
-      <input class="mover-password" id="password" type="password" placeholder="password" />
-
-      <div class="password-forgot-div">
-        <a href="#" class="mover-forgot-password">Forgot Password?</a>
-        <button class="user-login-button" id="button">Login</button>
-      </div>
+  <div class="secondary-nav-container">
+    <div class="secondary-nav margin-bottom-twentypx">
+      <ul class="secondary-nav-ul">
+        <li><a href="#" title="link to your profile">Profile</a></li>
+        <li><a href="#" title="link to your history">History</a></li>
+        <li><a href="contractorDashboardCincy.html" title="link to your dashboard">Dashboard</a></li>
+        <li><a href="#" onclick="logout()" title="click to log out of our account">Logout</a></li>
+      </ul>
     </div>
   </div>
 
 
-  <div id="parentDiv"></div>
+  <!-- Profile Info -->
+  <div class="white-container bottom-padding-fortypx container container-about margin-top-eightypx moverInvite-padding">
+
+    <h1>Profile</h1>
+    <p>
+      (All infomation is editable. Just click on your information to update.)
+    </p>
+    <h6 style="margin-top: 30px;">company</h6>
+    <h4 id="name" class="companyName" contenteditable="true" style="font-weight: bold"></h4>
+
+    <h6 style="margin-top: 20px;">address</h6>
+    <h4 id="address" class="address" contenteditable="true" style="font-weight: bold"></h4>
+
+    <h6 style="margin-top: 20px;">state</h6>
+    <h4 id="state" class="state" contenteditable="true" style="font-weight: bold"></h4>
+
+    <h6 style="margin-top: 20px;">zipcode</h6>
+    <h4 id="zip" class="zip" contenteditable="true" style="font-weight: bold; margin-bottom: 60px;"></h4>
+
+  </div>
+
+
 
   <!-- Footer -->
   <footer class="margin-top-eightypx">
@@ -179,7 +196,6 @@
     </div>
   </footer>
 
-
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -193,8 +209,10 @@
     };
     firebase.initializeApp(config);
   </script>
+  <!-- Custom Scripts -->
+  <script src="js/contractorDashboardCincy.js"></script>
   <script src="login.js"></script>
-  <!-- <script src="getMovingData.js"></script> -->
+  <script src="providerProfile.js"></script>
 
 
 </body>

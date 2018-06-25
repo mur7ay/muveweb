@@ -83,23 +83,44 @@
     </div>
   </nav>
 
-
-  <!-- Log In -->
-  <div class="container container-about container-login margin-top-eightypx">
-    <div class="white-container about-text2 confirm-container bottom-padding-fortypx" id="login_div">
-      <h1 class="login-h1 text-center">Log In</h1>
-      <input class="mover-username" id="email" type="text" placeholder="username" />
-      <input class="mover-password" id="password" type="password" placeholder="password" />
-
-      <div class="password-forgot-div">
-        <a href="#" class="mover-forgot-password">Forgot Password?</a>
-        <button class="user-login-button" id="button">Login</button>
-      </div>
+  <div class="secondary-nav-container">
+    <div class="secondary-nav margin-bottom-twentypx">
+          <ul class="secondary-nav-ul">
+            <li><a href="contractorProfile.html" title="link to your profile">Profile</a></li>
+            <li><a href="#" title="link to your history">History</a></li>
+            <li><a href="contractorDashboardCincy.html" title="link to your dashboard">Dashboard</a></li>
+            <li><a href="#" onclick="logout()" title="click to log out of our account">Logout</a></li>
+          </ul>
     </div>
   </div>
 
 
-  <div id="parentDiv"></div>
+
+
+
+
+
+<!--hjkids47-->
+  <!-- Jobs -->
+  <div class="container container-about container-login">
+    <div id="white-container" class="white-container about-text2 confirm-container-mover-dash bottom-padding-fortypx">
+
+      <p id="availableTitle" class="text-center avail-jobs-title">Available</p>
+      <p id="acceptedTitle" class="text-center accept-jobs-title">Accepted</p>
+
+      <div id="availableJobs" class="contractor-dash-div available-jobs"></div>
+      <div id="acceptedJobs" class="contractor-dash-div accepted-jobs"></div>
+
+      <div class="clear"></div>
+
+    </div>
+  </div>
+
+
+
+
+
+
 
   <!-- Footer -->
   <footer class="margin-top-eightypx">
@@ -179,7 +200,6 @@
     </div>
   </footer>
 
-
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -193,8 +213,10 @@
     };
     firebase.initializeApp(config);
   </script>
+  <!-- Custom Scripts -->
+  <script src="js/contractorDashboardCincy.js"></script>
   <script src="login.js"></script>
-  <!-- <script src="getMovingData.js"></script> -->
+  <script src="providerProfile.js"></script>
 
 
 </body>

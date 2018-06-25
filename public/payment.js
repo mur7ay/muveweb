@@ -1,11 +1,9 @@
 // Create a Stripe client
-var stripe = Stripe('pk_test_kSnjzwZxXhyj3ThOjoHWRaSq');
+var stripe = Stripe('pk_live_i3RiTR70dEHOF70ZeY82vmJI');
 
 // Create an instance of Elements
 var elements = stripe.elements();
 
-// Custom styling can be passed to options when creating an Element.
-// (Note that this demo uses a wider set of styles than the guide below.)
 var style = {
   base: {
     color: '#32325d',

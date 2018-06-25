@@ -2089,7 +2089,7 @@ p.avail-jobs-title, p.accept-jobs-title {
   clear: both;
 }
 
-.accept-job-button, .details-job-button {
+.accept-job-button, .details-job-button, .return-job-button {
   margin-top: 10px;
   border-radius: 5px;
   border: 1px solid #01D06F;
@@ -2104,10 +2104,25 @@ p.avail-jobs-title, p.accept-jobs-title {
   user-select: none;
 }
 
-.accept-job-button:hover, .details-job-button:hover {
+.accept-job-button:hover, .details-job-button:hover, .return-job-button:hover {
   color: white;
   background-color: #01D06F;
   cursor: pointer;
+}
+
+.return-job-button {
+  max-width: 350px;
+  padding-bottom: 0;
+  margin: 0 auto;
+}
+
+.return-job-button p {
+  margin-bottom: 3px;
+}
+
+.details-container {
+  width: 80%;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 767px) {
@@ -2156,6 +2171,11 @@ p.avail-jobs-title, p.accept-jobs-title {
 
   div.accepted-jobs {
     display: none;
+  }
+
+  .details-container {
+    padding-top: 40px;
+    font-size: 18px;
   }
 }
 
