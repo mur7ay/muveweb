@@ -39,33 +39,42 @@ $(document).ready(function() {
 
 
     i++;
+    var vap = 'available' + i;
+    var acceptButton = 'acceptButton' + i;
     $('<div>', {
-      id: 'available' + i,
+      id: vap,
       class: "avail-accept-jobs-div margin-bottom-twentypx"
     }).appendTo('#availableJobs');
-    $('#available' + i).append('<div class="delete-job initial-hidden"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+    $('#' + vap).append('<div class="delete-job initial-hidden"><p class="text-center font-weight-bold"><b>X</b></p></div>');
 
     // Populating the available job list
-    $('#available' + i).append('<p class="customer-name partial-name">Name: ' + partialName + '</p>');
-    $('#available' + i).append('<p class="customer-name full-name initial-hidden">Name: ' + name + '</p>');
-    $('#available' + i).append('<p>Move Date: ' + date + '</p>');
-    $('#available' + i).append('<p>Move Time: ' + time + '</p>');
-    $('#available' + i).append('<p>Drive Time: ' + timeDriven + '</p>');
-    $('#available' + i).append('<p>Potential Earnings: $' + earnings + '</p>');
-    $('#available' + i).append('<p>Job Type: ' + jobType + '</p>');
-    $('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
+    $('#' + vap).append('<p class="customer-name partial-name">Name: ' + partialName + '</p>');
+    $('#' + vap).append('<p class="customer-name full-name initial-hidden">Name: ' + name + '</p>');
+    $('#' + vap).append('<p>Move Date: ' + date + '</p>');
+    $('#' + vap).append('<p>Move Time: ' + time + '</p>');
+    $('#' + vap).append('<p>Drive Time: ' + timeDriven + '</p>');
+    $('#' + vap).append('<p>Potential Earnings: $' + earnings + '</p>');
+    $('#' + vap).append('<p>Job Type: ' + jobType + '</p>');
+    $('#' + vap).append('<div id="' + acceptButton + '" class="accept-job-button text-center"><p>Accept</p></div>');
+
+
     // Setting the id to firebase key value on button
+<<<<<<< HEAD
     var vap = document.querySelector('div.accept-job-button').id;
     console.log(snapshot.key = vap);
+=======
+    // var vap = document.querySelector('div.accept-job-button').id;
+
+>>>>>>> 247a376e6b39b34b0232fc7b5e59e9eb83c39fb1
     // printing out proper value
     console.log(vap);
 
 
 
     // Not alerting
-    $("#vap").click(function() {
-      alert('hi');
-    });
+    // $("#vap").find('accept-job-button').click(function() {
+    //   alert('hi');
+    // });
 
     firebase.auth().onAuthStateChanged((user) => {
 
@@ -100,6 +109,8 @@ $(document).ready(function() {
         $(this).remove();
         assignDeleteAcceptJob();
         // showJobDetails();
+        alert($(this).attr('id'));
+        console.log($(this).attr('id'));
       });
     }
 
