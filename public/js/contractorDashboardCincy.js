@@ -59,13 +59,8 @@ $(document).ready(function() {
 
 
     // Setting the id to firebase key value on button
-<<<<<<< HEAD
     var vap = document.querySelector('div.accept-job-button').id;
     console.log(snapshot.key = vap);
-=======
-    // var vap = document.querySelector('div.accept-job-button').id;
-
->>>>>>> 247a376e6b39b34b0232fc7b5e59e9eb83c39fb1
     // printing out proper value
     console.log(vap);
 
