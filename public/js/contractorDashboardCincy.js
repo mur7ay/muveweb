@@ -55,9 +55,12 @@ $(document).ready(function() {
     $('#available' + i).append('<p>Job Type: ' + jobType + '</p>');
     $('#available' + i).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
     // Setting the id to firebase key value on button
-    var vap = document.querySelector('div.accept-job-button').id = snapshot.key;
+    var vap = document.querySelector('div.accept-job-button').id;
+    console.log(snapshot.key = vap);
     // printing out proper value
     console.log(vap);
+
+
 
     // Not alerting
     $("#vap").click(function() {
@@ -66,8 +69,11 @@ $(document).ready(function() {
 
     firebase.auth().onAuthStateChanged((user) => {
 
+
+
       // getting reference to other node
       var userId2 = firebase.auth().currentUser.uid;
+      console.log(userId2);
       var ref2 = firebase.database().ref('users/' + userId2).child('jobs');
 
       // setting value of first ref into new node location
