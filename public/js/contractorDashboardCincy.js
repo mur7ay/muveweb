@@ -40,6 +40,7 @@ $(document).ready(function() {
 
     i++;
     var vap = 'available' + i;
+    var acceptButton = 'acceptButton' + i;
     $('<div>', {
       id: vap,
       class: "avail-accept-jobs-div margin-bottom-twentypx"
@@ -54,7 +55,9 @@ $(document).ready(function() {
     $('#' + vap).append('<p>Drive Time: ' + timeDriven + '</p>');
     $('#' + vap).append('<p>Potential Earnings: $' + earnings + '</p>');
     $('#' + vap).append('<p>Job Type: ' + jobType + '</p>');
-    $('#' + vap).append('<div class="accept-job-button text-center"><p>Accept</p></div>');
+    $('#' + vap).append('<div id="' + acceptButton + '" class="accept-job-button text-center"><p>Accept</p></div>');
+
+
     // Setting the id to firebase key value on button
     // var vap = document.querySelector('div.accept-job-button').id;
 
@@ -96,7 +99,8 @@ $(document).ready(function() {
         $(this).remove();
         assignDeleteAcceptJob();
         // showJobDetails();
-        alert($(this).parent().attr('id'));
+        alert($(this).attr('id'));
+        console.log($(this).attr('id'));
       });
     }
 
