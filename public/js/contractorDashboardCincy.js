@@ -1,169 +1,141 @@
-$(document).ready(function() {
-  let userId = -1;
+function rejectJob(data, key) {
+  var uid = firebase.auth().currentUser.uid;
 
-  let screenWidth = $(window).width();
-  let i = 0;
+  firebase.database().ref('cincinnati/' + key).set(data);
+  firebase.database().ref('acceptedJobs/' + uid + '/' + key).remove();
+}
 
-  var element;
-  // Ref the Cincinnati parent node
-  var ref = firebase.database().ref('cincinnati');
-  ref.on('child_added', function(snapshot) {
-    var datas = snapshot.val();
-    var time = snapshot.val().Scheduled_Time;
-    var name = snapshot.val().Name;
-    var timeDriven = snapshot.val().Time_Driven;
-    var date = snapshot.val().Scheduled_Date;
-    var earnings = snapshot.val().Estimated_Cost;
-    var jobType = snapshot.val().Job_Type;
+function acceptJob(data, key) {
+  var uid = firebase.auth().currentUser.uid;
 
-    var keys = snapshot.key;
+  firebase.database().ref('cincinnati/' + key).remove();
+  firebase.database().ref('acceptedJobs/' + uid + '/' + key).set(data);
+}
 
-    date = date.replace('.', '/');
+function renderAvailableJob(job, key) {
+  var time = job.Scheduled_Time;
+  var name = job.Name;
+  var timeDriven = job.Time_Driven;
+  var date = job.Scheduled_Date;
+  var earnings = job.Estimated_Cost;
+  var jobType = job.Job_Type;
 
-    // console.log(snapshot.key);
+  let partialName = name;
+  let spaceInName = name.split(' ');
+  let lastInitial;
 
+  if (spaceInName.length > 1) {
+    lastInitial = spaceInName[1].split('');
+    lastInitial = lastInitial[0];
+    partialName = `${spaceInName[0]} ${lastInitial}.`
+  }
 
-    let partialName = name;
-    let spaceInName = name.split(' ');
-    let lastInitial;
+  if (!lastInitial) {
+    partialName = name;
+  }
 
-    if (spaceInName.length > 1) {
-      lastInitial = spaceInName[1].split('');
-      lastInitial = lastInitial[0];
-      partialName = `${spaceInName[0]} ${lastInitial}.`
-    }
-
-    if (!lastInitial) {
-      partialName = name;
-    }
-
-
-    i++;
-    var vap = 'available' + i;
-    var acceptButton = 'acceptButton' + i;
-    $('<div>', {
-      id: vap,
-      class: "avail-accept-jobs-div margin-bottom-twentypx"
-    }).appendTo('#availableJobs');
-    $('#' + vap).append('<div class="delete-job initial-hidden"><p class="text-center font-weight-bold"><b>X</b></p></div>');
-
-    // Populating the available job list
-    $('#' + vap).append('<p class="customer-name partial-name">Name: ' + partialName + '</p>');
-    $('#' + vap).append('<p class="customer-name full-name initial-hidden">Name: ' + name + '</p>');
-    $('#' + vap).append('<p>Move Date: ' + date + '</p>');
-    $('#' + vap).append('<p>Move Time: ' + time + '</p>');
-    $('#' + vap).append('<p>Drive Time: ' + timeDriven + '</p>');
-    $('#' + vap).append('<p>Potential Earnings: $' + earnings + '</p>');
-    $('#' + vap).append('<p>Job Type: ' + jobType + '</p>');
-    $('#' + vap).append('<div id="' + acceptButton + '" class="accept-job-button text-center"><p>Accept</p></div>');
-
-
-    // Setting the id to firebase key value on button
-    var vap = document.querySelector('div.accept-job-button').id;
-    console.log(snapshot.key = vap);
-    // printing out proper value
-    console.log(vap);
-
-
-
-    // Not alerting
-    // $("#vap").find('accept-job-button').click(function() {
-    //   alert('hi');
-    // });
-
-    firebase.auth().onAuthStateChanged((user) => {
-
-
-
-      // getting reference to other node
-      var userId2 = firebase.auth().currentUser.uid;
-      console.log(userId2);
-      var ref2 = firebase.database().ref('users/' + userId2).child('jobs');
-
-      // setting value of first ref into new node location
-      ref.on("value", function(snapshot) {
-        ref2.set(snapshot.val());
-      });
-
-    });
-
-
-
-    //Moves job from available to accepted
-    function acceptJob() {
-      // console.log('Registering events');
-      $('.accept-job-button').off('click').on('click', function(e) {
-        // var value = e.currentTarget.id;
-
-        $(this).parent().appendTo('#acceptedJobs');
-        $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name initial-hidden');
-        $(this).parent().find('.full-name').attr('class', 'customer-name full-name');
-        $(this).parent().children(':first-child').attr('class', 'delete-job delete-accept-job');
-        $(this).parent().append('<div class="details-job-button text-center"><p>Details</p></div>');
-
-        $(this).remove();
-        assignDeleteAcceptJob();
-        // showJobDetails();
-        alert($(this).attr('id'));
-        console.log($(this).attr('id'));
-      });
-    }
-
-    acceptJob();
-
-
-    //Shows job details
-    function jobDetails() {
-      $('.details-job-button').off('click').on('click', function() {
-        $(this).parent().appendTo('#acceptedJobs');
-        $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name initial-hidden');
-        $(this).parent().find('.full-name').attr('class', 'customer-name full-name');
-        $(this).parent().children(':first-child').attr('class', 'delete-job delete-accept-job');
-        $(this).parent().append('<div class="details-job-button text-center"><p>Details</p></div>');
-        $(this).remove();
-        assignDeleteAcceptJob();
-      });
-    }
-
-    acceptJob();
-
-
-    //Delete from accepted job list, moves back to available jobs list
-    function assignDeleteAcceptJob() {
-      $('.delete-accept-job').off('click').on('click', function() {
-        $(this).parent().appendTo('#availableJobs');
-        $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name');
-        $(this).parent().find('.full-name').attr('class', 'customer-name full-name initial-hidden');
-        $(this).parent().children(':first-child').attr('class', 'delete-job initial-hidden');
-        $(this).parent().append('<div class="accept-job-button text-center"><p>Accept</p></div>');
-        $(this).parent().find('.details-job-button').remove();
-        acceptJob();
-      });
-    }
-
-    assignDeleteAcceptJob();
+  var vap = 'available-' + key;
+  var acceptButtonId = 'acceptButton-' + key;
+  var newJobEl = $('<div>', {
+    id: vap,
+    class: "avail-accept-jobs-div margin-bottom-twentypx"
   });
 
+  // Populating the available job list
+  newJobEl.append('<p class="customer-name partial-name ">Name: ' + partialName + '</p>');
+  newJobEl.append('<p>Move Date: ' + date + '</p>');
+  newJobEl.append('<p>Move Time: ' + time + '</p>');
+  newJobEl.append('<p>Drive Time: ' + timeDriven + '</p>');
+  newJobEl.append('<p>Potential Earnings: $' + earnings + '</p>');
+  newJobEl.append('<p>Job Type: ' + jobType + '</p>');
+  var acceptButtonEl = $('<div id="' + acceptButtonId + '" class="accept-job-button text-center"><p>Accept</p></div>');
+  acceptButtonEl.on('click', function() { acceptJob(job, key) });
+  newJobEl.append(acceptButtonEl);
 
 
+  newJobEl.appendTo('#availableJobs');
+}
+
+function renderAcceptedJob(job, key) {
+  var time = job.Scheduled_Time;
+  var name = job.Name;
+  var timeDriven = job.Time_Driven;
+  var date = job.Scheduled_Date;
+  var earnings = job.Estimated_Cost;
+  var jobType = job.Job_Type;
+
+  let partialName = name;
+  let spaceInName = name.split(' ');
+  let lastInitial;
+
+  if (spaceInName.length > 1) {
+    lastInitial = spaceInName[1].split('');
+    lastInitial = lastInitial[0];
+    partialName = `${spaceInName[0]} ${lastInitial}.`
+  }
+
+  if (!lastInitial) {
+    partialName = name;
+  }
+
+  var vap = 'available-' + key;
+  var acceptButtonId = 'acceptButton-' + key;
+  var newJobEl = $('<div>', {
+    id: vap,
+    class: "avail-accept-jobs-div margin-bottom-twentypx"
+  });
+  var rejectJobEl = $('<div class="delete-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+  rejectJobEl.on('click', function() { rejectJob(job, key) });
+  newJobEl.append(rejectJobEl);
+
+  // Populating the available job list
+  newJobEl.append('<p class="customer-name full-name">Name: ' + name + '</p>');
+  newJobEl.append('<p>Move Date: ' + date + '</p>');
+  newJobEl.append('<p>Move Time: ' + time + '</p>');
+  newJobEl.append('<p>Drive Time: ' + timeDriven + '</p>');
+  newJobEl.append('<p>Potential Earnings: $' + earnings + '</p>');
+  newJobEl.append('<p>Job Type: ' + jobType + '</p>');
 
 
-  // var arr = [];
-  //
-  // firebase.database().ref("Zips/Cincinnati").on('value', function(snap) {
-  //   snap.forEach(function(childNodes) {
-  //     console.log(childNodes.val());
-  //     arr.push(childNodes.val());
-  //     //This loop iterates over children of user_id
-  //     //childNodes.key is key of the children of userid such as (20170710)
-  //     //childNodes.val().name;
-  //     //childNodes.val().time;
-  //     //childNodes.val().rest_time;
-  //     //childNodes.val().interval_time;
-  //   });
-  //   console.log(arr);
-  // });
+  newJobEl.appendTo('#acceptedJobs');
+}
 
+
+function renderAvailableJobs(jobsObject) {
+  $('#availableJobs').html('');
+  Object.keys(jobsObject).forEach(function(key) {
+    var job = jobsObject[key];
+    renderAvailableJob(job, key);
+  });
+}
+
+function renderAcceptedJobs(jobsObject) {
+  $('#acceptedJobs').html('');
+  Object.keys(jobsObject).forEach(function(key) {
+    var job = jobsObject[key];
+    renderAcceptedJob(job, key);
+  });
+}
+
+$(document).ready(function() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    var uid = user.uid;
+    let screenWidth = $(window).width();
+    var element;
+    console.log('ready');
+
+    // Ref the Cincinnati parent node
+    var availableRef = firebase.database().ref('cincinnati');
+    var acceptedRef = firebase.database().ref('acceptedJobs/' + uid);
+    console.log('test');
+    availableRef.on('value', function (snapshot) {
+      renderAvailableJobs(snapshot.val());
+    });
+
+    acceptedRef.on('value', function (snapshot) {
+      renderAcceptedJobs(snapshot.val());
+    });
+  });
 
 
   //Gets screen width
@@ -363,16 +335,5 @@ $(document).ready(function() {
 //       showJobLists();
 //     });
 //   };
-
-//Removes Job Details
-// function showJobLists() {
-//   $('.return-job-button').off('click').on('click', function() {
-//     $('#availableTitle').removeClass('initial-hidden');
-//     $('#acceptedTitle').removeClass('initial-hidden');
-//     $('#availableJobs').removeClass('initial-hidden');
-//     $('#acceptedJobs').removeClass('initial-hidden');
-//     $(this).parent().remove();
-//   });
-// };
 
 // });

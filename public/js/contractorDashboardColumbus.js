@@ -1,153 +1,141 @@
-$(document).ready(function() {
-  let userId = -1;
+function rejectJob(data, key) {
+  var uid = firebase.auth().currentUser.uid;
 
-  let screenWidth = $(window).width();
-  let i = 0;
+  firebase.database().ref('columbus/' + key).set(data);
+  firebase.database().ref('acceptedJobs/' + uid + '/' + key).remove();
+}
 
-  var element;
-  var ref = firebase.database().ref('columbus');
-  ref.on('child_added', function(snapshot) {
-    var datas = snapshot.val();
-    var time = snapshot.val().Scheduled_Time;
-    var name = snapshot.val().Name;
-    var timeDriven = snapshot.val().Time_Driven;
-    var date = snapshot.val().Scheduled_Date;
-    var earnings = snapshot.val().Estimated_Cost;
-    var keys = snapshot.key;
-    // date = date.replace('.', '/');
+function acceptJob(data, key) {
+  var uid = firebase.auth().currentUser.uid;
 
+  firebase.database().ref('columbus/' + key).remove();
+  firebase.database().ref('acceptedJobs/' + uid + '/' + key).set(data);
+}
 
-    let partialName = name;
-    // let spaceInName = name.split(' ');
-    let lastInitial;;
+function renderAvailableJob(job, key) {
+  var time = job.Scheduled_Time;
+  var name = job.Name;
+  var timeDriven = job.Time_Driven;
+  var date = job.Scheduled_Date;
+  var earnings = job.Estimated_Cost;
+  var jobType = job.Job_Type;
 
-    // if (spaceInName.length > 1) {
-    //   lastInitial = spaceInName[1].split('');
-    //   lastInitial = lastInitial[0];
-    //   partialName = `${spaceInName[0]} ${lastInitial}.`
-    // }
-    //
-    // if (!lastInitial) {
-    //   partialName = name;
-    // }
+  let partialName = name;
+  let spaceInName = name.split(' ');
+  let lastInitial;
 
+  if (spaceInName.length > 1) {
+    lastInitial = spaceInName[1].split('');
+    lastInitial = lastInitial[0];
+    partialName = `${spaceInName[0]} ${lastInitial}.`
+  }
 
-    i++;
-    $('<div>', {
-      id: 'available' + i,
-      class: "avail-accept-jobs-div margin-bottom-twentypx"
-    }).appendTo('#availableJobs');
-    $('#available' + i).append('<div class="delete-job initial-hidden"><p class="text-center font-weight-bold"><b>X</b></p></div>');
-    var x = document.getElementById("availableJobs");
+  if (!lastInitial) {
+    partialName = name;
+  }
 
-    $('#available' + i).append('<p class="customer-name partial-name">Name: ' + partialName + '</p>');
-    $('#available' + i).append('<p class="customer-name full-name initial-hidden">Name: ' + name + '</p>');
-    $('#available' + i).append('<p>Move Date: ' + date + '</p>');
-    $('#available' + i).append('<p>Move Time: ' + time + '</p>');
-    $('#available' + i).append('<p>Drive Time: ' + timeDriven + '</p>');
-    $('#available' + i).append('<p>Potential Earnings: $' + earnings + '</p>');
-    $('#available' + i).append('<p>Potential Earnings:' + keys + '</p>');
-    $('#available' + i).append('<div id="' + keys + '" class="accept-job-button text-center"><p>Accept</p></div>');
-
-
-    //Moves job from available to accepted
-    function acceptJob() {
-      console.log('Registering events');
-      $('.accept-job-button').off('click').on('click', function(e) {
-        var value = e.currentTarget.id;
-
-        /*$(this).parent().appendTo('#acceptedJobs');
-        $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name initial-hidden');
-        $(this).parent().find('.full-name').attr('class', 'customer-name full-name');
-        $(this).parent().children(':first-child').attr('class', 'delete-job delete-accept-job');
-        $(this).parent().append('<div class="details-job-button text-center"><p>Details</p></div>'); */
-
-        $(this).remove();
-        assignDeleteAcceptJob();
-        showJobDetails();
-      });
-    }
-
-    acceptJob();
-
-
-    //Shows job details
-    function jobDetails() {
-      $('.details-job-button').off('click').on('click', function() {
-        $(this).parent().appendTo('#acceptedJobs');
-        $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name initial-hidden');
-        $(this).parent().find('.full-name').attr('class', 'customer-name full-name');
-        $(this).parent().children(':first-child').attr('class', 'delete-job delete-accept-job');
-        $(this).parent().append('<div class="details-job-button text-center"><p>Details</p></div>');
-        $(this).remove();
-        assignDeleteAcceptJob();
-      });
-    }
-
-    acceptJob();
-
-
-    //Delete from accepted job list, moves back to available jobs list
-    function assignDeleteAcceptJob() {
-      $('.delete-accept-job').off('click').on('click', function() {
-        $(this).parent().appendTo('#availableJobs');
-        $(this).parent().find('.partial-name').attr('class', 'customer-name partial-name');
-        $(this).parent().find('.full-name').attr('class', 'customer-name full-name initial-hidden');
-        $(this).parent().children(':first-child').attr('class', 'delete-job initial-hidden');
-        $(this).parent().append('<div class="accept-job-button text-center"><p>Accept</p></div>');
-        $(this).parent().find('.details-job-button').remove();
-        acceptJob();
-      });
-    }
-
-    assignDeleteAcceptJob();
+  var vap = 'available-' + key;
+  var acceptButtonId = 'acceptButton-' + key;
+  var newJobEl = $('<div>', {
+    id: vap,
+    class: "avail-accept-jobs-div margin-bottom-twentypx"
   });
 
+  // Populating the available job list
+  newJobEl.append('<p class="customer-name partial-name ">Name: ' + partialName + '</p>');
+  newJobEl.append('<p>Move Date: ' + date + '</p>');
+  newJobEl.append('<p>Move Time: ' + time + '</p>');
+  newJobEl.append('<p>Drive Time: ' + timeDriven + '</p>');
+  newJobEl.append('<p>Potential Earnings: $' + earnings + '</p>');
+  newJobEl.append('<p>Job Type: ' + jobType + '</p>');
+  var acceptButtonEl = $('<div id="' + acceptButtonId + '" class="accept-job-button text-center"><p>Accept</p></div>');
+  acceptButtonEl.on('click', function() { acceptJob(job, key) });
+  newJobEl.append(acceptButtonEl);
 
 
+  newJobEl.appendTo('#availableJobs');
+}
+
+function renderAcceptedJob(job, key) {
+  var time = job.Scheduled_Time;
+  var name = job.Name;
+  var timeDriven = job.Time_Driven;
+  var date = job.Scheduled_Date;
+  var earnings = job.Estimated_Cost;
+  var jobType = job.Job_Type;
+
+  let partialName = name;
+  let spaceInName = name.split(' ');
+  let lastInitial;
+
+  if (spaceInName.length > 1) {
+    lastInitial = spaceInName[1].split('');
+    lastInitial = lastInitial[0];
+    partialName = `${spaceInName[0]} ${lastInitial}.`
+  }
+
+  if (!lastInitial) {
+    partialName = name;
+  }
+
+  var vap = 'available-' + key;
+  var acceptButtonId = 'acceptButton-' + key;
+  var newJobEl = $('<div>', {
+    id: vap,
+    class: "avail-accept-jobs-div margin-bottom-twentypx"
+  });
+  var rejectJobEl = $('<div class="delete-job"><p class="text-center font-weight-bold"><b>X</b></p></div>');
+  rejectJobEl.on('click', function() { rejectJob(job, key) });
+  newJobEl.append(rejectJobEl);
+
+  // Populating the available job list
+  newJobEl.append('<p class="customer-name full-name">Name: ' + name + '</p>');
+  newJobEl.append('<p>Move Date: ' + date + '</p>');
+  newJobEl.append('<p>Move Time: ' + time + '</p>');
+  newJobEl.append('<p>Drive Time: ' + timeDriven + '</p>');
+  newJobEl.append('<p>Potential Earnings: $' + earnings + '</p>');
+  newJobEl.append('<p>Job Type: ' + jobType + '</p>');
 
 
-  // var arr = [];
-  //
-  // firebase.database().ref("Zips/Cincinnati").on('value', function(snap) {
-  //   snap.forEach(function(childNodes) {
-  //     console.log(childNodes.val());
-  //     arr.push(childNodes.val());
-  //     //This loop iterates over children of user_id
-  //     //childNodes.key is key of the children of userid such as (20170710)
-  //     //childNodes.val().name;
-  //     //childNodes.val().time;
-  //     //childNodes.val().rest_time;
-  //     //childNodes.val().interval_time;
-  //   });
-  //   console.log(arr);
-  // });
-  //
-  //
-  // // Listing current avaialable jobs.
-  // var ref = firebase.database().ref('moving-requests');
-  // // Current logged in user
-  // var user = firebase.auth().onAuthStateChanged(function(user) {
-  //   if (user) {
-  //     // User is signed in.
-  //     var uid = user.uid;
-  //     // var ref2 = firebase.database().ref('Providers').child("City").child("Cincinnati");
-  //     var ref2 = firebase.database().ref('Cincinnati');
-  //
-  //     // userId = uid;
-  //
-  //     ref.on('value', function(snapshot) {
-  //       console.log(snapshot.val());
-  //
-  //       ref2.child(uid).set(snapshot.val(), function(error) {
-  //         // bt.addEventListener("click", myScript);
-  //       });
-  //     });
-  //   } else {
-  //     // No user is signed in.
-  //   }
-  // });
+  newJobEl.appendTo('#acceptedJobs');
+}
 
+
+function renderAvailableJobs(jobsObject) {
+  $('#availableJobs').html('');
+  Object.keys(jobsObject).forEach(function(key) {
+    var job = jobsObject[key];
+    renderAvailableJob(job, key);
+  });
+}
+
+function renderAcceptedJobs(jobsObject) {
+  $('#acceptedJobs').html('');
+  Object.keys(jobsObject).forEach(function(key) {
+    var job = jobsObject[key];
+    renderAcceptedJob(job, key);
+  });
+}
+
+$(document).ready(function() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    var uid = user.uid;
+    let screenWidth = $(window).width();
+    var element;
+    console.log('ready');
+
+    // Ref the Cincinnati parent node
+    var availableRef = firebase.database().ref('columbus');
+    var acceptedRef = firebase.database().ref('acceptedJobs/' + uid);
+    console.log('test');
+    availableRef.on('value', function (snapshot) {
+      renderAvailableJobs(snapshot.val());
+    });
+
+    acceptedRef.on('value', function (snapshot) {
+      renderAcceptedJobs(snapshot.val());
+    });
+  });
 
 
   //Gets screen width
@@ -237,130 +225,115 @@ $(document).ready(function() {
 
 });
 
-firebase.auth().onAuthStateChanged(function(user) {
-  console.log(user.uid);
+// firebase.auth().onAuthStateChanged(function(user) {
+//   // console.log(user.uid);
+//
+//   //Displays Job Details
+//   function showJobDetails() {
+//     let Name = "Evan Slaton";
+//     let Phone = "555-555-5555";
+//     let Scheduled_Date = undefined;
+//     let Scheduled_Time = undefined;
+//     let Time_Driven = undefined;
+//     let Store_Pickup = undefined;
+//     let Num_Of_Movers = undefined;
+//     let Num_Of_Assemblers = undefined;
+//     let Num_Of_Items = undefined;
+//     let Num_Of_Boxes = undefined;
+//     let Pickup_Address = undefined;
+//     let Pickup_Home_Type = undefined;
+//     let Pickup_Room_Count = undefined;
+//     let Pickup_Stairs = undefined;
+//     let Dropoff_Address = undefined;
+//     let Dropoff_Home_Type = undefined;
+//     let Dropoff_Room_Count = undefined;
+//     let Dropoff_Stairs = undefined;
+//     let Pack_Help = undefined;
+//     let Rooms_To_Pack = undefined;
+//     let Load_Help = undefined;
+//     let Piano_Type = undefined;
+//     let Supplies_Needed = '50,000 didgeridoos';
+//
+//     $('.details-job-button').off('click').on('click', function() {
+//       $('#availableTitle').addClass('initial-hidden');
+//       $('#acceptedTitle').addClass('initial-hidden');
+//       $('#availableJobs').addClass('initial-hidden');
+//       $('#acceptedJobs').addClass('initial-hidden');
+//       $('#white-container').append('<div class="details-container"></div>');
+//
+//       if (Name) {
+//         $('.details-container').append('<p>Name: ' + Name + '</p>');
+//       }
+//       if (Phone) {
+//         $('.details-container').append('<p>Phone: ' + Phone + '</p>');
+//       }
+//       if (Scheduled_Date) {
+//         $('.details-container').append('<p>Move Date: ' + Scheduled_Date + '</p>');
+//       }
+//       if (Scheduled_Time) {
+//         $('.details-container').append('<p>Move Time: ' + Scheduled_Time + '</p>');
+//       }
+//       if (Time_Driven) {
+//         $('.details-container').append('<p>Drive Time: ' + Time_Driven + '</p>');
+//       }
+//       if (Store_Pickup) {
+//         $('.details-container').append('<p>Store Pickup: ' + Store_Pickup + '</p>');
+//       }
+//       if (Num_Of_Movers) {
+//         $('.details-container').append('<p>Movers: ' + Num_Of_Movers + '</p>');
+//       }
+//       if (Num_Of_Assemblers) {
+//         $('.details-container').append('<p>Assemblers: ' + Num_Of_Assemblers + '</p>');
+//       }
+//       if (Num_Of_Items) {
+//         $('.details-container').append('<p>Items: ' + Num_Of_Items + '</p>');
+//       }
+//       if (Num_Of_Boxes) {
+//         $('.details-container').append('<p>Boxes: ' + Num_Of_Boxes + '</p>');
+//       }
+//       if (Pickup_Address) {
+//         $('.details-container').append('<p>Pickup Address: ' + Pickup_Address + '</p>');
+//       }
+//       if (Pickup_Home_Type) {
+//         $('.details-container').append('<p>Home Type: ' + Pickup_Home_Type + '</p>');
+//       }
+//       if (Pickup_Room_Count) {
+//         $('.details-container').append('<p>Room Count: ' + Pickup_Room_Count + '</p>');
+//       }
+//       if (Pickup_Stairs) {
+//         $('.details-container').append('<p>Stairs: ' + Pickup_Stairs + '</p>');
+//       }
+//       if (Dropoff_Address) {
+//         $('.details-container').append('<p>Dropoff Address: ' + Dropoff_Address + '</p>');
+//       }
+//       if (Dropoff_Home_Type) {
+//         $('.details-container').append('<p>Home Type: ' + Dropoff_Home_Type + '</p>');
+//       }
+//       if (Dropoff_Room_Count) {
+//         $('.details-container').append('<p>Room Count: ' + Dropoff_Room_Count + '</p>');
+//       }
+//       if (Dropoff_Stairs) {
+//         $('.details-container').append('<p>Stairs: ' + Dropoff_Stairs + '</p>');
+//       }
+//       if (Pack_Help) {
+//         $('.details-container').append('<p>Help Pack: ' + Pack_Help + '</p>');
+//       }
+//       if (Rooms_To_Pack) {
+//         $('.details-container').append('<p>Rooms to Pack: ' + Rooms_To_Pack + '</p>');
+//       }
+//       if (Load_Help) {
+//         $('.details-container').append('<p>Load Help: ' + Load_Help + '</p>');
+//       }
+//       if (Piano_Type) {
+//         $('.details-container').append('<p>Piano Type: ' + Piano_Type + '</p>');
+//       }
+//       if (Supplies_Needed) {
+//         $('.details-container').append('<p>Supplies Needed: ' + Supplies_Needed + '</p>');
+//       }
+//
+//       $('.details-container').append('<div class="return-job-button text-center"><p>Return to List</p></div>');
+//       showJobLists();
+//     });
+//   };
 
-
-
-  console.log(Supplies_Needed);
-
-  //Displays Job Details
-  function showJobDetails() {
-    let Name = "Evan Slaton";
-    let Phone = "555-555-5555";
-    let Scheduled_Date = undefined;
-    let Scheduled_Time = undefined;
-    let Time_Driven = undefined;
-    let Store_Pickup = undefined;
-    let Num_Of_Movers = undefined;
-    let Num_Of_Assemblers = undefined;
-    let Num_Of_Items = undefined;
-    let Num_Of_Boxes = undefined;
-    let Pickup_Address = undefined;
-    let Pickup_Home_Type = undefined;
-    let Pickup_Room_Count = undefined;
-    let Pickup_Stairs = undefined;
-    let Dropoff_Address = undefined;
-    let Dropoff_Home_Type = undefined;
-    let Dropoff_Room_Count = undefined;
-    let Dropoff_Stairs = undefined;
-    let Pack_Help = undefined;
-    let Rooms_To_Pack = undefined;
-    let Load_Help = undefined;
-    let Piano_Type = undefined;
-    let Supplies_Needed = '50,000 didgeridoos';
-
-    $('.details-job-button').off('click').on('click', function() {
-      $('#availableTitle').addClass('initial-hidden');
-      $('#acceptedTitle').addClass('initial-hidden');
-      $('#availableJobs').addClass('initial-hidden');
-      $('#acceptedJobs').addClass('initial-hidden');
-      $('#white-container').append('<div class="details-container"></div>');
-
-      if (Name) {
-        $('.details-container').append('<p>Name: ' + Name + '</p>');
-      }
-      if (Phone) {
-        $('.details-container').append('<p>Phone: ' + Phone + '</p>');
-      }
-      if (Scheduled_Date) {
-        $('.details-container').append('<p>Move Date: ' + Scheduled_Date + '</p>');
-      }
-      if (Scheduled_Time) {
-        $('.details-container').append('<p>Move Time: ' + Scheduled_Time + '</p>');
-      }
-      if (Time_Driven) {
-        $('.details-container').append('<p>Drive Time: ' + Time_Driven + '</p>');
-      }
-      if (Store_Pickup) {
-        $('.details-container').append('<p>Store Pickup: ' + Store_Pickup + '</p>');
-      }
-      if (Num_Of_Movers) {
-        $('.details-container').append('<p>Movers: ' + Num_Of_Movers + '</p>');
-      }
-      if (Num_Of_Assemblers) {
-        $('.details-container').append('<p>Assemblers: ' + Num_Of_Assemblers + '</p>');
-      }
-      if (Num_Of_Items) {
-        $('.details-container').append('<p>Items: ' + Num_Of_Items + '</p>');
-      }
-      if (Num_Of_Boxes) {
-        $('.details-container').append('<p>Boxes: ' + Num_Of_Boxes + '</p>');
-      }
-      if (Pickup_Address) {
-        $('.details-container').append('<p>Pickup Address: ' + Pickup_Address + '</p>');
-      }
-      if (Pickup_Home_Type) {
-        $('.details-container').append('<p>Home Type: ' + Pickup_Home_Type + '</p>');
-      }
-      if (Pickup_Room_Count) {
-        $('.details-container').append('<p>Room Count: ' + Pickup_Room_Count + '</p>');
-      }
-      if (Pickup_Stairs) {
-        $('.details-container').append('<p>Stairs: ' + Pickup_Stairs + '</p>');
-      }
-      if (Dropoff_Address) {
-        $('.details-container').append('<p>Dropoff Address: ' + Dropoff_Address + '</p>');
-      }
-      if (Dropoff_Home_Type) {
-        $('.details-container').append('<p>Home Type: ' + Dropoff_Home_Type + '</p>');
-      }
-      if (Dropoff_Room_Count) {
-        $('.details-container').append('<p>Room Count: ' + Dropoff_Room_Count + '</p>');
-      }
-      if (Dropoff_Stairs) {
-        $('.details-container').append('<p>Stairs: ' + Dropoff_Stairs + '</p>');
-      }
-      if (Pack_Help) {
-        $('.details-container').append('<p>Help Pack: ' + Pack_Help + '</p>');
-      }
-      if (Rooms_To_Pack) {
-        $('.details-container').append('<p>Rooms to Pack: ' + Rooms_To_Pack + '</p>');
-      }
-      if (Load_Help) {
-        $('.details-container').append('<p>Load Help: ' + Load_Help + '</p>');
-      }
-      if (Piano_Type) {
-        $('.details-container').append('<p>Piano Type: ' + Piano_Type + '</p>');
-      }
-      if (Supplies_Needed) {
-        $('.details-container').append('<p>Supplies Needed: ' + Supplies_Needed + '</p>');
-      }
-
-      $('.details-container').append('<div class="return-job-button text-center"><p>Return to List</p></div>');
-      showJobLists();
-    });
-  };
-
-  //Removes Job Details
-  function showJobLists() {
-    $('.return-job-button').off('click').on('click', function() {
-      $('#availableTitle').removeClass('initial-hidden');
-      $('#acceptedTitle').removeClass('initial-hidden');
-      $('#availableJobs').removeClass('initial-hidden');
-      $('#acceptedJobs').removeClass('initial-hidden');
-      $(this).parent().remove();
-    });
-  };
-
-});
+// });
