@@ -18,8 +18,6 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
 
 // Set Static Folder
 app.use(express.static('public'));
-
-
 app.use(bodyParser.json());
 
 // app.use(function (req, res, next) {
@@ -54,8 +52,6 @@ app.use(bodyParser.json());
 //   res.sendFile('public/test.html', {root: __dirname});
 // });
 
-// Payment route
-
 
 // // About page link
 // app.get('/about', (req, res) => {
@@ -82,28 +78,9 @@ app.post('/charge', (req, res) => {
 });
 
 
-// const accountSid = 'AC79e7044c931e917688e13f14a88a59de';
-// const authToken = 'e74672ad5524970753d4c58085ed288d';
-//
-// const client = require('twilio')(accountSid, authToken);
-//
-// client.messages.create(
-//   {
-//     to: '+15137816780',
-//     from: '+13854744952',
-//     body: 'New Move Request',
-//   },
-//   (err, message) => {
-//     console.log(message.sid);
-//   }
-// );
-///
-
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
-
-
 
 
 //kade
