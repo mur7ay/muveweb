@@ -52,11 +52,13 @@ app.use(bodyParser.json());
 //   res.sendFile('public/test.html', {root: __dirname});
 // });
 
+app.use(express.static('about'))
+
 
 // // About page link
-app.get('/about', (req, res) => {
-  res.sendFile('public/about.html', {root: __dirname});
-});
+// app.get('/about', (req, res) => {
+//   res.sendFile('public/about.html', {root: __dirname});
+// });
 
 // charge route
 app.post('/charge', (req, res) => {
