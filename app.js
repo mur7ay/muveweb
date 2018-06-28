@@ -52,9 +52,9 @@ app.use(bodyParser.json());
 //   res.sendFile('public/test.html', {root: __dirname});
 // });
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/about.html');
-});
+// app.get('/', function(req, res){
+//     res.sendFile(__dirname + '/about.html');
+// });
 
 
 // // About page link
