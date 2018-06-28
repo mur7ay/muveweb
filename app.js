@@ -78,7 +78,7 @@ app.post('/charge', (req, res) => {
     currency:'USD',
     customer:customer.id
   })})
-  .then(charge => res.sendFile('public/confirmationPage.html', {root: __dirname}));
+  .then(charge => res.sendFile('confirmationPage.html', {root: __dirname}));
 });
 
 
