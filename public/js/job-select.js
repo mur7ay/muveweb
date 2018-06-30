@@ -793,7 +793,7 @@ $(document).ready(function() {
 	}
 
 
-	//Furniture Delivery ane Curb-to-Curb vars
+	//Furniture Delivery and Curb-to-Curb vars
 	var furnDelBase = 35;
 	var furnDelTotal;
 
@@ -803,7 +803,8 @@ $(document).ready(function() {
 			furnDelTotal = furnDelBase + durationInMinutes() + milesToDrive() + longDistancePrice + 40 //for labor;
 			return furnDelTotal;
 		} else {
-			furnDelTotal = furnDelBase + durationInMinutes() + milesToDrive() + 40 //for labor;
+			var priceIncrease = durationInMinutes() * 0.20;
+			furnDelTotal = furnDelBase + durationInMinutes() + priceIncrease + milesToDrive() + 40 //for labor;
 			return furnDelTotal;
 		}
 	}
