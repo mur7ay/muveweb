@@ -1,4 +1,5 @@
 const express = require('express');
+// const stripe = require('stripe')('sk_live_moHjmvjyDNKPlIEvVRuSgjEG');
 const stripe = require('stripe')('sk_live_moHjmvjyDNKPlIEvVRuSgjEG');
 const bodyParser = require('body-parser');
 const app = express();
@@ -78,7 +79,7 @@ app.post('/charge', (req, res) => {
     currency:'USD',
     customer:customer.id
   })})
-  .then(charge => res.sendFile('confirmationPage.html', {root: __dirname}));
+  .then(charge => res.redirect('public/confirmationPage.html', {root: __dirname}));
 });
 
 
