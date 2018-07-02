@@ -803,8 +803,7 @@ $(document).ready(function() {
 			furnDelTotal = furnDelBase + durationInMinutes() + milesToDrive() + longDistancePrice + 40 //for labor;
 			return furnDelTotal;
 		} else {
-			var priceIncrease = durationInMinutes() * 0.20;
-			furnDelTotal = furnDelBase + durationInMinutes() + priceIncrease + milesToDrive() + 40 //for labor;
+			furnDelTotal = furnDelBase + durationInMinutes() + milesToDrive() + 40 //for labor;
 			return furnDelTotal;
 		}
 	}
