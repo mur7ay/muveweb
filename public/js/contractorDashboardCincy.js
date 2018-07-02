@@ -134,76 +134,99 @@ function renderAcceptedJob(job, key) {
       $('#white-container').append('<div class="details-container"></div>');
 
       if (Name) {
-        $('.details-container').append('<p>Name: ' + Name + '</p>');
+        $('.details-container').append('<p style="font-size: 12px;">name</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Name + '</p>');
       }
       if (Phone) {
-        $('.details-container').append('<p>Phone: ' + Phone + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Phone</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Phone + '</p>');
       }
       if (Scheduled_Date) {
-        $('.details-container').append('<p>Move Date: ' + Scheduled_Date + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Move Date:</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Scheduled_Date + '</p>');
       }
       if (Scheduled_Time) {
-        $('.details-container').append('<p>Move Time: ' + Scheduled_Time + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Move Time</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Scheduled_Time + '</p>');
       }
       if (Time_Driven) {
-        $('.details-container').append('<p>Drive Time: ' + Time_Driven + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Drive Time:</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Time_Driven + '</p>');
       }
       if (Store_Pickup) {
-        $('.details-container').append('<p>Store Pickup: ' + Store_Pickup + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Store Pickup:</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Store_Pickup + '</p>');
       }
       if (Num_Of_Movers) {
-        $('.details-container').append('<p>Movers: ' + Num_Of_Movers + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Movers</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Num_Of_Movers + '</p>');
       }
       if (Num_Of_Assemblers) {
-        $('.details-container').append('<p>Assemblers: ' + Num_Of_Assemblers + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Assemblers</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Num_Of_Assemblers + '</p>');
       }
       if (Num_Of_Items) {
-        $('.details-container').append('<p>Items: ' + Num_Of_Items + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Items</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Num_Of_Items + '</p>');
       }
       if (Num_Of_Boxes) {
-        $('.details-container').append('<p>Boxes: ' + Num_Of_Boxes + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Boxes</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Num_Of_Boxes + '</p>');
       }
       if (Pickup_Address) {
-        $('.details-container').append('<p>Pickup Address: ' + Pickup_Address + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Pickup Address</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Pickup_Address + '</p>');
       }
       if (Pickup_Home_Type) {
-        $('.details-container').append('<p>Home Type: ' + Pickup_Home_Type + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Home Type</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Pickup_Home_Type + '</p>');
       }
       if (Pickup_Room_Count) {
-        $('.details-container').append('<p>Room Count: ' + Pickup_Room_Count + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Room Count</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Pickup_Room_Count + '</p>');
       }
       if (Pickup_Stairs) {
-        $('.details-container').append('<p>Stairs: ' + Pickup_Stairs + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Stairs</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Pickup_Stairs + '</p>');
       }
       if (Dropoff_Address) {
-        $('.details-container').append('<p>Dropoff Address: ' + Dropoff_Address + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Dropoff Address</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Dropoff_Address + '</p>');
       }
       if (Dropoff_Home_Type) {
-        $('.details-container').append('<p>Home Type: ' + Dropoff_Home_Type + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Home Type</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Dropoff_Home_Type + '</p>');
       }
       if (Dropoff_Room_Count) {
-        $('.details-container').append('<p>Room Count: ' + Dropoff_Room_Count + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Room Count</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Dropoff_Room_Count + '</p>');
       }
       if (Dropoff_Stairs) {
-        $('.details-container').append('<p>Stairs: ' + Dropoff_Stairs + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Stairs</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Dropoff_Stairs + '</p>');
       }
       if (Pack_Help) {
-        $('.details-container').append('<p>Help Pack: ' + Pack_Help + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Help Pack</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Pack_Help + '</p>');
       }
       if (Rooms_To_Pack) {
-        $('.details-container').append('<p>Rooms to Pack: ' + Rooms_To_Pack + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Rooms to Pack</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Rooms_To_Pack + '</p>');
       }
       if (Load_Help) {
-        $('.details-container').append('<p>Load Help: ' + Load_Help + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Load Help</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Load_Help + '</p>');
       }
       if (Piano_Type) {
-        $('.details-container').append('<p>Piano Type: ' + Piano_Type + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Piano Type</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Piano_Type + '</p>');
       }
       if (Supplies_Needed) {
-        $('.details-container').append('<p>Supplies Needed: ' + Supplies_Needed + '</p>');
+        $('.details-container').append('<p style="font-size: 12px; margin-top: 20px;">Supplies Needed</p>');
+        $('.details-container').append('<p style="font-weight: 900;">' + Supplies_Needed + '</p>');
       }
 
-      $('.details-container').append('<div class="return-job-button text-center"><p>Return to List</p></div>');
+      $('.details-container').append('<div class="return-job-button text-center" style="margin-top: 40px"><p>Return to List</p></div>');
       showJobLists();
     });
   });
