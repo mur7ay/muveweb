@@ -1447,7 +1447,7 @@
         </div>
 
         <div class="mover-quote" style="margin-top: 60px;">
-          <h2 class="quote-info">Company&#58; Muve</h2>
+          <!-- <h2 class="quote-info">Company&#58; Muve</h2> -->
           <h2 class="quote-info">Estimated total&#58; $<span id="new_text"></span> USD</h2>
           <h2 class="quote-info">Reservation deposit&#58; $<span id="new_text2"></span> USD</h2>
         </div>
@@ -1728,9 +1728,8 @@
         },
         dataType: "json",
         contentType: "application/json"
-      });
+      }).done(window.location.assign('/confirmationPage.html'));
 
-      form.submit();
     }
   </script>
   <!--   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
