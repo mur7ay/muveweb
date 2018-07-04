@@ -2093,9 +2093,10 @@ p.avail-jobs-title, p.accept-jobs-title {
   margin-top: 10px;
   border-radius: 5px;
   border: 1px solid #01D06F;
-  color: #01D06F;
+  border-style: none;
+  color: white;
   padding: 1px 35px 5px;
-  background-color: transparent;
+  background-color: #2C3D55;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -2106,7 +2107,7 @@ p.avail-jobs-title, p.accept-jobs-title {
 
 .accept-job-button:hover, .details-job-button:hover, .return-job-button:hover {
   color: white;
-  background-color: #01D06F;
+  background-color: #2C3D55;
   cursor: pointer;
 }
 
@@ -2148,6 +2149,7 @@ p.avail-jobs-title, p.accept-jobs-title {
     width: 100%;
     max-width: 350px;
     margin: 10px auto;
+    background-color: blue;
   }
 
   p.avail-jobs-title, p.accept-jobs-title {
