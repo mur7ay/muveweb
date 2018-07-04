@@ -42,7 +42,7 @@ function renderAvailableJob(job, key) {
   });
 
   // Populating the available job list
-  newJobEl.append('<p class="customer-name partial-name ">Name: ' + partialName + '</p>');
+  newJobEl.append('<p class="customer-name partial-name">Name: ' + partialName + '</p>');
   newJobEl.append('<p>Move Date: ' + date + '</p>');
   newJobEl.append('<p>Move Time: ' + time + '</p>');
   newJobEl.append('<p>Drive Time: ' + timeDriven + '</p>');
