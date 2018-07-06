@@ -39,8 +39,9 @@ object.onclick = function() {
 
 
 function forgotPassword() {
-  var userEmail = document.getElementById('email3').value;
+  var userEmail = document.getElementById('email').value;
   firebase.auth().sendPasswordResetEmail(userEmail);
+  alert("An email was sent to reset your password");
 }
 
 function logout() {
