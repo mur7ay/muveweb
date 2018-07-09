@@ -63,9 +63,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
-// var sid = 'AC79e7044c931e917688e13f14a88a59de';
-// var auth = 'e74672ad5524970753d4c58085ed288d';
 const twilio = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 var db = firebase.database().ref('providerNumbersColumbus');
