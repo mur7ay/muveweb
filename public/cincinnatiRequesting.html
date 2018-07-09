@@ -1453,7 +1453,9 @@
         </div>
 
         <div class="alert alert-success" style="margin-top: 20px;">
-          <strong>100% Money Back Guarantee</strong>- Your reservation deposit is fully refundable when canceled before 48 hours of your scheduled move. The reservation deposit is necessary to hold your time slot for the specified date you requested.<a href="terms.html" class="alert-link">Terms of Use</a>.
+          <strong>100% Money Back Guarantee</strong>- Your reservation deposit is fully refundable when canceled before 48 hours of your scheduled move. The reservation deposit is necessary to hold your time slot for the specified date you requested.
+          <a
+            href="terms.html" class="alert-link">Terms of Use</a>.
         </div>
 
 
@@ -1462,7 +1464,9 @@
             <label for="card-element">
             Reservation Deposit (Credit or Debit Card)
           </label>
-            <div id="card-element"><!-- a Stripe Element will be inserted here. --></div>
+            <div id="card-element">
+              <!-- a Stripe Element will be inserted here. -->
+            </div>
 
             <div id="card-errors"></div>
           </div>
@@ -1474,6 +1478,12 @@
           <div class="question-container" style="margin-top: 30px;">
             <button id="finalBackBtn" type="button" class="back-btn">BACK</button>
             <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
+
+            <!-- <script>
+              $('#furnitureBtn').click(function() {
+                $.post('/testtwilio')
+              });
+            </script> -->
           </div>
         </form>
       </div>

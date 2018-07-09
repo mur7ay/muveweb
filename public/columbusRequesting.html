@@ -1298,11 +1298,6 @@
             <p id="nameA" class="confirm-answer"></p>
           </div>
 
-          <!-- <div class="zipcodeA">
-            <p class="confirm-title">Zip</p>
-            <p id="zipcodeA" class="confirm-answer"></p>
-          </div> -->
-
           <div class="phoneA">
             <p class="confirm-title">Phone</p>
             <p id="phoneA" class="confirm-answer"></p>
@@ -1474,6 +1469,12 @@
           <div class="question-container" style="margin-top: 30px;">
             <button id="finalBackBtn" type="button" class="back-btn">BACK</button>
             <button id="furnitureBtn" type="submit" class="text-center next-btn">SUBMIT</button>
+
+            <script>
+              $('#furnitureBtn').click(function() {
+                $.post('/testtwilio')
+              });
+            </script>
           </div>
         </form>
       </div>
