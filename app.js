@@ -35,19 +35,19 @@ app.use(bodyParser.json());
 app.post('/charge', (req, res) => {
   const amount = req.body.totalAmount;
   const email = req.body.customerEmail;
-
   stripe.customers.create({
-    email: email,
-    source: req.body.mytoken
-  })
-  .then(customer =>  {
-    stripe.charges.create({
-    amount,
-    description:'Muve deposit request',
-    currency:'USD',
-    customer:customer.id
-  })})
-  // .then(charge => res.redirect('/index.html'));
+      email: email,
+      source: req.body.mytoken
+    })
+    .then(customer => {
+      stripe.charges.create({
+        amount,
+        description: 'Muve deposit request',
+        currency: 'USD',
+        customer: customer.id
+      })
+    })
+// .then(charge => res.redirect('/index.html'));
 });
 
 
@@ -71,7 +71,7 @@ db.on('value', function(snapshot) {
   var num = snapshot.val();
   var body = "New moving request. Check your dashboard to view and accept the job. Visit www.muveapp.com."
 
-  app.post('/testtwilio', function(req, res){
+  app.post('/testtwilio', function(req, res) {
     Promise.all(
       num.map(number => {
         return twilio.messages.create({

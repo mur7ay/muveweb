@@ -1044,7 +1044,7 @@ div.header-center-container {
   font-family: 'Lato', sans-serif;
 }
 
-input.zipcode {
+/* input.zipcode {
   position: absolute;
   left: 0;
   display: inline;
@@ -1056,24 +1056,25 @@ input.zipcode {
   width: 100%;
   padding-left: 10px;
   outline: none;
-}
+} */
 
 button.zipcode-button {
-  position: absolute;
-  right: 0;
+  /* position: absolute; */
+  /* right: 0; */
   height: 51px;
-  width: 50%;
+  width: 100%;
+  font-size: 20px;
   margin-top: 20px;
   letter-spacing: 1px;
   color: #FFF;
   background-color: #01D06F;
-  border-radius: 100px;
-  border-top-left-radius: 0%;
-  border-bottom-left-radius: 0%;
+  border-radius: 10px;
+  /* border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%; */
   border-style: solid;
   border-color: #01D06F;
   font-weight: bold;
-  border-top-width: 3px;
+  /* border-top-width: 3px; */
   outline: none;
 }
 
