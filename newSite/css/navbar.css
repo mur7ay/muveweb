@@ -1,20 +1,33 @@
 nav.navbar {
   background-color: #FFF;
+  padding: 0 16px;
 }
 
 a {
   font-family: 'Lato', sans-serif;
+  font-weight: 300 !important;
   color: #777 !important;
 }
 
 a.navbar-brand {
   font-size: 30px;
+  padding: 0;
 }
 
 a.nav-link {
   font-size: 18px;
+  padding: 10px 15px !important;
 }
 
 a.free-quote {
-  border: 1px solid #01D06F;
+  color: #01D06F !important;
+  border: 3px solid #01D06F;
+  border-radius: 5px;
+}
+
+a.free-quote:hover {
+  color: #FFF !important;
+  background-color: #01D06F;
+  border: 3px solid #01D06F;
+  border-radius: 5px;
 }

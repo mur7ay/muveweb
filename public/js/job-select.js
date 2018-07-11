@@ -317,13 +317,41 @@ $(document).ready(function() {
 	    return nextWeekEnd;
 	}
 
+	function thirdWeekStart() {
+	    var today = new Date(year + '/' + firstDayMonth2 + '/' + firstDayDate2);
+	    var thirdWeekStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()+14);
+	    return thirdWeekStart;
+	}
+
+	function thirdWeekEnd() {
+	    var today = new Date(year + '/' + firstDayMonth2 + '/' + firstDayDate2);
+	    var thirdWeekEnd = new Date(today.getFullYear(), today.getMonth(), today.getDate()+20);
+	    return thirdWeekEnd;
+	}
+
+	function fourthWeekStart() {
+	    var today = new Date(year + '/' + firstDayMonth2 + '/' + firstDayDate2);
+	    var fourthWeekStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()+21);
+	    return fourthWeekStart;
+	}
+
+	function fourthWeekEnd() {
+	    var today = new Date(year + '/' + firstDayMonth2 + '/' + firstDayDate2);
+	    var fourthWeekEnd = new Date(today.getFullYear(), today.getMonth(), today.getDate()+27);
+	    return fourthWeekEnd;
+	}
+
 
 	//Adds dates to select element
 	var thisWeek = firstDayMonth + '.' + firstDayDate + ' - ' + lastDayMonth + '.' + lastDayDate;
 	var nextWeek = (nextWeekStart().getMonth() + 1) + '.' + (nextWeekStart().getDate()) + ' - ' + (nextWeekEnd().getMonth() + 1) + '.' + (nextWeekEnd().getDate());
+	var thirdWeek = (thirdWeekStart().getMonth() + 1) + '.' + (thirdWeekStart().getDate()) + ' - ' + (thirdWeekEnd().getMonth() + 1) + '.' + (thirdWeekEnd().getDate());
+	var fourthWeek = (fourthWeekStart().getMonth() + 1) + '.' + (fourthWeekStart().getDate()) + ' - ' + (fourthWeekEnd().getMonth() + 1) + '.' + (fourthWeekEnd().getDate());
 
 	$('#thisWeek').text('This week (' +  thisWeek  +')');
 	$('#nextWeek').text('Next week (' +  nextWeek  +')');
+	$('#thirdWeek').text('Third week (' +  thirdWeek  +')');
+	$('#fourthWeek').text('Fourth week (' +  fourthWeek  +')');
 
 
 	//Changes color of selected day of the week and opens time pop-up
