@@ -1,0 +1,20 @@
+nav.navbar {
+  background-color: #FFF;
+}
+
+a {
+  font-family: 'Lato', sans-serif;
+  color: #777 !important;
+}
+
+a.navbar-brand {
+  font-size: 30px;
+}
+
+a.nav-link {
+  font-size: 18px;
+}
+
+a.free-quote {
+  border: 1px solid #01D06F;
+}
