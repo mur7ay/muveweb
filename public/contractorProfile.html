@@ -54,6 +54,36 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '252935988395903');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=252935988395903&ev=PageView&noscript=1"
+/></noscript>
+  <!-- End Facebook Pixel Code -->
+
+
+
 </head>
 
 
@@ -115,10 +145,12 @@
     <h4 id="zip" class="zip" contenteditable="true" style="font-weight: bold;"></h4>
 
     <h6 style="margin-top: 20px;">update password</h6>
-    <input id="currentPassword" class="currentPassword" type="password" contenteditable="true" style="font-weight: bold; margin-bottom: 10px; width: 250px; padding-left: 8px; border-radius: 4px; border-style: solid; height: 40px; border-color: red;" placeholder="Current Password" />
+    <input id="currentPassword" class="currentPassword" type="password" contenteditable="true" style="font-weight: bold; margin-bottom: 10px; width: 250px; padding-left: 8px; border-radius: 4px; border-style: solid; height: 40px; border-color: red;" placeholder="Current Password"
+    />
     </br>
-    <input id="updatePasswordField" class="updatePassword" type="password" contenteditable="true" style="font-weight: bold; margin-bottom: 20px; width: 250px; padding-left: 8px; border-radius: 4px; border-style: solid; height: 40px; border-color: red;" placeholder="New Password" />
-  </br>
+    <input id="updatePasswordField" class="updatePassword" type="password" contenteditable="true" style="font-weight: bold; margin-bottom: 20px; width: 250px; padding-left: 8px; border-radius: 4px; border-style: solid; height: 40px; border-color: red;" placeholder="New Password"
+    />
+    </br>
     <button id="updatePasswordBtn" style="margin-bottom: 60px; height: 40px; width: 200px; background-color: red; color: white; border-style: none; border-radius: 4px;">Update Password</button>
 
   </div>

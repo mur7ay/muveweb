@@ -90,6 +90,36 @@
   </script>
   <!-- End of Async Drift Code -->
 
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '252935988395903');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=252935988395903&ev=PageView&noscript=1"
+/></noscript>
+  <!-- End Facebook Pixel Code -->
+
+
+
 
 </head>
 
@@ -140,21 +170,21 @@
   <!-- How It Works -->
   <div class="background-color-fff section-padding">
     <div class="container">
-        <h2 class="container-headers text-center">How It Works</h2>
-        <div class="row margin-top-fiftypx">
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
-            <img class="img-fluid full-width disappear" src="img/iphone.png" alt="Phone with Muve's app displayed" />
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 center-text-smscn how-it-works-p margin-top-zero">
-            <strong><p class="green-heading-text">1. Tell us what you need.</p></strong>
-            <p class="how-it-works-text">Specify the type of move you need.</p>
-            <strong><p class="green-heading-text margin-top-twentypx">2. Review Free Quotes</p></strong>
-            <p class="how-it-works-text">Review three free instant quotes from only the top movers within your area.</p>
-            <strong><p class="green-heading-text margin-top-twentypx">3. Hire a mover instantly</p></strong>
-            <p class="how-it-works-text">Based on their profile, reviews, price, and available schedule, hire the best mover instantly based on your preferences.</p>
-          </div>
+      <h2 class="container-headers text-center">How It Works</h2>
+      <div class="row margin-top-fiftypx">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <img class="img-fluid full-width disappear" src="img/iphone.png" alt="Phone with Muve's app displayed" />
         </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 center-text-smscn how-it-works-p margin-top-zero">
+          <strong><p class="green-heading-text">1. Tell us what you need.</p></strong>
+          <p class="how-it-works-text">Specify the type of move you need.</p>
+          <strong><p class="green-heading-text margin-top-twentypx">2. Review Free Quotes</p></strong>
+          <p class="how-it-works-text">Review three free instant quotes from only the top movers within your area.</p>
+          <strong><p class="green-heading-text margin-top-twentypx">3. Hire a mover instantly</p></strong>
+          <p class="how-it-works-text">Based on their profile, reviews, price, and available schedule, hire the best mover instantly based on your preferences.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -228,36 +258,36 @@
   <!-- Services (Swiper) -->
   <div class="section-padding">
     <div class="container">
-        <h2 class="container-headers text-center">What we can do for you</h2>
-        <div class="swiper-container margin-top-fiftypx text-center">
-          <div class="swiper-wrapper">
+      <h2 class="container-headers text-center">What we can do for you</h2>
+      <div class="swiper-container margin-top-fiftypx text-center">
+        <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <a href="jobSelection.html"><img class="img-fluid full-width" src="img/assembly-icon.jpg" alt="Assemply service icon" /></a>
-            </div>
-
-            <div class="swiper-slide">
-              <a href="jobSelection.html"><img class="img-fluid full-width" src="img/furniture-icon.jpg" alt="furniture service icon" /></a>
-            </div>
-
-            <div class="swiper-slide">
-              <a href="jobSelection.html"><img class="img-fluid full-width" src="img/labor-icon.jpg" alt="labor service icon" /></a>
-            </div>
-
-            <div class="swiper-slide">
-              <a href="jobSelection.html"><img class="img-fluid full-width" src="img/piano-icon.jpg" alt="piano moving service icon" /></a>
-            </div>
-
-            <div class="swiper-slide">
-              <a href="jobSelection.html"><img class="img-fluid full-width" src="img/whole-home-icon.jpg" alt="whole home moving service icon" /></a>
-            </div>
+          <div class="swiper-slide">
+            <a href="jobSelection.html"><img class="img-fluid full-width" src="img/assembly-icon.jpg" alt="Assemply service icon" /></a>
           </div>
-          <!-- Add Pagination
-          <div class="swiper-pagination"></div>-->
-          <!-- Add Arrows -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+
+          <div class="swiper-slide">
+            <a href="jobSelection.html"><img class="img-fluid full-width" src="img/furniture-icon.jpg" alt="furniture service icon" /></a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="jobSelection.html"><img class="img-fluid full-width" src="img/labor-icon.jpg" alt="labor service icon" /></a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="jobSelection.html"><img class="img-fluid full-width" src="img/piano-icon.jpg" alt="piano moving service icon" /></a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="jobSelection.html"><img class="img-fluid full-width" src="img/whole-home-icon.jpg" alt="whole home moving service icon" /></a>
+          </div>
         </div>
+        <!-- Add Pagination
+          <div class="swiper-pagination"></div>-->
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
     </div>
   </div>
 
@@ -278,7 +308,8 @@
               <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
             </div>
             <div class="panel-footer">
-              <p class="about-text">I have nothing but great things to say about my experience with MUVE! They were extremely professional, courteous and prompt. They took their time to be thorough and did not give up...even when I thought the sectional wasn't going to make it downstairs. I would hire them again without hesitation.</p>
+              <p class="about-text">I have nothing but great things to say about my experience with MUVE! They were extremely professional, courteous and prompt. They took their time to be thorough and did not give up...even when I thought the sectional wasn't going to make
+                it downstairs. I would hire them again without hesitation.</p>
               <p class="about-text text-right">- Jessica L.</p>
             </div>
           </div>
@@ -294,7 +325,8 @@
               <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
             </div>
             <div class="panel-footer">
-              <p class="about-text">Everything about my Muve experience was spectacular. I couldn't have asked for a smoother move of my new sofa. The hours were absolutely perfect they were right on time<span class="hidden"> both men were extremely personable, courteous and professional</span>. I would be happy to recommend them to my friends and family. And from now on Muve will be the only movers I ever call for my next move!</p>
+              <p class="about-text">Everything about my Muve experience was spectacular. I couldn't have asked for a smoother move of my new sofa. The hours were absolutely perfect they were right on time<span class="hidden"> both men were extremely personable, courteous and professional</span>.
+                I would be happy to recommend them to my friends and family. And from now on Muve will be the only movers I ever call for my next move!</p>
               <p class="about-text text-right">- Kevin G.</p>
             </div>
           </div>
@@ -310,7 +342,7 @@
               <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
             </div>
             <div class="panel-footer">
-              <p class="about-text">I am over the moon with this company. Availability was amazing, they were prompt, they did the job better than any other moving company I have ever used<span class="hidden">, they wrapped my furniture and were so careful! They treated my furniture, and my home like it was their own. They let me know when they would be there, when they arrived and they were amazingly kind.</span> AND they were cheaper than any other company I have used or asked for an estimate. I highly recommend this company.</p>
+              <p class="about-text">I am over the moon with this company. Availability was amazing, they were prompt, they did the job better than any other moving company I have ever used<span class="hidden">, they wrapped my furniture and were so careful! They treated my furniture, and my home like it was their own. They let me know when they would be there, when they arrived and they were amazingly kind.</span>                AND they were cheaper than any other company I have used or asked for an estimate. I highly recommend this company.</p>
               <p class="about-text text-right">- Sheri G.</p>
             </div>
           </div>
@@ -344,23 +376,24 @@
     </p>
     <p class="about-text no-padding">
       Muve is an absolutely free service to use.
-    <p>
+      <p>
 
-    <p class="green-heading-text margin-top-twentypx">
-      Do you provide quotes?
-    </p>
-    <p class="about-text no-padding">
-      Not only do we provide online quotes from the top moving professionals within your area, we provide three <em>instant</em> quotes during the requesting phase where you’re able to schedule movers instantly from our website.
-    <p>
+        <p class="green-heading-text margin-top-twentypx">
+          Do you provide quotes?
+        </p>
+        <p class="about-text no-padding">
+          Not only do we provide online quotes from the top moving professionals within your area, we provide three <em>instant</em> quotes during the requesting phase where you’re able to schedule movers instantly from our website.
+          <p>
 
-    <p class="green-heading-text margin-top-twentypx">
-      Are your movers background checked?
-    </p>
-    <p class="about-text no-padding">
-      We hand select, screen, and perform a thorough background check on each individual moving company prior to them joining the platform. This ensures that you’ll only receive the utmost care and professionalism with each move. Each company must maintain a high standard of service to remain a service provider with Muve. Furthermore, each company is licensed, bonded, and insured.
-    </p>
+            <p class="green-heading-text margin-top-twentypx">
+              Are your movers background checked?
+            </p>
+            <p class="about-text no-padding">
+              We hand select, screen, and perform a thorough background check on each individual moving company prior to them joining the platform. This ensures that you’ll only receive the utmost care and professionalism with each move. Each company must maintain
+              a high standard of service to remain a service provider with Muve. Furthermore, each company is licensed, bonded, and insured.
+            </p>
 
-    <a href="jobSelection.html" class="margin-top-eightypx get-started about-button">Get Started</a>
+            <a href="jobSelection.html" class="margin-top-eightypx get-started about-button">Get Started</a>
   </div>
 
 

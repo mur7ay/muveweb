@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Muve | Your Personal On-demand Mover</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/muve-logos/favicon-16x16.png">
+
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="stylesheets.css" />
+
+
+  <!-- Meta Data -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn more about Muve, its team, value and our culture and how we're changing the way moving is performed.">
+  <meta name="keywords" content="" />
+
+
+  <!-- Analytics -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-104462465-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300|Raleway" rel="stylesheet">
+
+
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/ad4b507575.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-default navbar-fixed-top no-box-shadow" role="navigation">
+    <div class="container-fluid background-color-fff">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed border-color-fff" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle Navigator</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="../public/index.html">MUVE</a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-right  background-color-fff" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="moverInvite.html" title="link to the mover invite screen">Mover Invite</a></li>
+          <li><a href="about.html" title="link to the about page">About</a></li>
+          <li><a href="blog.html" title="link to Muve's blog">Blog</a></li>
+          <li><a href="login.html" title="link to Muve's blog">Login</a></li>
+          <li class="background-color-01D06F"><a class="color-01D06F" href="../public/jobSelection.html" title="link to the job/move service selection page.">Free Instant Quote</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Log In -->
+  <div class="container container-about container-login margin-top-eightypx">
+    <div class="white-container about-text2 confirm-container bottom-padding-fortypx" id="login_div">
+      <h1 class="login-h1 text-center">Log In</h1>
+      <input class="mover-username" id="email" type="text" placeholder="username" />
+      <input class="mover-password" id="password" type="password" placeholder="password" />
+
+      <div class="password-forgot-div">
+        <a href="#" class="mover-forgot-password" onclick="forgotPassword();">Forgot Password?</a>
+        <button class="user-login-button" id="button">Login</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="parentDiv"></div>
+
+  <!-- Footer -->
+  <footer class="margin-top-eightypx">
+    <div class="container">
+      <div class="row">
+
+
+        <!-- Logo and Summary -->
+        <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+          <ul class="adress">
+            <img class="footer-logo" src="footer-logo.png" />
+            <li>
+              <p>Muve is your solution for on-demand furniture delivery and other moving services in the Cincinnati, Ohio area.</p>
+            </li>
+
+            <li>
+              <p>info@muveapp.com</p>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- Footer Menu -->
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <ul class="contact">
+            <span class="margin-top-twentypx">Menu</span>
+            <li>
+              <a href="index.html">Request</a>
+            </li>
+
+            <li>
+              <a href="about.html">About Us</a>
+            </li>
+
+            <li>
+              <a href="#">Blog</a>
+            </li>
+
+            <li>
+              <a href="terms.html">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="privacy.html">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- Social Media Icons -->
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+          <ul class="social">
+            <span class="margin-top-twentypx">Social</span>
+            <li>
+              <a href="https://www.facebook.com/muvenow"><i class="fa fa-facebook fa-2x"></i></a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/muvenow"><i class="fa fa-instagram fa-2x"></i></a>
+            </li>
+
+            <li>
+              <a href="#"><i class="fa fa-pinterest-p fa-2x"></i></a>
+            </li>
+
+            <li>
+              <a href="https://www.twitter.com/muvenow"><i class="fa fa-twitter fa-2x"></i></a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/company/16254206/"><i class="fa fa-linkedin fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCQv6t6IEkvCKclLSyC1STff-vVh7M0C1A",
+      authDomain: "muve-ce0b0.firebaseapp.com",
+      databaseURL: "https://muve-ce0b0.firebaseio.com",
+      projectId: "muve-ce0b0",
+      storageBucket: "muve-ce0b0.appspot.com",
+      messagingSenderId: "274894158485"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="login.js"></script>
+  <!-- <script src="getMovingData.js"></script> -->
+
+
+</body>
+
+</html>

@@ -54,6 +54,36 @@
   <script src="https://use.fontawesome.com/ad4b507575.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '252935988395903');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=252935988395903&ev=PageView&noscript=1"
+/></noscript>
+  <!-- End Facebook Pixel Code -->
+
+
+
 </head>
 
 
@@ -85,12 +115,12 @@
 
   <div class="secondary-nav-container">
     <div class="secondary-nav margin-bottom-twentypx">
-          <ul class="secondary-nav-ul">
-            <li><a href="contractorProfile.html" title="link to your profile">Profile</a></li>
-            <li><a href="#" title="link to your history">History</a></li>
-            <li><a href="contractorDashboardColumbus.html" title="link to your dashboard">Dashboard</a></li>
-            <li><a href="#" onclick="logout()" title="click to log out of our account">Logout</a></li>
-          </ul>
+      <ul class="secondary-nav-ul">
+        <li><a href="contractorProfile.html" title="link to your profile">Profile</a></li>
+        <li><a href="#" title="link to your history">History</a></li>
+        <li><a href="contractorDashboardColumbus.html" title="link to your dashboard">Dashboard</a></li>
+        <li><a href="#" onclick="logout()" title="click to log out of our account">Logout</a></li>
+      </ul>
     </div>
   </div>
 

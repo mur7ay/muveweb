@@ -95,6 +95,36 @@
   </script>
   <!-- End of Async Drift Code -->
 
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '252935988395903');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=252935988395903&ev=PageView&noscript=1"
+/></noscript>
+  <!-- End Facebook Pixel Code -->
+
+
+
 </head>
 
 <body>
@@ -413,25 +443,25 @@
 
           <div class="heavyItemObj checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Cost per piano:</label>
-              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="pianoCost" placeholder="Your answer" />
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="pianoCost" placeholder="Your answer" />
             </label>
           </div>
 
-         <div class="heavyItemObj checkbox checkbox-container3">
+          <div class="heavyItemObj checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Cost per pool table:</label>
-              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="poolTableCost" placeholder="Your answer" />
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="poolTableCost" placeholder="Your answer" />
             </label>
           </div>
 
-         <div class="heavyItemObj checkbox checkbox-container3">
+          <div class="heavyItemObj checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Cost per kitchen appliance:</label>
-              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="applianceCost" placeholder="Your answer" />
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="applianceCost" placeholder="Your answer" />
             </label>
           </div>
 
           <div class="heavyItemObj checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">Other items:</label>
-              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="otherHeavyItemCost" placeholder="Your answer" />
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="otherHeavyItemCost" placeholder="Your answer" />
             </label>
           </div>
 
@@ -637,9 +667,9 @@
         <p class="text-danger initial-hidden">Please choose one</p>
 
         <form role="form" action="" class="margin-top-fortypx">
-         <div class="checkbox checkbox-container3">
+          <div class="checkbox checkbox-container3">
             <label class="checkbox-label2 text-input no-left-padding">How do you currently manage your scheduling?</label>
-              <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="servicesShouldKnow" placeholder="Your answer" />
+            <input class="input__field input__field--hoshi request-form margin-top-tenpx" type="text" id="servicesShouldKnow" placeholder="Your answer" />
             </label>
           </div>
 

@@ -4,7 +4,9 @@ body {
   min-width: 225px;
 }
 
+
 /*============ Nav Bar Styles ============*/
+
 nav {
   box-shadow: 0px 8px 5px #f8f8f8;
   border: 0 !important;
@@ -71,6 +73,7 @@ div.calendars-container {
 
 
 /* ============ Log In Styles ============*/
+
 .mover-username, .mover-password {
   display: block;
   margin: 0 auto;
@@ -150,7 +153,9 @@ a.mover-forgot-password {
   font-family: 'Lato', sans-serif;
 }
 
+
 /* ============ Main Section Styles ============*/
+
 #dv {
   display: none;
   padding: 0;
@@ -209,7 +214,6 @@ a.no-deco:hover, a.no-deco: active {
   }
 }
 
-
 @media screen and (min-width: 341px) and (max-width: 360px) {
   .about2 {
     margin-left: 30px;
@@ -257,7 +261,6 @@ a.no-deco:hover, a.no-deco: active {
     margin-left: 30px;
   }
 }
-
 
 @media screen and (min-width: 300px) and (max-width: 320px) {
   .h6 {
@@ -318,7 +321,6 @@ a.no-deco:hover, a.no-deco: active {
     margin-left: 30px;
   }
 }
-
 
 @media screen and (min-width: 350px) and (max-width: 420px) {
   .home-p {
@@ -480,7 +482,6 @@ button:hover {
   cursor: pointer;
 }
 
-
 .noUnderline {
   text-decoration: none;
 }
@@ -592,8 +593,8 @@ button:hover {
 }
 
 footer {
-     background-color: #33383c;
-     padding: 20px 0;
+  background-color: #33383c;
+  padding: 20px 0;
 }
 
 .footer-logo {
@@ -601,43 +602,45 @@ footer {
   margin-bottom: 20px !important;
 }
 
-.logo{
-    color:#FFF;
-    font-weight:800;
-    font-size:30px;
+.logo {
+  color: #FFF;
+  font-weight: 800;
+  font-size: 30px;
 }
+
 
 /*address*/
-.adress span , .contact span , .social span{
-   color: #FFF;
-   font-weight: 800;
-   padding-bottom: 10px;
-   margin-bottom: 20px;
-   display: block;
-   text-transform: uppercase;
-   font-size: 13px;
-   letter-spacing: 3px;
+
+.adress span, .contact span, .social span {
+  color: #FFF;
+  font-weight: 800;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: block;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 3px;
 }
 
-.adress li p , .contact li a , .social li a{
-    color:#FFF;
-    letter-spacing: 2px;
-    text-decoration:none;
-    font-size:12px;
+.adress li p, .contact li a, .social li a {
+  color: #FFF;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-size: 12px;
 }
 
-.social li{
-    float:left;
+.social li {
+  float: left;
 }
 
-.adress , .contact , .social {
-    list-style: none;
+.adress, .contact, .social {
+  list-style: none;
 }
 
-.fa{
-    color:#9c9c9c;
-    margin-right: 10px;
-    font-size:14px;
+.fa {
+  color: #9c9c9c;
+  margin-right: 10px;
+  font-size: 14px;
 }
 
 .about-container {
@@ -757,8 +760,7 @@ footer {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
@@ -789,7 +791,9 @@ blockquote p {
   color: #2ECC71;
 }
 
+
 /* ========== Styles for index2.html ============*/
+
 .index-header {
   height: 400px;
   width: 100%;
@@ -854,6 +858,7 @@ figcaption {
 
 
 /* ================================*/
+
 div.legal-container {
   padding-left: 40px;
   padding-right: 40px;
@@ -912,16 +917,20 @@ hr.green-underline {
   padding-bottom: 40px;
 }
 
+
 /* ========== Styles for blog.html ============*/
+
 img.blog-img {
   padding: 0 40px;
 }
 
 .width-eightypx {
- width: 80px;
+  width: 80px;
 }
 
+
 /* ============ Styles for about.html ============ */
+
 .container-about {
   max-width: 800px;
 }
@@ -1043,6 +1052,7 @@ div.header-center-container {
   max-width: 330px;
   font-family: 'Lato', sans-serif;
 }
+
 
 /* input.zipcode {
   position: absolute;
@@ -1175,29 +1185,34 @@ span.hidden {
 }
 
 .social-media-button {
-	border: none;
-	color: #FFFFFF;
-	font-size: 16px;
-	padding: 0.5em 1em;
+  border: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 0.5em 1em;
   margin-bottom: 50px;
 }
 
 .social-media-button:hover {
-	opacity: 0.9;
+  opacity: 0.9;
 }
 
+
 /* Twitter */
+
 .social-media-button.icon.twitter:before {
   font-family: FontAwesome;
   content: "\f099";
   padding-right: 0.5em;
 }
+
 .social-media-button.twitter {
-	background: #1da1f2;
+  background: #1da1f2;
   margin-left: 40px;
 }
 
+
 /* Facebook */
+
 .social-media-button.icon.facebook:before {
   font-family: FontAwesome;
   content: "\f09a";
@@ -1205,10 +1220,12 @@ span.hidden {
 }
 
 .social-media-button.facebook {
-	background: #0077b5;
+  background: #0077b5;
 }
 
+
 /* Media Queries for index.html FAQ */
+
 .faq-padding {
   padding-right: 5%;
   padding-left: 5%;
@@ -1218,15 +1235,14 @@ span.hidden {
   .faq-text {
     text-align: center;
   }
-
   .disappear {
     display: none;
   }
-
   .margin-top-zero {
     margin-top: 0 !important;
   }
 }
+
 
 /*============ Media Queries for index.html cover photo ============*/
 
@@ -1236,7 +1252,6 @@ span.hidden {
     background-position: 0 -250px;
   }
 }
-
 
 @media screen and (max-width: 1600px) {
   .index-header {
@@ -1434,7 +1449,9 @@ span.hidden {
   }
 }
 
+
 /* Testimonials Media Queries */
+
 @media screen and (min-width: 991px) {
   .only-mid-size {
     display: none;
@@ -1445,15 +1462,14 @@ span.hidden {
   .only-mid-size {
     display: none;
   }
-
   .progress {
     margin-top: 50px;
   }
-
 }
 
 
 /* ============ Move Detail Styles ============*/
+
 .initial-hidden {
   display: none !important;
 }
@@ -1503,7 +1519,6 @@ div.checkbox-container {
   }
 }
 
-
 div.checkbox-container2 {
   border: 2px solid #f8f8f8;
   border-radius: 2px;
@@ -1519,21 +1534,21 @@ div.checkbox-container3 {
 label.checkbox-label {
   width: 500px;
   -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 label.checkbox-label2 {
   width: 500px;
   -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 label.no-left-padding {
@@ -1712,7 +1727,6 @@ select.week {
   display: inline;
 }
 
-
 .times p {
   font-size: 16px;
   display: inline-block;
@@ -1750,7 +1764,6 @@ select.week {
   .week-label {
     width: 100%;
   }
-
   select.week {
     display: block;
     margin: 0 auto;
@@ -1759,7 +1772,6 @@ select.week {
     left: 0;
     top: 10px;
   }
-
   .days-div {
     margin-top: 80px;
   }
@@ -1795,15 +1807,14 @@ select.week {
   button.next-btn {
     width: 190px;
   }
-
   button.next-btn2 {
     width: 190px;
   }
 }
 
 
-
 /* ============ Confirmation Page Styles ============*/
+
 .confirm-container {
   padding-top: 60px;
 }
@@ -1836,8 +1847,7 @@ select.week {
   padding-left: 10px;
 }
 
-.confirm-container span {
-}
+.confirm-container span {}
 
 @media screen and (max-width: 350px) {
   .confirm-container li {
@@ -1860,7 +1870,6 @@ select.week {
     margin-left: 25%;
     margin-top: 40px;
   }
-
   .mover-invite-text-center {
     text-align: center;
   }
@@ -1900,16 +1909,13 @@ select.week {
     width: 1345.190px!important;
     padding: 0 80px !important;
   }
-
   .request-form-invite {
     float: left;
   }
-
   .request-form-invite2 {
     float: right;
     margin-top: 10px;
   }
-
   .request-form-clear-div {
     clear: both;
     height: 40px;
@@ -1949,7 +1955,7 @@ select.week {
 h2.quote-info {
   margin: 5px 0;
   font-size: 1.2em;
-  }
+}
 
 .agree-to-terms {
   margin-top: 40px;
@@ -1957,6 +1963,7 @@ h2.quote-info {
 
 
 /* Mover Invite */
+
 .label-other {
   display: inline !important;
 }
@@ -1979,6 +1986,7 @@ h1.lato {
 
 
 /* ============ Contractor Dashboard Styles ============*/
+
 .secondary-nav-container {
   margin-top: 56px;
   height: 35px;
@@ -2133,48 +2141,38 @@ p.avail-jobs-title, p.accept-jobs-title {
     height: 35px;
     margin-bottom: 70px
   }
-
   .secondary-nav {
     margin-top: 47px;
   }
-
   .secondary-nav-ul {
     text-align: center;
   }
-
   .confirm-container-mover-dash {
     padding-top: 0;
   }
-
   .avail-accept-jobs-div {
     width: 100%;
     max-width: 350px;
     margin: 10px auto;
   }
-
   p.avail-jobs-title, p.accept-jobs-title {
     margin-bottom: 20px;
     padding: 15px 0;
   }
-
   p.avail-jobs-title:hover, p.accept-jobs-title:hover {
     cursor: pointer;
   }
-
   p.accept-jobs-title {
     border-bottom: 1px solid #F1F1F1;
     border-left: 1px solid #F1F1F1;
     border-bottom-left-radius: 6px;
   }
-
   div.contractor-dash-div {
     width: 100%;
   }
-
   div.accepted-jobs {
     display: none;
   }
-
   .details-container {
     padding-top: 40px;
     font-size: 18px;

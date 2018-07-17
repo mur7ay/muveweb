@@ -95,6 +95,36 @@
   </script>
   <!-- End of Async Drift Code -->
 
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '252935988395903');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=252935988395903&ev=PageView&noscript=1"
+/></noscript>
+  <!-- End Facebook Pixel Code -->
+
+
+
 
 </head>
 
@@ -1451,8 +1481,7 @@
 
         <div class="alert alert-success" style="margin-top: 20px;">
           <strong>100% Money Back Guarantee</strong>- Your reservation deposit is fully refundable when canceled before 48 hours of your scheduled move. The reservation deposit is necessary to hold your time slot for the specified date you requested.
-          <a
-            href="terms.html" class="alert-link">Terms of Use</a>.
+          <a href="terms.html" class="alert-link">Terms of Use</a>.
         </div>
 
 
