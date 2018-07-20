@@ -333,8 +333,6 @@ $(document).ready(function() {
   const jobsListMobile = () => {
     getScreenWidth();
 
-    console.log($(window).width());
-
     if (screenWidth > 750) {
       $('#availableTitle').css({
         'border-bottom': 'none',
