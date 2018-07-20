@@ -2162,17 +2162,17 @@ p.avail-jobs-title, p.accept-jobs-title {
   p.avail-jobs-title:hover, p.accept-jobs-title:hover {
     cursor: pointer;
   }
-  p.accept-jobs-title {
+  /* p.accept-jobs-title {
     border-bottom: 1px solid #F1F1F1;
     border-left: 1px solid #F1F1F1;
     border-bottom-left-radius: 6px;
-  }
+  } */
   div.contractor-dash-div {
     width: 100%;
   }
-  div.accepted-jobs {
+  /* div.accepted-jobs {
     display: none;
-  }
+  } */
   .details-container {
     padding-top: 40px;
     font-size: 18px;
