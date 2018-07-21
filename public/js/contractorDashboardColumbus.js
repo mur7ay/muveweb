@@ -143,12 +143,15 @@ $(document).ready(function() {
     screenWidth = $(window).width();
   }
 
+    let showAvailableJobs = true;
+
   //Shows accepted jobs, hides available jobs on mobile
   const mobileAcceptJobs = () => {
     getScreenWidth();
 
-    if (screenWidth < 768) {
+    if (screenWidth < 751) {
       $('#availableTitle').off('click').on('click', function() {
+        showAvailableJobs = true;
         $('#acceptedTitle').css({
           'border-bottom': '1px solid #F1F1F1',
           'border-left': '1px solid #F1F1F1'
@@ -170,8 +173,9 @@ $(document).ready(function() {
   const mobileAvailJobs = () => {
     getScreenWidth();
 
-    if (screenWidth < 768) {
+    if (screenWidth < 751) {
       $('#acceptedTitle').off('click').on('click', function() {
+        showAvailableJobs = false;
         $('#availableTitle').css({
           'border-bottom': '1px solid #F1F1F1',
           'border-right': '1px solid #F1F1F1'
@@ -192,10 +196,10 @@ $(document).ready(function() {
   mobileAcceptJobs();
 
   //Gets screen width, sets CSS for column titles
-  $(window).resize(function() {
+  const jobsListMobile = () => {
     getScreenWidth();
 
-    if (screenWidth > 751) {
+    if (screenWidth > 750) {
       $('#availableTitle').css({
         'border-bottom': 'none',
         'border-right': 'none'
@@ -206,7 +210,7 @@ $(document).ready(function() {
       });
       $('.accepted-jobs').css('display', 'block');
       $('.available-jobs').css('display', 'block');
-    } else {
+    } else if (screenWidth < 751 && showAvailableJobs) {
       $('#availableTitle').css({
         'border-bottom': 'none',
         'border-right': 'none'
@@ -217,8 +221,25 @@ $(document).ready(function() {
       });
       $('.accepted-jobs').css('display', 'none');
       $('.available-jobs').css('display', 'block');
-    };
+    } else {
+      $('#availableTitle').css({
+        'border-bottom': '1px solid #F1F1F1',
+        'border-right': '1px solid #F1F1F1'
+      });
+      $('#acceptedTitle').css({
+        'border-bottom': 'none',
+        'border-left': 'none'
+      });
+      $('.accepted-jobs').css('display', 'block');
+      $('.available-jobs').css('display', 'none');
+    }
+  };
 
+  jobsListMobile();
+
+  //Gets screen width, sets CSS for column titles
+  $(window).resize(function() {
+    jobsListMobile();
     mobileAvailJobs();
     mobileAcceptJobs();
   });

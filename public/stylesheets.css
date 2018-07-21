@@ -794,7 +794,7 @@ blockquote p {
 
 /* ========== Styles for index2.html ============*/
 
-.index-header {
+/* .index-header {
   height: 400px;
   width: 100%;
   background-color: grey;
@@ -802,7 +802,7 @@ blockquote p {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 0;
-}
+} */
 
 .full-width {
   width: 50%;
@@ -1019,6 +1019,14 @@ div.white-container {
 
 .text-white {
   color: #FFF !important;
+}
+
+.index-instant-quote {
+  background-color: #2D3D56;
+}
+
+.header-green {
+  color: #4FB478;
 }
 
 h1.container-headers {
@@ -1246,7 +1254,7 @@ span.hidden {
 
 /*============ Media Queries for index.html cover photo ============*/
 
-@media screen and (min-width: 1600px) {
+/* @media screen and (min-width: 1600px) {
   .index-header {
     background-image: url(img/cover2.jpg);
     background-position: 0 -250px;
@@ -1447,7 +1455,7 @@ span.hidden {
     background-image: url(img/cover5.jpg);
     background-position: -25px 0;
   }
-}
+} */
 
 
 /* Testimonials Media Queries */

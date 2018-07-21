@@ -284,7 +284,7 @@ $(document).ready(function() {
   const mobileAcceptJobs = () => {
     getScreenWidth();
 
-    if (screenWidth < 768) {
+    if (screenWidth < 751) {
       $('#availableTitle').off('click').on('click', function() {
         showAvailableJobs = true;
         $('#acceptedTitle').css({
@@ -308,7 +308,7 @@ $(document).ready(function() {
   const mobileAvailJobs = () => {
     getScreenWidth();
 
-    if (screenWidth < 768) {
+    if (screenWidth < 751) {
       $('#acceptedTitle').off('click').on('click', function() {
         showAvailableJobs = false;
         $('#availableTitle').css({
@@ -344,7 +344,7 @@ $(document).ready(function() {
       });
       $('.accepted-jobs').css('display', 'block');
       $('.available-jobs').css('display', 'block');
-    } else if (screenWidth < 752 && showAvailableJobs) {
+    } else if (screenWidth < 751 && showAvailableJobs) {
       $('#availableTitle').css({
         'border-bottom': 'none',
         'border-right': 'none'
