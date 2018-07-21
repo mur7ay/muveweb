@@ -330,6 +330,7 @@ $(document).ready(function() {
   mobileAvailJobs();
   mobileAcceptJobs();
 
+  //Gets screen width, sets CSS for column titles
   const jobsListMobile = () => {
     getScreenWidth();
 
@@ -379,7 +380,6 @@ $(document).ready(function() {
   });
 
 });
-
 
 function showJobLists() {
   $('.return-job-button').off('click').on('click', function() {
